@@ -1,0 +1,56 @@
+{
+  "schema_version": "stories-of-us-public-safe-benchmark-cases-v01",
+  "status": "FROZEN",
+  "frozen_date": "2026-10-30",
+  "notice": "Public-safe paraphrased evidence only; no complete publisher article is reproduced.",
+  "cases": [
+    {
+      "case_id": "activism_edf_intergroup",
+      "source_name": "European Disability Forum",
+      "title": "Disability Intergroup Reviews Key Disability Rights Priorities",
+      "url": "https://www.edf-feph.org/disability-intergroup-reviews-key-disability-rights-priorities/",
+      "publication_date": "2026-10-27",
+      "category": "Activism",
+      "country": "Global",
+      "region": "Global",
+      "disability_relevance": "Disability-rights advocacy and implementation priorities raised by the European Parliament Disability Intergroup.",
+      "evidence": [
+        "Intergroup members called for stronger implementation of disability rights and discussed the Enhanced Disability Rights Strategy.",
+        "The meeting considered housing, artificial intelligence and the EU simplification agenda as issues affecting disabled people.",
+        "An EDF update identified the next EU budget and Digital Networks Act as priorities for joint work with the disability movement."
+      ]
+    },
+    {
+      "case_id": "access_transport_rail",
+      "source_name": "Transport for All",
+      "title": "Will the House of Lords improve accessibility in the Railways Bill?",
+      "url": "https://www.transportforall.org.uk/blog/2026/10/13/house-of-lords-railways-bill/",
+      "publication_date": "2026-10-13",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "disability_relevance": "The article examines proposed rail legislation and its effect on disabled passengers' access and legal rights.",
+      "evidence": [
+        "The Railways Bill was before the House of Lords, where amendments could improve how railways operate for disabled passengers.",
+        "The Bill creates Great British Railways and other public bodies responsible for shaping the future rail network.",
+        "House of Commons proposals for stronger legal rights were not adopted; a government factsheet instead describes an accessibility duty and consideration of disabled passengers' needs."
+      ]
+    },
+    {
+      "case_id": "tech_bca_smart_glasses",
+      "source_name": "Blind Citizens Australia",
+      "title": "BCA calls for calm in smart glasses ban debate",
+      "url": "https://www.bca.org.au/2026/10/29/bca-calls-for-calm-in-smart-glasses-ban-debate/",
+      "publication_date": "2026-10-29",
+      "category": "Tech",
+      "country": "Australia",
+      "region": "Oceania",
+      "disability_relevance": "Blind and partially sighted people use smart glasses as assistive technology and reported safety concerns about hostile public debate.",
+      "evidence": [
+        "Blind Citizens Australia warned that calls to ban smart glasses were putting blind and partially sighted people in danger.",
+        "The organisation described smart glasses as assistive technology that can combine several platforms in one wearable device.",
+        "Members and other users reported feeling unsafe using the devices in public, while some councils had introduced ad hoc bans at facilities."
+      ]
+    }
+  ]
+}

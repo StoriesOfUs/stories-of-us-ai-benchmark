@@ -1,0 +1,10 @@
+{
+  "status": "EXECUTED_LOCALLY_BEFORE_CLOUD_BENCHMARK",
+  "method": "existing deterministic PHP writer V03",
+  "notice": "No language model was used. Blank outputs are safe HOLD results, not successful summaries.",
+  "results": [
+    {"case_id": "activism_edf_intergroup", "summary": "", "generation_status": "HOLD_UNSUPPORTED_SEMANTIC_FRAME"},
+    {"case_id": "access_transport_rail", "summary": "", "generation_status": "HOLD_UNSUPPORTED_SEMANTIC_FRAME"},
+    {"case_id": "tech_bca_smart_glasses", "summary": "", "generation_status": "HOLD_UNSUPPORTED_SEMANTIC_FRAME"}
+  ]
+}
