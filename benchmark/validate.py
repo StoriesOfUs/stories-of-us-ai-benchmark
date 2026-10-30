@@ -23,6 +23,7 @@ checks = {
     "no_secrets": "secrets." not in WORKFLOW and "${{ secrets" not in WORKFLOW,
     "no_deployment": all(token not in WORKFLOW.lower() for token in ("netlify", "deploy", "pages")),
     "no_curated_examples": "curated" not in (ROOT / "benchmark/cases.json").read_text(encoding="utf-8").lower(),
+    "python_boolean_literal": '"curated_examples_used": False' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
 }
 
 for path in ROOT.rglob("*"):

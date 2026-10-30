@@ -127,7 +127,7 @@ def main() -> int:
         "model_sha256": actual_sha256,
         "model_file_bytes": args.model.stat().st_size,
         "condition": "v04_verified_evidence_no_curated_examples",
-        "curated_examples_used": false,
+        "curated_examples_used": False,
         "total_duration_seconds": round(time.monotonic() - model_started, 3),
         "results": results,
     }
