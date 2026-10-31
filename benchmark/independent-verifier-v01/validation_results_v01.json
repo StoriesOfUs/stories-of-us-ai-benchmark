@@ -9,8 +9,8 @@
     "contradiction": 6
   },
   "claim_counts": {
-    "frozen_unseen_holdout": 18,
     "known_historical_failures": 10,
-    "known_supported_controls": 13
+    "known_supported_controls": 13,
+    "frozen_unseen_holdout": 18
   }
 }

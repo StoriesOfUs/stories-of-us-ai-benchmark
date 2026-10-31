@@ -185,7 +185,7 @@ def known_case_detection(rows: list[dict[str, Any]], data: dict[str, Any]) -> di
 
 def package_versions() -> dict[str, str]:
     versions = {"python": platform.python_version()}
-    for package in ["torch", "transformers", "tokenizers", "safetensors", "sentencepiece"]:
+    for package in ["torch", "transformers", "tokenizers", "safetensors", "sentencepiece", "protobuf"]:
         try:
             versions[package] = importlib.metadata.version(package)
         except importlib.metadata.PackageNotFoundError:

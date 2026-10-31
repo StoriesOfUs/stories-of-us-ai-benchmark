@@ -22,9 +22,8 @@ def main() -> int:
     workflow = WORKFLOW.read_text(encoding="utf-8")
     runner = RUNNER.read_text(encoding="utf-8")
     claims = cases["claims"]
-    groups = {name: [row for row in claims if row["group"] == name] for name in {
-        "known_historical_failures", "known_supported_controls", "frozen_unseen_holdout"
-    }}
+    group_names = ["known_historical_failures", "known_supported_controls", "frozen_unseen_holdout"]
+    groups = {name: [row for row in claims if row["group"] == name] for name in group_names}
     holdout = groups["frozen_unseen_holdout"]
     historical_ids = {
         row["historical_case_id"] for row in groups["known_historical_failures"]

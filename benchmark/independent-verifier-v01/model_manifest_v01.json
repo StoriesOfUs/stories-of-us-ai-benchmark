@@ -58,7 +58,8 @@
     "transformers": "4.57.1",
     "tokenizers": "0.22.1",
     "safetensors": "0.6.2",
-    "sentencepiece": "0.2.1"
+    "sentencepiece": "0.2.1",
+    "protobuf": "6.33.0"
   },
   "interpretation_warning": "A model prediction is experimental evidence only. Neutral is not permission to publish, entailment is not automatic factual approval, and confidence scores are not calibrated probabilities of truth."
 }
