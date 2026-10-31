@@ -167,6 +167,7 @@ jobs:
           name: experimental-automatic-claim-coverage-v01-results
           path: |
             benchmark/results/automatic-claim-coverage-v01/results_v01.json
+            benchmark/results/automatic-claim-coverage-v01/progress_v01.json
             benchmark/results/automatic-claim-coverage-v01/execution_manifest_v01.json
             benchmark/results/automatic-claim-coverage-v01/package_validation_v01.json
             benchmark/results/automatic-claim-coverage-v01/model_file_hashes.txt

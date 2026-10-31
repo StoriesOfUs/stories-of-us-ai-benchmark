@@ -15,6 +15,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import traceback
 from typing import Any
 
 from evidence_preparer import material_tokens, prepare_evidence
@@ -241,7 +242,7 @@ JSON SHAPE
 
 def rewrite_prompt(case: dict[str, Any], summary: str, findings: list[dict[str, Any]]) -> str:
     rendered = "\n".join(
-        f"- Claim: {row['atomic_claim']} | decision: {row['decision']} | issue: {row['reason']}"
+        f"- Claim: {row['extracted_claim']['atomic_claim']} | decision: {row['decision']} | issue: {row['reason']}"
         for row in findings
     )
     return f"""/no_think
@@ -684,8 +685,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     )
     nli = NliRuntime(deberta_dir, manifest, config)
     records = []
+    checkpoint_path = pathlib.Path(args.output).resolve().with_name("progress_v01.json")
     for case in cases_data["cases"]:
         records.append(process_case(case, qwen_binary, qwen_model, nli, config, args.timeout_seconds))
+        atomic_json(checkpoint_path, {
+            "schema_version": "stories-of-us-automatic-claim-coverage-progress-v01",
+            "status": "IN_PROGRESS",
+            "completed_case_count": len(records),
+            "completed_case_ids": [record["case_id"] for record in records],
+            "records": records,
+            "public_label": PUBLIC_LABEL,
+            "operational_readiness": "NOT_AUTHORISED",
+        })
     groups = {
         group: metrics([record for record in records if record["evaluation_group"] == group])
         for group in ["development_diagnostic", "new_frozen_holdout"]
@@ -762,6 +773,7 @@ def main() -> int:
             "schema_version": "stories-of-us-automatic-claim-coverage-results-v01",
             "status": "FAILURE", "public_label": PUBLIC_LABEL,
             "error_type": type(exc).__name__, "error": str(exc)[:3000],
+            "traceback": traceback.format_exc()[-12000:],
             "runtime_versions": package_versions(), "operational_readiness": "NOT_AUTHORISED",
         }
         atomic_json(output, failure)

@@ -141,6 +141,17 @@ class ClaimCoverageTests(unittest.TestCase):
             "SUPPORTED",
         )
 
+    def test_rewrite_prompt_reads_nested_verified_claim(self) -> None:
+        case = CASES["cases"][0]
+        findings = [{
+            "extracted_claim": {"atomic_claim": "Disability Rights UK leads the research"},
+            "decision": "FLAG",
+            "reason": "Leadership is not established",
+        }]
+        prompt = RUNNER.rewrite_prompt(case, case["fixed_summary"], findings)
+        self.assertIn("Disability Rights UK leads the research", prompt)
+        self.assertIn("Leadership is not established", prompt)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
