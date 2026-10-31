@@ -1,0 +1,152 @@
+{
+  "schema_version": "stories-of-us-self-contained-evidence-holdout-v01",
+  "frozen_at_utc": "2026-10-31T18:46:51Z",
+  "public_label": "EXPERIMENTAL AI VERIFICATION — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "freeze_rules": {
+    "membership_frozen_before_preparer_implementation": true,
+    "claims_frozen_before_model_execution": true,
+    "references_frozen_before_model_execution": true,
+    "no_holdout_tuning": true,
+    "manual_atomic_claim_inventory": true,
+    "automatic_claim_extraction_status": "NOT_IMPLEMENTED",
+    "articles_previously_unused_by_deberta_benchmark": true,
+    "source_evidence_basis": "Previously verified local article evidence, converted to short original public-safe factual paraphrases with retained source references.",
+    "publication_approved": false
+  },
+  "articles": [
+    {
+      "article_id": "new_history_radar_key",
+      "source_name": "History Workshop",
+      "title": "Radical Object: The Radar Key",
+      "url": "https://www.historyworkshop.org.uk/disability-history/radical-object-the-radar-key",
+      "publication_date": "2026-09-10",
+      "category": "History",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "prior_evidence_reference": "retained-public-safe-evidence:article_history_workshop_radar_key",
+      "prior_source_sha256": "18c490160d8873d1df97c7d8e2462272d1190f82efd9991b79e550642829508a",
+      "evidence": [
+        {"evidence_id": "radar_f1", "status": "VERIFIED_FACT", "text": "History Workshop discusses the Radar Key as a small key connected with disabled people's access to locked public toilets in the United Kingdom.", "source_locations": ["E2", "E3"]},
+        {"evidence_id": "radar_f2", "status": "VERIFIED_FACT", "text": "It was designed to provide disabled people with access to public toilets.", "source_locations": ["E3"]},
+        {"evidence_id": "radar_f3", "status": "ATTRIBUTED_VIEW_OR_CONCERN", "text": "The article presents the key as an artefact of disabled people's activism since the late twentieth century.", "source_locations": ["E2"]}
+      ]
+    },
+    {
+      "article_id": "new_activism_olmstead",
+      "source_name": "AAPD",
+      "title": "Olmstead: What Comes Next",
+      "url": "https://www.aapd.com/olmstead-what-comes-next/",
+      "publication_date": "2026-10-26",
+      "category": "Activism",
+      "country": "United States",
+      "region": "North America",
+      "prior_evidence_reference": "retained-public-safe-evidence:trial1_aapd_olmstead",
+      "prior_source_sha256": "f4a816aa77ab933b8204fe202c206eb4217b89e05c1aec49056ca07153297167",
+      "evidence": [
+        {"evidence_id": "olm_f1", "status": "VERIFIED_FACT", "text": "AAPD's article identifies Lois Curtis and Elaine Wilson and says they lived in Georgia Regional Hospital.", "source_locations": ["E1", "E2"]},
+        {"evidence_id": "olm_f2", "status": "VERIFIED_FACT", "text": "They had psychiatric, intellectual and developmental disabilities.", "source_locations": ["E2"]},
+        {"evidence_id": "olm_f3", "status": "VERIFIED_FACT", "text": "The Olmstead decision found that unjustified institutionalisation violates the Americans with Disabilities Act.", "source_locations": ["E3"]}
+      ]
+    },
+    {
+      "article_id": "new_arts_frame_shift",
+      "source_name": "BroadwayWorld",
+      "title": "FRAME SHIFT 2026 Will Feature Works by Deaf and Disabled Artists",
+      "url": "https://www.broadwayworld.com/sydney/article/FRAME-SHIFT-2026-Will-Feature-Works-by-Deaf-and-Disabled-Artists-20261022",
+      "publication_date": "2026-10-22",
+      "category": "Arts",
+      "country": "Australia",
+      "region": "Oceania",
+      "prior_evidence_reference": "retained-public-safe-evidence:trial3_broadwayworld_frameshift",
+      "prior_source_sha256": "not separately recorded in retained packet",
+      "evidence": [
+        {"evidence_id": "frame_f1", "status": "PLANNED_OR_PROPOSED", "text": "Accessible Arts and Sydney Opera House planned to present FRAME SHIFT films and video artworks by Deaf and Disabled artists in December 2026.", "source_locations": ["E1"]},
+        {"evidence_id": "frame_f2", "status": "PLANNED_OR_PROPOSED", "text": "All artworks in the selection were to be captioned, Auslan interpreted and audio described.", "source_locations": ["E3"]},
+        {"evidence_id": "frame_f3", "status": "VERIFIED_FACT", "text": "The announced selection included three newly commissioned works.", "source_locations": ["E2"]}
+      ]
+    },
+    {
+      "article_id": "new_access_railways_bill",
+      "source_name": "Transport for All",
+      "title": "Will the House of Lords improve accessibility in the Railways Bill?",
+      "url": "https://www.transportforall.org.uk/blog/2026/10/13/house-of-lords-railways-bill/",
+      "publication_date": "2026-10-13",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "prior_evidence_reference": "retained-public-safe-evidence:access_transport_rail",
+      "prior_source_sha256": "7d28c9741bc9daebc12e26a7a45865e1ccc8ef28cc6af34357c74c40583191d7",
+      "evidence": [
+        {"evidence_id": "rail_f1", "status": "VERIFIED_FACT", "text": "Transport for All says the Railways Bill was before the House of Lords, where peers were debating amendments affecting disabled passengers.", "source_locations": ["E3"]},
+        {"evidence_id": "rail_f2", "status": "ATTRIBUTED_VIEW_OR_CONCERN", "text": "It argues that a duty to promote accessibility or consider disabled passengers' needs is weaker than a clear legal duty to improve accessibility.", "source_locations": ["E6"]},
+        {"evidence_id": "rail_f3", "status": "PLANNED_OR_PROPOSED", "text": "Proposed changes included accessibility duties and engagement with accessibility stakeholders.", "source_locations": ["E4", "E5"]}
+      ]
+    },
+    {
+      "article_id": "new_tech_nvda",
+      "source_name": "NV Access",
+      "title": "NVDA 2026.3 Released",
+      "url": "https://www.nvaccess.org/post/nvda-2026-3/",
+      "publication_date": "2026-10-26",
+      "category": "Tech",
+      "country": "Global",
+      "region": "Global",
+      "prior_evidence_reference": "retained-public-safe-evidence:tech_nvda_release",
+      "prior_source_sha256": "8e44e6bb4d8ba117dbdb34ed986042c440e91f9de65b4107f2423f868e099186",
+      "evidence": [
+        {"evidence_id": "nvda_f1", "status": "VERIFIED_FACT", "text": "NV Access announced that NVDA 2026.3, its free screen reader for Microsoft Windows, was available to download.", "source_locations": ["E1"]},
+        {"evidence_id": "nvda_f2", "status": "VERIFIED_FACT", "text": "The update added new braille tables for several languages and variants.", "source_locations": ["E3"]},
+        {"evidence_id": "nvda_f3", "status": "VERIFIED_FACT", "text": "Its updated browsable-message dialog better supports resizing, maximising and minimising.", "source_locations": ["E2"]}
+      ]
+    },
+    {
+      "article_id": "new_tech_meta_glasses",
+      "source_name": "Centre for Accessibility Australia",
+      "title": "Meta AI Glasses Help Make Art More Accessible for People Who Are Blind or With Low Vision.",
+      "url": "https://www.accessibility.org.au/meta-ai-glasses-help-make-art-more-accessible-for-people-who-are-blind-or-with-low-vision/",
+      "publication_date": "2026-10-23",
+      "category": "Tech",
+      "country": "Italy",
+      "region": "Southern Europe",
+      "prior_evidence_reference": "retained-public-safe-evidence:trial3_accessibility_au_ai_glasses",
+      "prior_source_sha256": "40aa55e1de813cbf896d52f5389d06f2976d2eb073ef0354b8302f6ad67b0104",
+      "evidence": [
+        {"evidence_id": "glasses_f1", "status": "VERIFIED_FACT", "text": "An Italian museum used AI-powered smart glasses to provide audio descriptions for visitors who are blind or have low vision.", "source_locations": ["E1"]},
+        {"evidence_id": "glasses_f2", "status": "VERIFIED_FACT", "text": "The glasses recognise an artwork and provide spoken descriptions through speakers in the frames.", "source_locations": ["E4"]},
+        {"evidence_id": "glasses_f3", "status": "VERIFIED_FACT", "text": "The experience covered eight artworks and was developed with input from blind and low-vision people and Italian organisations.", "source_locations": ["E3", "E6"]}
+      ]
+    }
+  ],
+  "claims": [
+    {"claim_id": "new_radar_supported_context", "article_id": "new_history_radar_key", "baseline_evidence_ids": ["radar_f2"], "claim": "The Radar Key was designed to provide disabled people with access to public toilets.", "reference_nli_label": "entailment", "reference_safety_verdict": "SUPPORTED", "reference_reason": "The verified evidence states this purpose; the baseline passage uses an unresolved pronoun."},
+    {"claim_id": "new_radar_unsupported_universal", "article_id": "new_history_radar_key", "baseline_evidence_ids": ["radar_f1", "radar_f2"], "claim": "The Radar Key guarantees disabled people unrestricted access to every public toilet in Britain.", "reference_nli_label": "neutral", "reference_safety_verdict": "NOT_ESTABLISHED", "reference_reason": "The evidence describes a purpose but does not establish universal, unrestricted access."},
+    {"claim_id": "new_radar_contradicted_purpose", "article_id": "new_history_radar_key", "baseline_evidence_ids": ["radar_f2"], "claim": "The Radar Key was designed to prevent disabled people from using public toilets.", "reference_nli_label": "contradiction", "reference_safety_verdict": "CONTRADICTED", "reference_reason": "The evidence says it was designed to provide access."},
+
+    {"claim_id": "new_olmstead_supported_identity", "article_id": "new_activism_olmstead", "baseline_evidence_ids": ["olm_f2"], "claim": "Lois Curtis and Elaine Wilson had psychiatric, intellectual and developmental disabilities.", "reference_nli_label": "entailment", "reference_safety_verdict": "SUPPORTED", "reference_reason": "The evidence supports the identities; the baseline passage uses an unresolved pronoun."},
+    {"claim_id": "new_olmstead_unsupported_guarantee", "article_id": "new_activism_olmstead", "baseline_evidence_ids": ["olm_f1", "olm_f3"], "claim": "Olmstead guaranteed every disabled American a place in community living.", "reference_nli_label": "neutral", "reference_safety_verdict": "NOT_ESTABLISHED", "reference_reason": "The decision and its importance do not establish an individual universal guarantee."},
+    {"claim_id": "new_olmstead_contradicted_ada", "article_id": "new_activism_olmstead", "baseline_evidence_ids": ["olm_f3"], "claim": "Olmstead found that unjustified institutionalisation complies with the Americans with Disabilities Act.", "reference_nli_label": "contradiction", "reference_safety_verdict": "CONTRADICTED", "reference_reason": "The evidence says unjustified institutionalisation violates the Act."},
+
+    {"claim_id": "new_frame_supported_access", "article_id": "new_arts_frame_shift", "baseline_evidence_ids": ["frame_f2"], "claim": "All FRAME SHIFT artworks were planned to be captioned, Auslan interpreted and audio described.", "reference_nli_label": "entailment", "reference_safety_verdict": "SUPPORTED", "reference_reason": "The verified plan states all three measures; the baseline phrase requires the event identity."},
+    {"claim_id": "new_frame_unsupported_full_access", "article_id": "new_arts_frame_shift", "baseline_evidence_ids": ["frame_f1", "frame_f2"], "claim": "FRAME SHIFT guaranteed full access for people with every type of impairment.", "reference_nli_label": "neutral", "reference_safety_verdict": "NOT_ESTABLISHED", "reference_reason": "Specific access measures do not establish universal full accessibility."},
+    {"claim_id": "new_frame_contradicted_no_access", "article_id": "new_arts_frame_shift", "baseline_evidence_ids": ["frame_f2"], "claim": "The FRAME SHIFT artworks were planned without captions, Auslan interpretation or audio description.", "reference_nli_label": "contradiction", "reference_safety_verdict": "CONTRADICTED", "reference_reason": "The evidence states that all three measures were planned."},
+
+    {"claim_id": "new_rail_supported_status", "article_id": "new_access_railways_bill", "baseline_evidence_ids": ["rail_f1"], "claim": "The Railways Bill was before the House of Lords with amendments affecting disabled passengers under debate.", "reference_nli_label": "entailment", "reference_safety_verdict": "SUPPORTED", "reference_reason": "This is a direct supported paraphrase of the bill's status."},
+    {"claim_id": "new_rail_unsupported_completed_duty", "article_id": "new_access_railways_bill", "baseline_evidence_ids": ["rail_f2", "rail_f3"], "claim": "The Railways Bill had already created a clear legal duty to improve accessibility.", "reference_nli_label": "neutral", "reference_safety_verdict": "NOT_ESTABLISHED", "reference_reason": "The source discusses proposed and weaker duties, not a completed clear legal duty."},
+    {"claim_id": "new_rail_contradicted_no_access", "article_id": "new_access_railways_bill", "baseline_evidence_ids": ["rail_f1", "rail_f3"], "claim": "The Railways Bill contained no proposals concerning disabled passengers or accessibility.", "reference_nli_label": "contradiction", "reference_safety_verdict": "CONTRADICTED", "reference_reason": "The evidence identifies disabled-passenger amendments and accessibility proposals."},
+
+    {"claim_id": "new_nvda_supported_braille", "article_id": "new_tech_nvda", "baseline_evidence_ids": ["nvda_f2"], "claim": "NVDA 2026.3 added new braille tables for several languages and variants.", "reference_nli_label": "entailment", "reference_safety_verdict": "SUPPORTED", "reference_reason": "The update and braille-table change are explicitly supported; the baseline uses a generic update reference."},
+    {"claim_id": "new_nvda_unsupported_crashes", "article_id": "new_tech_nvda", "baseline_evidence_ids": ["nvda_f1", "nvda_f3"], "claim": "NVDA 2026.3 prevents every Windows application from crashing.", "reference_nli_label": "neutral", "reference_safety_verdict": "NOT_ESTABLISHED", "reference_reason": "Availability and dialog improvements do not establish universal crash prevention."},
+    {"claim_id": "new_nvda_contradicted_platform", "article_id": "new_tech_nvda", "baseline_evidence_ids": ["nvda_f1"], "claim": "NVDA 2026.3 is a paid screen reader for macOS.", "reference_nli_label": "contradiction", "reference_safety_verdict": "CONTRADICTED", "reference_reason": "The evidence identifies NVDA as free and for Microsoft Windows."},
+
+    {"claim_id": "new_glasses_supported_function", "article_id": "new_tech_meta_glasses", "baseline_evidence_ids": ["glasses_f2"], "claim": "The museum's AI-powered smart glasses recognise artworks and provide spoken descriptions.", "reference_nli_label": "entailment", "reference_safety_verdict": "SUPPORTED", "reference_reason": "The evidence supports both functions; the baseline needs the museum/AI-glasses context."},
+    {"claim_id": "new_glasses_unsupported_universal", "article_id": "new_tech_meta_glasses", "baseline_evidence_ids": ["glasses_f1", "glasses_f3"], "claim": "The project makes every museum artwork accessible to every disabled visitor.", "reference_nli_label": "neutral", "reference_safety_verdict": "NOT_ESTABLISHED", "reference_reason": "The evidence concerns eight artworks and blind or low-vision visitors, not a universal outcome."},
+    {"claim_id": "new_glasses_contradicted_audio", "article_id": "new_tech_meta_glasses", "baseline_evidence_ids": ["glasses_f1", "glasses_f2"], "claim": "The museum experience provides no audio or spoken descriptions.", "reference_nli_label": "contradiction", "reference_safety_verdict": "CONTRADICTED", "reference_reason": "The evidence explicitly describes audio and spoken descriptions."}
+  ],
+  "reference_counts": {
+    "entailment": 6,
+    "neutral": 6,
+    "contradiction": 6,
+    "total": 18,
+    "categories": ["History", "Activism", "Arts", "Access", "Tech"]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "stories-of-us-self-contained-evidence-experiment-config-v01",
+  "public_label": "EXPERIMENTAL AI VERIFICATION — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "baseline_source": "benchmark/independent-verifier-v01/evaluation_cases_v01.json",
+  "new_holdout_source": "benchmark/self-contained-evidence-v01/new_frozen_holdout_v01.json",
+  "preserved_model_settings": {
+    "model_id": "cross-encoder/nli-deberta-v3-small",
+    "revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+    "entailment_threshold": 0.5,
+    "entailment_margin": 0.3,
+    "repetitions": 3,
+    "model_input_limit": 512,
+    "threshold_recalibration": false
+  },
+  "historical_diagnostic_claim_ids": [
+    "pc_bca_facility_bans",
+    "pc_puck_pressure",
+    "pc_vanda_objects",
+    "hu_dpo_assembled",
+    "hu_kate_identity",
+    "hu_bca_unsafe",
+    "kf_connect_integrates"
+  ],
+  "confirmed_false_rejection_claim_ids": [
+    "pc_bca_facility_bans",
+    "pc_puck_pressure",
+    "pc_vanda_objects",
+    "hu_dpo_assembled",
+    "hu_kate_identity",
+    "hu_bca_unsafe"
+  ],
+  "disputed_claim_ids": ["kf_connect_integrates"],
+  "control_claim_ids": [
+    "pc_dpo_collaboration",
+    "pc_dpo_payment",
+    "pc_connect_two_year",
+    "pc_puck_android",
+    "pc_vanda_touch",
+    "pc_kate_programmes",
+    "kf_dpo_improves_justice",
+    "kf_bca_vital",
+    "kf_puck_manage_calls",
+    "hu_connect_guarantees",
+    "hc_connect_replaces",
+    "hc_puck_iphone",
+    "hc_vanda_all_impairments",
+    "hc_kate_wrong_person"
+  ],
+  "human_diagnostic_evidence_ids": {
+    "pc_bca_facility_bans": ["bca_f2", "bca_f3"],
+    "pc_puck_pressure": ["puck_f1", "puck_f5"],
+    "pc_vanda_objects": ["vanda_f1", "vanda_f3"],
+    "hu_dpo_assembled": ["dpo_f4"],
+    "hu_kate_identity": ["kate_f1", "kate_f2"],
+    "hu_bca_unsafe": ["bca_f2", "bca_f3"],
+    "kf_connect_integrates": ["con_f1", "con_f2"]
+  },
+  "preparation_policy": {
+    "maximum_added_passages": 2,
+    "minimum_candidate_score": 2,
+    "preserve_original_evidence": true,
+    "use_only_existing_verified_evidence_items": true,
+    "claim_text_must_not_be_added_as_evidence": true,
+    "no_generated_facts": true,
+    "ambiguous_or_incomplete_action": "UNCERTAIN_REVIEW"
+  },
+  "conditions": {
+    "A": "ORIGINAL_BASELINE",
+    "B": "AUTOMATIC_SELF_CONTAINED",
+    "C": "HUMAN_DIAGNOSTIC_ONLY"
+  },
+  "fresh_holdout_excluded_from_development": true,
+  "automatic_claim_extraction_status": "NOT_IMPLEMENTED",
+  "operational_readiness": "NOT_AUTHORISED"
+}
