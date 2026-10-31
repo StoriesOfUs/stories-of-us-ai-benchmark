@@ -1,0 +1,130 @@
+name: Manual independent evidence verifier V01
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stories-of-us-manual-independent-verifier-v01
+  cancel-in-progress: false
+
+jobs:
+  independent-verifier:
+    name: independent-verifier-v01
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      MODEL_ID: cross-encoder/nli-deberta-v3-small
+      MODEL_REVISION: fa2804872c3b4bd748f38c0185cc85775361e735
+      MODEL_BASE_URL: https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735
+      MODEL_SHA256: ebc79588dd73ccfb6a3f6078519cfbf512c5305384c5ea1845bc71cd32216e86
+      SPM_SHA256: c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd
+      RESULT_DIR: benchmark/results/independent-verifier-v01
+    steps:
+      - name: Check out benchmark files
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Validate frozen public-safe package
+        id: validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RESULT_DIR"
+          python3 benchmark/independent-verifier-v01/validate_public_package.py
+          python3 benchmark/independent-verifier-v01/test_verifier.py
+
+      - name: Install pinned CPU runtime
+        id: runtime
+        if: steps.validation.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/verifier-venv"
+          "$RUNNER_TEMP/verifier-venv/bin/python" -m pip install --disable-pip-version-check --no-cache-dir -r benchmark/independent-verifier-v01/requirements-v01.txt
+          "$RUNNER_TEMP/verifier-venv/bin/python" -m pip install --disable-pip-version-check --no-cache-dir --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple torch==2.8.0+cpu
+          "$RUNNER_TEMP/verifier-venv/bin/python" -m pip freeze > "$RESULT_DIR/pip_freeze.txt"
+
+      - name: Download and verify pinned model files
+        id: download
+        if: steps.runtime.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/nli-model"
+          for file in config.json tokenizer_config.json special_tokens_map.json added_tokens.json spm.model model.safetensors; do
+            curl --fail --location --retry 2 --max-time 900 --output "$RUNNER_TEMP/nli-model/$file" "$MODEL_BASE_URL/$file"
+          done
+          echo "$MODEL_SHA256  $RUNNER_TEMP/nli-model/model.safetensors" | sha256sum --check --strict
+          echo "$SPM_SHA256  $RUNNER_TEMP/nli-model/spm.model" | sha256sum --check --strict
+          sha256sum "$RUNNER_TEMP"/nli-model/* > "$RESULT_DIR/model_file_hashes.txt"
+
+      - name: Run frozen NLI verification benchmark
+        id: inference
+        if: steps.download.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/verifier-venv/bin/python" benchmark/independent-verifier-v01/run_independent_verifier.py \
+            --cases benchmark/independent-verifier-v01/evaluation_cases_v01.json \
+            --manifest benchmark/independent-verifier-v01/model_manifest_v01.json \
+            --model-dir "$RUNNER_TEMP/nli-model" \
+            --output "$RESULT_DIR/results_v01.json" \
+            --repetitions 3
+
+      - name: Preserve bounded diagnostics
+        if: always()
+        env:
+          VALIDATION_OUTCOME: ${{ steps.validation.outcome }}
+          RUNTIME_OUTCOME: ${{ steps.runtime.outcome }}
+          DOWNLOAD_OUTCOME: ${{ steps.download.outcome }}
+          INFERENCE_OUTCOME: ${{ steps.inference.outcome }}
+        shell: bash
+        run: |
+          mkdir -p "$RESULT_DIR"
+          python3 - <<'PY'
+          import json, os, pathlib, platform
+          target = pathlib.Path(os.environ["RESULT_DIR"]) / "execution_manifest_v01.json"
+          result = {
+              "schema_version": "stories-of-us-independent-verifier-execution-manifest-v01",
+              "public_label": "EXPERIMENTAL VERIFICATION RESULT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+              "model_id": os.environ["MODEL_ID"],
+              "model_revision": os.environ["MODEL_REVISION"],
+              "runner": platform.platform(),
+              "steps": {
+                  "validation": os.environ.get("VALIDATION_OUTCOME", "unknown"),
+                  "runtime": os.environ.get("RUNTIME_OUTCOME", "unknown"),
+                  "download": os.environ.get("DOWNLOAD_OUTCOME", "unknown"),
+                  "inference": os.environ.get("INFERENCE_OUTCOME", "unknown"),
+              },
+              "additional_cost_gbp": 0,
+              "operational_readiness": "NOT_AUTHORISED",
+          }
+          target.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+          PY
+          du -sh "$RESULT_DIR" "$RUNNER_TEMP/nli-model" "$RUNNER_TEMP/verifier-venv" 2>/dev/null > "$RESULT_DIR/storage.txt" || true
+          lscpu > "$RESULT_DIR/runner_cpu.txt" 2>/dev/null || true
+
+      - name: Remove temporary model files
+        if: always()
+        shell: bash
+        run: rm -rf "$RUNNER_TEMP/nli-model"
+
+      - name: Upload public-safe verifier results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: experimental-independent-verifier-v01-results
+          path: |
+            benchmark/results/independent-verifier-v01/results_v01.json
+            benchmark/results/independent-verifier-v01/execution_manifest_v01.json
+            benchmark/results/independent-verifier-v01/model_file_hashes.txt
+            benchmark/results/independent-verifier-v01/pip_freeze.txt
+            benchmark/results/independent-verifier-v01/storage.txt
+            benchmark/results/independent-verifier-v01/runner_cpu.txt
+            benchmark/independent-verifier-v01/validation_results_v01.json
+          retention-days: 7
+          if-no-files-found: warn

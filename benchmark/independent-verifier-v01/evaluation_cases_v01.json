@@ -1,0 +1,716 @@
+{
+  "schema_version": "stories-of-us-independent-evidence-verifier-cases-v01",
+  "frozen_at_utc": "2026-10-31T18:10:07Z",
+  "public_label": "EXPERIMENTAL VERIFICATION RESULT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "freeze_rules": {
+    "development_groups": [
+      "known_historical_failures",
+      "known_supported_controls"
+    ],
+    "holdout_group": "frozen_unseen_holdout",
+    "holdout_not_used_for_calibration": true,
+    "manual_atomic_claim_inventory": true,
+    "automatic_claim_extraction_status": "NOT_IMPLEMENTED",
+    "evidence_is_public_safe_paraphrase": true
+  },
+  "articles": [
+    {
+      "article_id": "dpo_funding",
+      "source_name": "Disability Rights UK",
+      "title": "Paid Commission for DPOs | Contribute to sector-changing research on DPO Funding",
+      "url": "https://www.disabilityrightsuk.org/news/paid-commission-dpos-contribute-sector-changing-research-dpo-funding",
+      "publication_date": "2026-10-29",
+      "category": "Activism",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "evidence": [
+        {
+          "evidence_id": "dpo_f1",
+          "status": "VERIFIED_FACT",
+          "text": "Trust for London, Disability Rights UK and Braw Data are collaborating on UK-wide research mapping funding to the disability sector and Disabled People's Organisations."
+        },
+        {
+          "evidence_id": "dpo_f2",
+          "status": "VERIFIED_INTENTION",
+          "text": "The three partners state that the research is intended to support campaigners promoting funding justice for Disabled People's Organisations and led-by-and-for organisations."
+        },
+        {
+          "evidence_id": "dpo_f3",
+          "status": "VERIFIED_FACT",
+          "text": "Disabled People's Organisations are offered £50 to complete a 30-minute form confirming their classification and funding sources."
+        },
+        {
+          "evidence_id": "dpo_f4",
+          "status": "PLANNED_OR_PROPOSED",
+          "text": "The research and funding map are still being assembled; the source does not report that funding transparency or justice has already improved."
+        }
+      ]
+    },
+    {
+      "article_id": "bca_smart_glasses",
+      "source_name": "Blind Citizens Australia",
+      "title": "BCA calls for calm in smart glasses ban debate",
+      "url": "https://www.bca.org.au/2026/10/29/bca-calls-for-calm-in-smart-glasses-ban-debate/",
+      "publication_date": "2026-10-29",
+      "category": "Tech",
+      "country": "Australia",
+      "region": "Oceania",
+      "evidence": [
+        {
+          "evidence_id": "bca_f1",
+          "status": "ATTRIBUTED_VIEW_OR_CONCERN",
+          "text": "Blind Citizens Australia warns that calls to ban smart glasses are putting blind and partially sighted people in danger."
+        },
+        {
+          "evidence_id": "bca_f2",
+          "status": "ATTRIBUTED_VIEW_OR_CONCERN",
+          "text": "Blind Citizens Australia describes smart glasses as assistive technology that can combine several platforms in one wearable device."
+        },
+        {
+          "evidence_id": "bca_f3",
+          "status": "VERIFIED_FACT",
+          "text": "Members and other users report feeling unsafe using the devices in public, while some councils have introduced ad hoc bans at facilities."
+        },
+        {
+          "evidence_id": "bca_f4",
+          "status": "UNSUPPORTED_OR_UNCERTAIN",
+          "text": "The source does not establish that all smart glasses are assistive or that a nationwide ban exists."
+        }
+      ]
+    },
+    {
+      "article_id": "connectability",
+      "source_name": "ATandMe",
+      "title": "ConnectAbility: Building Digital Inclusion Through Virtual Services and Assistive Technology",
+      "url": "https://www.atandme.com/connectability-building-digital-inclusion-through-virtual-services-and-assistive-technology/",
+      "publication_date": "2026-09-22",
+      "category": "Tech",
+      "country": "Republic of Ireland",
+      "region": "Northern Europe",
+      "evidence": [
+        {
+          "evidence_id": "con_f1",
+          "status": "VERIFIED_FACT",
+          "text": "ConnectAbility is a two-year initiative focused on adult disability services and virtual services."
+        },
+        {
+          "evidence_id": "con_f2",
+          "status": "VERIFIED_INTENTION",
+          "text": "The project seeks to explore and enhance services' capacity to offer virtual services as a complementary model rather than replace face-to-face services."
+        },
+        {
+          "evidence_id": "con_f3",
+          "status": "VERIFIED_FACT",
+          "text": "The team developed an Assistive Technology for Digital Inclusion resource covering tools, apps, guides and supports for neurodivergent people and people the source describes as intellectually disabled."
+        },
+        {
+          "evidence_id": "con_f4",
+          "status": "PLANNED_OR_PROPOSED",
+          "text": "The project says it will produce a replicable framework for HSE-funded day services; the framework is not reported as complete."
+        }
+      ]
+    },
+    {
+      "article_id": "puck_call",
+      "source_name": "ATandMe",
+      "title": "Using Puck.js to Answer a Mobile Phone Call",
+      "url": "https://www.atandme.com/using-puck-js-to-answer-a-mobile-phone-call/",
+      "publication_date": "2026-08-19",
+      "category": "Tech",
+      "country": "Global",
+      "region": "Global",
+      "evidence": [
+        {
+          "evidence_id": "puck_f1",
+          "status": "VERIFIED_FACT",
+          "text": "The demonstration uses a programmable Bluetooth Puck.js device as an accessible switch to answer an incoming mobile phone call."
+        },
+        {
+          "evidence_id": "puck_f2",
+          "status": "VERIFIED_FACT",
+          "text": "The approach is presented for people with limited mobility or reduced hand function who may find a touchscreen difficult to reach or use quickly."
+        },
+        {
+          "evidence_id": "puck_f3",
+          "status": "VERIFIED_FACT",
+          "text": "Puck.js sends a Bluetooth volume-up command and Android's accessibility setting uses that command to answer the call."
+        },
+        {
+          "evidence_id": "puck_f4",
+          "status": "VERIFIED_FACT",
+          "text": "The same method does not answer calls on an iPhone; the article instead points to Apple's built-in Auto-Answer Calls feature."
+        },
+        {
+          "evidence_id": "puck_f5",
+          "status": "ATTRIBUTED_VIEW_OR_CONCERN",
+          "text": "The author says the device is highly programmable but criticises its switch for requiring pressure on a specific area."
+        }
+      ]
+    },
+    {
+      "article_id": "vanda_dundee",
+      "source_name": "Disability Arts Online",
+      "title": "V&A's Design and Disability with a Scottish accent: a call to action",
+      "url": "https://disabilityarts.online/magazine/reviews/vas-design-and-disability-with-a-scottish-accent-a-call-to-action/",
+      "publication_date": "2026-07-06",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "evidence": [
+        {
+          "evidence_id": "vanda_f1",
+          "status": "VERIFIED_FACT",
+          "text": "V&A Dundee hosts a reconfigured Design and Disability exhibition celebrating disabled-led design across art, architecture, fashion, photography and design."
+        },
+        {
+          "evidence_id": "vanda_f2",
+          "status": "VERIFIED_FACT",
+          "text": "The Dundee presentation adds Scottish artists and designers to material adapted from the London exhibition."
+        },
+        {
+          "evidence_id": "vanda_f3",
+          "status": "VERIFIED_FACT",
+          "text": "About 170 objects from the 1940s to the present are organised around Visibility, Creativity and Living."
+        },
+        {
+          "evidence_id": "vanda_f4",
+          "status": "ATTRIBUTED_VIEW_OR_CONCERN",
+          "text": "The reviewer notes BSL and audio-described tours, large-print guides, DeafSpace-style mirrors and some tactile exhibits, but says touch remains limited and not all impairment types are represented."
+        }
+      ]
+    },
+    {
+      "article_id": "kate_lovell",
+      "source_name": "Disability Arts Online",
+      "title": "A new chapter for Disability Arts Online: Kate Lovell named as Artistic Director",
+      "url": "https://disabilityarts.online/magazine/news/a-new-chapter-for-disability-arts-online-kate-lovell-named-as-artistic-director/",
+      "publication_date": "2026-05-12",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "evidence": [
+        {
+          "evidence_id": "kate_f1",
+          "status": "VERIFIED_FACT",
+          "text": "Disability Arts Online announced Kate Lovell as its first Artistic Director."
+        },
+        {
+          "evidence_id": "kate_f2",
+          "status": "VERIFIED_FACT",
+          "text": "Lovell is a disabled and neurodivergent theatre-maker, playwright and social justice activist."
+        },
+        {
+          "evidence_id": "kate_f3",
+          "status": "PLANNED_OR_PROPOSED",
+          "text": "In the role, Lovell will lead talent development and creative programmes, including the magazine, and co-lead the organisation with chief executive Trish Wheatley."
+        },
+        {
+          "evidence_id": "kate_f4",
+          "status": "VERIFIED_FACT",
+          "text": "Lovell previously participated in the organisation's disabled writers' programme and later contributed to its magazine and podcast."
+        }
+      ]
+    }
+  ],
+  "historical_summaries": [
+    {
+      "historical_case_id": "hist_dpo",
+      "article_id": "dpo_funding",
+      "prior_output_id": "out_08",
+      "qwen_checker_result": "PASS",
+      "independent_editorial_result": "REVISE",
+      "summary": "Disability Rights UK is leading activism to improve funding justice for Disabled People's Organisations through UK-wide research on disability-sector funding. The initiative invites DPOs to verify their details with a paid 30-minute form as part of sector-changing research.",
+      "reviewer_objections": [
+        "Leading activism is unsupported because Disability Rights UK is one of three collaborating partners.",
+        "Improve funding justice presents the research intention too directly.",
+        "Sector-changing research is an unsupported promotional significance claim."
+      ],
+      "unsafe_claim_ids": ["kf_dpo_leads", "kf_dpo_improves_justice", "kf_dpo_sector_changing"]
+    },
+    {
+      "historical_case_id": "hist_bca",
+      "article_id": "bca_smart_glasses",
+      "prior_output_id": "out_11",
+      "qwen_checker_result": "PASS",
+      "independent_editorial_result": "REVISE",
+      "summary": "Blind Citizens Australia warns that smart glasses are vital assistive technology for blind and partially sighted Australians, yet some councils have banned them, leaving users feeling unsafe. The organisation highlights that not all smart glasses are assistive, and bans are not nationwide.",
+      "reviewer_objections": [
+        "Vital is unsupported promotional wording.",
+        "Some councils have banned them overstates ad hoc bans at some council facilities.",
+        "The source limitations are not verified contrary claims highlighted by the organisation."
+      ],
+      "unsafe_claim_ids": ["kf_bca_vital", "kf_bca_general_bans", "kf_bca_not_all", "kf_bca_not_nationwide"]
+    },
+    {
+      "historical_case_id": "hist_connect",
+      "article_id": "connectability",
+      "prior_output_id": "out_02",
+      "qwen_checker_result": "PASS",
+      "independent_editorial_result": "REVISE",
+      "summary": "ATandMe's Tech category article outlines ConnectAbility, a two-year initiative aiming to integrate virtual services with face-to-face support for adult disability services. The project has developed a resource offering assistive technology, apps, and guides tailored for neurodivergent and intellectually disabled individuals.",
+      "reviewer_objections": [
+        "The opening is mechanical internal-category wording.",
+        "The terminology conflicts with V04's people with learning difficulties rule.",
+        "Integrate is less precise than the verified complementary model rather than replacement."
+      ],
+      "unsafe_claim_ids": ["kf_connect_integrates"]
+    },
+    {
+      "historical_case_id": "hist_puck",
+      "article_id": "puck_call",
+      "prior_output_id": "out_05",
+      "qwen_checker_result": "PASS",
+      "independent_editorial_result": "REVISE",
+      "summary": "ATandMe reports that Puck.js is used as an accessible switch for disabled users to answer Android calls, enabling those with limited mobility to manage phone calls efficiently. The device sends a Bluetooth volume-up command that triggers Android's answer-call setting, unlike iPhones which use a separate Auto-Answer Calls feature.",
+      "reviewer_objections": [
+        "Manage phone calls efficiently is an unsupported broad benefit.",
+        "The iPhone wording overgeneralises an optional feature and obscures that this method does not work on iPhone."
+      ],
+      "unsafe_claim_ids": ["kf_puck_manage_calls"]
+    },
+    {
+      "historical_case_id": "hist_vanda",
+      "article_id": "vanda_dundee",
+      "prior_output_id": "out_12",
+      "qwen_checker_result": "PASS",
+      "independent_editorial_result": "REVISE",
+      "summary": "Disability Arts Online reviews V&A Dundee's reconfigured Design and Disability exhibition, highlighting disabled-led design with Scottish additions. The exhibition features 170 objects across art, architecture, and design, but access measures like BSL tours and tactile exhibits are limited in scope.",
+      "reviewer_objections": [
+        "The blanket limitation is unsupported because the evidence specifically limits touch and impairment representation, not BSL tours themselves."
+      ],
+      "unsafe_claim_ids": ["kf_vanda_all_access_limited"]
+    },
+    {
+      "historical_case_id": "hist_kate_control",
+      "article_id": "kate_lovell",
+      "prior_output_id": "out_06",
+      "qwen_checker_result": "PASS",
+      "independent_editorial_result": "ACCEPT",
+      "summary": "Disability Arts Online has appointed disabled and neurodivergent theatre-maker Kate Lovell as its first Artistic Director. She will lead its talent development and creative programmes, including the magazine, and co-lead the organisation with its chief executive.",
+      "reviewer_objections": [],
+      "unsafe_claim_ids": []
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "kf_dpo_leads",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_dpo",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f1"],
+      "claim": "Disability Rights UK leads the UK-wide research project.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The evidence establishes a three-partner collaboration but does not establish that Disability Rights UK leads it."
+    },
+    {
+      "claim_id": "kf_dpo_improves_justice",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_dpo",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f2", "dpo_f4"],
+      "claim": "The research improves funding justice for Disabled People's Organisations.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The source establishes an intended contribution to campaigning, not an achieved improvement."
+    },
+    {
+      "claim_id": "kf_dpo_sector_changing",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_dpo",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f1", "dpo_f4"],
+      "claim": "The research is sector-changing.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "Promotional title wording does not establish achieved sector-wide impact."
+    },
+    {
+      "claim_id": "kf_bca_vital",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_bca",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f2"],
+      "claim": "Smart glasses are vital assistive technology for blind and partially sighted Australians.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The attributed source description supports assistive use, but not the universal value judgement vital."
+    },
+    {
+      "claim_id": "kf_bca_general_bans",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_bca",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f3"],
+      "claim": "Some councils have banned smart glasses generally.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The evidence is narrower: ad hoc bans at some council facilities."
+    },
+    {
+      "claim_id": "kf_bca_not_all",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_bca",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f4"],
+      "claim": "Blind Citizens Australia says that some smart glasses are not assistive.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The evidence records a limit on what the source establishes; it is not a positive attributed claim."
+    },
+    {
+      "claim_id": "kf_bca_not_nationwide",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_bca",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f4"],
+      "claim": "Blind Citizens Australia says that smart-glasses bans are not nationwide.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "Absence of evidence for a nationwide ban is not evidence for this attributed contrary claim."
+    },
+    {
+      "claim_id": "kf_connect_integrates",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_connect",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f2"],
+      "claim": "ConnectAbility aims to integrate virtual services with face-to-face support.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "REQUIRES_EDITORIAL_REVIEW",
+      "reference_reason": "The source establishes a complementary model and explicitly distinguishes it from replacement; integrate is an imprecise inference."
+    },
+    {
+      "claim_id": "kf_puck_manage_calls",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_puck",
+      "article_id": "puck_call",
+      "evidence_ids": ["puck_f1", "puck_f3"],
+      "claim": "Puck.js enables people with limited mobility to manage phone calls efficiently.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The demonstration supports answering one incoming Android call, not general efficient call management."
+    },
+    {
+      "claim_id": "kf_vanda_all_access_limited",
+      "group": "known_historical_failures",
+      "historical_case_id": "hist_vanda",
+      "article_id": "vanda_dundee",
+      "evidence_ids": ["vanda_f4"],
+      "claim": "The exhibition's BSL tours and tactile exhibits are both limited in scope.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The reviewer limits touch and impairment representation, not the BSL tours themselves."
+    },
+    {
+      "claim_id": "pc_dpo_collaboration",
+      "group": "known_supported_controls",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f1"],
+      "claim": "Disability Rights UK is one of three partners collaborating on UK-wide research into disability-sector funding.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "This is a direct natural paraphrase of the supplied evidence."
+    },
+    {
+      "claim_id": "pc_dpo_payment",
+      "group": "known_supported_controls",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f3"],
+      "claim": "Disabled People's Organisations are offered £50 to complete a 30-minute form.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The amount and activity are explicitly supplied."
+    },
+    {
+      "claim_id": "pc_bca_assistive_view",
+      "group": "known_supported_controls",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f2"],
+      "claim": "Blind Citizens Australia describes smart glasses as assistive technology.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The attribution and description match the evidence."
+    },
+    {
+      "claim_id": "pc_bca_facility_bans",
+      "group": "known_supported_controls",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f3"],
+      "claim": "Some councils have introduced ad hoc smart-glasses bans at facilities.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The scope remains limited to the reported facilities."
+    },
+    {
+      "claim_id": "pc_connect_two_year",
+      "group": "known_supported_controls",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f1"],
+      "claim": "ConnectAbility is a two-year initiative concerning virtual adult disability services.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The duration and subject are explicit."
+    },
+    {
+      "claim_id": "pc_connect_complement",
+      "group": "known_supported_controls",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f2"],
+      "claim": "The project seeks to offer virtual services as a complement to face-to-face services.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The wording preserves the attributed intention and complementary relationship."
+    },
+    {
+      "claim_id": "pc_connect_resource",
+      "group": "known_supported_controls",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f3"],
+      "claim": "The team developed a resource covering assistive technology, apps and guides.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "This is a narrower supported description of the completed resource."
+    },
+    {
+      "claim_id": "pc_puck_android",
+      "group": "known_supported_controls",
+      "article_id": "puck_call",
+      "evidence_ids": ["puck_f3"],
+      "claim": "Puck.js sends a Bluetooth volume-up command that Android can use to answer an incoming call.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The command and Android function are explicitly supplied."
+    },
+    {
+      "claim_id": "pc_puck_pressure",
+      "group": "known_supported_controls",
+      "article_id": "puck_call",
+      "evidence_ids": ["puck_f5"],
+      "claim": "The author criticises the Puck.js switch for requiring pressure on a specific area.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The source view is correctly attributed."
+    },
+    {
+      "claim_id": "pc_vanda_objects",
+      "group": "known_supported_controls",
+      "article_id": "vanda_dundee",
+      "evidence_ids": ["vanda_f3"],
+      "claim": "The exhibition contains about 170 objects dating from the 1940s to the present.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The number and period are explicit."
+    },
+    {
+      "claim_id": "pc_vanda_touch",
+      "group": "known_supported_controls",
+      "article_id": "vanda_dundee",
+      "evidence_ids": ["vanda_f4"],
+      "claim": "The reviewer says opportunities to touch exhibits remain limited.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The limitation is kept to touch and attributed to the reviewer."
+    },
+    {
+      "claim_id": "pc_kate_appointment",
+      "group": "known_supported_controls",
+      "article_id": "kate_lovell",
+      "evidence_ids": ["kate_f1"],
+      "claim": "Disability Arts Online appointed Kate Lovell as its first Artistic Director.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "This is directly supported."
+    },
+    {
+      "claim_id": "pc_kate_programmes",
+      "group": "known_supported_controls",
+      "article_id": "kate_lovell",
+      "evidence_ids": ["kate_f3"],
+      "claim": "Kate Lovell will lead the organisation's talent development and creative programmes.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The future status and scope match the evidence."
+    },
+    {
+      "claim_id": "hu_dpo_assembled",
+      "group": "frozen_unseen_holdout",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f4"],
+      "claim": "The research and funding map were still being assembled when the article was published.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The progress status is explicit."
+    },
+    {
+      "claim_id": "hu_bca_unsafe",
+      "group": "frozen_unseen_holdout",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f3"],
+      "claim": "Smart-glasses users report feeling unsafe using the devices in public.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The statement preserves the attributed report."
+    },
+    {
+      "claim_id": "hu_connect_framework_plan",
+      "group": "frozen_unseen_holdout",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f4"],
+      "claim": "The project says it will produce a replicable framework for HSE-funded day services.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The statement keeps the work in future status."
+    },
+    {
+      "claim_id": "hu_puck_switch",
+      "group": "frozen_unseen_holdout",
+      "article_id": "puck_call",
+      "evidence_ids": ["puck_f1", "puck_f2"],
+      "claim": "The demonstration uses Puck.js as an accessible switch for people who may find a touchscreen difficult to use quickly.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The function and intended users are explicitly supported."
+    },
+    {
+      "claim_id": "hu_vanda_scottish",
+      "group": "frozen_unseen_holdout",
+      "article_id": "vanda_dundee",
+      "evidence_ids": ["vanda_f2"],
+      "claim": "The Dundee exhibition adds Scottish artists and designers to material adapted from London.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "This is a direct natural paraphrase."
+    },
+    {
+      "claim_id": "hu_kate_identity",
+      "group": "frozen_unseen_holdout",
+      "article_id": "kate_lovell",
+      "evidence_ids": ["kate_f2"],
+      "claim": "Kate Lovell is a disabled and neurodivergent theatre-maker.",
+      "reference_nli_label": "entailment",
+      "reference_safety_verdict": "SUPPORTED",
+      "reference_reason": "The identity and occupation are explicitly supplied."
+    },
+    {
+      "claim_id": "hu_dpo_transparency_outcome",
+      "group": "frozen_unseen_holdout",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f4"],
+      "claim": "The project has already made disability-sector funding more transparent.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "No completed transparency outcome is reported."
+    },
+    {
+      "claim_id": "hu_bca_every_device",
+      "group": "frozen_unseen_holdout",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f2", "bca_f4"],
+      "claim": "Every type of smart glasses is assistive technology for blind people.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The source attribution does not establish a universal statement about every device."
+    },
+    {
+      "claim_id": "hu_connect_guarantees",
+      "group": "frozen_unseen_holdout",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f3"],
+      "claim": "The resource guarantees digital inclusion for everyone using disability services.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The existence and contents of a resource do not establish a guaranteed outcome."
+    },
+    {
+      "claim_id": "hu_puck_all_functions",
+      "group": "frozen_unseen_holdout",
+      "article_id": "puck_call",
+      "evidence_ids": ["puck_f1", "puck_f3"],
+      "claim": "Puck.js lets users control all smartphone functions efficiently.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The demonstration concerns answering an incoming Android call only."
+    },
+    {
+      "claim_id": "hu_vanda_bsl_limited",
+      "group": "frozen_unseen_holdout",
+      "article_id": "vanda_dundee",
+      "evidence_ids": ["vanda_f4"],
+      "claim": "The reviewer says the BSL tours themselves are limited in scope.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The limitation applies to touch and represented impairment types, not explicitly to BSL tours."
+    },
+    {
+      "claim_id": "hu_kate_representation_outcome",
+      "group": "frozen_unseen_holdout",
+      "article_id": "kate_lovell",
+      "evidence_ids": ["kate_f1", "kate_f2"],
+      "claim": "Kate Lovell's appointment has already improved disability representation across the arts.",
+      "reference_nli_label": "neutral",
+      "reference_safety_verdict": "NOT_ESTABLISHED",
+      "reference_reason": "The appointment and identity do not establish this broad completed outcome."
+    },
+    {
+      "claim_id": "hc_dpo_complete",
+      "group": "frozen_unseen_holdout",
+      "article_id": "dpo_funding",
+      "evidence_ids": ["dpo_f4"],
+      "claim": "The research and funding map were complete when the article was published.",
+      "reference_nli_label": "contradiction",
+      "reference_safety_verdict": "CONTRADICTED",
+      "reference_reason": "The evidence says they were still being assembled."
+    },
+    {
+      "claim_id": "hc_bca_no_bans",
+      "group": "frozen_unseen_holdout",
+      "article_id": "bca_smart_glasses",
+      "evidence_ids": ["bca_f3"],
+      "claim": "No council facilities have introduced smart-glasses bans.",
+      "reference_nli_label": "contradiction",
+      "reference_safety_verdict": "CONTRADICTED",
+      "reference_reason": "The evidence reports ad hoc bans at some council facilities."
+    },
+    {
+      "claim_id": "hc_connect_replaces",
+      "group": "frozen_unseen_holdout",
+      "article_id": "connectability",
+      "evidence_ids": ["con_f2"],
+      "claim": "ConnectAbility seeks to replace face-to-face services with virtual services.",
+      "reference_nli_label": "contradiction",
+      "reference_safety_verdict": "CONTRADICTED",
+      "reference_reason": "The evidence explicitly says the virtual model is complementary rather than a replacement."
+    },
+    {
+      "claim_id": "hc_puck_iphone",
+      "group": "frozen_unseen_holdout",
+      "article_id": "puck_call",
+      "evidence_ids": ["puck_f4"],
+      "claim": "The demonstrated Puck.js method answers calls on an iPhone.",
+      "reference_nli_label": "contradiction",
+      "reference_safety_verdict": "CONTRADICTED",
+      "reference_reason": "The evidence expressly says this method does not answer iPhone calls."
+    },
+    {
+      "claim_id": "hc_vanda_all_impairments",
+      "group": "frozen_unseen_holdout",
+      "article_id": "vanda_dundee",
+      "evidence_ids": ["vanda_f4"],
+      "claim": "The exhibition represents every impairment type.",
+      "reference_nli_label": "contradiction",
+      "reference_safety_verdict": "CONTRADICTED",
+      "reference_reason": "The reviewer says not all impairment types are represented."
+    },
+    {
+      "claim_id": "hc_kate_wrong_person",
+      "group": "frozen_unseen_holdout",
+      "article_id": "kate_lovell",
+      "evidence_ids": ["kate_f1", "kate_f3"],
+      "claim": "Trish Wheatley, rather than Kate Lovell, was appointed as Disability Arts Online's first Artistic Director.",
+      "reference_nli_label": "contradiction",
+      "reference_safety_verdict": "CONTRADICTED",
+      "reference_reason": "The evidence identifies Kate Lovell as the first Artistic Director and Trish Wheatley as chief executive."
+    }
+  ]
+}

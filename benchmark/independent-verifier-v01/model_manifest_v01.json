@@ -1,0 +1,64 @@
+{
+  "schema_version": "stories-of-us-independent-verifier-model-manifest-v01",
+  "checked_at_utc": "2026-10-31T18:10:07Z",
+  "official_repository": "https://huggingface.co/cross-encoder/nli-deberta-v3-small",
+  "model_id": "cross-encoder/nli-deberta-v3-small",
+  "revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+  "license": "apache-2.0",
+  "base_model": "microsoft/deberta-v3-small",
+  "training_datasets": [
+    "SNLI",
+    "MultiNLI"
+  ],
+  "model_card_label_order": [
+    "contradiction",
+    "entailment",
+    "neutral"
+  ],
+  "config_id2label": {
+    "0": "contradiction",
+    "1": "entailment",
+    "2": "neutral"
+  },
+  "max_position_embeddings": 512,
+  "selected_format": "safetensors",
+  "remote_code_allowed": false,
+  "files": [
+    {
+      "path": "config.json",
+      "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735/config.json"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735/tokenizer_config.json"
+    },
+    {
+      "path": "special_tokens_map.json",
+      "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735/special_tokens_map.json"
+    },
+    {
+      "path": "added_tokens.json",
+      "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735/added_tokens.json"
+    },
+    {
+      "path": "spm.model",
+      "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735/spm.model",
+      "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+      "size_bytes": 2464616
+    },
+    {
+      "path": "model.safetensors",
+      "url": "https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735/model.safetensors",
+      "sha256": "ebc79588dd73ccfb6a3f6078519cfbf512c5305384c5ea1845bc71cd32216e86",
+      "size_bytes": 567605820
+    }
+  ],
+  "runtime_dependencies": {
+    "torch": "2.8.0+cpu",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.1",
+    "safetensors": "0.6.2",
+    "sentencepiece": "0.2.1"
+  },
+  "interpretation_warning": "A model prediction is experimental evidence only. Neutral is not permission to publish, entailment is not automatic factual approval, and confidence scores are not calibrated probabilities of truth."
+}

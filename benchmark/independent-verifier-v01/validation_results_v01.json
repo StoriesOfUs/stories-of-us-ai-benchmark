@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checks_total": 57,
+  "checks_passed": 57,
+  "failed": [],
+  "holdout_reference_counts": {
+    "entailment": 6,
+    "neutral": 6,
+    "contradiction": 6
+  },
+  "claim_counts": {
+    "frozen_unseen_holdout": 18,
+    "known_historical_failures": 10,
+    "known_supported_controls": 13
+  }
+}
