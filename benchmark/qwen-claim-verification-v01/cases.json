@@ -1,0 +1,146 @@
+{
+  "schema_version": "stories-of-us-qwen-claim-cases-v01",
+  "frozen_at_utc": "2026-10-31T18:00:00Z",
+  "freeze_note": "Final cases were selected and frozen before benchmark execution or output-led prompt changes. Earlier discovery caches may contain source URLs; none was used in a previous summary-authoring evaluation.",
+  "cases": [
+    {
+      "case_id": "diag_activism_dpo_funding",
+      "evaluation_group": "diagnostic",
+      "source_name": "Disability Rights UK",
+      "title": "Paid Commission for DPOs | Contribute to sector-changing research on DPO Funding",
+      "url": "https://www.disabilityrightsuk.org/news/paid-commission-dpos-contribute-sector-changing-research-dpo-funding",
+      "publication_date": "2026-10-29",
+      "category": "Activism",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "complexity": "complex",
+      "two_main_points": [
+        {"point_id": "p1", "fact_ids": ["f1", "f2"], "point": "Partners are conducting UK-wide research into disability-sector and DPO funding, intended to support campaigning for funding justice."},
+        {"point_id": "p2", "fact_ids": ["f3"], "point": "DPOs are invited to verify their details through a paid 30-minute form."}
+      ],
+      "essential_qualification_fact_ids": ["f2", "f4"],
+      "verified_facts": [
+        {"fact_id": "f1", "status": "VERIFIED FACT", "fact": "Trust for London, Disability Rights UK and Braw Data are collaborating on UK-wide research mapping funding to the disability sector and Disabled People's Organisations.", "evidence_ref": "publisher article, project description"},
+        {"fact_id": "f2", "status": "VERIFIED INTENTION", "fact": "The partners state that the research is intended to support campaigners promoting funding justice for Disabled People's Organisations and led-by-and-for organisations.", "evidence_ref": "publisher article, stated project purpose"},
+        {"fact_id": "f3", "status": "VERIFIED FACT", "fact": "Disabled People's Organisations are offered £50 to complete a 30-minute form confirming their classification and funding sources.", "evidence_ref": "publisher article, participation invitation"},
+        {"fact_id": "f4", "status": "PLANNED OR PROPOSED", "fact": "The research and funding map are still being assembled; the source does not report that funding transparency or justice has already improved.", "evidence_ref": "publisher article, project status"}
+      ]
+    },
+    {
+      "case_id": "diag_tech_bca_smart_glasses",
+      "evaluation_group": "diagnostic",
+      "source_name": "Blind Citizens Australia",
+      "title": "BCA calls for calm in smart glasses ban debate",
+      "url": "https://www.bca.org.au/2026/10/29/bca-calls-for-calm-in-smart-glasses-ban-debate/",
+      "publication_date": "2026-10-29",
+      "category": "Tech",
+      "country": "Australia",
+      "region": "Oceania",
+      "complexity": "complex",
+      "two_main_points": [
+        {"point_id": "p1", "fact_ids": ["f1", "f2"], "point": "Blind Citizens Australia is responding to proposed smart-glasses bans and explaining their assistive use by blind and partially sighted people."},
+        {"point_id": "p2", "fact_ids": ["f3"], "point": "Users report feeling unsafe, while some councils have introduced ad hoc facility bans."}
+      ],
+      "essential_qualification_fact_ids": ["f4"],
+      "verified_facts": [
+        {"fact_id": "f1", "status": "ATTRIBUTED VIEW OR CONCERN", "fact": "Blind Citizens Australia warns that calls to ban smart glasses are putting blind and partially sighted people in danger.", "evidence_ref": "publisher article, organisation statement"},
+        {"fact_id": "f2", "status": "ATTRIBUTED VIEW OR CONCERN", "fact": "The organisation describes smart glasses as assistive technology that can combine several platforms in one wearable device.", "evidence_ref": "publisher article, organisation statement"},
+        {"fact_id": "f3", "status": "VERIFIED FACT", "fact": "Members and other users report feeling unsafe using the devices in public, while some councils have introduced ad hoc bans at facilities.", "evidence_ref": "publisher article, reported experiences and council actions"},
+        {"fact_id": "f4", "status": "UNSUPPORTED OR UNCERTAIN", "fact": "The source does not establish that all smart glasses are assistive or that a nationwide ban exists.", "evidence_ref": "publisher article, scope limitation"}
+      ]
+    },
+    {
+      "case_id": "final_tech_connectability",
+      "evaluation_group": "frozen_final",
+      "source_name": "ATandMe",
+      "title": "ConnectAbility: Building Digital Inclusion Through Virtual Services and Assistive Technology",
+      "url": "https://www.atandme.com/connectability-building-digital-inclusion-through-virtual-services-and-assistive-technology/",
+      "publication_date": "2026-09-22",
+      "category": "Tech",
+      "country": "Republic of Ireland",
+      "region": "Northern Europe",
+      "complexity": "complex",
+      "two_main_points": [
+        {"point_id": "p1", "fact_ids": ["f1", "f2"], "point": "ConnectAbility is a two-year project exploring how adult disability services can provide virtual services alongside face-to-face support."},
+        {"point_id": "p2", "fact_ids": ["f3"], "point": "Its team has produced a resource of assistive technologies, accessibility tools, apps, guides and supports for neurodivergent and intellectually disabled people."}
+      ],
+      "essential_qualification_fact_ids": ["f2", "f4"],
+      "verified_facts": [
+        {"fact_id": "f1", "status": "VERIFIED FACT", "fact": "ConnectAbility is a two-year initiative focused on adult disability services and virtual services.", "evidence_ref": "publisher article, ConnectAbility section"},
+        {"fact_id": "f2", "status": "VERIFIED INTENTION", "fact": "The project seeks to explore and enhance services' capacity to offer virtual services as a complementary model rather than replace face-to-face services.", "evidence_ref": "publisher article, stated project purpose"},
+        {"fact_id": "f3", "status": "VERIFIED FACT", "fact": "The team developed an Assistive Technology for Digital Inclusion resource covering tools, apps, guides and supports for neurodivergent or intellectually disabled people.", "evidence_ref": "publisher article, assistive technology section"},
+        {"fact_id": "f4", "status": "PLANNED OR PROPOSED", "fact": "The project says it will produce a replicable framework for HSE-funded day services; the framework is not reported as complete.", "evidence_ref": "publisher article, future deliverable"}
+      ]
+    },
+    {
+      "case_id": "final_tech_puck_call",
+      "evaluation_group": "frozen_final",
+      "source_name": "ATandMe",
+      "title": "Using Puck.js to Answer a Mobile Phone Call",
+      "url": "https://www.atandme.com/using-puck-js-to-answer-a-mobile-phone-call/",
+      "publication_date": "2026-08-19",
+      "category": "Tech",
+      "country": "Global",
+      "region": "Global",
+      "complexity": "simple",
+      "two_main_points": [
+        {"point_id": "p1", "fact_ids": ["f1", "f2"], "point": "The article demonstrates configuring Puck.js as an accessible switch for people with limited mobility to answer an Android phone call."},
+        {"point_id": "p2", "fact_ids": ["f3", "f4"], "point": "A Bluetooth volume-up command triggers Android's answer-call setting, while iPhones require a different auto-answer feature."}
+      ],
+      "essential_qualification_fact_ids": ["f4", "f5"],
+      "verified_facts": [
+        {"fact_id": "f1", "status": "VERIFIED FACT", "fact": "The demonstration uses a programmable Bluetooth Puck.js device as an accessible switch to answer an incoming mobile phone call.", "evidence_ref": "publisher article, demonstration section"},
+        {"fact_id": "f2", "status": "VERIFIED FACT", "fact": "The approach is presented for people with limited mobility or reduced hand function who may find a touchscreen difficult to reach or use quickly.", "evidence_ref": "publisher article, accessibility context"},
+        {"fact_id": "f3", "status": "VERIFIED FACT", "fact": "Puck.js sends a Bluetooth volume-up command and Android's accessibility setting uses that command to answer the call.", "evidence_ref": "publisher article, Android instructions"},
+        {"fact_id": "f4", "status": "VERIFIED FACT", "fact": "The same method does not answer calls on an iPhone; the article instead points to Apple's built-in Auto-Answer Calls feature.", "evidence_ref": "publisher article, platform qualification"},
+        {"fact_id": "f5", "status": "ATTRIBUTED VIEW OR CONCERN", "fact": "The author says the device is highly programmable but criticises its switch for requiring pressure on a specific area.", "evidence_ref": "publisher article, verdict"}
+      ]
+    },
+    {
+      "case_id": "final_arts_vanda_dundee",
+      "evaluation_group": "frozen_final",
+      "source_name": "Disability Arts Online",
+      "title": "V&A's Design and Disability with a Scottish accent: a call to action",
+      "url": "https://disabilityarts.online/magazine/reviews/vas-design-and-disability-with-a-scottish-accent-a-call-to-action/",
+      "publication_date": "2026-07-06",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "complexity": "complex",
+      "two_main_points": [
+        {"point_id": "p1", "fact_ids": ["f1", "f2"], "point": "A review examines V&A Dundee's reconfigured Design and Disability exhibition celebrating disabled-led design with Scottish additions."},
+        {"point_id": "p2", "fact_ids": ["f3", "f4"], "point": "The exhibition includes about 170 objects and several access measures, though the reviewer identifies limits in touch access and representation."}
+      ],
+      "essential_qualification_fact_ids": ["f4"],
+      "verified_facts": [
+        {"fact_id": "f1", "status": "VERIFIED FACT", "fact": "V&A Dundee hosts a reconfigured Design and Disability exhibition celebrating disabled-led design across art, architecture, fashion, photography and design.", "evidence_ref": "publisher review, introduction"},
+        {"fact_id": "f2", "status": "VERIFIED FACT", "fact": "The Dundee presentation adds Scottish artists and designers to material adapted from the London exhibition.", "evidence_ref": "publisher review, Scottish context"},
+        {"fact_id": "f3", "status": "VERIFIED FACT", "fact": "About 170 objects from the 1940s to the present are organised around Visibility, Creativity and Living.", "evidence_ref": "publisher review, exhibition description"},
+        {"fact_id": "f4", "status": "ATTRIBUTED VIEW OR CONCERN", "fact": "The reviewer notes BSL and audio-described tours, large-print guides, DeafSpace-style mirrors and some tactile exhibits, but says touch remains limited and not all impairment types are represented.", "evidence_ref": "publisher review, access assessment"}
+      ]
+    },
+    {
+      "case_id": "final_arts_kate_lovell",
+      "evaluation_group": "frozen_final",
+      "source_name": "Disability Arts Online",
+      "title": "A new chapter for Disability Arts Online: Kate Lovell named as Artistic Director",
+      "url": "https://disabilityarts.online/magazine/news/a-new-chapter-for-disability-arts-online-kate-lovell-named-as-artistic-director/",
+      "publication_date": "2026-05-12",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "complexity": "simple",
+      "two_main_points": [
+        {"point_id": "p1", "fact_ids": ["f1", "f2"], "point": "Disability Arts Online has appointed disabled and neurodivergent theatre-maker Kate Lovell as its first Artistic Director."},
+        {"point_id": "p2", "fact_ids": ["f3"], "point": "She will lead its talent development and creative programmes, including the magazine, and co-lead the organisation with its chief executive."}
+      ],
+      "essential_qualification_fact_ids": [],
+      "verified_facts": [
+        {"fact_id": "f1", "status": "VERIFIED FACT", "fact": "Disability Arts Online announced Kate Lovell as its first Artistic Director.", "evidence_ref": "publisher announcement, opening"},
+        {"fact_id": "f2", "status": "VERIFIED FACT", "fact": "Lovell is a disabled and neurodivergent theatre-maker, playwright and social justice activist.", "evidence_ref": "publisher announcement, opening"},
+        {"fact_id": "f3", "status": "PLANNED OR PROPOSED", "fact": "In the role, Lovell will lead talent development and creative programmes, including the magazine, and co-lead the organisation with chief executive Trish Wheatley.", "evidence_ref": "publisher announcement, role description"},
+        {"fact_id": "f4", "status": "VERIFIED FACT", "fact": "She previously participated in the organisation's disabled writers' programme and later contributed to its magazine and podcast.", "evidence_ref": "publisher announcement, career history"}
+      ]
+    }
+  ]
+}

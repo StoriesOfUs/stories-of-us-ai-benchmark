@@ -1,0 +1,17 @@
+{
+  "schema_version": "stories-of-us-qwen-claim-methods-v01",
+  "methods": [
+    {
+      "method_id": "A",
+      "name": "Current Qwen V04 baseline",
+      "two_main_points": false,
+      "claim_check": false
+    },
+    {
+      "method_id": "B",
+      "name": "Two-main-points authoring with semantic claim check",
+      "two_main_points": true,
+      "claim_check": true
+    }
+  ]
+}
