@@ -26,6 +26,7 @@ checks = {
     "python_boolean_literal": '"curated_examples_used": False' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
     "independent_matrix_jobs": "fail-fast: false" in WORKFLOW and "max-parallel: 1" in WORKFLOW,
     "single_turn_inference": '"--single-turn"' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
+    "assistant_output_file": '"--output-file"' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8") and 'rsplit("Assistant:\\n", 1)' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
     "old_forced_conversation_removed": '"-cnv"' not in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
     "bounded_stderr_retained": '"stderr": safe_error' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
     "failure_safe_artifacts": "Upload public-safe model result\n        if: always()" in WORKFLOW,

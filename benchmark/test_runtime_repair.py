@@ -53,10 +53,13 @@ def run(fake_source: str) -> tuple[subprocess.CompletedProcess[str], dict]:
 
 success, success_data = run("""#!/usr/bin/env python3
 import sys
+from pathlib import Path
 if '--version' in sys.argv:
     print('fake llama-cli 1')
 else:
-    print('Example Source reports an access measure for disabled people. The article describes one supported practical detail.')
+    output = Path(sys.argv[sys.argv.index('--output-file') + 1])
+    output.write_text('User:\\n<PROMPT>\\n\\nAssistant:\\nExample Source reports an access measure for disabled people. The article describes one supported practical detail.\\n', encoding='utf-8')
+    print('Loading model... echoed prompt that must not enter the summary')
 """)
 failure, failure_data = run("""#!/usr/bin/env python3
 import sys
@@ -90,6 +93,8 @@ checks = {
     "success_exit": success.returncode == 0,
     "success_manifest": success_data["status"] == "SUCCESS",
     "success_raw_output_retained": "Example Source" in success_data["results"][0]["raw_response"],
+    "console_not_parsed_as_summary": "Loading model" not in success_data["results"][0]["summary"],
+    "transcript_prompt_not_parsed_as_summary": "<PROMPT>" not in success_data["results"][0]["summary"],
     "failure_exit": failure.returncode == 1,
     "failure_manifest": failure_data["status"] == "FAILURE",
     "failure_return_code": failure_data["results"][0]["return_code"] == 7,

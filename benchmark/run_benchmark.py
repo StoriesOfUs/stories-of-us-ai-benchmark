@@ -9,6 +9,7 @@ import pathlib
 import re
 import resource
 import subprocess
+import tempfile
 import time
 
 
@@ -64,8 +65,9 @@ Verified evidence:
 
 
 def cleaned_summary(raw: str) -> tuple[str, bool]:
-    thinking = bool(re.search(r"<think>|</think>|\bAnalysis:\b", raw, flags=re.I))
+    thinking = bool(re.search(r"<think>|</think>|\[Start thinking\]|\[End thinking\]|\bAnalysis:\b", raw, flags=re.I))
     text = re.sub(r"<think>.*?</think>", "", raw, flags=re.I | re.S)
+    text = re.sub(r"\[Start thinking\].*?\[End thinking\]", "", text, flags=re.I | re.S)
     text = re.sub(r"^```(?:text|json)?\s*|\s*```$", "", text.strip(), flags=re.I)
     text = re.sub(r"^(?:assistant|summary)\s*:\s*", "", text.strip(), flags=re.I)
     text = re.sub(r"\n*Exiting\.\.\.\s*$", "", text.strip(), flags=re.I)
@@ -73,47 +75,61 @@ def cleaned_summary(raw: str) -> tuple[str, bool]:
 
 
 def run_one(binary: pathlib.Path, model: pathlib.Path, prompt: str, timeout: int, model_id: str) -> dict:
-    command = [
-        str(binary), "-m", str(model), "--single-turn", "--simple-io",
-        "--no-display-prompt", "--no-show-timings", "--no-warmup",
-        "--seed", "42", "-n", "180", "-c", "4096",
-    ]
-    if model_id.startswith("qwen"):
-        command.extend(["--jinja", "--temp", "0.7", "--top-k", "20", "--top-p", "0.8", "--min-p", "0", "--presence-penalty", "1.5"])
-    else:
-        command.extend(["--temp", "0.2"])
-    command.extend(["-p", prompt])
-    started = time.monotonic()
-    replacements = {str(binary): "<LLAMA_CLI>", str(model): "<MODEL_FILE>", prompt: "<PROMPT>"}
-    try:
-        completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
-    except subprocess.TimeoutExpired as exc:
-        raw = exc.stdout if isinstance(exc.stdout, str) else ""
-        error = exc.stderr if isinstance(exc.stderr, str) else ""
-        safe_raw, raw_truncated = bounded_public_text(raw, replacements)
-        safe_error, error_truncated = bounded_public_text(error, replacements)
-        return {
-            "execution_status": "FAILURE",
-            "failure_reason": "TIMEOUT",
-            "return_code": None,
-            "duration_seconds": round(time.monotonic() - started, 3),
-            "raw_response_sha256": hashlib.sha256(raw.encode()).hexdigest(),
-            "raw_response": safe_raw,
-            "raw_response_truncated": raw_truncated,
-            "stderr": safe_error,
-            "stderr_truncated": error_truncated,
-            "summary": "",
-            "output_validation": {
-                "text_present": False,
-                "model_returned_hold": False,
-                "word_count": 0,
-                "maximum_50_words": True,
-                "sentence_count": 0,
-                "exactly_two_sentences": False,
-            },
+    with tempfile.TemporaryDirectory(prefix="stories-of-us-llama-") as temporary:
+        transcript_path = pathlib.Path(temporary) / "conversation.txt"
+        command = [
+            str(binary), "-m", str(model), "--single-turn", "--simple-io",
+            "--no-display-prompt", "--no-show-timings", "--no-warmup",
+            "--seed", "42", "-n", "180", "-c", "4096",
+            "--output-file", str(transcript_path),
+        ]
+        if model_id.startswith("qwen"):
+            command.extend(["--jinja", "--temp", "0.7", "--top-k", "20", "--top-p", "0.8", "--min-p", "0", "--presence-penalty", "1.5"])
+        else:
+            command.extend(["--temp", "0.2"])
+        command.extend(["-p", prompt])
+        started = time.monotonic()
+        replacements = {
+            str(binary): "<LLAMA_CLI>", str(model): "<MODEL_FILE>",
+            str(transcript_path): "<OUTPUT_FILE>", prompt: "<PROMPT>",
         }
+        try:
+            completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
+        except subprocess.TimeoutExpired as exc:
+            console = exc.stdout if isinstance(exc.stdout, str) else ""
+            error = exc.stderr if isinstance(exc.stderr, str) else ""
+            transcript = transcript_path.read_text(encoding="utf-8") if transcript_path.is_file() else ""
+            assistant = transcript.rsplit("Assistant:\n", 1)[-1] if "Assistant:\n" in transcript else ""
+            safe_raw, raw_truncated = bounded_public_text(assistant, replacements)
+            safe_console, console_truncated = bounded_public_text(console, replacements)
+            safe_error, error_truncated = bounded_public_text(error, replacements)
+            return {
+                "execution_status": "FAILURE",
+                "failure_reason": "TIMEOUT",
+                "return_code": None,
+                "duration_seconds": round(time.monotonic() - started, 3),
+                "raw_response_sha256": hashlib.sha256(assistant.encode()).hexdigest(),
+                "raw_response": safe_raw,
+                "raw_response_truncated": raw_truncated,
+                "console_stdout": safe_console,
+                "console_stdout_truncated": console_truncated,
+                "stderr": safe_error,
+                "stderr_truncated": error_truncated,
+                "summary": "",
+                "output_validation": {
+                    "text_present": False,
+                    "model_returned_hold": False,
+                    "word_count": 0,
+                    "maximum_50_words": True,
+                    "sentence_count": 0,
+                    "exactly_two_sentences": False,
+                },
+            }
+        transcript = transcript_path.read_text(encoding="utf-8") if transcript_path.is_file() else ""
     usage_after = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
-    safe_raw, raw_truncated = bounded_public_text(completed.stdout, replacements)
+    assistant = transcript.rsplit("Assistant:\n", 1)[-1] if "Assistant:\n" in transcript else ""
+    safe_raw, raw_truncated = bounded_public_text(assistant, replacements)
+    safe_console, console_truncated = bounded_public_text(completed.stdout, replacements)
     safe_error, error_truncated = bounded_public_text(completed.stderr, replacements)
     summary, thinking = cleaned_summary(safe_raw)
     execution_status = "SUCCESS" if completed.returncode == 0 and bool(summary) else "FAILURE"
@@ -130,10 +146,12 @@ def run_one(binary: pathlib.Path, model: pathlib.Path, prompt: str, timeout: int
         "return_code": completed.returncode,
         "duration_seconds": round(time.monotonic() - started, 3),
         "peak_rss_kb_observed": usage_after,
-        "raw_response_sha256": hashlib.sha256(completed.stdout.encode()).hexdigest(),
-        "raw_response_characters": len(completed.stdout),
+        "raw_response_sha256": hashlib.sha256(assistant.encode()).hexdigest(),
+        "raw_response_characters": len(assistant),
         "raw_response": safe_raw,
         "raw_response_truncated": raw_truncated,
+        "console_stdout": safe_console,
+        "console_stdout_truncated": console_truncated,
         "stderr": safe_error,
         "stderr_truncated": error_truncated,
         "reasoning_markup_detected": thinking,
