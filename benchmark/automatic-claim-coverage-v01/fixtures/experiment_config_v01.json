@@ -1,0 +1,73 @@
+{
+  "schema_version": "stories-of-us-automatic-claim-coverage-config-v01",
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "qwen": {
+    "model_id": "qwen3-4b-q4-k-m",
+    "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+    "filename": "Qwen3-4B-Q4_K_M.gguf",
+    "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "llama_cpp_revision": "792fcf4e7501972b595d3aeeb85153f9926f6aef",
+    "author_temperature": 0.4,
+    "extractor_temperature": 0.0,
+    "rewrite_temperature": 0.2,
+    "seed": 42,
+    "context_size": 4096,
+    "extractor_repetitions": 3
+  },
+  "deberta": {
+    "model_id": "cross-encoder/nli-deberta-v3-small",
+    "revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+    "entailment_threshold": 0.5,
+    "entailment_margin": 0.3,
+    "repetitions": 3,
+    "input_limit": 512,
+    "threshold_recalibration": false
+  },
+  "claim_extraction": {
+    "allowed_factual_statuses": [
+      "FACT_COMPLETED",
+      "ONGOING",
+      "PLAN_INTENDED",
+      "FUTURE_EXPECTED",
+      "POSSIBILITY_UNCERTAIN",
+      "ASPIRATION_DESIRED",
+      "OPINION_ATTRIBUTED"
+    ],
+    "required_claim_fields": [
+      "claim_id",
+      "source_sentence",
+      "exact_text_span",
+      "atomic_claim",
+      "actor",
+      "action_or_assertion",
+      "object_or_affected_group",
+      "factual_status",
+      "temporal_context",
+      "attribution",
+      "qualifications",
+      "uncertainty",
+      "extraction_status"
+    ],
+    "material_token_coverage_review_threshold": 0.75,
+    "complete_coverage_requires_stable_repetitions": true,
+    "automatic_extractor_is_independent_verifier": false
+  },
+  "evidence_preparation": {
+    "maximum_initial_passages": 1,
+    "maximum_added_passages": 2,
+    "minimum_initial_overlap_score": 2,
+    "minimum_added_candidate_score": 2,
+    "claim_text_as_evidence_prohibited": true,
+    "generated_facts_prohibited": true
+  },
+  "outcomes": [
+    "ACCEPT_FOR_EDITORIAL_REVIEW",
+    "REWRITE_REQUIRED",
+    "HOLD",
+    "UNCERTAIN_REVIEW",
+    "TECHNICAL_FAILURE"
+  ],
+  "single_controlled_rewrite_maximum": 1,
+  "additional_cost_limit_gbp": 0,
+  "operational_readiness": "NOT_AUTHORISED"
+}

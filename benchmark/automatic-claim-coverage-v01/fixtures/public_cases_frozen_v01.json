@@ -1,0 +1,209 @@
+{
+  "schema_version": "stories-of-us-automatic-claim-coverage-cases-v01",
+  "frozen_at_utc": "2026-10-31T19:18:00Z",
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "freeze_rules": {
+    "frozen_holdout_membership_precedes_extractor_implementation": true,
+    "frozen_holdout_not_used_for_prompt_tuning": true,
+    "complete_articles_uploaded": false,
+    "evidence_is_short_public_safe_paraphrase": true,
+    "diagnostic_cases_are_not_fresh": true,
+    "independent_reference_claim_inventories_created_blind_after_qwen_authoring": true
+  },
+  "allowed_factual_statuses": [
+    "FACT_COMPLETED",
+    "ONGOING",
+    "PLAN_INTENDED",
+    "FUTURE_EXPECTED",
+    "POSSIBILITY_UNCERTAIN",
+    "ASPIRATION_DESIRED",
+    "OPINION_ATTRIBUTED"
+  ],
+  "cases": [
+    {
+      "case_id": "dev_dpo_funding",
+      "evaluation_group": "development_diagnostic",
+      "summary_mode": "fixed_prior_qwen_output",
+      "source_name": "Disability Rights UK",
+      "title": "Paid Commission for DPOs | Contribute to sector-changing research on DPO Funding",
+      "url": "https://www.disabilityrightsuk.org/news/paid-commission-dpos-contribute-sector-changing-research-dpo-funding",
+      "publication_date": "2026-10-29",
+      "category": "Activism",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "fixed_summary": "Disability Rights UK is leading activism to improve funding justice for Disabled People's Organisations through UK-wide research on disability-sector funding. The initiative invites DPOs to verify their details with a paid 30-minute form as part of sector-changing research.",
+      "two_main_points": [
+        {"point_id": "p1", "point": "Three partners are conducting UK-wide research into disability-sector and DPO funding.", "evidence_ids": ["dpo_f1"]},
+        {"point_id": "p2", "point": "DPOs are offered £50 to complete a 30-minute classification and funding form.", "evidence_ids": ["dpo_f3"]}
+      ],
+      "evidence": [
+        {"evidence_id": "dpo_f1", "text": "Trust for London, Disability Rights UK and Braw Data are collaborating on UK-wide research mapping funding to the disability sector and Disabled People's Organisations.", "factual_status": ["ONGOING"], "source_reference": "retained-public-safe-evidence:dpo_f1"},
+        {"evidence_id": "dpo_f2", "text": "The partners state that the research is intended to support campaigners promoting funding justice for Disabled People's Organisations and led-by-and-for organisations.", "factual_status": ["PLAN_INTENDED", "ASPIRATION_DESIRED", "OPINION_ATTRIBUTED"], "source_reference": "retained-public-safe-evidence:dpo_f2"},
+        {"evidence_id": "dpo_f3", "text": "Disabled People's Organisations are offered £50 to complete a 30-minute form confirming their classification and funding sources.", "factual_status": ["ONGOING"], "source_reference": "retained-public-safe-evidence:dpo_f3"},
+        {"evidence_id": "dpo_f4", "text": "The research and funding map are still being assembled; the source does not report that funding transparency or justice has already improved.", "factual_status": ["ONGOING"], "source_reference": "retained-public-safe-evidence:dpo_f4"}
+      ]
+    },
+    {
+      "case_id": "dev_bca_smart_glasses",
+      "evaluation_group": "development_diagnostic",
+      "summary_mode": "fixed_prior_qwen_output",
+      "source_name": "Blind Citizens Australia",
+      "title": "BCA calls for calm in smart glasses ban debate",
+      "url": "https://www.bca.org.au/2026/10/29/bca-calls-for-calm-in-smart-glasses-ban-debate/",
+      "publication_date": "2026-10-29",
+      "category": "Tech",
+      "country": "Australia",
+      "region": "Oceania",
+      "fixed_summary": "Blind Citizens Australia warns that smart glasses are vital assistive technology for blind and partially sighted Australians, yet some councils have banned them, leaving users feeling unsafe. The organisation highlights that not all smart glasses are assistive, and bans are not nationwide.",
+      "two_main_points": [
+        {"point_id": "p1", "point": "BCA warns that calls for smart-glasses bans affect blind and partially sighted people.", "evidence_ids": ["bca_f1"]},
+        {"point_id": "p2", "point": "Users report feeling unsafe and some councils have introduced ad hoc bans at facilities.", "evidence_ids": ["bca_f3"]}
+      ],
+      "evidence": [
+        {"evidence_id": "bca_f1", "text": "Blind Citizens Australia warns that calls to ban smart glasses are putting blind and partially sighted people in danger.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-public-safe-evidence:bca_f1"},
+        {"evidence_id": "bca_f2", "text": "Blind Citizens Australia describes smart glasses as assistive technology that can combine several platforms in one wearable device.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-public-safe-evidence:bca_f2"},
+        {"evidence_id": "bca_f3", "text": "Members and other users report feeling unsafe using the devices in public, while some councils have introduced ad hoc bans at facilities.", "factual_status": ["FACT_COMPLETED", "OPINION_ATTRIBUTED"], "source_reference": "retained-public-safe-evidence:bca_f3"},
+        {"evidence_id": "bca_f4", "text": "The source does not establish that all smart glasses are assistive or that a nationwide ban exists.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-public-safe-evidence:bca_f4"}
+      ]
+    },
+    {
+      "case_id": "dev_puck_call",
+      "evaluation_group": "development_diagnostic",
+      "summary_mode": "fixed_prior_qwen_output",
+      "source_name": "ATandMe",
+      "title": "Using Puck.js to Answer a Mobile Phone Call",
+      "url": "https://www.atandme.com/using-puck-js-to-answer-a-mobile-phone-call/",
+      "publication_date": "2026-08-19",
+      "category": "Tech",
+      "country": "Global",
+      "region": "Global",
+      "fixed_summary": "ATandMe reports that Puck.js is used as an accessible switch for disabled users to answer Android calls, enabling those with limited mobility to manage phone calls efficiently. The device sends a Bluetooth volume-up command that triggers Android's answer-call setting, unlike iPhones which use a separate Auto-Answer Calls feature.",
+      "two_main_points": [
+        {"point_id": "p1", "point": "The demonstration uses Puck.js as an accessible switch to answer an Android phone call.", "evidence_ids": ["puck_f1", "puck_f2", "puck_f3"]},
+        {"point_id": "p2", "point": "The same method does not answer iPhone calls, which have a separate built-in feature.", "evidence_ids": ["puck_f4"]}
+      ],
+      "evidence": [
+        {"evidence_id": "puck_f1", "text": "The demonstration uses a programmable Bluetooth Puck.js device as an accessible switch to answer an incoming mobile phone call.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-public-safe-evidence:puck_f1"},
+        {"evidence_id": "puck_f2", "text": "The approach is presented for people with limited mobility or reduced hand function who may find a touchscreen difficult to reach or use quickly.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-public-safe-evidence:puck_f2"},
+        {"evidence_id": "puck_f3", "text": "Puck.js sends a Bluetooth volume-up command and Android's accessibility setting uses that command to answer the call.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-public-safe-evidence:puck_f3"},
+        {"evidence_id": "puck_f4", "text": "The same method does not answer calls on an iPhone; the article instead points to Apple's built-in Auto-Answer Calls feature.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-public-safe-evidence:puck_f4"}
+      ]
+    },
+    {
+      "case_id": "holdout_history_workhouses",
+      "evaluation_group": "new_frozen_holdout",
+      "summary_mode": "qwen_two_main_points",
+      "source_name": "The Limping Chicken",
+      "title": "Wayne Richards: The forgotten Deaf people of Yorkshire's workhouses (BSL)",
+      "url": "https://limpingchicken.com/2026/10/23/wayne-richards-the-forgotten-deaf-people-of-yorkshires-workhouses/",
+      "publication_date": "2026-10-23T10:09:31+00:00",
+      "category": "History",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "fixed_summary": null,
+      "two_main_points": [
+        {"point_id": "p1", "point": "Deaf historian Wayne Richards discusses research into Deaf people who lived in Yorkshire workhouses.", "evidence_ids": ["work_f1", "work_f3", "work_f4"]},
+        {"point_id": "p2", "point": "The research is presented in Yorkshire's Abandoned Few and records varied reasons for workhouse residence.", "evidence_ids": ["work_f4"]}
+      ],
+      "evidence": [
+        {"evidence_id": "work_f1", "text": "Wayne Richards identifies himself as profoundly deaf and closely connected with the Deaf community.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-evidence:trial2_limping_chicken_workhouses:E1"},
+        {"evidence_id": "work_f2", "text": "Richards says he began researching his family tree and Deaf history about 25 years before the article.", "factual_status": ["FACT_COMPLETED", "OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:trial2_limping_chicken_workhouses:E4"},
+        {"evidence_id": "work_f3", "text": "Richards and his collaborators later continued research into Deaf people who lived in workhouses.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-evidence:trial2_limping_chicken_workhouses:E7"},
+        {"evidence_id": "work_f4", "text": "Yorkshire's Abandoned Few concerns Deaf people in Yorkshire who lived in workhouses for varied reasons.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-evidence:trial2_limping_chicken_workhouses:E8"}
+      ]
+    },
+    {
+      "case_id": "holdout_activism_nigeria",
+      "evaluation_group": "new_frozen_holdout",
+      "summary_mode": "qwen_two_main_points",
+      "source_name": "Voice of Nigeria",
+      "title": "NHRC Seeks Measurable Action on African Disability Rights Protocol",
+      "url": "https://von.gov.ng/nhrc-seeks-measurable-action-on-african-disability-rights-protocol/",
+      "publication_date": "2026-10-23",
+      "category": "Activism",
+      "country": "Nigeria",
+      "region": "West Africa",
+      "fixed_summary": null,
+      "two_main_points": [
+        {"point_id": "p1", "point": "Nigeria's NHRC is developing a 2027 disability-rights workplan linked to the African Disability Protocol.", "evidence_ids": ["nhrc_f1"]},
+        {"point_id": "p2", "point": "The commission says the work seeks coordinated action and measurable disability-rights outcomes.", "evidence_ids": ["nhrc_f2", "nhrc_f3"]}
+      ],
+      "evidence": [
+        {"evidence_id": "nhrc_f1", "text": "Nigeria's National Human Rights Commission is developing a 2027 workplan intended to advance disabled people's rights and strengthen implementation of the African Disability Protocol.", "factual_status": ["ONGOING", "PLAN_INTENDED", "ASPIRATION_DESIRED"], "source_reference": "retained-evidence:voice_nigeria:E1"},
+        {"evidence_id": "nhrc_f2", "text": "The commission's executive secretary says Nigeria seeks better stakeholder coordination, targeted interventions and measurable disability-rights outcomes.", "factual_status": ["ASPIRATION_DESIRED", "OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:voice_nigeria:E2"},
+        {"evidence_id": "nhrc_f3", "text": "At a working-group meeting in Abuja, the executive secretary said the meeting aimed to turn disability-rights commitments into coordinated practical action.", "factual_status": ["FACT_COMPLETED", "ASPIRATION_DESIRED", "OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:voice_nigeria:E3-E4"},
+        {"evidence_id": "nhrc_f4", "text": "The commission previously organised a two-day stakeholder workshop on 8 and 9 October 2024 about responsibilities under the protocol and disability law.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-evidence:voice_nigeria:E5"}
+      ]
+    },
+    {
+      "case_id": "holdout_arts_criptic_ethos",
+      "evaluation_group": "new_frozen_holdout",
+      "summary_mode": "qwen_two_main_points",
+      "source_name": "CRIPtic Arts",
+      "title": "Ethos and Directing",
+      "url": "https://cripticarts.org/ethos-and-directing/",
+      "publication_date": "2026-09-30",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "fixed_summary": null,
+      "two_main_points": [
+        {"point_id": "p1", "point": "Artistic Director Jamie Hale discusses responsibilities when directing work for disabled audiences.", "evidence_ids": ["ethos_f1", "ethos_f2"]},
+        {"point_id": "p2", "point": "Hale argues that access work falls disproportionately on disabled creatives.", "evidence_ids": ["ethos_f3", "ethos_f4"]}
+      ],
+      "evidence": [
+        {"evidence_id": "ethos_f1", "text": "CRIPtic Arts Artistic Director Jamie Hale authors the article about directing practice.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-evidence:goal-t2-criptic-ethos:E1"},
+        {"evidence_id": "ethos_f2", "text": "Hale says responsibility for disabled audiences runs through directing decisions because arts spaces can be hostile and exhausting for them.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:goal-t2-criptic-ethos:E3"},
+        {"evidence_id": "ethos_f3", "text": "Hale says the burden of access work in the arts falls disproportionately on disabled creatives.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:goal-t2-criptic-ethos:E4"},
+        {"evidence_id": "ethos_f4", "text": "Hale describes expecting disabled creatives both to navigate disableism and to lead accessible practice as an unreasonable burden.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:goal-t2-criptic-ethos:E5"},
+        {"evidence_id": "ethos_f5", "text": "Hale acknowledges that their own work can fall short of the inclusive practice they seek.", "factual_status": ["OPINION_ATTRIBUTED", "POSSIBILITY_UNCERTAIN", "ASPIRATION_DESIRED"], "source_reference": "retained-evidence:goal-t2-criptic-ethos:E6"}
+      ]
+    },
+    {
+      "case_id": "holdout_access_bridge_transport",
+      "evaluation_group": "new_frozen_holdout",
+      "summary_mode": "qwen_two_main_points",
+      "source_name": "Department for Infrastructure",
+      "title": "Kimmins commends Bridge Accessible Transport for connecting people",
+      "url": "https://www.infrastructure-ni.gov.uk/news/kimmins-commends-bridge-accessible-transport-connecting-people",
+      "publication_date": "2026-10-16",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "fixed_summary": null,
+      "two_main_points": [
+        {"point_id": "p1", "point": "Minister Liz Kimmins visits and praises Bridge Accessible Transport during its 30th year.", "evidence_ids": ["bridge_f1", "bridge_f2"]},
+        {"point_id": "p2", "point": "The organisation provides disability transport, equipment loans and accessible delivery services.", "evidence_ids": ["bridge_f2", "bridge_f3"]}
+      ],
+      "evidence": [
+        {"evidence_id": "bridge_f1", "text": "Infrastructure Minister Liz Kimmins visited Bridge Accessible Transport during Community Transport Week and praised its community contribution.", "factual_status": ["FACT_COMPLETED", "OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:goal-t1-access:E1-E2"},
+        {"evidence_id": "bridge_f2", "text": "During its 30th year, Bridge Accessible Transport delivers the Disability Action Transport Scheme in its operating area.", "factual_status": ["ONGOING"], "source_reference": "retained-evidence:goal-t1-access:E3"},
+        {"evidence_id": "bridge_f3", "text": "It also operates Shopmobility Foyle, offering mobility-equipment loans and an accessible mobile delivery service.", "factual_status": ["ONGOING"], "source_reference": "retained-evidence:goal-t1-access:E4"},
+        {"evidence_id": "bridge_f4", "text": "Kimmins describes community transport as a valuable lifeline for many people in local communities.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:goal-t1-access:E5"},
+        {"evidence_id": "bridge_f5", "text": "The source says disabled people and other users would struggle to reach goods, services, family and friends without these services.", "factual_status": ["OPINION_ATTRIBUTED", "POSSIBILITY_UNCERTAIN"], "source_reference": "retained-evidence:goal-t1-access:E6"}
+      ]
+    },
+    {
+      "case_id": "holdout_tech_app_remote",
+      "evaluation_group": "new_frozen_holdout",
+      "summary_mode": "qwen_two_main_points",
+      "source_name": "ATandMe",
+      "title": "Just the buttons you need: build a simpler way to control apps",
+      "url": "https://www.atandme.com/just-the-buttons-you-need-build-a-simpler-way-to-control-apps/",
+      "publication_date": "2026-10-23",
+      "category": "Tech",
+      "country": "Global",
+      "region": "Global",
+      "fixed_summary": null,
+      "two_main_points": [
+        {"point_id": "p1", "point": "ATandMe built a simplified remote for the Spotify desktop app.", "evidence_ids": ["remote_f1"]},
+        {"point_id": "p2", "point": "Possible switch access through OptiKey was suggested but had not been tested.", "evidence_ids": ["remote_f2"]}
+      ],
+      "evidence": [
+        {"evidence_id": "remote_f1", "text": "ATandMe built a Spotify desktop-app remote with large labelled previous, play/pause, next, quieter, mute and louder controls plus a favourites screen.", "factual_status": ["FACT_COMPLETED"], "source_reference": "retained-evidence:tech_atandme_buttons:E1"},
+        {"evidence_id": "remote_f2", "text": "The authors suggest a switch user might use the remote with OptiKey game-controller access, but they state that this possibility has not been tested.", "factual_status": ["POSSIBILITY_UNCERTAIN", "OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:tech_atandme_buttons:E2"},
+        {"evidence_id": "remote_f3", "text": "The article advises starting with one difficult-to-use program and one task the supported person wants to perform.", "factual_status": ["OPINION_ATTRIBUTED"], "source_reference": "retained-evidence:tech_atandme_buttons:E3"}
+      ]
+    }
+  ]
+}

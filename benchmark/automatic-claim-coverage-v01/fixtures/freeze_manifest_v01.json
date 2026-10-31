@@ -1,0 +1,19 @@
+{
+  "schema_version": "stories-of-us-automatic-claim-coverage-freeze-manifest-v01",
+  "frozen_at_utc": "2026-10-31T19:18:00Z",
+  "cases_file": "public_cases_frozen_v01.json",
+  "cases_sha256": "26b5c2f041d3a0a467620109f62fdd29a03f6941efe5a83ed7e3711175c95e7a",
+  "total_cases": 8,
+  "development_diagnostic_cases": 3,
+  "new_frozen_holdout_cases": 5,
+  "new_holdout_categories": ["History", "Activism", "Arts", "Access", "Tech"],
+  "verified_evidence_items": 33,
+  "holdout_membership_frozen_before_extractor_implementation": true,
+  "holdout_membership_frozen_before_model_execution": true,
+  "holdout_prompt_tuning_prohibited": true,
+  "reference_claim_inventory_process": "Fresh-context reviewer creates the reference inventory from each generated summary and supplied evidence while blind to automatic extraction and verifier outputs.",
+  "complete_articles_uploaded": false,
+  "protected_curated_records_uploaded": false,
+  "publication_approved": false,
+  "operational_readiness": "NOT_AUTHORISED"
+}

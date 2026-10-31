@@ -1,0 +1,177 @@
+name: Manual automatic claim coverage V01
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stories-of-us-manual-automatic-claim-coverage-v01
+  cancel-in-progress: false
+
+jobs:
+  automatic-claim-coverage:
+    name: automatic-claim-coverage-v01
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      LLAMA_CPP_REVISION: 792fcf4e7501972b595d3aeeb85153f9926f6aef
+      QWEN_MODEL_ID: qwen3-4b-q4-k-m
+      QWEN_MODEL_REVISION: bc640142c66e1fdd12af0bd68f40445458f3869b
+      QWEN_MODEL_FILENAME: Qwen3-4B-Q4_K_M.gguf
+      QWEN_MODEL_URL: https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf
+      QWEN_MODEL_SHA256: 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5
+      NLI_MODEL_ID: cross-encoder/nli-deberta-v3-small
+      NLI_MODEL_REVISION: fa2804872c3b4bd748f38c0185cc85775361e735
+      NLI_MODEL_BASE_URL: https://huggingface.co/cross-encoder/nli-deberta-v3-small/resolve/fa2804872c3b4bd748f38c0185cc85775361e735
+      NLI_MODEL_SHA256: ebc79588dd73ccfb6a3f6078519cfbf512c5305384c5ea1845bc71cd32216e86
+      NLI_SPM_SHA256: c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd
+      PACKAGE_DIR: benchmark/automatic-claim-coverage-v01
+      RESULT_DIR: benchmark/results/automatic-claim-coverage-v01
+    steps:
+      - name: Check out benchmark files
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Validate frozen public-safe package
+        id: validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RESULT_DIR"
+          PYTHONPYCACHEPREFIX="$RUNNER_TEMP/pycache" python3 -m py_compile \
+            "$PACKAGE_DIR/code/run_automatic_claim_coverage.py" \
+            "$PACKAGE_DIR/code/evidence_preparer.py" \
+            "$PACKAGE_DIR/code/validate_public_package.py" \
+            "$PACKAGE_DIR/tests/test_claim_coverage.py"
+          PYTHONPYCACHEPREFIX="$RUNNER_TEMP/pycache" python3 -m unittest discover \
+            -s "$PACKAGE_DIR/tests" -p 'test_*.py' -v
+          python3 "$PACKAGE_DIR/code/validate_public_package.py" \
+            --root "$PACKAGE_DIR" \
+            --output "$RESULT_DIR/package_validation_v01.json"
+
+      - name: Build pinned llama.cpp CPU runtime
+        id: build
+        if: steps.validation.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --filter=blob:none --no-checkout https://github.com/ggml-org/llama.cpp.git "$RUNNER_TEMP/llama.cpp"
+          git -C "$RUNNER_TEMP/llama.cpp" checkout --detach "$LLAMA_CPP_REVISION"
+          cmake -S "$RUNNER_TEMP/llama.cpp" -B "$RUNNER_TEMP/llama.cpp/build" \
+            -DGGML_NATIVE=OFF -DGGML_OPENMP=ON -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release
+          cmake --build "$RUNNER_TEMP/llama.cpp/build" --config Release -j2 --target llama-cli
+
+      - name: Install pinned DeBERTa CPU runtime
+        id: runtime
+        if: steps.build.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m venv "$RUNNER_TEMP/verifier-venv"
+          "$RUNNER_TEMP/verifier-venv/bin/python" -m pip install \
+            --disable-pip-version-check --no-cache-dir -r "$PACKAGE_DIR/code/requirements-v01.txt"
+          "$RUNNER_TEMP/verifier-venv/bin/python" -m pip install \
+            --disable-pip-version-check --no-cache-dir \
+            --index-url https://download.pytorch.org/whl/cpu \
+            --extra-index-url https://pypi.org/simple torch==2.8.0+cpu
+          "$RUNNER_TEMP/verifier-venv/bin/python" -m pip freeze > "$RESULT_DIR/pip_freeze.txt"
+
+      - name: Download and verify pinned models
+        id: download
+        if: steps.runtime.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/models" "$RUNNER_TEMP/nli-model"
+          curl --fail --location --retry 2 --max-time 900 \
+            --output "$RUNNER_TEMP/models/$QWEN_MODEL_FILENAME" "$QWEN_MODEL_URL"
+          echo "$QWEN_MODEL_SHA256  $RUNNER_TEMP/models/$QWEN_MODEL_FILENAME" | sha256sum --check --strict
+          for file in config.json tokenizer_config.json special_tokens_map.json added_tokens.json spm.model model.safetensors; do
+            curl --fail --location --retry 2 --max-time 900 \
+              --output "$RUNNER_TEMP/nli-model/$file" "$NLI_MODEL_BASE_URL/$file"
+          done
+          echo "$NLI_MODEL_SHA256  $RUNNER_TEMP/nli-model/model.safetensors" | sha256sum --check --strict
+          echo "$NLI_SPM_SHA256  $RUNNER_TEMP/nli-model/spm.model" | sha256sum --check --strict
+          sha256sum "$RUNNER_TEMP/models/$QWEN_MODEL_FILENAME" "$RUNNER_TEMP"/nli-model/* \
+            > "$RESULT_DIR/model_file_hashes.txt"
+
+      - name: Run frozen authoring, claim coverage and verification experiment
+        id: inference
+        if: steps.download.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/verifier-venv/bin/python" "$PACKAGE_DIR/code/run_automatic_claim_coverage.py" \
+            --qwen-binary "$RUNNER_TEMP/llama.cpp/build/bin/llama-cli" \
+            --qwen-model "$RUNNER_TEMP/models/$QWEN_MODEL_FILENAME" \
+            --deberta-model-dir "$RUNNER_TEMP/nli-model" \
+            --deberta-manifest "$PACKAGE_DIR/fixtures/deberta_model_manifest_v01.json" \
+            --cases "$PACKAGE_DIR/fixtures/public_cases_frozen_v01.json" \
+            --config "$PACKAGE_DIR/fixtures/experiment_config_v01.json" \
+            --output "$RESULT_DIR/results_v01.json" \
+            --timeout-seconds 240
+
+      - name: Preserve bounded diagnostics
+        if: always()
+        env:
+          VALIDATION_OUTCOME: ${{ steps.validation.outcome }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+          RUNTIME_OUTCOME: ${{ steps.runtime.outcome }}
+          DOWNLOAD_OUTCOME: ${{ steps.download.outcome }}
+          INFERENCE_OUTCOME: ${{ steps.inference.outcome }}
+        shell: bash
+        run: |
+          mkdir -p "$RESULT_DIR"
+          python3 - <<'PY'
+          import json, os, pathlib, platform
+          target = pathlib.Path(os.environ["RESULT_DIR"]) / "execution_manifest_v01.json"
+          target.write_text(json.dumps({
+              "schema_version": "stories-of-us-automatic-claim-coverage-execution-manifest-v01",
+              "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+              "qwen_model_id": os.environ["QWEN_MODEL_ID"],
+              "qwen_model_revision": os.environ["QWEN_MODEL_REVISION"],
+              "nli_model_id": os.environ["NLI_MODEL_ID"],
+              "nli_model_revision": os.environ["NLI_MODEL_REVISION"],
+              "runner": platform.platform(),
+              "steps": {
+                  "validation": os.environ.get("VALIDATION_OUTCOME", "unknown"),
+                  "build": os.environ.get("BUILD_OUTCOME", "unknown"),
+                  "runtime": os.environ.get("RUNTIME_OUTCOME", "unknown"),
+                  "download": os.environ.get("DOWNLOAD_OUTCOME", "unknown"),
+                  "inference": os.environ.get("INFERENCE_OUTCOME", "unknown"),
+              },
+              "workflow_dispatch_only": True,
+              "additional_cost_gbp": 0,
+              "operational_readiness": "NOT_AUTHORISED",
+          }, indent=2) + "\n", encoding="utf-8")
+          PY
+          du -sh "$RESULT_DIR" "$RUNNER_TEMP/llama.cpp" "$RUNNER_TEMP/models" \
+            "$RUNNER_TEMP/nli-model" "$RUNNER_TEMP/verifier-venv" 2>/dev/null \
+            > "$RESULT_DIR/storage.txt" || true
+          lscpu > "$RESULT_DIR/runner_cpu.txt" 2>/dev/null || true
+
+      - name: Remove temporary model weights
+        if: always()
+        shell: bash
+        run: |
+          rm -f "$RUNNER_TEMP/models/$QWEN_MODEL_FILENAME"
+          rm -rf "$RUNNER_TEMP/nli-model"
+
+      - name: Upload public-safe results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: experimental-automatic-claim-coverage-v01-results
+          path: |
+            benchmark/results/automatic-claim-coverage-v01/results_v01.json
+            benchmark/results/automatic-claim-coverage-v01/execution_manifest_v01.json
+            benchmark/results/automatic-claim-coverage-v01/package_validation_v01.json
+            benchmark/results/automatic-claim-coverage-v01/model_file_hashes.txt
+            benchmark/results/automatic-claim-coverage-v01/pip_freeze.txt
+            benchmark/results/automatic-claim-coverage-v01/storage.txt
+            benchmark/results/automatic-claim-coverage-v01/runner_cpu.txt
+          retention-days: 7
+          if-no-files-found: warn
