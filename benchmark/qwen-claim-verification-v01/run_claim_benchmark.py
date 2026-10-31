@@ -399,11 +399,14 @@ def main() -> int:
     for case in cases_data["cases"]:
         results.append(run_case(args.binary, args.model, case, args.timeout_seconds))
     all_exec = []
+    seen_execution_records = set()
     for row in results:
-        all_exec.extend([row["method_a"], row["method_b"]["initial"]])
-        for key in ("initial_claim_check", "rewrite", "final_claim_check"):
-            if row["method_b"].get(key):
-                all_exec.append(row["method_b"][key])
+        for item in [row["method_a"], row["method_b"]["initial"],
+                     row["method_b"].get("initial_claim_check"), row["method_b"].get("rewrite"),
+                     row["method_b"].get("final_claim_check")]:
+            if item is not None and id(item) not in seen_execution_records:
+                seen_execution_records.add(id(item))
+                all_exec.append(item)
     output = {
         "schema_version": "stories-of-us-qwen-claim-results-v01",
         "public_label": LABEL,
