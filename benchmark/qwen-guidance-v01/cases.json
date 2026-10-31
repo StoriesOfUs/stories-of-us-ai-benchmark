@@ -1,0 +1,168 @@
+{
+  "schema_version": "stories-of-us-qwen-guidance-cases-v01",
+  "status": "FROZEN",
+  "frozen_at": "2026-10-31T12:00:00Z",
+  "notice": "Public-safe original paraphrases of verified source evidence; no complete publisher article or protected curated summary is reproduced.",
+  "groups": {
+    "diagnostic": "Previously evaluated development cases; not unseen final evidence.",
+    "fresh_unseen": "Previously unused eligible articles, frozen before benchmark execution and excluded from prompt development."
+  },
+  "cases": [
+    {
+      "case_id": "diag_activism_edf_intergroup",
+      "evaluation_group": "diagnostic",
+      "source_name": "European Disability Forum",
+      "title": "Disability Intergroup Reviews Key Disability Rights Priorities",
+      "url": "https://www.edf-feph.org/disability-intergroup-reviews-key-disability-rights-priorities/",
+      "publication_date": "2026-10-27",
+      "category": "Activism",
+      "country": "Global",
+      "region": "Global",
+      "article_facts": {
+        "main_actor": "Members of the European Parliament Disability Intergroup and the European Disability Forum",
+        "principal_development": "The Intergroup reviewed disability-rights implementation priorities and areas for joint advocacy.",
+        "disabled_community": "Disabled people represented by the European disability movement",
+        "specific_concern": "Implementation of disability rights in housing, artificial intelligence, digital networks and the next EU budget",
+        "event_status": "Completed meeting; future advocacy priorities identified",
+        "geographic_scope": "European Union and the wider European disability movement",
+        "qualifications": "The evidence records priorities and calls for action; it does not establish that the proposed policy changes have been adopted."
+      },
+      "verified_facts": [
+        {"fact_id": "f1", "fact": "Intergroup members called for stronger implementation of disability rights and discussed the Enhanced Disability Rights Strategy.", "evidence_ref": "publisher article"},
+        {"fact_id": "f2", "fact": "The meeting considered housing, artificial intelligence and the EU simplification agenda as issues affecting disabled people.", "evidence_ref": "publisher article"},
+        {"fact_id": "f3", "fact": "The update identified the next EU budget and Digital Networks Act as priorities for joint work with the disability movement.", "evidence_ref": "publisher article"}
+      ],
+      "eligibility": {"status": "VERIFIED_ELIGIBLE", "category_evidence": "Collective disability-rights advocacy and policy demands define the article.", "geography_evidence": "The article concerns EU institutions and the European disability movement; Global is retained as non-geographic scope in the benchmark contract."}
+    },
+    {
+      "case_id": "diag_access_transport_rail",
+      "evaluation_group": "diagnostic",
+      "source_name": "Transport for All",
+      "title": "Will the House of Lords improve accessibility in the Railways Bill?",
+      "url": "https://www.transportforall.org.uk/blog/2026/10/13/house-of-lords-railways-bill/",
+      "publication_date": "2026-10-13",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "article_facts": {
+        "main_actor": "Transport for All and members of the House of Lords",
+        "principal_development": "The Railways Bill reached the House of Lords, where amendments could strengthen accessibility duties and disabled passengers' rights.",
+        "disabled_community": "Disabled rail passengers",
+        "specific_concern": "Legal rights, accessibility duties and the future operation of the rail network",
+        "event_status": "Bill under parliamentary consideration",
+        "geographic_scope": "United Kingdom rail system",
+        "qualifications": "Potential amendments and duties were under consideration; stronger legal rights had not been enacted."
+      },
+      "verified_facts": [
+        {"fact_id": "f1", "fact": "The Railways Bill was before the House of Lords, where amendments could improve how railways operate for disabled passengers.", "evidence_ref": "publisher article"},
+        {"fact_id": "f2", "fact": "The Bill creates Great British Railways and other public bodies responsible for shaping the future rail network.", "evidence_ref": "publisher article"},
+        {"fact_id": "f3", "fact": "House of Commons proposals for stronger legal rights were not adopted; a government factsheet instead described an accessibility duty and consideration of disabled passengers' needs.", "evidence_ref": "publisher article"}
+      ],
+      "eligibility": {"status": "VERIFIED_ELIGIBLE", "category_evidence": "The central issue is disabled passengers' access and legal rights in transport.", "geography_evidence": "The legislation and rail system are UK-wide; United Kingdom maps to Northern Europe."}
+    },
+    {
+      "case_id": "diag_tech_bca_smart_glasses",
+      "evaluation_group": "diagnostic",
+      "source_name": "Blind Citizens Australia",
+      "title": "BCA calls for calm in smart glasses ban debate",
+      "url": "https://www.bca.org.au/2026/10/29/bca-calls-for-calm-in-smart-glasses-ban-debate/",
+      "publication_date": "2026-10-29",
+      "category": "Tech",
+      "country": "Australia",
+      "region": "Oceania",
+      "article_facts": {
+        "main_actor": "Blind Citizens Australia",
+        "principal_development": "The organisation responded to calls for smart-glasses bans and warned that hostile debate was making blind and partially sighted users feel unsafe.",
+        "disabled_community": "Blind and partially sighted people",
+        "specific_concern": "Smart glasses used as assistive technology and proposed public-facility bans",
+        "event_status": "Public debate and local ad hoc bans underway",
+        "geographic_scope": "Australia",
+        "qualifications": "The article reports safety concerns and assistive uses; it does not establish that all smart glasses are assistive or that a nationwide ban exists."
+      },
+      "verified_facts": [
+        {"fact_id": "f1", "fact": "Blind Citizens Australia warned that calls to ban smart glasses were putting blind and partially sighted people in danger.", "evidence_ref": "publisher article"},
+        {"fact_id": "f2", "fact": "The organisation described smart glasses as assistive technology that can combine several platforms in one wearable device.", "evidence_ref": "publisher article"},
+        {"fact_id": "f3", "fact": "Members and other users reported feeling unsafe using the devices in public, while some councils had introduced ad hoc bans at facilities.", "evidence_ref": "publisher article"}
+      ],
+      "eligibility": {"status": "VERIFIED_ELIGIBLE", "category_evidence": "Assistive smart-glasses technology and its use by blind people define the article.", "geography_evidence": "Blind Citizens Australia and Australian council actions support Australia, which maps to Oceania."}
+    },
+    {
+      "case_id": "fresh_arts_secret_gardens",
+      "evaluation_group": "fresh_unseen",
+      "source_name": "Disability Arts Online",
+      "title": "Time to grow: exploring disability justice and climate justice through The Secret Gardens",
+      "url": "https://disabilityarts.online/magazine/opinion/time-to-grow-exploring-disability-justice-and-climate-justice-through-the-secret-gardens/",
+      "publication_date": "2026-10-07",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "article_facts": {
+        "main_actor": "Creative Access Dramaturg Kate Lovell, writer Tom Wentworth and The Egg theatre",
+        "principal_development": "A disabled-led adaptation and long-term producing process reworked The Secret Garden through disability justice and climate justice.",
+        "disabled_community": "Disabled artists and audiences, including a wheelchair-using character and a neurodivergent interpretation of Mary",
+        "specific_concern": "Reclaiming a cure narrative, embedding the social model of disability and developing access through slow producing",
+        "event_status": "Stage run completed; wider engagement and a filmed production continued",
+        "geographic_scope": "Bath and wider UK audiences",
+        "qualifications": "The article reflects the author's work on the project; it presents an artistic and producing approach rather than a measured general outcome."
+      },
+      "verified_facts": [
+        {"fact_id": "f1", "fact": "Tom Wentworth's adaptation at The Egg reimagined The Secret Garden through a disabled perspective with a disabled team, presented Mary as neurodivergent and rejected the original cure ending for wheelchair-using Colin.", "evidence_ref": "publisher article paragraphs 24-26"},
+        {"fact_id": "f2", "fact": "Kate Lovell worked as Creative Access Dramaturg from 2022, beginning with disability-equality training and continuing through script development, research and access consultation.", "evidence_ref": "publisher article paragraphs 31-35"},
+        {"fact_id": "f3", "fact": "The longer project connected disability justice with climate justice and extended into work with schools, children in hospital and a filmed production.", "evidence_ref": "publisher article paragraphs 43-54"}
+      ],
+      "eligibility": {"status": "VERIFIED_ELIGIBLE", "category_evidence": "A disabled-led theatre adaptation and its creative process are the central subject.", "geography_evidence": "The production was based at The Egg in Bath, United Kingdom; United Kingdom maps to Northern Europe."}
+    },
+    {
+      "case_id": "fresh_arts_edible_conversation",
+      "evaluation_group": "fresh_unseen",
+      "source_name": "Disability Arts Online",
+      "title": "An Edible Conversation",
+      "url": "https://disabilityarts.online/magazine/showcase/an-edible-conversation/",
+      "publication_date": "2026-09-30",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "article_facts": {
+        "main_actor": "Artists in the Poole-based 15 Days In Clay project",
+        "principal_development": "The project presented Edible Conversation, a ceramics exhibition shaped by learning-disabled artists' work and experiences.",
+        "disabled_community": "Adults with learning disabilities and additional needs who participate as ceramic artists",
+        "specific_concern": "An exhibition using animal totems, clay food and worry monsters to express affirmation, belonging and harmful experiences",
+        "event_status": "Exhibition underway when the article was published",
+        "geographic_scope": "Poole and Swanage, Dorset, United Kingdom",
+        "qualifications": "The article describes the project and artists' work; broad claims about impact should be attributed or expressed with restraint."
+      },
+      "verified_facts": [
+        {"fact_id": "f1", "fact": "15 Days In Clay has supported adults with learning disabilities and additional needs to develop as ceramic artists since 2003 and had grown to four days a week with more than 40 participants.", "evidence_ref": "publisher article paragraphs 20-21"},
+        {"fact_id": "f2", "fact": "Edible Conversation featured five-foot animal totems, a clay banquet carrying positive words and contrasting worry monsters based on artists' lived experiences.", "evidence_ref": "publisher article paragraphs 23-31"},
+        {"fact_id": "f3", "fact": "A four-foot revolving ceramic cake traced the project's previous group shows, while the exhibition included work by up to 40 artists.", "evidence_ref": "publisher article paragraphs 37-43"}
+      ],
+      "eligibility": {"status": "VERIFIED_ELIGIBLE", "category_evidence": "The work, exhibition and development of learning-disabled ceramic artists define the article.", "geography_evidence": "The project is based in Poole and the exhibition was in Swanage, United Kingdom; United Kingdom maps to Northern Europe."}
+    },
+    {
+      "case_id": "fresh_activism_dpo_funding",
+      "evaluation_group": "fresh_unseen",
+      "source_name": "Disability Rights UK",
+      "title": "Paid Commission for DPOs | Contribute to sector-changing research on DPO Funding",
+      "url": "https://www.disabilityrightsuk.org/news/paid-commission-dpos-contribute-sector-changing-research-dpo-funding",
+      "publication_date": "2026-10-29",
+      "category": "Activism",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "article_facts": {
+        "main_actor": "Trust for London, Disability Rights UK and Braw Data",
+        "principal_development": "The partners invited Disabled People's Organisations to verify their classification and funding information for a UK-wide funding map.",
+        "disabled_community": "Disabled People's Organisations and led-by-and-for organisations",
+        "specific_concern": "Evidence for funding justice, sector connection and campaigning by Disabled People's Organisations",
+        "event_status": "Research and paid participation opportunity underway",
+        "geographic_scope": "United Kingdom",
+        "qualifications": "The project was collecting verification data; the map and research findings were not yet complete."
+      },
+      "verified_facts": [
+        {"fact_id": "f1", "fact": "Trust for London, Disability Rights UK and Braw Data were collaborating on UK-wide research mapping funding to the disability sector and a larger map of Disabled People's Organisations.", "evidence_ref": "publisher article paragraph 89"},
+        {"fact_id": "f2", "fact": "The project was intended to support campaigners promoting funding justice for Disabled People's Organisations and led-by-and-for organisations.", "evidence_ref": "publisher article paragraph 89"},
+        {"fact_id": "f3", "fact": "Disabled People's Organisations were offered £50 to complete a 30-minute form confirming their classification and funding sources.", "evidence_ref": "publisher article paragraph 90"}
+      ],
+      "eligibility": {"status": "VERIFIED_ELIGIBLE", "category_evidence": "Disabled-led sector research and its intended use in campaigning for funding justice make Activism the strongest category.", "geography_evidence": "The project is explicitly UK-wide; United Kingdom maps to Northern Europe."}
+    }
+  ]
+}

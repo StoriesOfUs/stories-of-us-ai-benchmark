@@ -1,0 +1,24 @@
+{
+  "schema_version": "stories-of-us-public-safe-style-examples-v01",
+  "status": "FROZEN",
+  "frozen_at": "2026-10-31T12:00:00Z",
+  "notice": "These are original fictional examples created for this public benchmark. They demonstrate style only and are not evidence about any benchmark article.",
+  "protected_curated_examples_used": false,
+  "examples": [
+    {
+      "example_id": "fictional_access",
+      "category": "Access",
+      "summary": "Example Access Journal reports on a disabled-led campaign seeking step-free access across a city bus network. The proposal asks operators to publish lift failures in real time and train staff to offer reliable assistance."
+    },
+    {
+      "example_id": "fictional_arts",
+      "category": "Arts",
+      "summary": "Example Arts Review explores a Deaf theatre company's new production, which places British Sign Language at the centre of its storytelling. The cast developed visual scenes with a Deaf creative team instead of adding access after rehearsals."
+    },
+    {
+      "example_id": "fictional_tech",
+      "category": "Tech",
+      "summary": "Example Technology News examines navigation software designed with blind travellers to describe indoor routes. Its developers say the trial combines spoken directions with verified landmark information, while accuracy testing remains under way."
+    }
+  ]
+}

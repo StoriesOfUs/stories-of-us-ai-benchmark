@@ -1,0 +1,25 @@
+{
+  "schema_version": "stories-of-us-qwen-writing-conditions-v01",
+  "status": "FROZEN",
+  "frozen_at": "2026-10-31T12:00:00Z",
+  "conditions": [
+    {
+      "condition_id": "A",
+      "name": "V04 baseline",
+      "practical_guidance": false,
+      "illustrative_examples": false
+    },
+    {
+      "condition_id": "B",
+      "name": "V04 plus owner's practical guidance",
+      "practical_guidance": true,
+      "illustrative_examples": false
+    },
+    {
+      "condition_id": "C",
+      "name": "V04 plus guidance and public-safe illustrative examples",
+      "practical_guidance": true,
+      "illustrative_examples": true
+    }
+  ]
+}
