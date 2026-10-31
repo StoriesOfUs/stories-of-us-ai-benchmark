@@ -24,6 +24,14 @@ checks = {
     "no_deployment": all(token not in WORKFLOW.lower() for token in ("netlify", "deploy", "pages")),
     "no_curated_examples": "curated" not in (ROOT / "benchmark/cases.json").read_text(encoding="utf-8").lower(),
     "python_boolean_literal": '"curated_examples_used": False' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
+    "independent_matrix_jobs": "fail-fast: false" in WORKFLOW and "max-parallel: 1" in WORKFLOW,
+    "single_turn_inference": '"--single-turn"' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
+    "old_forced_conversation_removed": '"-cnv"' not in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
+    "bounded_stderr_retained": '"stderr": safe_error' in (ROOT / "benchmark/run_benchmark.py").read_text(encoding="utf-8"),
+    "failure_safe_artifacts": "Upload public-safe model result\n        if: always()" in WORKFLOW,
+    "per_model_artifacts": "experimental-ai-summary-results-${{ matrix.short_name }}" in WORKFLOW,
+    "real_failure_enforced": "job_manifest.py enforce" in WORKFLOW,
+    "temporary_weights_removed": "Remove temporary model weights" in WORKFLOW,
 }
 
 for path in ROOT.rglob("*"):

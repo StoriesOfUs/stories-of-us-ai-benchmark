@@ -11,9 +11,27 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  benchmark:
+  benchmark-model:
+    name: benchmark-${{ matrix.short_name }}
     runs-on: ubuntu-24.04
     timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - short_name: granite
+            model_id: granite-3.3-2b-instruct-q4-k-m
+            model_revision: 7cdf86ccd1f1bb3491c9b7017b033f2e51367397
+            model_filename: granite-3.3-2b-instruct-Q4_K_M.gguf
+            model_url: https://huggingface.co/ibm-granite/granite-3.3-2b-instruct-GGUF/resolve/7cdf86ccd1f1bb3491c9b7017b033f2e51367397/granite-3.3-2b-instruct-Q4_K_M.gguf
+            model_sha256: ac71e9e32c0bea919b409c5918f69ca74339854b0319c5065e4e9fb6d95c4852
+          - short_name: qwen
+            model_id: qwen3-4b-q4-k-m
+            model_revision: bc640142c66e1fdd12af0bd68f40445458f3869b
+            model_filename: Qwen3-4B-Q4_K_M.gguf
+            model_url: https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf
+            model_sha256: 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5
     env:
       LLAMA_CPP_REVISION: 792fcf4e7501972b595d3aeeb85153f9926f6aef
     steps:
@@ -23,9 +41,23 @@ jobs:
           persist-credentials: false
 
       - name: Validate public-safe package
+        id: validation
         run: python3 benchmark/validate.py
 
+      - name: Initialise model execution manifest
+        if: always()
+        run: |
+          python3 benchmark/job_manifest.py init \
+            --model-id "${{ matrix.model_id }}" \
+            --model-revision "${{ matrix.model_revision }}" \
+            --model-sha256 "${{ matrix.model_sha256 }}" \
+            --runtime-revision "$LLAMA_CPP_REVISION" \
+            --output "benchmark/results/${{ matrix.short_name }}.json"
+
       - name: Build pinned llama.cpp CPU runtime
+        id: build
+        if: steps.validation.outcome == 'success'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
@@ -34,33 +66,66 @@ jobs:
           cmake -S "$RUNNER_TEMP/llama.cpp" -B "$RUNNER_TEMP/llama.cpp/build" -DGGML_NATIVE=OFF -DGGML_OPENMP=ON -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release
           cmake --build "$RUNNER_TEMP/llama.cpp/build" --config Release -j2 --target llama-cli
 
-      - name: Download, verify and run Granite
+      - name: Download and verify model
+        id: download
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/models" benchmark/results
-          curl --fail --location --retry 2 --max-time 600 --output "$RUNNER_TEMP/models/granite.gguf" "https://huggingface.co/ibm-granite/granite-3.3-2b-instruct-GGUF/resolve/7cdf86ccd1f1bb3491c9b7017b033f2e51367397/granite-3.3-2b-instruct-Q4_K_M.gguf"
-          echo "ac71e9e32c0bea919b409c5918f69ca74339854b0319c5065e4e9fb6d95c4852  $RUNNER_TEMP/models/granite.gguf" | sha256sum --check --strict
-          python3 benchmark/run_benchmark.py --binary "$RUNNER_TEMP/llama.cpp/build/bin/llama-cli" --model "$RUNNER_TEMP/models/granite.gguf" --expected-sha256 ac71e9e32c0bea919b409c5918f69ca74339854b0319c5065e4e9fb6d95c4852 --model-id granite-3.3-2b-instruct-q4-k-m --cases benchmark/cases.json --output benchmark/results/granite.json
-          rm -f "$RUNNER_TEMP/models/granite.gguf"
+          curl --fail --location --retry 2 --max-time 600 \
+            --output "$RUNNER_TEMP/models/${{ matrix.model_filename }}" \
+            "${{ matrix.model_url }}"
+          echo "${{ matrix.model_sha256 }}  $RUNNER_TEMP/models/${{ matrix.model_filename }}" | sha256sum --check --strict
 
-      - name: Download, verify and run Qwen
+      - name: Run bounded single-turn inference
+        id: inference
+        if: steps.download.outcome == 'success'
+        continue-on-error: true
         shell: bash
         run: |
           set -euo pipefail
-          curl --fail --location --retry 2 --max-time 600 --output "$RUNNER_TEMP/models/qwen.gguf" "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf"
-          echo "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5  $RUNNER_TEMP/models/qwen.gguf" | sha256sum --check --strict
-          python3 benchmark/run_benchmark.py --binary "$RUNNER_TEMP/llama.cpp/build/bin/llama-cli" --model "$RUNNER_TEMP/models/qwen.gguf" --expected-sha256 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5 --model-id qwen3-4b-q4-k-m --cases benchmark/cases.json --output benchmark/results/qwen.json
-          rm -f "$RUNNER_TEMP/models/qwen.gguf"
+          python3 benchmark/run_benchmark.py \
+            --binary "$RUNNER_TEMP/llama.cpp/build/bin/llama-cli" \
+            --model "$RUNNER_TEMP/models/${{ matrix.model_filename }}" \
+            --expected-sha256 "${{ matrix.model_sha256 }}" \
+            --model-id "${{ matrix.model_id }}" \
+            --cases benchmark/cases.json \
+            --output "benchmark/results/${{ matrix.short_name }}.json" \
+            --timeout-seconds 300
+
+      - name: Finalise model execution manifest
+        if: always()
+        run: |
+          python3 benchmark/job_manifest.py finalise \
+            --output "benchmark/results/${{ matrix.short_name }}.json" \
+            --validation "${{ steps.validation.outcome }}" \
+            --build "${{ steps.build.outcome }}" \
+            --download "${{ steps.download.outcome }}" \
+            --inference "${{ steps.inference.outcome }}"
 
       - name: Record bounded disk use
+        if: always()
         shell: bash
-        run: du -sh benchmark/results "$RUNNER_TEMP/llama.cpp" | tee benchmark/results/storage.txt
+        run: du -sh benchmark/results "$RUNNER_TEMP/llama.cpp" 2>/dev/null | tee "benchmark/results/${{ matrix.short_name }}-storage.txt" || true
 
-      - name: Upload public-safe benchmark results
+      - name: Remove temporary model weights
+        if: always()
+        shell: bash
+        run: rm -f "$RUNNER_TEMP/models/${{ matrix.model_filename }}"
+
+      - name: Upload public-safe model result
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: experimental-ai-summary-results
-          path: benchmark/results/
+          name: experimental-ai-summary-results-${{ matrix.short_name }}
+          path: |
+            benchmark/results/${{ matrix.short_name }}.json
+            benchmark/results/${{ matrix.short_name }}-storage.txt
           retention-days: 7
           if-no-files-found: error
+
+      - name: Preserve real model job status
+        if: always()
+        run: python3 benchmark/job_manifest.py enforce --output "benchmark/results/${{ matrix.short_name }}.json"

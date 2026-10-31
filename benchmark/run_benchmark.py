@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run a bounded public-safe Stories Of Us CPU summary benchmark."""
+"""Run one bounded public-safe Stories Of Us CPU summary benchmark."""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +12,20 @@ import subprocess
 import time
 
 
-LABEL = "EXPERIMENTAL AI SUMMARY — NOT EDITORIALLY APPROVED — NOT FOR STORIES OF US PUBLICATION"
+LABEL = "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION"
+MAX_CAPTURE_CHARACTERS = 16000
+
+
+def bounded_public_text(text: str, replacements: dict[str, str]) -> tuple[str, bool]:
+    """Remove local runner paths and cap diagnostic text retained in a public artifact."""
+    for original, replacement in replacements.items():
+        text = text.replace(original, replacement)
+    text = re.sub(r"/home/runner/(?:work|_work)/[^\s'\"]+", "<RUNNER_PATH>", text)
+    text = re.sub(r"\x1b\[[0-9;?]*[ -/]*[@-~]", "", text)
+    truncated = len(text) > MAX_CAPTURE_CHARACTERS
+    if truncated:
+        text = text[:MAX_CAPTURE_CHARACTERS] + "\n[TRUNCATED]"
+    return text, truncated
 
 
 def file_sha256(path: pathlib.Path) -> str:
@@ -55,37 +68,84 @@ def cleaned_summary(raw: str) -> tuple[str, bool]:
     text = re.sub(r"<think>.*?</think>", "", raw, flags=re.I | re.S)
     text = re.sub(r"^```(?:text|json)?\s*|\s*```$", "", text.strip(), flags=re.I)
     text = re.sub(r"^(?:assistant|summary)\s*:\s*", "", text.strip(), flags=re.I)
+    text = re.sub(r"\n*Exiting\.\.\.\s*$", "", text.strip(), flags=re.I)
     return text.strip(), thinking
 
 
-def run_one(binary: pathlib.Path, model: pathlib.Path, prompt: str, timeout: int) -> dict:
+def run_one(binary: pathlib.Path, model: pathlib.Path, prompt: str, timeout: int, model_id: str) -> dict:
     command = [
-        str(binary), "-m", str(model), "-cnv", "--simple-io", "--no-display-prompt",
-        "--temp", "0.2", "--seed", "42", "-n", "180", "-c", "8192", "-p", prompt,
+        str(binary), "-m", str(model), "--single-turn", "--simple-io",
+        "--no-display-prompt", "--no-show-timings", "--no-warmup",
+        "--seed", "42", "-n", "180", "-c", "4096",
     ]
+    if model_id.startswith("qwen"):
+        command.extend(["--jinja", "--temp", "0.7", "--top-k", "20", "--top-p", "0.8", "--min-p", "0", "--presence-penalty", "1.5"])
+    else:
+        command.extend(["--temp", "0.2"])
+    command.extend(["-p", prompt])
     started = time.monotonic()
-    usage_before = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
+    replacements = {str(binary): "<LLAMA_CLI>", str(model): "<MODEL_FILE>", prompt: "<PROMPT>"}
     try:
         completed = subprocess.run(command, capture_output=True, text=True, timeout=timeout, check=False)
     except subprocess.TimeoutExpired as exc:
         raw = exc.stdout if isinstance(exc.stdout, str) else ""
+        error = exc.stderr if isinstance(exc.stderr, str) else ""
+        safe_raw, raw_truncated = bounded_public_text(raw, replacements)
+        safe_error, error_truncated = bounded_public_text(error, replacements)
         return {
-            "status": "TIMEOUT",
+            "execution_status": "FAILURE",
+            "failure_reason": "TIMEOUT",
+            "return_code": None,
             "duration_seconds": round(time.monotonic() - started, 3),
             "raw_response_sha256": hashlib.sha256(raw.encode()).hexdigest(),
+            "raw_response": safe_raw,
+            "raw_response_truncated": raw_truncated,
+            "stderr": safe_error,
+            "stderr_truncated": error_truncated,
             "summary": "",
+            "output_validation": {
+                "text_present": False,
+                "model_returned_hold": False,
+                "word_count": 0,
+                "maximum_50_words": True,
+                "sentence_count": 0,
+                "exactly_two_sentences": False,
+            },
         }
     usage_after = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss
-    summary, thinking = cleaned_summary(completed.stdout)
+    safe_raw, raw_truncated = bounded_public_text(completed.stdout, replacements)
+    safe_error, error_truncated = bounded_public_text(completed.stderr, replacements)
+    summary, thinking = cleaned_summary(safe_raw)
+    execution_status = "SUCCESS" if completed.returncode == 0 and bool(summary) else "FAILURE"
+    failure_reason = None
+    if completed.returncode != 0:
+        failure_reason = "RUNTIME_PROCESS_EXIT"
+    elif not summary:
+        failure_reason = "NO_OUTPUT_TEXT"
+    word_count = len(re.findall(r"\b[\w’'-]+\b", summary))
+    sentence_count = len(re.findall(r"[.!?](?:[\"'’)]*)?(?:\s|$)", summary))
     return {
-        "status": "COMPLETED" if completed.returncode == 0 else "RUNTIME_ERROR",
+        "execution_status": execution_status,
+        "failure_reason": failure_reason,
         "return_code": completed.returncode,
         "duration_seconds": round(time.monotonic() - started, 3),
-        "peak_rss_kb_child_delta": max(0, usage_after - usage_before),
+        "peak_rss_kb_observed": usage_after,
         "raw_response_sha256": hashlib.sha256(completed.stdout.encode()).hexdigest(),
         "raw_response_characters": len(completed.stdout),
+        "raw_response": safe_raw,
+        "raw_response_truncated": raw_truncated,
+        "stderr": safe_error,
+        "stderr_truncated": error_truncated,
         "reasoning_markup_detected": thinking,
         "summary": summary,
+        "output_validation": {
+            "text_present": bool(summary),
+            "model_returned_hold": summary.strip().upper() == "HOLD",
+            "word_count": word_count,
+            "maximum_50_words": word_count <= 50,
+            "sentence_count": sentence_count,
+            "exactly_two_sentences": sentence_count == 2,
+        },
     }
 
 
@@ -104,12 +164,17 @@ def main() -> int:
     if actual_sha256 != args.expected_sha256:
         raise SystemExit(f"Model checksum mismatch: {actual_sha256}")
 
+    version = subprocess.run([str(args.binary), "--version"], capture_output=True, text=True, timeout=30, check=False)
+    runtime_version, runtime_version_truncated = bounded_public_text(
+        (version.stdout + "\n" + version.stderr).strip(),
+        {str(args.binary): "<LLAMA_CLI>", str(args.model): "<MODEL_FILE>"},
+    )
     cases = json.loads(args.cases.read_text(encoding="utf-8"))["cases"]
     results = []
     model_started = time.monotonic()
     for case in cases:
         prompt = build_prompt(case, args.model_id)
-        result = run_one(args.binary, args.model, prompt, args.timeout_seconds)
+        result = run_one(args.binary, args.model, prompt, args.timeout_seconds, args.model_id)
         result.update({
             "case_id": case["case_id"],
             "source_url": case["url"],
@@ -118,6 +183,7 @@ def main() -> int:
             "prompt_characters": len(prompt),
             "public_label": LABEL,
         })
+        result["output_validation"]["exact_source_name_present"] = case["source_name"] in result["summary"]
         results.append(result)
 
     output = {
@@ -126,14 +192,24 @@ def main() -> int:
         "model_id": args.model_id,
         "model_sha256": actual_sha256,
         "model_file_bytes": args.model.stat().st_size,
+        "runtime": {
+            "name": "llama.cpp llama-cli",
+            "version_output": runtime_version,
+            "version_output_truncated": runtime_version_truncated,
+        },
+        "runner": "GitHub Actions ubuntu-24.04 standard public-repository runner",
         "condition": "v04_verified_evidence_no_curated_examples",
         "curated_examples_used": False,
+        "status": "SUCCESS" if all(row["execution_status"] == "SUCCESS" for row in results) else "FAILURE",
         "total_duration_seconds": round(time.monotonic() - model_started, 3),
+        "input_token_counts": None,
+        "output_token_counts": None,
+        "token_count_note": "The bounded llama-cli path did not expose reliable machine-readable token counts.",
         "results": results,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    return 0 if all(row["status"] == "COMPLETED" for row in results) else 1
+    return 0 if output["status"] == "SUCCESS" else 1
 
 
 if __name__ == "__main__":

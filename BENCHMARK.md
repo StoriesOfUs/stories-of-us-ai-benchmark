@@ -28,4 +28,6 @@ The current run tests verified evidence without protected curated examples. The 
 
 Open the **Actions** tab, select **Manual AI summary benchmark**, choose **Run workflow**, and use the `main` branch. The workflow has no automatic trigger.
 
-The output artifact is retained for seven days. A technical result is not human editorial approval and does not authorise publication or deployment.
+Each model runs in its own sequential matrix job (`fail-fast: false`, `max-parallel: 1`). A Granite failure therefore does not prevent Qwen from running. Bounded stdout, stderr, return codes and phase outcomes are retained in separate per-model artifacts even when inference fails. The artifacts are retained for seven days.
+
+A technical result is not human editorial approval and does not authorise publication or deployment.
