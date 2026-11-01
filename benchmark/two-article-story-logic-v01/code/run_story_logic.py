@@ -168,14 +168,33 @@ JSON SHAPE
 {{"facts":[{{"fact_id":"af1","statement":"...","actor":"...","action":"...","status":["ONGOING"],"qualifications":["..."],"evidence_ids":["id"]}},{{"fact_id":"af2","statement":"...","actor":"...","action":"...","status":["PLANNED"],"qualifications":["..."],"evidence_ids":["id"]}}],"relationship":{{"type":"ADDITIONAL RELEVANT DETAIL","statement":"...","status":["ONGOING"],"evidence_ids":["id"]}}}}"""
 
 
-def parse_json_object(text: str) -> tuple[dict[str, Any] | None, list[str]]:
+def parse_json_object(text: str) -> tuple[dict[str, Any] | None, list[str], list[str]]:
     start, end = text.find("{"), text.rfind("}")
     if start < 0 or end <= start:
-        return None, ["No JSON object found"]
+        return None, ["No JSON object found"], []
+    candidate = text[start:end + 1]
     try:
-        return json.loads(text[start:end + 1]), []
+        return json.loads(candidate), [], []
     except json.JSONDecodeError as exc:
-        return None, [f"Invalid JSON: {exc}"]
+        original_error = f"Invalid JSON: {exc}"
+    # Bounded syntax-only recovery for a known llama.cpp response defect: Qwen can
+    # omit the closing object brace between the second fact's evidence_ids array
+    # and the top-level relationship. This does not change any selected content.
+    marker = '],"relationship":'
+    if marker in candidate and '}],"relationship":' not in candidate:
+        repaired = candidate.replace(marker, '}],"relationship":', 1)
+        try:
+            return json.loads(repaired), [], ["INSERTED_MISSING_FACT_OBJECT_BRACE_BEFORE_RELATIONSHIP"]
+        except json.JSONDecodeError as repaired_error:
+            if repaired_error.msg == "Extra data" and repaired.endswith("}}}"):
+                try:
+                    return json.loads(repaired[:-1]), [], [
+                        "INSERTED_MISSING_FACT_OBJECT_BRACE_BEFORE_RELATIONSHIP",
+                        "REMOVED_MATCHING_REDUNDANT_TRAILING_OBJECT_BRACE",
+                    ]
+                except json.JSONDecodeError:
+                    pass
+    return None, [original_error], []
 
 
 def validate_packet(payload: dict[str, Any] | None, case: dict[str, Any]) -> dict[str, Any]:
@@ -472,7 +491,7 @@ def process_case(case: dict[str, Any], reference: dict[str, Any], binary: pathli
                                     temperature=config["qwen"]["selection_temperature"], seed=config["qwen"]["seed"],
                                     context_size=config["qwen"]["context_size"], phase="automatic_fact_and_relationship_selection")
     automatic_text = automatic_execution.pop("text")
-    parsed, parse_errors = parse_json_object(automatic_text) if automatic_execution["execution_status"] == "SUCCESS" else (None, ["Automatic packet execution failed"])
+    parsed, parse_errors, syntax_repairs = parse_json_object(automatic_text) if automatic_execution["execution_status"] == "SUCCESS" else (None, ["Automatic packet execution failed"], [])
     packet_validation = validate_packet(parsed, case)
     packet_validation["errors"] = parse_errors + packet_validation["errors"]
     packet_validation["valid"] = packet_validation["valid"] and not parse_errors
@@ -501,6 +520,7 @@ def process_case(case: dict[str, Any], reference: dict[str, Any], binary: pathli
         "reference_packet_verification": reference_verification,
         "automatic_packet": {"execution": automatic_execution, "raw_text": automatic_text, "parsed": parsed,
                              "validation": packet_validation, "verification": automatic_verification,
+                             "syntax_repairs": syntax_repairs,
                              "effective_packet_after_automatic_safety_rule": effective_packet,
                              "human_correction_applied": False},
         "conditions": [condition_a, condition_b, condition_c],

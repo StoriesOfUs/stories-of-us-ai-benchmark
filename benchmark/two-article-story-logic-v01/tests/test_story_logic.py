@@ -65,6 +65,14 @@ class StoryLogicTests(unittest.TestCase):
         result = MODULE.validate_packet(ref, case)
         self.assertTrue(result["valid"], result)
 
+    def test_bounded_missing_fact_brace_repair_preserves_content(self):
+        malformed = '{"facts":[{"fact_id":"af1"},{"fact_id":"af2","evidence_ids":["bbc_e5"]],"relationship":{"type":"NO VERIFIED RELATIONSHIP","statement":"UNKNOWN","status":[],"evidence_ids":[]}}'
+        parsed, errors, repairs = MODULE.parse_json_object(malformed)
+        self.assertEqual(errors, [])
+        self.assertEqual(repairs, ["INSERTED_MISSING_FACT_OBJECT_BRACE_BEFORE_RELATIONSHIP"])
+        self.assertEqual(parsed["facts"][1]["evidence_ids"], ["bbc_e5"])
+        self.assertEqual(parsed["relationship"]["statement"], "UNKNOWN")
+
     def test_no_third_party_source_substitution(self):
         for case in self.cases:
             self.assertTrue(case["source_url"].startswith(("https://www.bbc.co.uk/", "https://www.disabilityrightsuk.org/")))
