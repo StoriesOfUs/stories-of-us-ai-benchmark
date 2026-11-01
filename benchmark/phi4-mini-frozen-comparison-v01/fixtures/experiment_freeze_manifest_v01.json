@@ -1,0 +1,31 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-frozen-comparison-freeze-v01",
+  "frozen_at_utc": "2026-11-01T17:00:00Z",
+  "frozen_before_phi_generation": true,
+  "frozen_file_sha256": {
+    "fixtures/article_packets_frozen_v01.json": "f0613ec57cc0c2e265e8166d80bb83901a85872d33ad71173629d1af40590e2e",
+    "fixtures/phi_model_manifest_v01.json": "e54e8161a36579ff6d5a627079ee7567f7236c2e387d24c6bada92d070215a45",
+    "fixtures/archived_qwen_results_v01.json": "2daa8fa62815ce2a78f13a64bc24eacc02d1937e8276ac2cbb9d2c3be04b8af5",
+    "fixtures/archived_qwen_editorial_review_v01.json": "003ae12359fd3888f4dffae66952dc2b1b44f7b2132d5c12d0b8107d8023c3ca"
+  },
+  "prior_source_freeze_manifest_sha256": "67ea75547bd3e1831941a0dd642dddc0da0dcee3ffc7111e178a685f61099499",
+  "prior_github_run_id": 41327064281,
+  "prior_github_commit": "595c9023f3e9855db97f96c2fb4ef7cd2d0992ab",
+  "intended_new_output_slots": [
+    "bbc_disabled_bay/PHI",
+    "druk_dpo_funding/PHI"
+  ],
+  "archived_output_slots": [
+    "bbc_disabled_bay/A",
+    "bbc_disabled_bay/B",
+    "druk_dpo_funding/A",
+    "druk_dpo_funding/B"
+  ],
+  "new_editorial_outputs_seen_at_freeze": 0,
+  "constraints": {
+    "qwen_regeneration": "PROHIBITED",
+    "gemma_execution": "PROHIBITED",
+    "prompt_tuning_after_outputs": "PROHIBITED",
+    "new_generation_count": 2
+  }
+}

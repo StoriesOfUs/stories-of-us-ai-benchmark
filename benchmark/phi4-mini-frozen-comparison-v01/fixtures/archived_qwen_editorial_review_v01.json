@@ -1,0 +1,138 @@
+{
+  "schema_version": "stories-of-us-three-model-simple-prompt-independent-blind-editorial-review-v01",
+  "review_status": "COMPLETE",
+  "reviewer_context": "Fresh-context Codex editorial review. Model identities and the unblinding map were not inspected before verdicts were frozen.",
+  "authority": {
+    "house_style": "Summary House Style V04",
+    "supported_claims": "Stories Of Us Supported Claims Rules V01",
+    "evidence_basis": "Frozen, independently reviewed exact-article evidence packets supplied for the two authorised diagnostic cases"
+  },
+  "verdict_scale": ["ACCEPT", "REVISE", "HOLD"],
+  "totals": {
+    "outputs_reviewed": 4,
+    "ACCEPT": 0,
+    "REVISE": 4,
+    "HOLD": 0,
+    "unsupported_or_materially_imprecise_assertions": 4,
+    "style_only_or_structural_defects": 10,
+    "evidence_sufficient_for_review": 4
+  },
+  "results": [
+    {
+      "blind_output_id": "BBC-R1",
+      "case_id": "bbc_disabled_bay",
+      "verdict": "REVISE",
+      "summary": "BBC News reported that Paul Rapetti installed a 16ft banner in frustration over an 18-month wait for a council decision on a disabled parking space for his wife, Berta, who had a terminal brain tumour. The Lincolnshire County Council said officers would review the case and provide a recommendation, but no decision had been made by the article’s publication date.",
+      "evidence_sufficient": true,
+      "word_count": 61,
+      "sentence_count": 2,
+      "exact_source_name": true,
+      "disability_relevance_clear_in_sentence_one": true,
+      "category_relevance_clear_in_sentence_one": true,
+      "actor_and_collaboration_accuracy": "PASS",
+      "factual_status_accuracy": "PASS_WITH_MATERIAL_WORDING_IMPRECISION",
+      "unsupported_claims": [
+        {
+          "wording": "who had a terminal brain tumour",
+          "finding": "The evidence says Berta was terminally ill with a brain tumour. It does not specifically establish that the tumour itself should be described as a 'terminal brain tumour'. The compressed wording changes the supported relationship and should be narrowed."
+        }
+      ],
+      "style_only_or_structural_defects": [
+        "The 61-word summary exceeds V04's 50-word maximum.",
+        "The opening uses retrospective 'reported' rather than publication-time present tense 'reports'."
+      ],
+      "naturalness": "Generally clear and natural, but the first sentence is overloaded and the whole summary is too long.",
+      "reason": "The core event, actor, planned council review and undecided application are represented accurately, but the medical wording is materially imprecise and the summary fails the word limit and publication-time voice. The defects are correctable from the existing evidence, so REVISE rather than HOLD."
+    },
+    {
+      "blind_output_id": "BBC-R2",
+      "case_id": "bbc_disabled_bay",
+      "verdict": "REVISE",
+      "summary": "Banner protest by Paul Rapetti over an 18-month wait for a disabled parking space for his terminally ill wife. The council planned to review the application but had not yet decided, highlighting delays in access for disabled individuals. The 16ft banner outside his home reflected frustration over the prolonged process.",
+      "evidence_sufficient": true,
+      "word_count": 50,
+      "sentence_count": 3,
+      "exact_source_name": false,
+      "disability_relevance_clear_in_sentence_one": true,
+      "category_relevance_clear_in_sentence_one": true,
+      "actor_and_collaboration_accuracy": "PASS",
+      "factual_status_accuracy": "PASS",
+      "unsupported_claims": [
+        {
+          "wording": "highlighting delays in access for disabled individuals",
+          "finding": "The evidence establishes one prolonged application affecting Berta Rapetti. This wording generalises the reported delay to disabled people more broadly, which the packet does not establish. It also uses 'disabled individuals' instead of V04's normal term 'disabled people'."
+        }
+      ],
+      "style_only_or_structural_defects": [
+        "The exact source_name 'BBC News' is absent.",
+        "The first sentence is a headline-style fragment rather than a complete sentence with an accurate reporting verb.",
+        "The summary has three sentences without a documented structural exception.",
+        "The final sentence repeats the banner and frustration already conveyed in sentence one."
+      ],
+      "naturalness": "The second and third sentences are readable, but the opening is mechanical headline copy and the third sentence is repetitive.",
+      "reason": "The main chronology and undecided status are preserved, but the summary omits the publisher, breaks the two-sentence structure, opens with a fragment and makes an unsupported generalisation. The evidence can support a compliant rewrite, so REVISE."
+    },
+    {
+      "blind_output_id": "DRUK-R1",
+      "case_id": "druk_dpo_funding",
+      "verdict": "REVISE",
+      "summary": "Disability Rights UK is collaborating with Trust for London and Braw Data on a UK-wide research project to map funding to the disability sector. The project invites Disabled People's Organisations to complete a 30-minute form and offers £50 for their time, aiming to support campaigning for funding justice in the sector. The initiative is intended to advance research on DPO funding, not yet an achieved outcome.",
+      "evidence_sufficient": true,
+      "word_count": 66,
+      "sentence_count": 3,
+      "exact_source_name": true,
+      "disability_relevance_clear_in_sentence_one": true,
+      "category_relevance_clear_in_sentence_one": false,
+      "actor_and_collaboration_accuracy": "PASS",
+      "factual_status_accuracy": "PASS_WITH_UNSUPPORTED_PURPOSE_WORDING",
+      "unsupported_claims": [
+        {
+          "wording": "The initiative is intended to advance research on DPO funding, not yet an achieved outcome.",
+          "finding": "The packet supports an ongoing research project and an attributed intention to support campaigners promoting funding justice. It does not identify 'advancing research' as a separate intended outcome, and the phrase 'not yet an achieved outcome' is conceptually confused because research is already under way."
+        }
+      ],
+      "style_only_or_structural_defects": [
+        "The 66-word summary exceeds V04's 50-word maximum.",
+        "It uses three sentences without a documented structural exception.",
+        "Sentence one establishes the disability subject but not the Activism connection; campaigning appears only in sentence two.",
+        "The final sentence is awkward and unnecessary rather than a useful concrete detail."
+      ],
+      "naturalness": "The first two sentences are mostly natural, but the third is bureaucratic and semantically awkward.",
+      "reason": "Collaboration, research scope and paid DPO participation are represented accurately, but the summary is overlong, structurally non-compliant, delays Category relevance and adds a confused unsupported purpose statement. These are correctable from the adequate evidence, so REVISE."
+    },
+    {
+      "blind_output_id": "DRUK-R2",
+      "case_id": "druk_dpo_funding",
+      "verdict": "REVISE",
+      "summary": "Disability Rights UK, alongside Trust for London and Braw Data, is conducting UK-wide research mapping disability sector funding. Disabled People's Organisations are invited to complete a 30-minute form about their funding sources and offered £50 for their time. This research aims to support campaigners promoting funding justice for DPOs, though no improvements have been achieved yet.",
+      "evidence_sufficient": true,
+      "word_count": 56,
+      "sentence_count": 3,
+      "exact_source_name": true,
+      "disability_relevance_clear_in_sentence_one": true,
+      "category_relevance_clear_in_sentence_one": false,
+      "actor_and_collaboration_accuracy": "PASS",
+      "factual_status_accuracy": "FAIL_UNSUPPORTED_NEGATIVE_OUTCOME_CLAIM",
+      "unsupported_claims": [
+        {
+          "wording": "though no improvements have been achieved yet",
+          "finding": "The evidence says the source does not establish that funding justice has improved. Absence of evidence for an achieved improvement does not establish the affirmative claim that no improvements have occurred. The unsupported negative should be omitted rather than invented as a safeguard."
+        }
+      ],
+      "style_only_or_structural_defects": [
+        "The 56-word summary exceeds V04's 50-word maximum.",
+        "It uses three sentences without a documented structural exception.",
+        "Sentence one establishes the disability subject but not the Activism connection; the campaigning purpose appears only in sentence three."
+      ],
+      "naturalness": "Mostly clear and natural, but the final defensive clause is unnecessary and gives the prose a mechanical fact-checking tone.",
+      "reason": "The three collaborators, research, DPO form and payment are accurately scoped, and the campaigning purpose is presented as an aim. However, the final clause converts a lack of verified outcome into an unsupported claim that no improvement occurred, while length, structure and first-sentence Category relevance also fail V04. REVISE."
+    }
+  ],
+  "cross_output_findings": {
+    "principal_pattern": "All four outputs had adequate evidence but failed V04. Each introduced one materially unsupported or imprecise assertion, and every output also had at least two structural or style defects.",
+    "safe_status_handling": "The summaries generally preserved the still-undecided BBC application and the intended nature of DRUK's funding-justice purpose. However, DRUK-R2 shows that defensive wording can create a new unsupported negative outcome claim.",
+    "publisher_and_actor_handling": "Three outputs used the exact source_name and both DRUK outputs preserved the three-way collaboration rather than inventing sole leadership. BBC-R2 omitted the source_name.",
+    "house_style_pattern": "No output simultaneously met the exact source-name, publication-time voice, two-sentence and 50-word requirements. Three outputs used three sentences; three exceeded 50 words; two delayed Category relevance beyond sentence one.",
+    "editorial_reliability": "NOT_DEMONSTRATED_ON_THESE_FOUR_OUTPUTS"
+  }
+}

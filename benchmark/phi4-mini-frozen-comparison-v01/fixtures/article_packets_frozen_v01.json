@@ -1,0 +1,101 @@
+{
+  "schema_version": "stories-of-us-three-model-simple-prompt-article-packets-v01",
+  "frozen_at_utc": "2026-11-01T17:00:00Z",
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "writing_instruction": "Using only the verified information below, write two short, natural sentences (maximum 50 words).\nBegin with the exact publisher name, explain the main development and its disability connection, then add one important detail. Preserve what actually happened versus what is only planned or intended. Invent nothing.",
+  "freeze_basis": "The two packets reuse the independently reviewed facts and exact-publisher evidence preserved before the completed two-article diagnostic. Adequacy and provenance were rechecked before this freeze; no output from the present model comparison existed.",
+  "cases": [
+    {
+      "case_id": "bbc_disabled_bay",
+      "source_name": "BBC News",
+      "article_title": "Banner protest over 18-month wait for disabled bay",
+      "source_url": "https://www.bbc.co.uk/news/articles/cwp9g10ke2p3o",
+      "publication_date": "2026-10-15",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "two_verified_facts": [
+        {
+          "fact_id": "bbc_fact_1",
+          "statement": "Paul Rapetti installed a 16ft banner outside his Lincoln home in frustration over an 18-month wait for a council decision on a disabled parking space for his wife Berta, who was terminally ill with a brain tumour.",
+          "actor": "Paul Rapetti",
+          "factual_status": ["COMPLETED", "ONGOING"],
+          "qualifications": ["He applied in March 2025 and the application remained undecided when the article was published; it had not been rejected or approved."],
+          "evidence_refs": ["bbc_e1", "bbc_e2"]
+        },
+        {
+          "fact_id": "bbc_fact_2",
+          "statement": "Lincolnshire County Council's highways executive member said officers would review the situation and provide a recommendation so a decision could be made.",
+          "actor": "Lincolnshire County Council's highways executive member",
+          "factual_status": ["PLANNED", "ATTRIBUTED OPINION"],
+          "qualifications": ["The council statement was not an approval or rejection of the application."],
+          "evidence_refs": ["bbc_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "Paul Rapetti made the banner protest; Lincolnshire County Council was responsible for the still-undecided parking-space application.",
+      "disability_relevance": "The application concerned a disabled parking space and wheelchair access near the home for Berta Rapetti as her mobility declined.",
+      "category_relevance": "Access: the reported problem concerned delayed access to a disabled parking space and room for wheelchair access near the couple's home.",
+      "relevant_qualifications": [
+        "The council had not rejected or approved the application.",
+        "The banner was a response to the prolonged wait.",
+        "The council review and recommendation were planned, not completed outcomes."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "bbc_e1", "text": "The exact BBC article reports Rapetti's 16ft banner and the 18-month wait for a decision on the disabled parking space.", "source_location": "BBC introduction"},
+        {"evidence_id": "bbc_e2", "text": "It reports that the March 2025 application was still undecided at publication.", "source_location": "BBC early paragraphs"},
+        {"evidence_id": "bbc_e4", "text": "The council response says officers would review the situation and provide a recommendation so a decision could be made.", "source_location": "BBC council response"}
+      ],
+      "source_provenance": {
+        "status": "EXACT_ORIGINAL_VERIFIED_FROM_PRESERVED_EVIDENCE",
+        "prior_capture_sha256": "ad2df12b16e3714ff295171760a12b33c99792b78f7371b72e005bd7090981e8",
+        "note": "The completed two-article diagnostic directly retrieved the canonical BBC page with HTTP 200 on 2026-11-01. The current web retrieval tool could not reopen it; the exact-article evidence and capture hash were preserved and were not replaced by a mirror."
+      }
+    },
+    {
+      "case_id": "druk_dpo_funding",
+      "source_name": "Disability Rights UK",
+      "article_title": "Paid Commission for DPOs | Contribute to sector-changing research on DPO Funding",
+      "source_url": "https://www.disabilityrightsuk.org/news/paid-commission-dpos-contribute-sector-changing-research-dpo-funding",
+      "publication_date": "2026-10-29",
+      "category": "Activism",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "two_verified_facts": [
+        {
+          "fact_id": "druk_fact_1",
+          "statement": "Trust for London, Disability Rights UK and Braw Data are collaborating on a UK-wide research project mapping funding to the disability sector.",
+          "actor": "Trust for London, Disability Rights UK and Braw Data",
+          "factual_status": ["ONGOING"],
+          "qualifications": ["The source supports joint collaboration and does not identify Disability Rights UK or another partner as the sole project leader."],
+          "evidence_refs": ["druk_e1"]
+        },
+        {
+          "fact_id": "druk_fact_2",
+          "statement": "Disabled People's Organisations are invited to complete a 30-minute online form about their classification and funding sources and are offered £50 for 30 minutes of their time.",
+          "actor": "Disabled People's Organisations",
+          "factual_status": ["ONGOING", "PLANNED"],
+          "qualifications": ["The payment offer is for the specified 30-minute form; it does not establish that funding justice has improved."],
+          "evidence_refs": ["druk_e3"]
+        }
+      ],
+      "actor_and_collaborator_identity": "Trust for London, Disability Rights UK and Braw Data are the three collaborating partners; DPOs are invited participants.",
+      "disability_relevance": "The research concerns funding to the disability sector and participation by Disabled People's Organisations.",
+      "category_relevance": "Activism: the partners state that the research is intended to support campaigners promoting funding justice for DPOs and led-by-and-for organisations; that purpose is intended, not an achieved outcome.",
+      "relevant_qualifications": [
+        "Do not assign sole leadership to one collaborating partner.",
+        "The intended support for funding-justice campaigning is an attributed purpose, not an achieved improvement.",
+        "The publisher's phrase 'sector-changing' is promotional wording, not an independently established result.",
+        "The funding tool and DPO map are future outputs."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "druk_e1", "text": "The publisher page names Trust for London, Disability Rights UK and Braw Data as collaborators on UK-wide research mapping funding to the disability sector.", "source_location": "DRUK project description"},
+        {"evidence_id": "druk_e2", "text": "The partners state that the project is intended to support campaigners promoting funding justice for DPOs and led-by-and-for organisations.", "source_location": "DRUK stated purpose"},
+        {"evidence_id": "druk_e3", "text": "The page invites DPOs to complete a 30-minute form about classification and funding sources and offers £50 for 30 minutes.", "source_location": "DRUK participation invitation"}
+      ],
+      "source_provenance": {
+        "status": "EXACT_ORIGINAL_VERIFIED",
+        "note": "The canonical publisher page was re-opened successfully on 2026-11-01 and displayed the title, publication date, three collaborators, intended campaigning purpose and £50/30-minute participation terms."
+      }
+    }
+  ]
+}

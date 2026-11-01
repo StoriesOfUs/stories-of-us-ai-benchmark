@@ -1,0 +1,32 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-model-manifest-v01",
+  "checked_at_utc": "2026-11-01T17:00:00Z",
+  "model": {
+    "model_key": "PHI",
+    "display_name": "Microsoft Phi-4-mini-instruct",
+    "official_upstream": "microsoft/Phi-4-mini-instruct",
+    "official_upstream_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+    "official_licence": "MIT",
+    "official_access": "PUBLIC_UNGATED_NO_AUTHENTICATION_REQUIRED",
+    "parameters": "3.8B",
+    "architecture": "Phi3ForCausalLM / dense decoder-only Transformer",
+    "context_length": 131072,
+    "gguf_repository": "bartowski/microsoft_Phi-4-mini-instruct-GGUF",
+    "gguf_revision": "7ff82c2aaa4dde30121698a973765f39be5288c0",
+    "gguf_base_model": "microsoft/Phi-4-mini-instruct",
+    "gguf_conversion": "llama.cpp b4792 with imatrix quantisation; no fine-tune, ablation or behavioural alteration identified",
+    "format": "GGUF",
+    "quantisation": "Q4_K_M",
+    "filename": "microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+    "size_bytes": 2491874688,
+    "sha256": "01999f17c39cc3074afae5e9c539bc82d45f2dd7faa3917c66cbef76fce8c0c2",
+    "download_url": "https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF/resolve/7ff82c2aaa4dde30121698a973765f39be5288c0/microsoft_Phi-4-mini-instruct-Q4_K_M.gguf",
+    "chat_template": "<|system|>{system_prompt}<|end|><|user|>{prompt}<|end|><|assistant|>",
+    "chat_template_source": "Official Microsoft model card and selected GGUF model card",
+    "cpu_runtime": "Pinned llama.cpp llama-cli with embedded Jinja chat template",
+    "access_status": "PASS",
+    "resource_note": "The 2.492 GB model is comparable in file size to the prior Q4_K_M Qwen files. Sequential execution on the same 15 GiB standard CPU runner is expected to be feasible; measured memory and time are required from the actual run."
+  },
+  "llama_cpp_revision": "792fcf4e7501972b595d3aeeb85153f9926f6aef",
+  "financial_status": "ZERO_ADDITIONAL_COST_ONLY"
+}
