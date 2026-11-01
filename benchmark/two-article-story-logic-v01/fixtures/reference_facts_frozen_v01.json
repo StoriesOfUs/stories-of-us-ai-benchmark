@@ -1,0 +1,66 @@
+{
+  "schema_version": "stories-of-us-two-article-story-logic-independent-reference-facts-v01",
+  "frozen_at_utc": "2026-11-01T16:20:00Z",
+  "prepared_by": "fresh-context independent reference-fact reviewer",
+  "prepared_before_qwen_generation": true,
+  "cases": [
+    {
+      "case_id": "bbc_disabled_bay",
+      "facts": [
+        {
+          "fact_id": "hf1",
+          "statement": "Paul Rapetti installed a 16ft banner outside his Lincoln home in frustration over an 18-month wait for a decision on a disabled parking space for his wife Berta, who was terminally ill with a brain tumour.",
+          "actor": "Paul Rapetti",
+          "action": "Installed a banner protesting the prolonged wait.",
+          "status": ["COMPLETED", "ONGOING"],
+          "qualifications": ["He applied in March 2025, and the application remained undecided when the article was published."],
+          "evidence_ids": ["bbc_e1", "bbc_e2"]
+        },
+        {
+          "fact_id": "hf2",
+          "statement": "Lincolnshire County Council's highways executive member said officers would review the situation and provide a recommendation so a decision could be made.",
+          "actor": "Lincolnshire County Council's highways executive member",
+          "action": "Announced a planned review and recommendation.",
+          "status": ["PLANNED"],
+          "qualifications": ["The statement was not an approval or rejection of the disabled-parking-space application."],
+          "evidence_ids": ["bbc_e4"]
+        }
+      ],
+      "relationship": {
+        "type": "NEW DEVELOPMENT AND ITS CONTEXT",
+        "statement": "The council's planned review and recommendation was a new development in the context of Rapetti's banner protest over an application that remained undecided after 18 months.",
+        "status": ["COMPLETED", "ONGOING", "PLANNED"],
+        "evidence_ids": ["bbc_e1", "bbc_e2", "bbc_e4"]
+      }
+    },
+    {
+      "case_id": "druk_dpo_funding",
+      "facts": [
+        {
+          "fact_id": "hf1",
+          "statement": "Trust for London, Disability Rights UK and Braw Data are collaborating on a UK-wide research project mapping funding to the disability sector.",
+          "actor": "Trust for London, Disability Rights UK and Braw Data",
+          "action": "Are collaborating on disability-sector funding research.",
+          "status": ["ONGOING"],
+          "qualifications": ["The evidence supports joint collaboration and does not identify any one partner as the project's sole leader."],
+          "evidence_ids": ["druk_e1"]
+        },
+        {
+          "fact_id": "hf2",
+          "statement": "DPOs are invited to complete a 30-minute online form confirming their classification and funding sources and are offered £50 for 30 minutes.",
+          "actor": "Disabled People's Organisations",
+          "action": "Are invited to provide paid research participation through an online form.",
+          "status": ["ONGOING"],
+          "qualifications": ["The invitation and payment terms do not establish that funding justice has improved or that the proposed funding tool and DPO map have been delivered."],
+          "evidence_ids": ["druk_e2", "druk_e3", "druk_e4"]
+        }
+      ],
+      "relationship": {
+        "type": "COLLABORATION AND PARTICIPATION",
+        "statement": "The three organisations' collaborative funding-research project includes paid participation by DPOs through the specified £50, 30-minute online form.",
+        "status": ["ONGOING"],
+        "evidence_ids": ["druk_e1", "druk_e3"]
+      }
+    }
+  ]
+}

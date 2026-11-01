@@ -1,0 +1,29 @@
+{
+  "schema_version": "stories-of-us-two-article-story-logic-config-v01",
+  "qwen": {
+    "model_id": "qwen3-4b-q4-k-m",
+    "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+    "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "seed": 42,
+    "context_size": 4096,
+    "summary_max_tokens": 128,
+    "selection_max_tokens": 768,
+    "author_temperature": 0.2,
+    "selection_temperature": 0.0
+  },
+  "deberta": {
+    "model_id": "cross-encoder/nli-deberta-v3-small",
+    "revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+    "input_limit": 512,
+    "entailment_threshold": 0.5,
+    "entailment_margin": 0.3,
+    "repetitions": 3,
+    "threshold_recalibrated": false
+  },
+  "evaluation": {
+    "expected_case_count": 2,
+    "expected_summary_count": 6,
+    "conditions": ["A_VERIFIED_FACTS_ONLY", "B_VERIFIED_FACTS_PLUS_LOGIC", "C_AUTOMATIC_FACTS_PLUS_LOGIC"],
+    "rewrites_allowed": 0
+  }
+}
