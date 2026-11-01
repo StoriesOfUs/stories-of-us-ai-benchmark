@@ -1,0 +1,58 @@
+{
+  "schema_version": "stories-of-us-facts-first-reference-facts-v01",
+  "frozen_at_utc": "2026-11-01T00:00:00Z",
+  "use_boundary": "Human-prepared evaluation references. These records must not be included in automatic fact-selection or authoring prompts.",
+  "cases": [
+    {
+      "case_id": "fresh_tech_xbox_toggle_hold",
+      "reference_facts": [
+        {
+          "rank": 1,
+          "statement": "XBOX Wire reports that toggle hold is coming to the Xbox Elite Wireless Controller Series 2 and Xbox Adaptive Controller, with an accessibility use for players who may need alternatives to simultaneous button presses.",
+          "acceptable_evidence_ids": ["x1", "x3"],
+          "factual_status": ["FUTURE_EXPECTED", "ATTRIBUTED_VIEW"]
+        },
+        {
+          "rank": 2,
+          "statement": "When enabled, toggle hold lets one controller button remain held after a single press.",
+          "acceptable_evidence_ids": ["x2"],
+          "factual_status": ["FUTURE_EXPECTED", "FUNCTION_DESCRIBED"]
+        }
+      ]
+    },
+    {
+      "case_id": "fresh_arts_dao_dis_place",
+      "reference_facts": [
+        {
+          "rank": 1,
+          "statement": "Disability Arts Online announces dis_place, a planned digital gallery intended to reduce access barriers and platform disabled, D/deaf and neurodivergent artists.",
+          "acceptable_evidence_ids": ["d1"],
+          "factual_status": ["FACT_COMPLETED", "PLAN_INTENDED", "ASPIRATION_DESIRED"]
+        },
+        {
+          "rank": 2,
+          "statement": "The soft launch partnership with MIMA was scheduled to reimagine selected Towards New Worlds works for online audiences from May to December 2025.",
+          "acceptable_evidence_ids": ["d2", "d3"],
+          "factual_status": ["FACT_COMPLETED", "PLAN_INTENDED", "FUTURE_EXPECTED"]
+        }
+      ]
+    },
+    {
+      "case_id": "fresh_arts_australian_museum_unfinished_business",
+      "reference_facts": [
+        {
+          "rank": 1,
+          "statement": "Australian Museum reports that Unfinished Business opened and shares first-person experiences of Aboriginal and Torres Strait Islander people with disability.",
+          "acceptable_evidence_ids": ["a1"],
+          "factual_status": ["FACT_COMPLETED"]
+        },
+        {
+          "rank": 2,
+          "statement": "The exhibition presents stories from 30 people and was created by Belinda Mason with Dieter and Liam Knierim in collaboration with the First Peoples Disability Network.",
+          "acceptable_evidence_ids": ["a2", "a3"],
+          "factual_status": ["FACT_COMPLETED"]
+        }
+      ]
+    }
+  ]
+}

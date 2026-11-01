@@ -1,0 +1,197 @@
+{
+  "schema_version": "stories-of-us-facts-first-cases-v01",
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "frozen_at_utc": "2026-11-01T00:00:00Z",
+  "source_check_date": "2026-11-01",
+  "protected_curated_examples_used": false,
+  "cases": [
+    {
+      "case_id": "fresh_tech_xbox_toggle_hold",
+      "evaluation_group": "new_frozen_holdout",
+      "complexity": "straightforward_factual_feature",
+      "article_id": "xbox-wire-2024-08-toggle-hold",
+      "source_url": "https://news.xbox.com/en-us/2024/08/28/xbox-august-update-discord/",
+      "article_title": "The Xbox August Update Is Rolling Out with Updates to Cloud Gaming, Consoles, PC Gaming, and Accessories",
+      "publication_date": "2024-08-28",
+      "source_name": "XBOX Wire",
+      "category": "Tech",
+      "country": "United States",
+      "region": "North America",
+      "disability_connection": "The controller feature is presented as useful for players who may need an alternative to pressing multiple buttons simultaneously.",
+      "evidence": [
+        {
+          "evidence_id": "x1",
+          "text": "XBOX Wire reports that toggle hold is coming to the Xbox Elite Wireless Controller Series 2 and the Xbox Adaptive Controller.",
+          "factual_status": ["FUTURE_EXPECTED"],
+          "source_locations": ["article section: Xbox Accessories; paragraph beginning Two new customization options"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "x2",
+          "text": "When enabled, toggle hold lets a controller button remain held after the player presses it once.",
+          "factual_status": ["FUTURE_EXPECTED", "FUNCTION_DESCRIBED"],
+          "source_locations": ["article section: Xbox Accessories; toggle hold explanation"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "x3",
+          "text": "The article says the feature is useful for accessibility when a player may need to press multiple buttons simultaneously.",
+          "factual_status": ["ATTRIBUTED_VIEW"],
+          "source_locations": ["article section: Xbox Accessories; accessibility sentence"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "x4",
+          "text": "The same update also introduces a controller shortcut for turning off a connected device.",
+          "factual_status": ["FUTURE_EXPECTED"],
+          "source_locations": ["article section: Xbox Accessories; device shortcut paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        }
+      ],
+      "negative_probes": [
+        {
+          "probe_id": "x_neg_achievement",
+          "claim": "Toggle hold has already removed controller barriers for disabled players.",
+          "reference": "FLAG",
+          "reason": "The source describes a forthcoming feature and does not establish this achieved outcome."
+        },
+        {
+          "probe_id": "x_neg_function",
+          "claim": "Toggle hold automatically presses several controller buttons at the same time.",
+          "reference": "FLAG",
+          "reason": "The source says one button can remain held after one press; it does not describe automatic multi-button pressing."
+        }
+      ]
+    },
+    {
+      "case_id": "fresh_arts_dao_dis_place",
+      "evaluation_group": "new_frozen_holdout",
+      "complexity": "plan_aim_and_future_schedule",
+      "article_id": "dao-2025-04-dis-place",
+      "source_url": "https://disabilityarts.online/magazine/news/disability-arts-online-announces-innovative-digital-gallery-space/",
+      "article_title": "Disability Arts Online announces innovative digital gallery space",
+      "publication_date": "2025-04-17",
+      "source_name": "Disability Arts Online",
+      "category": "Arts",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "disability_connection": "The announced gallery is intended to platform work by disabled, D/deaf and neurodivergent artists and reduce access barriers to exhibitions.",
+      "evidence": [
+        {
+          "evidence_id": "d1",
+          "text": "Disability Arts Online announces dis_place, a planned digital gallery intended to reduce exhibition access barriers and platform disabled, D/deaf and neurodivergent artists.",
+          "factual_status": ["FACT_COMPLETED", "PLAN_INTENDED", "ASPIRATION_DESIRED"],
+          "source_locations": ["opening paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "d2",
+          "text": "For the soft launch, Disability Arts Online has partnered with Middlesbrough Institute of Modern Art to present Towards New Worlds online.",
+          "factual_status": ["FACT_COMPLETED", "PLAN_INTENDED"],
+          "source_locations": ["second paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "d3",
+          "text": "Selected works from Towards New Worlds were scheduled to be reimagined for online audiences from 21 May to 19 December 2025.",
+          "factual_status": ["FUTURE_EXPECTED", "PLAN_INTENDED"],
+          "source_locations": ["second paragraph and exhibition details"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "d4",
+          "text": "Nathalie Boobis was appointed as Disability Arts Online's first in-house curator and was due to lead dis_place.",
+          "factual_status": ["FACT_COMPLETED", "FUTURE_EXPECTED"],
+          "source_locations": ["opening paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "d5",
+          "text": "The gallery project was developed with digital agency Surface Impression, community consultation and funding from Arts Council England.",
+          "factual_status": ["FACT_COMPLETED"],
+          "source_locations": ["development and funding paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        }
+      ],
+      "negative_probes": [
+        {
+          "probe_id": "d_neg_outcome",
+          "claim": "dis_place has removed access barriers from disability arts exhibitions.",
+          "reference": "FLAG",
+          "reason": "The article describes the intended purpose of an announced gallery, not a demonstrated outcome."
+        },
+        {
+          "probe_id": "d_neg_actor",
+          "claim": "Arts Council England leads dis_place and curates Towards New Worlds.",
+          "reference": "FLAG",
+          "reason": "Arts Council England funded the project; the source assigns different roles to Disability Arts Online, MIMA and named curators."
+        }
+      ]
+    },
+    {
+      "case_id": "fresh_arts_australian_museum_unfinished_business",
+      "evaluation_group": "new_frozen_holdout",
+      "complexity": "multiple_actors_and_attribution",
+      "article_id": "australian-museum-2025-10-unfinished-business",
+      "source_url": "https://australian.museum/about/organisation/media-centre/first-nations-photography-exhibition/",
+      "article_title": "Powerful, accessible First Nations photography exhibition opens at the Australian Museum",
+      "publication_date": "2025-10-30",
+      "source_name": "Australian Museum",
+      "category": "Arts",
+      "country": "Australia",
+      "region": "Oceania",
+      "disability_connection": "The exhibition shares first-person experiences of Aboriginal and Torres Strait Islander people with disability.",
+      "evidence": [
+        {
+          "evidence_id": "a1",
+          "text": "Australian Museum reports that Unfinished Business opened at the museum and shares first-person experiences of Aboriginal and Torres Strait Islander people with disability.",
+          "factual_status": ["FACT_COMPLETED"],
+          "source_locations": ["opening paragraphs"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "a2",
+          "text": "The exhibition presents images and stories from 30 Aboriginal and Torres Strait Islander people with disability from remote, regional and urban communities.",
+          "factual_status": ["FACT_COMPLETED"],
+          "source_locations": ["opening summary and second paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "a3",
+          "text": "Belinda Mason created the exhibition with Dieter and Liam Knierim, in collaboration with the First Peoples Disability Network.",
+          "factual_status": ["FACT_COMPLETED"],
+          "source_locations": ["second paragraph"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "a4",
+          "text": "Working with Vision Australia and Expression Australia, the museum included tactile panels, audio descriptions, Auslan interpretation and large-print materials.",
+          "factual_status": ["FACT_COMPLETED"],
+          "source_locations": ["Setting new standards in museum accessibility section"],
+          "evidence_kind": "verified_paraphrase"
+        },
+        {
+          "evidence_id": "a5",
+          "text": "Uncle John Baxter created a new installation about inadequate disability support systems for the Australian Museum exhibition.",
+          "factual_status": ["FACT_COMPLETED"],
+          "source_locations": ["Confronting the reality of disability support section"],
+          "evidence_kind": "verified_paraphrase"
+        }
+      ],
+      "negative_probes": [
+        {
+          "probe_id": "a_neg_number",
+          "claim": "The exhibition presents stories from 300 Aboriginal and Torres Strait Islander people with disability.",
+          "reference": "FLAG",
+          "reason": "The verified number is 30, not 300."
+        },
+        {
+          "probe_id": "a_neg_leadership",
+          "claim": "Vision Australia created and leads Unfinished Business.",
+          "reference": "FLAG",
+          "reason": "The source assigns creation to Belinda Mason with Dieter and Liam Knierim, in collaboration with FPDN; Vision Australia supported accessibility."
+        }
+      ]
+    }
+  ]
+}

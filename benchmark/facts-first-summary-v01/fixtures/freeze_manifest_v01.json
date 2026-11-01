@@ -1,0 +1,17 @@
+{
+  "schema_version": "stories-of-us-facts-first-freeze-manifest-v01",
+  "frozen_at_utc": "2026-11-01T00:00:00Z",
+  "holdout_used_for_prompt_tuning": false,
+  "human_reference_facts_supplied_to_models": false,
+  "files": {
+    "fixtures/cases_frozen_v01.json": "e7e9094ee4fee8471946630d31278c2171db6446f8eced0b1bead85ac8e1bd2b",
+    "fixtures/reference_facts_frozen_v01.json": "15558e1899a6b3a93cff8068114d8caf291fd2a57afb7be5b6ec6c31842af75f",
+    "fixtures/experiment_config_v01.json": "04861b68289063c068af686acdcfa17237dc95495a613699e894df291c15bc16",
+    "fixtures/deberta_model_manifest_v01.json": "8c514fac1e21d6fadb2d7cae1f9b41315a2e0355bbf280e092e0bcbd728cfa3d"
+  },
+  "case_ids": [
+    "fresh_tech_xbox_toggle_hold",
+    "fresh_arts_dao_dis_place",
+    "fresh_arts_australian_museum_unfinished_business"
+  ]
+}

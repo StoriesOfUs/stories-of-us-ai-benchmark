@@ -1,0 +1,42 @@
+{
+  "schema_version": "stories-of-us-facts-first-config-v01",
+  "qwen": {
+    "model_id": "qwen3-4b-q4-k-m",
+    "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+    "filename": "Qwen3-4B-Q4_K_M.gguf",
+    "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "llama_cpp_revision": "792fcf4e7501972b595d3aeeb85153f9926f6aef",
+    "seed": 42,
+    "context_size": 4096,
+    "selection_temperature": 0.0,
+    "author_temperature": 0.4,
+    "rewrite_temperature": 0.2,
+    "selection_max_tokens": 650,
+    "summary_max_tokens": 180,
+    "maximum_rewrites_per_summary": 1
+  },
+  "deberta": {
+    "model_id": "cross-encoder/nli-deberta-v3-small",
+    "revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+    "entailment_threshold": 0.5,
+    "entailment_margin": 0.3,
+    "repetitions": 3,
+    "input_limit": 512,
+    "threshold_recalibration": false
+  },
+  "evidence_preparation": {
+    "maximum_added_passages": 2,
+    "minimum_added_candidate_score": 2,
+    "claim_text_as_evidence_prohibited": true,
+    "generated_facts_prohibited": true
+  },
+  "evaluation": {
+    "expected_case_count": 3,
+    "minimum_specialist_categories": 2,
+    "negative_probe_count": 6,
+    "reference_facts_not_prompted": true,
+    "maximum_cloud_dispatches": 2,
+    "maximum_job_minutes": 45,
+    "additional_cost_gbp": 0
+  }
+}
