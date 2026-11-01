@@ -1,0 +1,181 @@
+name: Manual three-model simple prompt V01
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stories-of-us-manual-three-model-simple-prompt-v01
+  cancel-in-progress: false
+
+jobs:
+  three-model-simple-prompt:
+    name: three-model-simple-prompt-v01
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      LLAMA_CPP_REVISION: 792fcf4e7501972b595d3aeeb85153f9926f6aef
+      MODEL_A_FILENAME: Qwen3-4B-Q4_K_M.gguf
+      MODEL_A_URL: https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf
+      MODEL_A_SHA256: 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5
+      MODEL_B_FILENAME: Qwen3-4B-Instruct-2507-Q4_K_M.gguf
+      MODEL_B_URL: https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/a06e946bb6b655725eafa393f4a9745d460374c9/Qwen3-4B-Instruct-2507-Q4_K_M.gguf
+      MODEL_B_SHA256: 3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597
+      PACKAGE_DIR: benchmark/three-model-simple-prompt-v01
+      RESULT_DIR: benchmark/results/three-model-simple-prompt-v01
+    steps:
+      - name: Check out benchmark files
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Validate frozen public-safe package
+        id: validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RESULT_DIR"
+          PYTHONPYCACHEPREFIX="$RUNNER_TEMP/pycache" python3 -m py_compile \
+            "$PACKAGE_DIR/code/run_simple_comparison.py" \
+            "$PACKAGE_DIR/code/aggregate_results.py" \
+            "$PACKAGE_DIR/code/validate_public_package.py" \
+            "$PACKAGE_DIR/tests/test_simple_comparison.py"
+          PYTHONPYCACHEPREFIX="$RUNNER_TEMP/pycache" python3 -m unittest discover \
+            -s "$PACKAGE_DIR/tests" -p 'test_*.py' -v
+          python3 "$PACKAGE_DIR/code/validate_public_package.py" \
+            | tee "$RESULT_DIR/package_validation_v01.json"
+
+      - name: Build pinned llama.cpp CPU runtime
+        id: build
+        if: steps.validation.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --filter=blob:none --no-checkout https://github.com/ggml-org/llama.cpp.git "$RUNNER_TEMP/llama.cpp"
+          git -C "$RUNNER_TEMP/llama.cpp" checkout --detach "$LLAMA_CPP_REVISION"
+          cmake -S "$RUNNER_TEMP/llama.cpp" -B "$RUNNER_TEMP/llama.cpp/build" \
+            -DGGML_NATIVE=OFF -DGGML_OPENMP=ON -DLLAMA_CURL=OFF -DCMAKE_BUILD_TYPE=Release
+          cmake --build "$RUNNER_TEMP/llama.cpp/build" --config Release -j2 --target llama-cli
+
+      - name: Run Model A current Qwen3 4B
+        id: model_a
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/models" "$RESULT_DIR"
+          trap 'rm -f "$RUNNER_TEMP/models/$MODEL_A_FILENAME"' EXIT
+          curl --fail --location --retry 2 --max-time 900 \
+            --output "$RUNNER_TEMP/models/$MODEL_A_FILENAME" "$MODEL_A_URL"
+          echo "$MODEL_A_SHA256  $RUNNER_TEMP/models/$MODEL_A_FILENAME" | sha256sum --check --strict
+          sha256sum "$RUNNER_TEMP/models/$MODEL_A_FILENAME" > "$RESULT_DIR/model_a_file_hash.txt"
+          python3 "$PACKAGE_DIR/code/run_simple_comparison.py" \
+            --model-key A \
+            --llama-binary "$RUNNER_TEMP/llama.cpp/build/bin/llama-cli" \
+            --model-file "$RUNNER_TEMP/models/$MODEL_A_FILENAME" \
+            --model-manifest "$PACKAGE_DIR/fixtures/model_access_manifest_v01.json" \
+            --packets "$PACKAGE_DIR/fixtures/article_packets_frozen_v01.json" \
+            --output "$RESULT_DIR/model_a_results_v01.json" \
+            --timeout-seconds 240
+
+      - name: Run Model B updated Qwen3 4B Instruct 2507
+        id: model_b
+        if: always() && steps.build.outcome == 'success'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/models" "$RESULT_DIR"
+          trap 'rm -f "$RUNNER_TEMP/models/$MODEL_B_FILENAME"' EXIT
+          curl --fail --location --retry 2 --max-time 900 \
+            --output "$RUNNER_TEMP/models/$MODEL_B_FILENAME" "$MODEL_B_URL"
+          echo "$MODEL_B_SHA256  $RUNNER_TEMP/models/$MODEL_B_FILENAME" | sha256sum --check --strict
+          sha256sum "$RUNNER_TEMP/models/$MODEL_B_FILENAME" > "$RESULT_DIR/model_b_file_hash.txt"
+          python3 "$PACKAGE_DIR/code/run_simple_comparison.py" \
+            --model-key B \
+            --llama-binary "$RUNNER_TEMP/llama.cpp/build/bin/llama-cli" \
+            --model-file "$RUNNER_TEMP/models/$MODEL_B_FILENAME" \
+            --model-manifest "$PACKAGE_DIR/fixtures/model_access_manifest_v01.json" \
+            --packets "$PACKAGE_DIR/fixtures/article_packets_frozen_v01.json" \
+            --output "$RESULT_DIR/model_b_results_v01.json" \
+            --timeout-seconds 240
+
+      - name: Aggregate six intended slots
+        id: aggregate
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p "$RESULT_DIR"
+          python3 "$PACKAGE_DIR/code/aggregate_results.py" \
+            --model-a "$RESULT_DIR/model_a_results_v01.json" \
+            --model-b "$RESULT_DIR/model_b_results_v01.json" \
+            --blocked-c "$PACKAGE_DIR/fixtures/model_c_blocked_slots_v01.json" \
+            --output "$RESULT_DIR/combined_results_v01.json"
+
+      - name: Preserve bounded execution evidence
+        if: always()
+        env:
+          VALIDATION_OUTCOME: ${{ steps.validation.outcome }}
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+          MODEL_A_OUTCOME: ${{ steps.model_a.outcome }}
+          MODEL_B_OUTCOME: ${{ steps.model_b.outcome }}
+          AGGREGATE_OUTCOME: ${{ steps.aggregate.outcome }}
+        shell: bash
+        run: |
+          mkdir -p "$RESULT_DIR"
+          python3 - <<'PY'
+          import json, os, pathlib, platform
+          target = pathlib.Path(os.environ["RESULT_DIR"]) / "execution_manifest_v01.json"
+          target.write_text(json.dumps({
+              "schema_version": "stories-of-us-three-model-simple-prompt-execution-manifest-v01",
+              "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+              "runner": platform.platform(),
+              "steps": {
+                  "validation": os.environ.get("VALIDATION_OUTCOME", "unknown"),
+                  "build": os.environ.get("BUILD_OUTCOME", "unknown"),
+                  "model_a": os.environ.get("MODEL_A_OUTCOME", "unknown"),
+                  "model_b": os.environ.get("MODEL_B_OUTCOME", "unknown"),
+                  "aggregate": os.environ.get("AGGREGATE_OUTCOME", "unknown")
+              },
+              "model_c": "BLOCKED_MODEL_ACCESS_REQUIRES_SEPARATE_OWNER_AUTHORISATION",
+              "manual_dispatch_only": True,
+              "additional_cost_gbp": 0,
+              "operational_readiness": "NOT_AUTHORISED"
+          }, indent=2) + "\n", encoding="utf-8")
+          PY
+          du -sh "$RESULT_DIR" "$RUNNER_TEMP/llama.cpp" "$RUNNER_TEMP/models" 2>/dev/null \
+            > "$RESULT_DIR/storage.txt" || true
+          lscpu > "$RESULT_DIR/runner_cpu.txt" 2>/dev/null || true
+          free -h > "$RESULT_DIR/runner_memory.txt" 2>/dev/null || true
+
+      - name: Upload public-safe results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: experimental-three-model-simple-prompt-v01-results
+          path: |
+            benchmark/results/three-model-simple-prompt-v01/combined_results_v01.json
+            benchmark/results/three-model-simple-prompt-v01/model_a_results_v01.json
+            benchmark/results/three-model-simple-prompt-v01/model_b_results_v01.json
+            benchmark/results/three-model-simple-prompt-v01/model_a_file_hash.txt
+            benchmark/results/three-model-simple-prompt-v01/model_b_file_hash.txt
+            benchmark/results/three-model-simple-prompt-v01/execution_manifest_v01.json
+            benchmark/results/three-model-simple-prompt-v01/package_validation_v01.json
+            benchmark/results/three-model-simple-prompt-v01/storage.txt
+            benchmark/results/three-model-simple-prompt-v01/runner_cpu.txt
+            benchmark/results/three-model-simple-prompt-v01/runner_memory.txt
+          retention-days: 7
+          if-no-files-found: warn
+
+      - name: Preserve real failure status for authorised Qwen paths
+        if: always()
+        env:
+          MODEL_A_OUTCOME: ${{ steps.model_a.outcome }}
+          MODEL_B_OUTCOME: ${{ steps.model_b.outcome }}
+        shell: bash
+        run: |
+          test "$MODEL_A_OUTCOME" = success
+          test "$MODEL_B_OUTCOME" = success

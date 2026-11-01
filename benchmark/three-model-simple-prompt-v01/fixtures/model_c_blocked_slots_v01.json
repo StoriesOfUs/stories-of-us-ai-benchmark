@@ -1,0 +1,30 @@
+{
+  "schema_version": "stories-of-us-three-model-simple-prompt-blocked-slots-v01",
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "model_key": "C",
+  "model_display_name": "Gemma 3 4B instruction-tuned QAT Q4_0",
+  "blocker": "BLOCKED — MODEL ACCESS REQUIRES SEPARATE OWNER AUTHORISATION",
+  "reason": "Google's official Gemma GGUF repository is manually gated and an unauthenticated request returns HTTP 401 GatedRepo. The owner did not authorise licence acceptance, credentials or a substitute model.",
+  "results": [
+    {
+      "case_id": "bbc_disabled_bay",
+      "source_name": "BBC News",
+      "model_key": "C",
+      "model_display_name": "Gemma 3 4B instruction-tuned QAT Q4_0",
+      "execution_status": "BLOCKED_MODEL_ACCESS",
+      "failure_reason": "SEPARATE_OWNER_LICENCE_AND_AUTHENTICATION_AUTHORISATION_REQUIRED",
+      "text": "",
+      "editorial_review_status": "NO_OUTPUT_TO_REVIEW"
+    },
+    {
+      "case_id": "druk_dpo_funding",
+      "source_name": "Disability Rights UK",
+      "model_key": "C",
+      "model_display_name": "Gemma 3 4B instruction-tuned QAT Q4_0",
+      "execution_status": "BLOCKED_MODEL_ACCESS",
+      "failure_reason": "SEPARATE_OWNER_LICENCE_AND_AUTHENTICATION_AUTHORISATION_REQUIRED",
+      "text": "",
+      "editorial_review_status": "NO_OUTPUT_TO_REVIEW"
+    }
+  ]
+}
