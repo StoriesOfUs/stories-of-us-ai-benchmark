@@ -48,6 +48,29 @@ class FactsFirstTests(unittest.TestCase):
                                "source_location": "location"} for i in (1, 2)]}
         self.assertFalse(module.validate_selection(payload, case)["valid"])
 
+    def test_status_mismatch_is_preserved_and_normalised_from_evidence(self):
+        case = self.cases[0]
+        payload = {"facts": [
+            {"fact_id": f"f{i}", "statement": case["evidence"][i-1]["text"], "actor": "actor", "action": "action",
+             "object": "object", "factual_status": ["FACT_COMPLETED"], "attribution": "NONE",
+             "time_context": "publication", "evidence_ids": [f"x{i}"],
+             "supporting_excerpt": case["evidence"][i-1]["text"], "source_location": "article"}
+            for i in (1, 2)
+        ]}
+        result = module.validate_selection(payload, case)
+        self.assertTrue(result["valid"])
+        self.assertEqual(result["facts"][0]["model_reported_factual_status"], ["FACT_COMPLETED"])
+        self.assertEqual(result["facts"][0]["factual_status"], ["FUTURE_EXPECTED"])
+        self.assertTrue(result["facts"][0]["factual_status_normalised_from_evidence"])
+
+    def test_ambiguous_evidence_adds_existing_context(self):
+        case = self.cases[2]
+        prepared = module.prepare_evidence(case, case["evidence"][1]["text"], ["a2"],
+                                           maximum_added_passages=2, minimum_candidate_score=2)
+        self.assertEqual(prepared["status"], "SELF_CONTAINED")
+        self.assertGreater(len(prepared["prepared_evidence_ids"]), 1)
+        self.assertEqual(prepared["added_context"][0]["selection_reason"], "AUTOMATIC_AMBIGUOUS_REFERENCE_CONTEXT")
+
     def test_v04_structure_and_disability_guard(self):
         case = self.cases[0]
         good = ("XBOX Wire reports a forthcoming controller option presented as useful for accessibility. "

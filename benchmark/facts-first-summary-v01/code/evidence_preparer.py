@@ -144,11 +144,39 @@ def prepare_evidence(
                 "matched_named_tokens": details["matched_named_tokens"],
             })
 
+        # When a single selected passage begins with an ambiguous reference, add the
+        # strongest existing context passage even when all claim words already occur in
+        # the selected passage. This retains the proven provenance boundary while making
+        # the evidence self-contained for "the exhibition/project/device" references.
+        ambiguity = has_ambiguous_reference(original_text)
+        if ambiguity and len(original) == 1 and not added_rows and maximum_added_passages > 0:
+            original_material = material_tokens(original_text)
+            claim_named = named_tokens(claim_text)
+            contextual = []
+            for row in candidate_rows:
+                candidate_material = material_tokens(row["text"])
+                shared = original_material & candidate_material
+                named_shared = claim_named & candidate_material
+                context_score = len(shared) + 2 * len(named_shared) + len(shared & CONTEXT_NOUNS)
+                contextual.append((context_score, row))
+            contextual.sort(key=lambda item: (-item[0], item[1]["evidence_id"]))
+            if contextual and contextual[0][0] >= minimum_candidate_score:
+                score, row = contextual[0]
+                added_rows.append(row)
+                additions.append({
+                    "evidence_id": row["evidence_id"],
+                    "source_locations": list(row.get("source_locations", [])),
+                    "status": row.get("status"),
+                    "selection_reason": "AUTOMATIC_AMBIGUOUS_REFERENCE_CONTEXT",
+                    "score": score,
+                    "matched_unresolved_tokens": [],
+                    "matched_named_tokens": sorted(claim_named & material_tokens(row["text"])),
+                })
+
         # Context comes first so later pronouns and definite descriptions have an antecedent.
         prepared_rows = added_rows + original
         prepared_ids = [row["evidence_id"] for row in prepared_rows]
         prepared_text = " ".join(row["text"].strip() for row in prepared_rows)
-        ambiguity = has_ambiguous_reference(original_text)
         unresolved: list[str] = []
         if ambiguity and len(original) == 1 and not added_rows:
             unresolved.append("Original evidence contains a context-dependent reference with no qualifying passage selected.")

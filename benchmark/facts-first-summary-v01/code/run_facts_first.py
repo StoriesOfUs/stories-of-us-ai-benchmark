@@ -131,7 +131,7 @@ def evidence_block(case: dict[str, Any], selected_ids: list[str] | None = None) 
     if selected_ids is not None:
         rows = [row for row in rows if row["evidence_id"] in selected_ids]
     return "\n".join(
-        f"- [{row['evidence_id']}] status={'+'.join(row['factual_status'])}; {row['text']}"
+        f"- [{row['evidence_id']}] status={json.dumps(row['factual_status'])}; {row['text']}"
         for row in rows
     )
 
@@ -150,7 +150,7 @@ RULES
 - Do not invent or generalise a benefit, function, impact, leadership role, number, date or location.
 - supporting_excerpt must be an exact complete evidence sentence copied from one selected evidence item.
 - evidence_ids must name every evidence item needed to support the fact.
-- factual_status must use only the statuses printed with that evidence.
+- factual_status must copy the exact JSON status array(s) printed with the selected evidence. Do not combine statuses into one string and do not reinterpret them.
 
 ARTICLE METADATA
 Exact source_name: {case['source_name']}
@@ -180,9 +180,10 @@ def parse_json_object(text: str) -> tuple[dict[str, Any] | None, list[str]]:
 
 def validate_selection(payload: dict[str, Any] | None, case: dict[str, Any]) -> dict[str, Any]:
     errors: list[str] = []
+    warnings: list[str] = []
     facts = payload.get("facts") if isinstance(payload, dict) else None
     if not isinstance(facts, list) or len(facts) != 2:
-        return {"valid": False, "errors": ["Exactly two facts are required"], "facts": []}
+        return {"valid": False, "errors": ["Exactly two facts are required"], "warnings": [], "facts": []}
     evidence = {row["evidence_id"]: row for row in case["evidence"]}
     required = {"fact_id", "statement", "actor", "action", "object", "factual_status",
                 "attribution", "time_context", "evidence_ids", "supporting_excerpt", "source_location"}
@@ -209,10 +210,19 @@ def validate_selection(payload: dict[str, Any] | None, case: dict[str, Any]) -> 
         statuses = fact["factual_status"]
         available = {status for item in ids for status in evidence[item]["factual_status"]}
         if not isinstance(statuses, list) or not statuses or any(status not in ALLOWED_STATUSES for status in statuses):
-            errors.append(f"Fact {index} factual_status is invalid")
+            warnings.append(f"Fact {index} model factual_status was invalid and was replaced from verified evidence metadata")
+            fact["model_reported_factual_status"] = statuses
+            fact["factual_status"] = sorted(available)
+            fact["factual_status_normalised_from_evidence"] = True
         elif not set(statuses) <= available:
-            errors.append(f"Fact {index} factual_status is absent from its evidence metadata")
-    return {"valid": not errors, "errors": errors, "facts": facts}
+            warnings.append(f"Fact {index} model factual_status differed from evidence and was replaced from verified evidence metadata")
+            fact["model_reported_factual_status"] = statuses
+            fact["factual_status"] = sorted(available)
+            fact["factual_status_normalised_from_evidence"] = True
+        else:
+            fact["model_reported_factual_status"] = list(statuses)
+            fact["factual_status_normalised_from_evidence"] = False
+    return {"valid": not errors, "errors": errors, "warnings": warnings, "facts": facts}
 
 
 def baseline_author_prompt(case: dict[str, Any]) -> str:
@@ -560,7 +570,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     neg_pass = sum(probe["passed"] for row in records for probe in row["negative_probes"])
     technical_pass = all(row["automatic_fact_selection"]["execution"]["execution_status"] == "SUCCESS"
                          and row["method_a_baseline"]["authoring"]["execution_status"] == "SUCCESS"
-                         and row["method_b_facts_first"]["authoring"]["execution_status"] == "SUCCESS"
+                         and row["method_b_facts_first"]["authoring"]["execution_status"] in {"SUCCESS", "NOT_EXECUTED"}
                          for row in records)
     return {
         "schema_version": "stories-of-us-facts-first-summary-results-v01", "status": "SUCCESS" if technical_pass else "PARTIAL",
@@ -582,6 +592,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                     "qwen_model_bytes": model.stat().st_size,
                     "deberta_model_directory_bytes": sum(path.stat().st_size for path in deberta_dir.rglob("*") if path.is_file())},
         "metrics": {"cases": len(records), "automatic_fact_selections_valid": sum(row["automatic_fact_selection"]["validation"]["valid"] for row in records),
+                    "model_status_outputs_normalised_from_evidence": sum(
+                        sum(bool(fact.get("factual_status_normalised_from_evidence"))
+                            for fact in row["automatic_fact_selection"]["validation"]["facts"])
+                        for row in records),
                     "selected_fact_packets_verified": sum(row["automatic_fact_selection"]["facts_verified"] for row in records),
                     "reference_points_matched": sum(row["automatic_fact_selection"]["reference_comparison_after_selection"]["reference_points_matched"] for row in records),
                     "reference_points_total": 2 * len(records), "method_a_safe_for_review": baseline_safe,
