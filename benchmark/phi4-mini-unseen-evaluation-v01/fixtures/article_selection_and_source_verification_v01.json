@@ -1,0 +1,64 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-unseen-selection-verification-v01",
+  "evaluation_reference_date": "2026-11-02",
+  "fresh_http_attempt_budget": 60,
+  "counted_attempts": 35,
+  "counting_method": "Conservative count of individual web search queries and page-open operations used for discovery and verification, including three earlier direct-open attempts. Cached find operations were not counted as fresh retrievals. Redirects internal to the retrieval service are not separately observable; the total remains below the authorised ceiling with substantial margin.",
+  "history_recovery_window_used": false,
+  "selection_status": "PASS",
+  "distinct_publishers": 5,
+  "categories": ["Access", "Tech", "Activism", "Arts", "History"],
+  "cases": [
+    {
+      "case_id": "access_dns_conference_lift",
+      "category": "Access",
+      "publisher": "Disability News Service",
+      "original_url_verified": true,
+      "publication_date_verified": "2026-10-08",
+      "source_content_adequate": true,
+      "eligibility_note": "A recent original report centred on a physical access failure affecting powered-wheelchair users; specialist Access takes precedence over the publisher site's broader activism section.",
+      "duplicate_or_same_event_found": false
+    },
+    {
+      "case_id": "tech_abc_smart_glasses",
+      "category": "Tech",
+      "publisher": "ABC News",
+      "original_url_verified": true,
+      "publication_date_verified": "2026-10-13",
+      "source_content_adequate": true,
+      "eligibility_note": "A recent original report on AI smart-glasses functions used by blind and deaf people and the qualified policy debate around them.",
+      "duplicate_or_same_event_found": false
+    },
+    {
+      "case_id": "activism_aci_rights_rally",
+      "category": "Activism",
+      "publisher": "Alliance Center for Independence",
+      "original_url_verified": true,
+      "publication_date_verified": "2026-10-09",
+      "source_content_adequate": true,
+      "eligibility_note": "A recent first-party report of a disability-rights rally and civic advocacy; publisher participation is explicitly qualified in the packet.",
+      "duplicate_or_same_event_found": false
+    },
+    {
+      "case_id": "arts_pg_textures_of_being",
+      "category": "Arts",
+      "publisher": "Pittsburgh Post-Gazette",
+      "original_url_verified": true,
+      "publication_date_verified": "2026-10-06",
+      "source_content_adequate": true,
+      "eligibility_note": "A recent original arts report on a contemporary craft exhibition featuring work by 14 disabled artists.",
+      "duplicate_or_same_event_found": false
+    },
+    {
+      "case_id": "history_ha_disability_history_month",
+      "category": "History",
+      "publisher": "Historical Association",
+      "original_url_verified": true,
+      "publication_date_verified": "2026-10-25",
+      "source_content_adequate": true,
+      "eligibility_note": "A current original association article announcing the 2026 Disability History Month theme and disability-history resources; no History recovery window was needed.",
+      "duplicate_or_same_event_found": false
+    }
+  ],
+  "public_data_status": "Only concise original paraphrases, source links and bounded evidence references are retained; complete article text is not included."
+}

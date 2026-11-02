@@ -1,0 +1,218 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-unseen-article-packets-v01",
+  "frozen_at_utc": "2026-11-02T14:39:14Z",
+  "evaluation_reference_date": "2026-11-02",
+  "history_recovery_window_used": false,
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT APPROVED FOR PUBLICATION",
+  "writing_instruction": "Using only the verified information below, write two short, natural sentences (maximum 50 words).\nBegin with the exact publisher name, explain the main development and its disability connection, then add one important detail. Preserve what actually happened versus what is only planned or intended. Invent nothing.",
+  "packet_preparation": "ASSISTED_MANUAL: Codex used read-only web retrieval to locate candidates, manually checked original-publisher evidence, selected and paraphrased two material facts, and checked Category/geography and previous-use status before freezing. This experiment evaluates the writer given verified packets; it does not demonstrate autonomous discovery or evidence preparation.",
+  "cases": [
+    {
+      "case_id": "access_dns_conference_lift",
+      "source_name": "Disability News Service",
+      "article_title": "Access failures at Tory conference leave wheelchair-user suspended in mid-air for more than an hour",
+      "source_url": "https://www.disabilitynewsservice.com/access-failures-at-tory-conference-leave-wheelchair-user-suspended-in-mid-air-for-more-than-an-hour/",
+      "publication_date": "2026-10-08",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "two_verified_facts": [
+        {
+          "fact_id": "access_e1_fact",
+          "statement": "Accessible-transport expert and powered-wheelchair user Clive Gilbert was left suspended for more than an hour on an unsafe platform lift at Birmingham's ICC during the Conservative conference and suffered a long graze to his arm.",
+          "actor": "Clive Gilbert",
+          "factual_status": ["COMPLETED"],
+          "qualifications": ["The incident occurred while Gilbert was travelling to his own conference fringe event."],
+          "evidence_refs": ["access_e1", "access_e2"]
+        },
+        {
+          "fact_id": "access_e3_fact",
+          "statement": "The event room was reached by eight steps and the platform lift, and the Conservative party had not alerted Policy Connect to the room's access difficulties.",
+          "actor": "The Conservative party and Policy Connect",
+          "factual_status": ["COMPLETED"],
+          "qualifications": ["Four other disabled people also needed the lift; the source describes the room as appearing to be the venue's least accessible."],
+          "evidence_refs": ["access_e3", "access_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "Clive Gilbert is head of accessible transport at Policy Connect and uses a powered wheelchair; the Conservative party booking system and Birmingham ICC venue are distinct actors in the reported access failure.",
+      "disability_relevance": "A powered-wheelchair user and four other disabled attendees faced unsafe and delayed access to a conference room.",
+      "category_relevance": "Access: the central reported development is a physical access failure involving steps and an unsafe platform lift.",
+      "relevant_qualifications": [
+        "The source article's own site section is Activism and Campaigning, but the current Stories Of Us specialist Category is Access because the story's principal substance is an access barrier.",
+        "Do not generalise the incident into an outcome beyond the reported conference access failure."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "access_e1", "text": "The original article reports that Gilbert was suspended in mid-air on an unsafe platform lift for more than an hour.", "source_location": "Original publisher, opening paragraph"},
+        {"evidence_id": "access_e2", "text": "It identifies Gilbert as a powered-wheelchair user and reports a long graze to his arm while using the lift.", "source_location": "Original publisher, early paragraphs"},
+        {"evidence_id": "access_e3", "text": "The room was beyond eight steps and accessible through the platform lift; four other disabled attendees needed it.", "source_location": "Original publisher, access account"},
+        {"evidence_id": "access_e4", "text": "Policy Connect had not been warned about the room's access challenges when the fringe event was booked.", "source_location": "Original publisher, venue account"}
+      ],
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical publisher page."}
+    },
+    {
+      "case_id": "tech_abc_smart_glasses",
+      "source_name": "ABC News",
+      "article_title": "Smart glasses are giving blind and deaf people more independence",
+      "source_url": "https://www.abc.net.au/news/2026-10-13/federal-politics-smart-glasses-benefits-disability-community/107244416",
+      "publication_date": "2026-10-13",
+      "category": "Tech",
+      "country": "Australia",
+      "region": "Oceania",
+      "two_verified_facts": [
+        {
+          "fact_id": "tech_e1_fact",
+          "statement": "Blind disability advocate Chris Edwards uses AI smart glasses to read a recipe, check washing-machine settings and obtain street directions, while deaf town planner Matt Henderson uses smart glasses for live captions in conversations and meetings.",
+          "actor": "Chris Edwards and Matt Henderson",
+          "factual_status": ["ONGOING", "ATTRIBUTED OPINION"],
+          "qualifications": ["These are the two men's reported uses and experiences, not a claim that every device or user has the same functions or benefits."],
+          "evidence_refs": ["tech_e1", "tech_e2"]
+        },
+        {
+          "fact_id": "tech_e3_fact",
+          "statement": "Disability advocates feared that stigma and proposed restrictions on smart glasses could overlook disability uses; a draft Greens import-ban proposal included a possible permission for devices sold as disability aids.",
+          "actor": "Disability advocates and the Australian Greens",
+          "factual_status": ["ATTRIBUTED OPINION", "PLANNED"],
+          "qualifications": ["The import ban was proposed, not enacted, and the disability-aid provision was described as a carve-out in draft legislation."],
+          "evidence_refs": ["tech_e3", "tech_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "Chris Edwards is blind and works at Vision Australia; Matt Henderson is deaf and works as a town planner; advocates and legislators are separately attributed in the policy debate.",
+      "disability_relevance": "The article reports how blind and deaf people use smart glasses and their concerns about restrictions that may overlook disability uses.",
+      "category_relevance": "Tech: the main subject is the disability use of AI-enabled smart-glasses technology.",
+      "relevant_qualifications": [
+        "Personal benefits must be attributed to the named users.",
+        "The Greens proposal and its disability-aid carve-out were not completed law."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "tech_e1", "text": "Edwards reports using the glasses for recipes, appliance settings and street directions.", "source_location": "Original publisher, user account"},
+        {"evidence_id": "tech_e2", "text": "Henderson reports that his glasses provide live captions during conversations and meetings.", "source_location": "Original publisher, user account"},
+        {"evidence_id": "tech_e3", "text": "The article reports disability-community concern that stigma and restrictions could obscure disability uses.", "source_location": "Original publisher, policy discussion"},
+        {"evidence_id": "tech_e4", "text": "The proposed Greens import ban included a draft route permitting imports for sale as disability aids.", "source_location": "Original publisher, proposed legislation"}
+      ],
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical publisher page."}
+    },
+    {
+      "case_id": "activism_aci_rights_rally",
+      "source_name": "Alliance Center for Independence",
+      "article_title": "Advocates, Supporters, and Community Leaders Gather for Disability Rights Rally",
+      "source_url": "https://www.adacil.org/latest-updates/disability-rights-rally-2026",
+      "publication_date": "2026-10-09",
+      "category": "Activism",
+      "country": "United States",
+      "region": "North America",
+      "two_verified_facts": [
+        {
+          "fact_id": "activism_e1_fact",
+          "statement": "More than 100 advocates, supporters and community leaders gathered at the Trenton War Memorial on 5 October for REV UP New Jersey's disability-rights rally, Our Pride. Our Power. Our Community.",
+          "actor": "REV UP New Jersey rally participants",
+          "factual_status": ["COMPLETED"],
+          "qualifications": ["The publisher describes the group as more than 100; it does not provide an exact count."],
+          "evidence_refs": ["activism_e1"]
+        },
+        {
+          "fact_id": "activism_e2_fact",
+          "statement": "Participants defended disabled people's civil rights, community living, services and civic participation, and the rally recognised 5 October as Disability Rights Day in New Jersey through a governor's proclamation.",
+          "actor": "Rally participants and the Governor of New Jersey",
+          "factual_status": ["COMPLETED", "ATTRIBUTED OPINION"],
+          "qualifications": ["The threats and rights concerns are presented by the organising publisher and rally participants."],
+          "evidence_refs": ["activism_e2", "activism_e3"]
+        }
+      ],
+      "actor_and_collaborator_identity": "The Alliance Center for Independence published the account; REV UP New Jersey convened the named rally with advocates, supporters and community leaders.",
+      "disability_relevance": "The event focused on disabled people's civil rights, community living, services, choice and civic participation.",
+      "category_relevance": "Activism: the article reports collective disability-rights advocacy and voter participation.",
+      "relevant_qualifications": [
+        "The publisher is an event participant and advocacy organisation; advocacy positions should remain attributed.",
+        "Do not convert stated threats or policy concerns into independently established outcomes."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "activism_e1", "text": "The original page reports more than 100 people at the 5 October Trenton rally.", "source_location": "Original publisher, opening paragraph"},
+        {"evidence_id": "activism_e2", "text": "The publisher says participants defended civil rights, services, community living, choice and civic participation for disabled people.", "source_location": "Original publisher, rally account"},
+        {"evidence_id": "activism_e3", "text": "The rally recognised 5 October as Disability Rights Day in New Jersey through the governor's proclamation.", "source_location": "Original publisher, rally account"}
+      ],
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical publisher page."}
+    },
+    {
+      "case_id": "arts_pg_textures_of_being",
+      "source_name": "Pittsburgh Post-Gazette",
+      "article_title": "‘It’s about caring’: Contemporary Craft exhibition centers on disabled artists",
+      "source_url": "https://post-gazette.com/ae/art-architecture/2026/10/06/contemporary-craft-disability-textures-of-being-exhibition/stories/202609280051",
+      "publication_date": "2026-10-06",
+      "category": "Arts",
+      "country": "United States",
+      "region": "North America",
+      "two_verified_facts": [
+        {
+          "fact_id": "arts_e1_fact",
+          "statement": "Contemporary Craft's Textures of Being exhibition brings together work by 14 disabled artists whose pieces draw on disabled bodies and lived experience rather than treating disability as something to overcome, hide or correct.",
+          "actor": "Contemporary Craft and 14 disabled artists",
+          "factual_status": ["ONGOING"],
+          "qualifications": ["The exhibition opened on 25 September 2026 and was scheduled to run through 16 January."],
+          "evidence_refs": ["arts_e1", "arts_e2"]
+        },
+        {
+          "fact_id": "arts_e3_fact",
+          "statement": "Artist Dominic Quagliozzi, who has cystic fibrosis and received a double lung transplant, made Blue Morpho partly from hospital gowns and moving blankets to connect the artwork with medical experience.",
+          "actor": "Dominic Quagliozzi",
+          "factual_status": ["COMPLETED", "ATTRIBUTED OPINION"],
+          "qualifications": ["The article also profiles other disabled artists, but this is one concrete example from the exhibition."],
+          "evidence_refs": ["arts_e3"]
+        }
+      ],
+      "actor_and_collaborator_identity": "Contemporary Craft presents the exhibition; 14 disabled artists contribute work; Dominic Quagliozzi is one featured artist.",
+      "disability_relevance": "The exhibition centres work by disabled artists and explores bodies, illness, medicine, culture and disability from their perspectives.",
+      "category_relevance": "Arts: the story reports a contemporary craft exhibition and the practices and works of disabled artists.",
+      "relevant_qualifications": [
+        "The exhibition was ongoing at publication and its closing date was prospective.",
+        "Do not imply that Quagliozzi's example represents every participating artist."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "arts_e1", "text": "The original article reports that Textures of Being opened on 25 September and was scheduled through 16 January.", "source_location": "Original publisher, exhibition introduction"},
+        {"evidence_id": "arts_e2", "text": "It says the show contains work by 14 disabled artists drawing directly from disabled bodies and experiences.", "source_location": "Original publisher, exhibition description"},
+        {"evidence_id": "arts_e3", "text": "It describes Quagliozzi's Blue Morpho as partly made from hospital gowns and moving blankets and connects these materials to his cystic fibrosis and transplant history.", "source_location": "Original publisher, artist profile"}
+      ],
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical publisher page and indexed original-publisher article text."}
+    },
+    {
+      "case_id": "history_ha_disability_history_month",
+      "source_name": "Historical Association",
+      "article_title": "Disability History Month 2026",
+      "source_url": "https://www.history.org.uk/secondary/news/4584/disability-history-month-2026",
+      "publication_date": "2026-10-25",
+      "category": "History",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "two_verified_facts": [
+        {
+          "fact_id": "history_e1_fact",
+          "statement": "The Historical Association presents Disability History Month 2026, running from 19 November to 19 December, under the theme Disability, Politics and Democracy.",
+          "actor": "Historical Association and UK Disability History Month",
+          "factual_status": ["COMPLETED", "PLANNED"],
+          "qualifications": ["The month had not begun when the 25 October article was published."],
+          "evidence_refs": ["history_e1"]
+        },
+        {
+          "fact_id": "history_e2_fact",
+          "statement": "The association brings together disability-history resources and makes an entire disability-themed issue of The Historian openly available, including work on how historians write disability history and on people who challenged past exclusion.",
+          "actor": "Historical Association",
+          "factual_status": ["COMPLETED", "ONGOING"],
+          "qualifications": ["The article says disabled people have frequently been omitted from historical records and that historians are increasingly recovering these histories."],
+          "evidence_refs": ["history_e2", "history_e3"]
+        }
+      ],
+      "actor_and_collaborator_identity": "The Historical Association publishes the article and resource collection; UK Disability History Month supplies the announced theme and dates.",
+      "disability_relevance": "The article addresses disabled people's historical marginalisation and the recovery and teaching of disability history.",
+      "category_relevance": "History: the main development is a disability-history theme and an accompanying historical resource collection.",
+      "relevant_qualifications": [
+        "The event dates were future dates at publication.",
+        "The statement about people being written out of history is the publisher's historical framing; do not convert it into a quantified finding."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "history_e1", "text": "The original page gives the dates 19 November–19 December 2026 and the theme Disability, Politics and Democracy.", "source_location": "Original publisher, heading and introduction"},
+        {"evidence_id": "history_e2", "text": "The association says it has assembled resources exploring disability history and opened a whole disability-themed issue of The Historian.", "source_location": "Original publisher, resources section"},
+        {"evidence_id": "history_e3", "text": "The issue includes work on writing disability history, people who challenged exclusion and past attitudes to disability.", "source_location": "Original publisher, resources description"}
+      ],
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of indexed content from the canonical publisher URL."}
+    }
+  ]
+}

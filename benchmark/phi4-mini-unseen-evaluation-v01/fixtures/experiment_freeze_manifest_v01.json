@@ -1,0 +1,24 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-unseen-experiment-freeze-v01",
+  "frozen_at_utc": "2026-11-02T14:39:14Z",
+  "generation_started": false,
+  "freeze_scope": "Five article identities and specialist Categories, exact evidence packets and writing instruction, previous-use checks, unchanged Phi model/runtime manifest, generation settings inherited by code, and editorial evaluation criteria.",
+  "frozen_file_sha256": {
+    "fixtures/article_packets_frozen_v01.json": "67665421426ad7587c695dcefddf1822ad3fd0f4945aee9b2a2a88df4af4f4b8",
+    "fixtures/phi_model_manifest_v01.json": "e54e8161a36579ff6d5a627079ee7567f7236c2e387d24c6bada92d070215a45",
+    "fixtures/previous_use_check_v01.json": "4906e89d67e56dc1c5d0cb6df594f82edd627e8f0ec254ccbd59daf433c4a185",
+    "fixtures/article_selection_and_source_verification_v01.json": "e19a9b78b42057091fadd3202edadb27a3223c5f66da9ca6eb937bb2840d3ba0",
+    "fixtures/evaluation_criteria_v01.json": "da1da34e6a3b7b57c4424f0a448a138e22034272b7e1dba0def2c3edbc2221f5"
+  },
+  "unchanged_generation_settings": {
+    "seed": 42,
+    "temperature": 0.2,
+    "top_k": 20,
+    "top_p": 0.8,
+    "min_p": 0,
+    "max_output_tokens": 128,
+    "context_size": 4096,
+    "chat_template_mode": "GGUF_EMBEDDED_JINJA"
+  },
+  "post_generation_change_rule": "No article replacement, packet revision, prompt change, rewrite, additional generation or best-of selection is permitted after generation starts."
+}

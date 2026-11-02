@@ -1,0 +1,29 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-unseen-evaluation-criteria-v01",
+  "frozen_at_utc": "2026-11-02T14:39:14Z",
+  "dimensions": {
+    "factual_accuracy": [
+      "Every material claim is supported by the supplied original-source evidence.",
+      "Actors and attributions are correct.",
+      "Plans and intentions are not presented as completed achievements.",
+      "Qualifications and geographic scope are preserved.",
+      "No invented consequence or materially misleading omission is introduced."
+    ],
+    "house_style_v04": [
+      "The summary normally contains exactly two succinct sentences and no more than 50 words.",
+      "Sentence one begins with the exact source_name and uses publication-time source voice.",
+      "Disability relevance and the assigned specialist Category are clear.",
+      "Sentence two adds a concrete, source-supported detail without unnecessary repetition.",
+      "The language is original, grammatical and natural UK English."
+    ],
+    "overall_editorial_verdicts": ["ACCEPT", "REVISE", "HOLD"]
+  },
+  "defect_classes": [
+    "SOURCE_OR_PACKET_INSUFFICIENCY",
+    "FACTUAL_DISTORTION_DESPITE_ADEQUATE_EVIDENCE",
+    "STYLE_OR_STRUCTURAL_FAILURE",
+    "RUNTIME_FAILURE",
+    "UNRESOLVED_REVIEW_UNCERTAINTY"
+  ],
+  "no_automatic_threshold": "No overall editorial pass threshold was invented for this five-article exploratory sample."
+}

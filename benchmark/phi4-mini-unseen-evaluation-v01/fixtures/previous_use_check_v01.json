@@ -1,0 +1,51 @@
+{
+  "schema_version": "stories-of-us-phi4-mini-unseen-previous-use-check-v01",
+  "scope": "All readable files beneath the Option C audit root except this new experiment, plus all six protected curated Category files.",
+  "meaning_of_unseen": "Unused in relevant accessible project summary experiments; no claim is made about model pretraining data.",
+  "audit_files_scanned": 3017,
+  "curated_records_checked": 528,
+  "curated_unique_urls_checked": 528,
+  "cases": [
+    {
+      "case_id": "access_dns_conference_lift",
+      "candidate_url": "https://www.disabilitynewsservice.com/access-failures-at-tory-conference-leave-wheelchair-user-suspended-in-mid-air-for-more-than-an-hour/",
+      "normalised_url": "https://disabilitynewsservice.com/access-failures-at-tory-conference-leave-wheelchair-user-suspended-in-mid-air-for-more-than-an-hour",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_project_summary_experiments": true
+    },
+    {
+      "case_id": "tech_abc_smart_glasses",
+      "candidate_url": "https://www.abc.net.au/news/2026-10-13/federal-politics-smart-glasses-benefits-disability-community/107244416",
+      "normalised_url": "https://abc.net.au/news/2026-10-13/federal-politics-smart-glasses-benefits-disability-community/107244416",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_project_summary_experiments": true
+    },
+    {
+      "case_id": "activism_aci_rights_rally",
+      "candidate_url": "https://www.adacil.org/latest-updates/disability-rights-rally-2026",
+      "normalised_url": "https://adacil.org/latest-updates/disability-rights-rally-2026",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_project_summary_experiments": true
+    },
+    {
+      "case_id": "arts_pg_textures_of_being",
+      "candidate_url": "https://post-gazette.com/ae/art-architecture/2026/10/06/contemporary-craft-disability-textures-of-being-exhibition/stories/202609280051",
+      "normalised_url": "https://post-gazette.com/ae/art-architecture/2026/10/06/contemporary-craft-disability-textures-of-being-exhibition/stories/202609280051",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_project_summary_experiments": true
+    },
+    {
+      "case_id": "history_ha_disability_history_month",
+      "candidate_url": "https://www.history.org.uk/secondary/news/4584/disability-history-month-2026",
+      "normalised_url": "https://history.org.uk/secondary/news/4584/disability-history-month-2026",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_project_summary_experiments": true
+    }
+  ],
+  "status": "PASS"
+}
