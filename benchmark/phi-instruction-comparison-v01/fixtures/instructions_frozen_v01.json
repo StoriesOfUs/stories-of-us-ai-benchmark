@@ -1,0 +1,8 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-instructions-v01",
+  "frozen_at_utc": "2026-11-02T18:00:00Z",
+  "old_instruction": "Using only the verified information below, write two short, natural sentences (maximum 50 words).\nBegin with the exact publisher name, explain the main development and its disability connection, then add one important detail. Preserve what actually happened versus what is only planned or intended. Invent nothing.",
+  "revised_instruction": "Using only the verified article information, write a brief, clear summary in plain British English. Begin with the exact publisher name, explain the article’s main focus or development and its connection to disabled people. Include a supporting detail where it helps explain the story.\n\nUse natural, neutral language. Preserve who is involved, the scope of any claims, and the distinction between what has happened and what is proposed or intended. Do not invent facts or implications.\n\nAim for about 50 words; use fewer when sufficient and no more than 70. Normally use two sentences, with a third when it improves clarity. Avoid padding and preserve important qualifications when shortening.",
+  "status": "FROZEN_BEFORE_GENERATION",
+  "change_boundary": "Only the writing instruction changes between paired conditions; model, runtime, evidence packet and generation settings remain identical."
+}

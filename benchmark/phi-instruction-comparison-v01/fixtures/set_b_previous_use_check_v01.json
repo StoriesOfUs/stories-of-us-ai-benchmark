@@ -1,0 +1,51 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-previous-use-check-v01",
+  "scope": "All readable files beneath the Option C audit root except this experiment, plus all six protected curated Category files.",
+  "meaning_of_new": "Unused in accessible prior project experiments and absent from the protected corpus; no claim is made about model pretraining data.",
+  "audit_files_scanned": 3062,
+  "curated_records_checked": 528,
+  "curated_unique_urls_checked": 528,
+  "cases": [
+    {
+      "case_id": "access_aop_nhs_app",
+      "candidate_url": "https://www.aop.org.uk/ot/news/2026/10/30/accessibility-failings-in-nhs-app-appg-report-says",
+      "normalised_url": "https://aop.org.uk/ot/news/2026/10/30/accessibility-failings-in-nhs-app-appg-report-says",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_accessible_project_summary_experiments": true
+    },
+    {
+      "case_id": "tech_mit_magnetic_sensors",
+      "candidate_url": "https://news.mit.edu/2026/magnetic-sensors-track-muscle-movement-better-prosthetic-limb-control-1029",
+      "normalised_url": "https://news.mit.edu/2026/magnetic-sensors-track-muscle-movement-better-prosthetic-limb-control-1029",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_accessible_project_summary_experiments": true
+    },
+    {
+      "case_id": "activism_star_kenya_charter",
+      "candidate_url": "https://www.the-star.co.ke/news/2026-10-30-government-plans-disability-rights-charter-to-boost-inclusion",
+      "normalised_url": "https://the-star.co.ke/news/2026-10-30-government-plans-disability-rights-charter-to-boost-inclusion",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_accessible_project_summary_experiments": true
+    },
+    {
+      "case_id": "arts_dtnext_tattva",
+      "candidate_url": "https://www.dtnext.in/amp/story/news/chennai/a-canvas-for-every-talent",
+      "normalised_url": "https://dtnext.in/amp/story/news/chennai/a-canvas-for-every-talent",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_accessible_project_summary_experiments": true
+    },
+    {
+      "case_id": "history_manchester_alf_morris",
+      "candidate_url": "https://www.staffnet.manchester.ac.uk/news/display/?id=34457",
+      "normalised_url": "https://staffnet.manchester.ac.uk/news/display?id=34457",
+      "prior_experiment_matches": [],
+      "in_protected_curated_corpus": false,
+      "unused_in_accessible_project_summary_experiments": true
+    }
+  ],
+  "status": "PASS"
+}

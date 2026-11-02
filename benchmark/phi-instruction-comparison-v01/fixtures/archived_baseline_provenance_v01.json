@@ -1,0 +1,16 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-archived-baseline-provenance-v01",
+  "source_experiment": "option_c_phi4mini_unseen_evaluation_v01",
+  "github_repository": "StoriesOfUs/stories-of-us-ai-benchmark",
+  "github_run_id": 41464206660,
+  "github_commit": "5a0ef4689cb72a05e78fa07a957bd0787de1ec3f",
+  "source_results_relative_path": "option_c_phi4mini_unseen_evaluation_v01/outputs/github_run_41464206660/phi_results_v01.json",
+  "copied_results_sha256": "c067e0479a6f004e946538255f99d74890964c10280f21038973c51b0ac4aca2",
+  "copied_set_a_packets_sha256": "67665421426ad7587c695dcefddf1822ad3fd0f4945aee9b2a2a88df4af4f4b8",
+  "model_manifest_sha256": "e54e8161a36579ff6d5a627079ee7567f7236c2e387d24c6bada92d070215a45",
+  "old_instruction_semantic_sha256": "70a75dd5277761b840dd398ffb948b56a6bd54b4a8d68ac599bf2103210136eb",
+  "output_count": 5,
+  "successful_output_count": 5,
+  "regeneration_permitted": false,
+  "status": "PROVENANCE_VERIFIED_ARCHIVED_BASELINE"
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-set-b-packets-v01",
+  "frozen_at_utc": "2026-11-02T18:00:00Z",
+  "evaluation_reference_date": "2026-11-02",
+  "history_recovery_window_used": false,
+  "public_label": "EXPERIMENTAL AI OUTPUT — NOT EDITORIALLY APPROVED — NOT FOR PUBLICATION",
+  "packet_preparation": "ASSISTED_MANUAL: Codex used read-only retrieval of exact original-publisher pages, checked publisher/date/content evidence, selected and paraphrased two material facts, verified Category and canonical geography, and excluded prior project use before freezing. This does not demonstrate autonomous discovery or evidence preparation.",
+  "cases": [
+    {
+      "case_id": "access_aop_nhs_app",
+      "source_name": "Optometry Today",
+      "article_title": "Accessibility failings in NHS App, APPG report says",
+      "source_url": "https://www.aop.org.uk/ot/news/2026/10/30/accessibility-failings-in-nhs-app-appg-report-says",
+      "publication_date": "2026-10-30",
+      "category": "Access",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "two_verified_facts": [
+        {
+          "fact_id": "access_b_e1_fact",
+          "statement": "An All-Party Parliamentary Group report found that the NHS App risks excluding blind and partially sighted people; among 64 survey respondents, 53 per cent rated it inaccessible or only slightly accessible and 46 per cent found it difficult or very difficult to use.",
+          "actor": "All-Party Parliamentary Group on Eye Health and Visual Impairment and survey respondents",
+          "factual_status": ["COMPLETED", "ATTRIBUTED_FINDING"],
+          "qualifications": ["The percentages describe the report's 64-person survey and must not be generalised to every NHS App user."],
+          "evidence_refs": ["access_b_e1", "access_b_e2"]
+        },
+        {
+          "fact_id": "access_b_e3_fact",
+          "statement": "The APPG called for the app to be co-developed with people with lived experience of sight loss and recommended that non-digital alternatives remain available as health services become more digital.",
+          "actor": "All-Party Parliamentary Group on Eye Health and Visual Impairment",
+          "factual_status": ["ATTRIBUTED_RECOMMENDATION", "PROPOSED"],
+          "qualifications": ["These are recommendations, not changes already implemented by the NHS."],
+          "evidence_refs": ["access_b_e3", "access_b_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "Optometry Today reports findings and recommendations from the APPG; the APPG, survey respondents, NHS England and RNIB are distinct actors.",
+      "disability_relevance": "The report concerns barriers blind and partially sighted people face when using the NHS App and accessing health information privately.",
+      "category_relevance": "Access: the central subject is access to a digital public-health service and accessible alternatives, not the underlying app technology itself.",
+      "relevant_qualifications": [
+        "Survey findings apply to a 64-person respondent group.",
+        "Recommendations for co-development, audits and non-digital options were not reported as completed changes."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "access_b_e1", "text": "The original article reports an APPG finding that the NHS App risks locking out blind and partially sighted people.", "source_location": "Original publisher, opening paragraph"},
+        {"evidence_id": "access_b_e2", "text": "It reports 53 per cent of 64 survey respondents found the app inaccessible or only slightly accessible, and 46 per cent found it difficult or very difficult to use.", "source_location": "Original publisher, survey findings"},
+        {"evidence_id": "access_b_e3", "text": "The APPG calls for NHS App accessibility improvements developed with people who have lived experience of blindness or sight loss.", "source_location": "Original publisher, recommendations"},
+        {"evidence_id": "access_b_e4", "text": "The report recommends retaining non-digital alternatives wherever health services are digitised.", "source_location": "Original publisher, recommendations"}
+      ],
+      "headline_alignment_reference": "The headline centres accessibility failures in the NHS App and attributes the assessment to an APPG report; it does not establish that every user is excluded.",
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical Optometry Today article page."}
+    },
+    {
+      "case_id": "tech_mit_magnetic_sensors",
+      "source_name": "MIT News",
+      "article_title": "Magnetic sensors track muscle movement, for better prosthetic limb control",
+      "source_url": "https://news.mit.edu/2026/magnetic-sensors-track-muscle-movement-better-prosthetic-limb-control-1029",
+      "publication_date": "2026-10-29",
+      "category": "Tech",
+      "country": "United States",
+      "region": "North America",
+      "two_verified_facts": [
+        {
+          "fact_id": "tech_b_e1_fact",
+          "statement": "MIT researchers accurately tracked muscle movement in three people with below-knee amputations using tiny magnetic beads implanted in muscles and an external sensor worn over the skin.",
+          "actor": "MIT-led research team and three study participants",
+          "factual_status": ["COMPLETED", "RESEARCH_FINDING"],
+          "qualifications": ["The human study involved three participants and measured muscle signals; it did not test participants while they wore prosthetic limbs."],
+          "evidence_refs": ["tech_b_e1", "tech_b_e2"]
+        },
+        {
+          "fact_id": "tech_b_e3_fact",
+          "statement": "In a virtual cursor-control task, the magnetic approach produced more accurate and stable control than the compared electrode measurements; the researchers are now studying control of actual prosthetic limbs.",
+          "actor": "MIT-led research team",
+          "factual_status": ["COMPLETED", "ONGOING"],
+          "qualifications": ["Better prosthetic-limb control remains a research objective; commercial development and improved walking or object manipulation were not demonstrated in this study."],
+          "evidence_refs": ["tech_b_e3", "tech_b_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "MIT researchers led the reported study with collaborators and three participants who had below-knee amputations; hoped-for prosthetic applications remain distinct from measured results.",
+      "disability_relevance": "The research is intended to improve interfaces through which people with amputations control prosthetic limbs.",
+      "category_relevance": "Tech: the article reports a magnetic sensing system and its experimental evaluation for neuroprosthetic control.",
+      "relevant_qualifications": [
+        "Participants controlled a cursor during the reported comparison and were not wearing prosthetic limbs.",
+        "The article describes actual prosthetic control as the subject of a larger ongoing study and future application."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "tech_b_e1", "text": "MIT News reports that pairs of implanted magnets enable external sensors to measure muscle length and movement.", "source_location": "Original publisher, technology description"},
+        {"evidence_id": "tech_b_e2", "text": "The study demonstrated measurement accuracy in three participants with below-knee amputations.", "source_location": "Original publisher, study description"},
+        {"evidence_id": "tech_b_e3", "text": "Participants used muscle signals to move a cursor, and the magnetic method gave more accurate and stable control than the compared interfaces.", "source_location": "Original publisher, experimental results"},
+        {"evidence_id": "tech_b_e4", "text": "A larger ongoing study is evaluating how well people can control prosthetic limbs using the magnetic measurements.", "source_location": "Original publisher, closing paragraph"}
+      ],
+      "headline_alignment_reference": "The headline describes better prosthetic control as the purpose or potential application; the article body limits the completed result to muscle tracking and a virtual control task.",
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical MIT News article page."}
+    },
+    {
+      "case_id": "activism_star_kenya_charter",
+      "source_name": "The Star",
+      "article_title": "Government plans disability rights charter to boost inclusion",
+      "source_url": "https://www.the-star.co.ke/news/2026-10-30-government-plans-disability-rights-charter-to-boost-inclusion",
+      "publication_date": "2026-10-30",
+      "category": "Activism",
+      "country": "Kenya",
+      "region": "East Africa",
+      "two_verified_facts": [
+        {
+          "fact_id": "activism_b_e1_fact",
+          "statement": "Kenya's government plans to introduce a disability rights charter intended to guide efforts to protect disabled people's rights and promote inclusion in public and private institutions.",
+          "actor": "Government of Kenya and Office of Diversity, Inclusion and Disability Rights",
+          "factual_status": ["PLANNED", "VERIFIED_INTENTION"],
+          "qualifications": ["The article reports a plan and intended purpose; the charter had not been introduced and its effects had not been achieved."],
+          "evidence_refs": ["activism_b_e1", "activism_b_e2"]
+        },
+        {
+          "fact_id": "activism_b_e3_fact",
+          "statement": "At a Nairobi diversity-benchmarking discussion, participants called for disability inclusion to become an organisation-wide responsibility, while officials described work to improve coordination and representation in decision-making.",
+          "actor": "Discussion participants and government officials",
+          "factual_status": ["COMPLETED", "ATTRIBUTED_VIEW", "ONGOING"],
+          "qualifications": ["Calls and expectations from participants must remain attributed and are not proof of completed institutional change."],
+          "evidence_refs": ["activism_b_e3", "activism_b_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "The Kenyan government proposes the charter; Isaac Mwaura speaks for the Office of Diversity, Inclusion and Disability Rights; other participants separately express views about institutional responsibility.",
+      "disability_relevance": "The planned charter and discussion explicitly concern the rights, accessibility, representation and inclusion of people with disabilities in Kenya.",
+      "category_relevance": "Activism: the article concerns disability-rights policy advocacy, proposed rights protections and calls for institutional action.",
+      "relevant_qualifications": [
+        "The charter is proposed, not launched or implemented.",
+        "Claims that it will strengthen rights or translate commitments into practical change are stated intentions or expectations."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "activism_b_e1", "text": "The original article says the government plans to introduce a disability rights charter.", "source_location": "Original publisher, opening paragraph"},
+        {"evidence_id": "activism_b_e2", "text": "Isaac Mwaura says the proposed charter is intended to guide equality and accessibility efforts.", "source_location": "Original publisher, early paragraphs"},
+        {"evidence_id": "activism_b_e3", "text": "Participants call for institutions to treat disability inclusion as a shared organisational responsibility.", "source_location": "Original publisher, discussion account"},
+        {"evidence_id": "activism_b_e4", "text": "Officials describe work to coordinate inclusion across government and include disabled people in programmes and decision-making.", "source_location": "Original publisher, government account"}
+      ],
+      "headline_alignment_reference": "The headline says the government plans a charter and describes its intended benefit; a summary must preserve both the planned status and attributed purpose.",
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical The Star article page."}
+    },
+    {
+      "case_id": "arts_dtnext_tattva",
+      "source_name": "DT Next",
+      "article_title": "A canvas for every talent",
+      "source_url": "https://www.dtnext.in/amp/story/news/chennai/a-canvas-for-every-talent",
+      "publication_date": "2026-10-25",
+      "category": "Arts",
+      "country": "India",
+      "region": "South Asia",
+      "two_verified_facts": [
+        {
+          "fact_id": "arts_b_e1_fact",
+          "statement": "The fifth Tattva festival was scheduled for 28 October to 1 November in Chennai, bringing together more than 270 artists with disabilities from Tamil Nadu and Kolkata for exhibitions, workshops, demonstrations and collaborative art activities.",
+          "actor": "V-Excel Educational Trust and participating artists with disabilities",
+          "factual_status": ["PLANNED"],
+          "qualifications": ["The 25 October article described the five-day festival before it began."],
+          "evidence_refs": ["arts_b_e1", "arts_b_e2"]
+        },
+        {
+          "fact_id": "arts_b_e3_fact",
+          "statement": "The programme included workshops in several art forms, a collaborative mural about disability, creativity and inclusion, live demonstrations and opportunities to buy artworks; all participating artists were to be recognised rather than ranked only through competition.",
+          "actor": "Tattva organisers and participating artists",
+          "factual_status": ["PLANNED", "ONGOING_PRACTICE"],
+          "qualifications": ["Selected works could receive awards, while the organisers also said every participant would be felicitated."],
+          "evidence_refs": ["arts_b_e3", "arts_b_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "V-Excel Educational Trust organises Tattva; more than 270 participating artists with disabilities come from Tamil Nadu and Kolkata; DT Next reports the programme.",
+      "disability_relevance": "The festival is designed as an arts platform for artists with disabilities across age groups.",
+      "category_relevance": "Arts: the central development is a visual-arts festival with exhibitions, workshops, a mural, demonstrations and an auction.",
+      "relevant_qualifications": [
+        "The festival programme was forthcoming at the article's publication time.",
+        "Do not convert organisers' claims about recognition or opportunity into measured outcomes."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "arts_b_e1", "text": "DT Next reports that Tattva's fifth edition was scheduled for 28 October to 1 November in Chennai.", "source_location": "Original publisher, opening paragraphs"},
+        {"evidence_id": "arts_b_e2", "text": "The festival was expected to bring together more than 270 artists with disabilities from Tamil Nadu and Kolkata.", "source_location": "Original publisher, opening paragraphs"},
+        {"evidence_id": "arts_b_e3", "text": "The programme included exhibitions, workshops, live demonstrations and a collaborative mural exploring disability, creativity and inclusion.", "source_location": "Original publisher, programme description"},
+        {"evidence_id": "arts_b_e4", "text": "The article says every participating artist would be recognised and selected works could also receive awards or enter an auction.", "source_location": "Original publisher, participation and award details"}
+      ],
+      "headline_alignment_reference": "The headline is broad and promotional; the article body establishes a specific forthcoming festival and must control factual detail and status.",
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical DT Next article page."}
+    },
+    {
+      "case_id": "history_manchester_alf_morris",
+      "source_name": "The University of Manchester",
+      "article_title": "Disability History Month 2026",
+      "source_url": "https://www.staffnet.manchester.ac.uk/news/display/?id=34457",
+      "publication_date": "2026-10-30",
+      "category": "History",
+      "country": "United Kingdom",
+      "region": "Northern Europe",
+      "two_verified_facts": [
+        {
+          "fact_id": "history_b_e1_fact",
+          "statement": "The University of Manchester announced that its 2026 Disability History Month programme would open with The Unfinished Act, an Alf Morris Disability Lecture honouring the pioneering Manchester MP and first Minister for Disabled People.",
+          "actor": "The University of Manchester and Alf Morris Disability Lecture organisers",
+          "factual_status": ["COMPLETED_ANNOUNCEMENT", "PLANNED_EVENT", "HISTORICAL_FACT"],
+          "qualifications": ["The lecture was scheduled for 24 November and had not taken place when the article was published."],
+          "evidence_refs": ["history_b_e1", "history_b_e2"]
+        },
+        {
+          "fact_id": "history_b_e3_fact",
+          "statement": "Kate Nash was due to deliver the lecture on building on past disability-rights progress, and Disabled People's Organisations were scheduled to present their current work during the event.",
+          "actor": "Kate Nash and participating Disabled People's Organisations",
+          "factual_status": ["PLANNED_EVENT", "VERIFIED_INTENTION"],
+          "qualifications": ["The article previews the event and does not report its completion or effects."],
+          "evidence_refs": ["history_b_e3", "history_b_e4"]
+        }
+      ],
+      "actor_and_collaborator_identity": "The University of Manchester announces the programme; Alf Morris is the historical figure being honoured; Kate Nash and participating Disabled People's Organisations were scheduled contributors.",
+      "disability_relevance": "The event links Alf Morris's disability-rights legacy with disabled people's leadership and continuing work for equality.",
+      "category_relevance": "History: the main focus is a Disability History Month lecture marking the legacy of a pioneering Minister for Disabled People and connecting past progress with current work.",
+      "relevant_qualifications": [
+        "The programme and lecture were future events at publication.",
+        "Statements about Morris's vision and legacy are historical framing; no later event outcome should be implied."
+      ],
+      "concise_supporting_evidence": [
+        {"evidence_id": "history_b_e1", "text": "The original page says Manchester's Disability History Month programme would begin with The Unfinished Act, the Alf Morris Disability Lecture.", "source_location": "Original publisher, programme introduction"},
+        {"evidence_id": "history_b_e2", "text": "It identifies Morris as a pioneering Manchester MP and the world's first Minister for Disabled People.", "source_location": "Original publisher, historical context"},
+        {"evidence_id": "history_b_e3", "text": "Kate Nash was scheduled to discuss building on past progress and creating opportunities for disabled people.", "source_location": "Original publisher, lecture preview"},
+        {"evidence_id": "history_b_e4", "text": "Disabled People's Organisations were scheduled to showcase their work during the 24 November event.", "source_location": "Original publisher, event details"}
+      ],
+      "headline_alignment_reference": "The headline names Disability History Month generally; useful body-supported detail about the Alf Morris lecture is necessary to identify the actual development.",
+      "source_provenance": {"status": "EXACT_ORIGINAL_VERIFIED", "checked_at": "2026-11-02", "method": "Read-only retrieval of the canonical University of Manchester StaffNet article page."}
+    }
+  ]
+}

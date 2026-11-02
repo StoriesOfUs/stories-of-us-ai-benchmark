@@ -1,0 +1,15 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-review-criteria-v01",
+  "frozen_at_utc": "2026-11-02T18:00:00Z",
+  "blind_review": true,
+  "verdicts": ["ACCEPT", "REVISE", "HOLD"],
+  "factual_review": ["actors and participant groups", "numbers and geography", "attribution", "completed versus proposed or intended status", "essential qualifications", "invented consequences and materially misleading omissions"],
+  "reader_usefulness": ["main story clarity", "supported disability connection", "helpful additional detail", "natural neutral language", "absence of padding or confusing compression"],
+  "headline_alignment": ["central subject and development", "actors and scope", "factual status", "body-supported qualification of broad headline wording"],
+  "headline_boundary": "Headline alignment is a supporting editorial check, not factual authority or an automatic accuracy PASS; article evidence takes precedence.",
+  "assessment_one_existing_v04": "Unchanged authoritative Summary House Style V04, including the normal two-sentence and maximum-50-word requirements and all factual safeguards.",
+  "assessment_two_experimental": "Exact revised instruction: about 50 words, fewer when sufficient, no more than 70; normally two sentences and a third when it improves clarity; supporting detail when helpful.",
+  "same_standards_for_both_conditions": true,
+  "no_automatic_threshold": true,
+  "historical_verdicts_preserved": true
+}

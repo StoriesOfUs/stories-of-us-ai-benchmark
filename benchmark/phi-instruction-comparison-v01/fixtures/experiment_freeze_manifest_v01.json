@@ -1,0 +1,57 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-freeze-v01",
+  "frozen_at_utc": "2026-11-02T18:00:00Z",
+  "generation_started": false,
+  "instructions_fixed_before_generation": true,
+  "set_a_is_familiar_diagnostic_not_unseen": true,
+  "set_b_is_new_to_accessible_project_experiments": true,
+  "model_and_settings_unchanged": true,
+  "history_recovery_window_used": false,
+  "frozen_file_sha256": {
+    "fixtures/instructions_frozen_v01.json": "fbc9b256af8b76fdfa5c5d4396f779ec2e52b983aff826fbdde4eee5bb28c57e",
+    "fixtures/set_a_article_packets_frozen_v01.json": "67665421426ad7587c695dcefddf1822ad3fd0f4945aee9b2a2a88df4af4f4b8",
+    "fixtures/set_a_archived_old_instruction_outputs_v01.json": "c067e0479a6f004e946538255f99d74890964c10280f21038973c51b0ac4aca2",
+    "fixtures/set_b_article_packets_frozen_v01.json": "254620f6e0e24f3bc9a08049730e2d6ceab65f87868c5899be0ba3127fcbc0a7",
+    "fixtures/set_b_previous_use_check_v01.json": "9a44f89da489e635532c613a1859b0165afe537c7c806dfd4a01815a308a1418",
+    "fixtures/set_b_selection_and_source_verification_v01.json": "aa5afddb378010988949d71d12d1babfd9f73ceb8f3a5d23ecab796e0c1b9867",
+    "fixtures/evaluation_criteria_frozen_v01.json": "9fc4ce3d0aaebeea8b76ad507d0c6495bd3a4a5b12492f3923b0f8289cc5e7ae",
+    "fixtures/phi_model_manifest_v01.json": "e54e8161a36579ff6d5a627079ee7567f7236c2e387d24c6bada92d070215a45"
+  },
+  "generation_settings": {
+    "seed": 42,
+    "temperature": 0.2,
+    "top_k": 20,
+    "top_p": 0.8,
+    "min_p": 0,
+    "max_output_tokens": 128,
+    "context_size": 4096
+  },
+  "planned_output_slots": [
+    "A_FAMILIAR/access_dns_conference_lift/REVISED",
+    "A_FAMILIAR/tech_abc_smart_glasses/REVISED",
+    "A_FAMILIAR/activism_aci_rights_rally/REVISED",
+    "A_FAMILIAR/arts_pg_textures_of_being/REVISED",
+    "A_FAMILIAR/history_ha_disability_history_month/REVISED",
+    "B_NEW/access_aop_nhs_app/OLD",
+    "B_NEW/access_aop_nhs_app/REVISED",
+    "B_NEW/tech_mit_magnetic_sensors/OLD",
+    "B_NEW/tech_mit_magnetic_sensors/REVISED",
+    "B_NEW/activism_star_kenya_charter/OLD",
+    "B_NEW/activism_star_kenya_charter/REVISED",
+    "B_NEW/arts_dtnext_tattva/OLD",
+    "B_NEW/arts_dtnext_tattva/REVISED",
+    "B_NEW/history_manchester_alf_morris/OLD",
+    "B_NEW/history_manchester_alf_morris/REVISED"
+  ],
+  "archived_output_slots": [
+    "A_FAMILIAR/access_dns_conference_lift/OLD_ARCHIVED",
+    "A_FAMILIAR/tech_abc_smart_glasses/OLD_ARCHIVED",
+    "A_FAMILIAR/activism_aci_rights_rally/OLD_ARCHIVED",
+    "A_FAMILIAR/arts_pg_textures_of_being/OLD_ARCHIVED",
+    "A_FAMILIAR/history_ha_disability_history_month/OLD_ARCHIVED"
+  ],
+  "planned_new_output_count": 15,
+  "planned_total_comparison_output_count": 20,
+  "no_best_of_multiple_generation": true,
+  "no_prompt_tuning_after_results": true
+}

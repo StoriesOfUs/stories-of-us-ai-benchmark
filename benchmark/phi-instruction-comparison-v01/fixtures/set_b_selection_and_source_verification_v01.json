@@ -1,0 +1,21 @@
+{
+  "schema_version": "stories-of-us-phi-instruction-comparison-set-b-selection-v01",
+  "evaluation_reference_date": "2026-11-02",
+  "selection_status": "PASS",
+  "fresh_http_attempt_budget": 60,
+  "counted_attempt_units": 38,
+  "counting_note": "Count includes search queries and explicit page opens used for discovery and verification, including one failed page-opening operation. The browsing interface did not expose any additional internal redirect count.",
+  "history_recovery_window_used": false,
+  "history_freshness_note": "The History article was published three days before the reference date; no Day-14 or final-week recovery window was invoked.",
+  "sets": {
+    "set_a": "Five familiar diagnostic packets copied byte-for-byte from the preceding Phi unseen-evaluation experiment; they are not described as unseen.",
+    "set_b": "Five URL- and event-distinct articles unused in accessible prior project experiments and absent from the 528-record protected corpus."
+  },
+  "cases": [
+    {"case_id":"access_aop_nhs_app","category":"Access","publisher":"Optometry Today","publication_date":"2026-10-30","country":"United Kingdom","region":"Northern Europe","eligibility":"VERIFIED_ELIGIBLE","source_access":"EXACT_ORIGINAL_VERIFIED","date_evidence":"Visible original-page date","previous_use":"PASS_UNUSED","event_duplicate_check":"PASS_NO_MATCH_FOUND"},
+    {"case_id":"tech_mit_magnetic_sensors","category":"Tech","publisher":"MIT News","publication_date":"2026-10-29","country":"United States","region":"North America","eligibility":"VERIFIED_ELIGIBLE","source_access":"EXACT_ORIGINAL_VERIFIED","date_evidence":"Visible original-page date","previous_use":"PASS_UNUSED","event_duplicate_check":"PASS_NO_MATCH_FOUND"},
+    {"case_id":"activism_star_kenya_charter","category":"Activism","publisher":"The Star","publication_date":"2026-10-30","country":"Kenya","region":"East Africa","eligibility":"VERIFIED_ELIGIBLE","source_access":"EXACT_ORIGINAL_VERIFIED","date_evidence":"Visible original-page timestamp","previous_use":"PASS_UNUSED","event_duplicate_check":"PASS_NO_MATCH_FOUND"},
+    {"case_id":"arts_dtnext_tattva","category":"Arts","publisher":"DT Next","publication_date":"2026-10-25","country":"India","region":"South Asia","eligibility":"VERIFIED_ELIGIBLE","source_access":"EXACT_ORIGINAL_VERIFIED","date_evidence":"Visible original-page updated date","previous_use":"PASS_UNUSED","event_duplicate_check":"PASS_NO_MATCH_FOUND"},
+    {"case_id":"history_manchester_alf_morris","category":"History","publisher":"The University of Manchester","publication_date":"2026-10-30","country":"United Kingdom","region":"Northern Europe","eligibility":"VERIFIED_ELIGIBLE","source_access":"EXACT_ORIGINAL_VERIFIED","date_evidence":"Visible original-page date","previous_use":"PASS_UNUSED","event_duplicate_check":"PASS_NO_MATCH_FOUND"}
+  ]
+}
