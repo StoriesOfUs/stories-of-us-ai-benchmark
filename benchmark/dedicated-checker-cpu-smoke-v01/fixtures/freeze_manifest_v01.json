@@ -1,0 +1,26 @@
+{
+  "schema_version": "stories-of-us-cpu-dependency-smoke-freeze-v01",
+  "frozen_at": "2026-11-06",
+  "frozen_files": {
+    "README.md": "656e182131183df73ef0d4312ef1ea26b4588a509ae4e25fe6b7e33d5f33a642",
+    "code/build_freeze_manifest_v01.py": "04f53e2aa3c444203d87f88f64b9c9e4d39e6df1b4a9868b0bc0fa00ef6896ec",
+    "code/dependency_smoke_test_v01.py": "59903fbc8f2373f63b1d2af35f823ea9c7728c1ad6dd2e6ed03a72df06f7b41a",
+    "code/lock_execution_v01.py": "8acce0e212e8f74d582886a4c5a58198422a16b51b9c7408b343dd0e6ca81341",
+    "code/record_install_state_v01.py": "022b3326318b987f0f4397c9f2a35f9d96b5474eb75bde70794ad00f257ccad7",
+    "code/smoke_controls_v01.py": "e918f4fe228feb298b70e230a0a6b788c8ae528bc7cce300590458aca85f4073",
+    "evidence/dependency_closure_audit_v01.json": "84e6a4aba64693d7fbf197f6d3889427c21febc56fd82d6b5c198b92ed99b69f",
+    "evidence/public_preflight_v01.json": "b95f2eb7d8a35d5d66fd21c7636d007fa562b87d6fd7ee8dbece480ad6cff8b6",
+    "fixtures/execution_authority_GATE_TEMPLATE_v01.json": "5f009ed5efe712e9298c0135c28f8181dcce95f2d91afb4c26c7ea8bf782e75f",
+    "fixtures/expected_versions_frozen_v01.json": "e243b0d2e7ff7f0b78245221e7eade7b3402c6a9d52a372ba86b85b22a63cf42",
+    "fixtures/requirements_cpu_wheels_frozen_v01.txt": "8e886b63b5ce63d71764d3966e40e5ed952c7baf2a2c342bfcaa16ed201cee64",
+    "fixtures/resource_limits_frozen_v01.json": "4bde5eeb5a5a902521669ee4655d71369f0b2e8aca515b28b3c3460d374e29a9",
+    "tests/test_offline_package_v01.py": "489963b7ea447d3e27228a8fd1708c2fc513479cc83ddb02a6406ae56e2ae716",
+    "workflow_draft/dedicated_checker_cpu_smoke_manual_v01.yml": "90542dffb36e030e8dffd01827c47335bee1305b2d261312c10eed2bfe4f6eb6"
+  },
+  "excluded_mutable_paths": [
+    "fixtures/execution_authority_APPROVED_v01.json",
+    "outputs/",
+    "reports/",
+    "recovery/"
+  ]
+}

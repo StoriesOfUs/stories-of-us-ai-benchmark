@@ -1,0 +1,21 @@
+{
+  "schema_version": "stories-of-us-cpu-smoke-dependency-closure-audit-v01",
+  "checked_at": "2026-11-06",
+  "target": "CPython 3.12 / Linux x86_64 / manylinux-compatible",
+  "method": "Official PyPI release JSON and official PyTorch CPU-index metadata; active Requires-Dist markers evaluated for Python 3.12/Linux with no extras.",
+  "locked_distributions": 36,
+  "active_requires_dist_entries_checked": 36,
+  "missing_dependencies": [],
+  "version_constraint_mismatches": [],
+  "source_distributions": 0,
+  "unhashed_distributions": 0,
+  "generic_pypi_torch_distribution_used": false,
+  "torch_cpu_wheel": {
+    "filename": "torch-2.15.0+cpu-cp312-cp312-manylinux_2_28_x86_64.whl",
+    "size_bytes": 209530490,
+    "sha256": "0955c7e3446326293f48af18fad67872fa31dee5a36a87690eb9e5be8b465be3",
+    "source": "https://download.pytorch.org/whl/cpu/torch-2.15.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl"
+  },
+  "compressed_wheel_bytes_total": 264554074,
+  "interpretation": "The metadata closure is complete for the frozen direct-URL/no-deps install design. Runtime compatibility and installed size still require the authorised clean-runner smoke test."
+}

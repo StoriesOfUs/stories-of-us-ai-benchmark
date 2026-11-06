@@ -1,0 +1,42 @@
+{
+  "schema_version": "stories-of-us-cpu-smoke-public-preflight-v01",
+  "checked_at": "2026-11-06",
+  "repository": {
+    "name_with_owner": "StoriesOfUs/stories-of-us-ai-benchmark",
+    "url": "https://github.com/StoriesOfUs/stories-of-us-ai-benchmark",
+    "verified_publicly_reachable_by_unauthenticated_git": true,
+    "head_before_smoke_package": "d1655502885041bf914e9058cf86ff885ffaf417"
+  },
+  "github_runner": {
+    "label": "ubuntu-latest",
+    "class": "standard public-repository GitHub-hosted runner",
+    "official_documentation_checked": "https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/choose-the-runner-for-a-job",
+    "documented_public_repository_cost": "free and unlimited for standard runners",
+    "documented_x64_resources": {
+      "cpu_cores": 4,
+      "memory_gb": 16,
+      "storage_gb": 14
+    },
+    "larger_runner_used": false,
+    "cache_action_used": false,
+    "maximum_expenditure_gbp": 0
+  },
+  "offline_validation": {
+    "python_syntax": "PASS",
+    "unit_tests": "7/7 PASS",
+    "yaml_syntax": "PASS",
+    "actionlint": "PASS",
+    "actionlint_version": "1.7.12",
+    "mock_authority_states": "PASS",
+    "symlink_and_hardlink_accounting_fixture": "PASS"
+  },
+  "scope": {
+    "dependency_installation_attempts": 1,
+    "retries": 0,
+    "model_tokenizer_downloads": 0,
+    "model_loads": 0,
+    "model_inference_computations": 0,
+    "development_cases": 0,
+    "evaluation_cases": 0
+  }
+}

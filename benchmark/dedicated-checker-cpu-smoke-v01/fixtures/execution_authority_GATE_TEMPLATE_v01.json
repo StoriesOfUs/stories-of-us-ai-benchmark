@@ -1,0 +1,12 @@
+{
+  "schema_version": "stories-of-us-cpu-smoke-execution-authority-v01",
+  "execution_authorised": false,
+  "owner_approved_cpu_wheel_installation": false,
+  "owner_approved_single_public_runner_dispatch": false,
+  "owner_approved_zero_model_downloads_and_inference": false,
+  "owner_approved_zero_retries": false,
+  "owner_approved_zero_cost": false,
+  "owner_approved_documentation_closeout": false,
+  "approved_freeze_manifest_sha256": null,
+  "note": "Template only. Live authority must be recorded separately after the freeze manifest is built and validated."
+}

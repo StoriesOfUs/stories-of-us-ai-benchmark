@@ -1,0 +1,14 @@
+{
+  "schema_version": "stories-of-us-cpu-smoke-execution-authority-v01",
+  "execution_authorised": true,
+  "owner_approved_cpu_wheel_installation": true,
+  "owner_approved_single_public_runner_dispatch": true,
+  "owner_approved_zero_model_downloads_and_inference": true,
+  "owner_approved_zero_retries": true,
+  "owner_approved_zero_cost": true,
+  "owner_approved_documentation_closeout": true,
+  "approved_freeze_manifest_sha256": "28bac3fbca231062d01d1598199846d03dda20bb451e79c1e736a03f05b612a1",
+  "owner_instruction_date": "2026-11-06",
+  "authority_source": "Direct owner instruction: Stories Of Us — Authorised CPU Dependency Smoke Test",
+  "approval_boundary": "One manual standard public GitHub CPU run, zero retries, dependency wheels only, zero model/tokenizer downloads, zero model loading/inference, £0 maximum, followed by the authorised documentation closeout."
+}

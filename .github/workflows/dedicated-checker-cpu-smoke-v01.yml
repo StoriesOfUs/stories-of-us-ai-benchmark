@@ -1,0 +1,92 @@
+name: Dedicated checker CPU dependency smoke V01 (manual, one use)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dedicated-checker-cpu-smoke-v01
+  cancel-in-progress: false
+
+jobs:
+  cpu-dependency-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PACKAGE_DIR: benchmark/dedicated-checker-cpu-smoke-v01
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      HF_DATASETS_OFFLINE: '1'
+      PYTHONNOUSERSITE: '1'
+      PIP_NO_CACHE_DIR: '1'
+    steps:
+      - name: Check out the authorised public benchmark commit
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Initialise isolated runtime paths
+        shell: bash
+        run: |
+          echo "SOU_ENV_ROOT=${RUNNER_TEMP}/sou_cpu_smoke_venv" >> "$GITHUB_ENV"
+          echo "SOU_PIP_CACHE=${RUNNER_TEMP}/sou_cpu_smoke_pip_cache" >> "$GITHUB_ENV"
+          echo "SOU_HF_HOME=${RUNNER_TEMP}/sou_cpu_smoke_hf" >> "$GITHUB_ENV"
+          echo "PIP_CACHE_DIR=${RUNNER_TEMP}/sou_cpu_smoke_pip_cache" >> "$GITHUB_ENV"
+          echo "HF_HOME=${RUNNER_TEMP}/sou_cpu_smoke_hf" >> "$GITHUB_ENV"
+
+      - name: Consume one-use authority before installation
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: python code/lock_execution_v01.py
+
+      - name: Install exact CPU wheel lock once and record pre-guard sizes
+        working-directory: ${{ env.PACKAGE_DIR }}
+        shell: bash
+        run: |
+          set +e
+          python -m venv "$SOU_ENV_ROOT"
+          venv_status=$?
+          if [ "$venv_status" -eq 0 ]; then
+            "$SOU_ENV_ROOT/bin/python" -m pip install \
+              --disable-pip-version-check \
+              --no-input \
+              --no-cache-dir \
+              --retries 0 \
+              --timeout 30 \
+              --no-deps \
+              --no-index \
+              --only-binary=:all: \
+              --require-hashes \
+              -r fixtures/requirements_cpu_wheels_frozen_v01.txt \
+              2>&1 | tee outputs/pip_install_log_v01.txt
+            install_status=${PIPESTATUS[0]}
+          else
+            install_status=$venv_status
+          fi
+          set -e
+          python code/record_install_state_v01.py --pip-exit-code "$install_status"
+
+      - name: Run dependency, import, CPU identity and final resource checks
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: |
+          "$SOU_ENV_ROOT/bin/python" code/dependency_smoke_test_v01.py
+
+      - name: Remove dependency and cache directories before artifact upload
+        if: always()
+        shell: bash
+        run: |
+          python -c 'import os, shutil; [shutil.rmtree(os.environ[name], ignore_errors=True) for name in ("SOU_ENV_ROOT", "SOU_PIP_CACHE", "SOU_HF_HOME")]'
+
+      - name: Upload concise smoke evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dedicated-checker-cpu-smoke-v01
+          path: ${{ env.PACKAGE_DIR }}/outputs/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9

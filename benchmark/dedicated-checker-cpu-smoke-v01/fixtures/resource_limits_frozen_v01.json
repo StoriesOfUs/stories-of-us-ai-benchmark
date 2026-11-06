@@ -1,0 +1,20 @@
+{
+  "schema_version": "stories-of-us-cpu-smoke-resource-limits-v01",
+  "maximum_workflow_runs": 1,
+  "maximum_run_attempt": 1,
+  "maximum_installation_attempts": 1,
+  "maximum_retries": 0,
+  "maximum_job_minutes": 15,
+  "maximum_expenditure_gbp": 0,
+  "compressed_dependency_wheels_bytes": 264554074,
+  "maximum_compressed_dependency_wheels_bytes": 1000000000,
+  "maximum_installed_environment_bytes": 3221225472,
+  "installed_environment_limit_note": "3 GiB exactly; equivalent to the V02 workflow guard of 3,145,728 KiB.",
+  "maximum_model_tokenizer_download_bytes": 0,
+  "maximum_combined_task_created_bytes": 8000000000,
+  "maximum_peak_rss_bytes": 12000000000,
+  "model_loads": 0,
+  "model_inference_computations": 0,
+  "development_cases": 0,
+  "evaluation_cases": 0
+}
