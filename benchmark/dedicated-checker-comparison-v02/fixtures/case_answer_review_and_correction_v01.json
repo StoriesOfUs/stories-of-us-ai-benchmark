@@ -1,0 +1,39 @@
+{
+  "schema_version": "stories-of-us-checker-case-answer-review-v01",
+  "status": "REVIEWED_WITH_ONE_DISCLOSED_CORRECTION_PENDING_OWNER_APPROVAL",
+  "reviewed_against": "The exact evidence supplied to the checker, applying the proposed three-label definitions and precedence.",
+  "cases_reviewed": 16,
+  "development_cases": 4,
+  "evaluation_cases": 12,
+  "unresolved_answer_ambiguities_after_correction": 0,
+  "correction": {
+    "case_id": "fresh02_aapd_revup_profile",
+    "claim_id": "F02C2",
+    "problem_in_original_proposal": "The shortened F02E2 evidence established the 2016 discrimination, former Texas participation and current Hawai‘i activity, but did not itself establish that the experience led to advocacy. The expected SUPPORTED verdict therefore exceeded the exact supplied evidence.",
+    "original_proposal_preserved": true,
+    "candidate_package_change": "F02E2 now includes the retained source's direct statement that the 2016 experience launched Matthews into advocating for an accessible democracy.",
+    "cached_source_path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_multisource_refinement_v02/rounds/round_1/article_evidence_v02.json",
+    "cached_source_sha256": "c3de32aa4ee630af662420c6ef566bf93669adbfafabf74d2c6c3b35e6aeaa72",
+    "effect_on_expected_answer": "F02C2 remains SUPPORTED, now on direct checker-facing evidence.",
+    "owner_decision_required": "Approve this disclosed evidence-packet correction as part of the frozen execution package."
+  },
+  "review_findings": [
+    {"case_id": "dev00_access_supported_control", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "dev01_access_barrier_relationship", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "dev03_enil_developed_versus_contributed", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "dev05_disabled_playwright_evidence_gap", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh01_bath_history_month_event", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh02_aapd_revup_profile", "status": "ANSWER_JUSTIFIED_AFTER_DISCLOSED_SOURCE_BACKED_EVIDENCE_CORRECTION"},
+    {"case_id": "fresh03_bug_kabut_venice", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh04_radar_key_history", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh05_utah_project_achievement", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh06_jonapwd_national_outcome", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh07_heumann_sole_attribution", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh08_het_dorp_telethon_scope", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh09_personhood_implementation_gap", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh10_tambalan_duration_gap", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh11_oral_history_interview_count_gap", "status": "ANSWER_JUSTIFIED"},
+    {"case_id": "fresh12_ipswich_trigger_event_gap", "status": "ANSWER_JUSTIFIED"}
+  ],
+  "historical_dev01_protection": "The historical dev01 exact-match failure remains unchanged."
+}

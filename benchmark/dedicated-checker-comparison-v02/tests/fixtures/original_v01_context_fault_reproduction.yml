@@ -1,0 +1,24 @@
+# Validation-only reproduction of the V01 runner-context fault.
+# The V01 launch-command YAML syntax fault is corrected here solely so that
+# actionlint can continue far enough to report the independent context fault.
+name: Dedicated checker comparison V01 context-fault reproduction
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bounded-comparison:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_DIR: benchmark/dedicated-checker-comparison-v01
+      SOU_HF_CACHE: ${{ runner.temp }}/sou_hf_cache
+      SOU_ENV_ROOT: ${{ runner.temp }}/sou_checker_venv
+      HF_HOME: ${{ runner.temp }}/sou_hf_cache
+      TRANSFORMERS_CACHE: ${{ runner.temp }}/sou_hf_cache
+    steps:
+      - name: Reproduce context validation only
+        run: |
+          "$SOU_ENV_ROOT/bin/python" code/dedicated_checker_runner_v01.py --execute

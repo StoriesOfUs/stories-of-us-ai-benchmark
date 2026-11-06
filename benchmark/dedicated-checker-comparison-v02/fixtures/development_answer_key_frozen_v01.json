@@ -1,0 +1,41 @@
+{
+  "schema_version": "stories-of-us-checker-development-answer-key-v01",
+  "status": "FROZEN_PRIVATE_SCORING_FIXTURE_NOT_MODEL_FACING",
+  "answers": {
+    "dev00_access_supported_control": {
+      "expected_whole_summary": "SUPPORTED",
+      "claim_verdicts": {
+        "D01C1": "SUPPORTED",
+        "D01C2": "SUPPORTED"
+      },
+      "reason": "Both claims are directly established by D01E1."
+    },
+    "dev01_access_barrier_relationship": {
+      "expected_whole_summary": "UNSUPPORTED",
+      "claim_verdicts": {
+        "D01C1": "SUPPORTED",
+        "D01C2": "SUPPORTED",
+        "D01C3": "UNSUPPORTED"
+      },
+      "reason": "The evidence establishes a narrower relationship: the room was beyond steps and reached through an unsafe lift; it does not establish that both the steps and a faulty lift made the room inaccessible."
+    },
+    "dev03_enil_developed_versus_contributed": {
+      "expected_whole_summary": "UNSUPPORTED",
+      "claim_verdicts": {
+        "D03C1": "UNSUPPORTED",
+        "D03C2": "SUPPORTED"
+      },
+      "reason": "Participation and contribution do not establish that ENIL developed the disability-rights perspective; ENIL's proposed approach is supported."
+    },
+    "dev05_disabled_playwright_evidence_gap": {
+      "expected_whole_summary": "INSUFFICIENT_EVIDENCE",
+      "claim_verdicts": {
+        "D05C1": "SUPPORTED",
+        "D05C2": "INSUFFICIENT_EVIDENCE",
+        "D05C3": "SUPPORTED"
+      },
+      "reason": "The supplied evidence supports the writing, directing and character claims but provides no information deciding the playwright's disability identity."
+    }
+  },
+  "historical_protection": "The historical dev01 exact-match failure remains unchanged; these are prospective frozen expectations under the proposed clarified definitions."
+}

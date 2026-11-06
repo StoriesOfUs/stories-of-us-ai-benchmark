@@ -1,0 +1,20 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-dependency-licence-inventory-v01",
+  "status": "DIRECT_PINS_FROZEN_TRANSITIVE_RESOLUTION_PENDING_AUTHORISED_EXECUTION",
+  "python": "3.12.x on ubuntu-latest public x64 runner",
+  "direct_dependencies": [
+    {"name": "torch", "version": "2.15.0", "documented_licence": "multi-licence expression including BSD/Apache/MIT components; inspect installed distribution notices"},
+    {"name": "transformers", "version": "5.22.0", "documented_licence": "Apache-2.0"},
+    {"name": "huggingface-hub", "version": "2.4.0", "documented_licence": "Apache-2.0"},
+    {"name": "safetensors", "version": "0.8.0", "documented_licence": "Apache-2.0"},
+    {"name": "sentencepiece", "version": "0.2.1", "documented_licence": "Apache-2.0"},
+    {"name": "psutil", "version": "7.2.2", "documented_licence": "BSD-3-Clause"}
+  ],
+  "excluded_upstream_minicheck_dependencies": ["datasets", "nltk", "pandas", "numpy", "openai", "vllm"],
+  "exclusion_reason": "The locked runner performs direct single-packet CPU scoring and does not use MiniCheck's document splitter, dataset tooling, OpenAI path or vLLM path.",
+  "unresolved": [
+    "Exact transitive versions and distribution hashes cannot be measured until a separately authorised dependency-resolution/install step.",
+    "Runtime compatibility of these direct pins with both exact checkpoints is unmeasured.",
+    "This inventory is technical evidence, not legal advice."
+  ]
+}

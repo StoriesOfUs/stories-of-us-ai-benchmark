@@ -1,0 +1,156 @@
+{
+  "schema_version": "stories-of-us-checker-development-cases-model-facing-v01",
+  "status": "FROZEN_PENDING_EXECUTION_APPROVAL",
+  "public_label": "EXPERIMENTAL CHECKER INPUT — NOT FOR PUBLICATION",
+  "important": "This fixture contains no expected verdicts, answer explanations or scoring labels.",
+  "cases": [
+    {
+      "case_id": "dev00_access_supported_control",
+      "stage": "development",
+      "origin": "KNOWN_DERIVED_SUPPORTED_CONTROL",
+      "source_name": "Disability News Service",
+      "headline": "Access failures at Tory conference leave wheelchair-user suspended in mid-air for more than an hour",
+      "source_url": "https://www.disabilitynewsservice.com/access-failures-at-tory-conference-leave-wheelchair-user-suspended-in-mid-air-for-more-than-an-hour/",
+      "candidate_summary": "Disability News Service reports that a powered-wheelchair user was suspended on an unsafe platform lift for more than an hour at the Conservative conference in Birmingham's ICC.",
+      "verified_evidence": [
+        {
+          "evidence_id": "D01E1",
+          "text": "Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference."
+        }
+      ],
+      "qualifications": [],
+      "atomic_claims": [
+        {
+          "claim_id": "D01C1",
+          "dimension": "ACTION",
+          "claim": "A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour."
+        },
+        {
+          "claim_id": "D01C2",
+          "dimension": "ACTOR",
+          "claim": "The incident occurred at the Conservative conference in Birmingham's ICC."
+        }
+      ]
+    },
+    {
+      "case_id": "dev01_access_barrier_relationship",
+      "stage": "development",
+      "origin": "KNOWN_HISTORICAL_FALSE_PASS",
+      "source_name": "Disability News Service",
+      "headline": "Access failures at Tory conference leave wheelchair-user suspended in mid-air for more than an hour",
+      "source_url": "https://www.disabilitynewsservice.com/access-failures-at-tory-conference-leave-wheelchair-user-suspended-in-mid-air-for-more-than-an-hour/",
+      "candidate_summary": "Disability News Service reports that a powered-wheelchair user was left suspended in mid-air for over an hour due to an unsafe platform lift. The incident occurred at the Conservative conference in Birmingham's ICC, where the room was inaccessible by eight steps and a faulty lift.",
+      "verified_evidence": [
+        {
+          "evidence_id": "D01E1",
+          "text": "Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference."
+        },
+        {
+          "evidence_id": "D01E2",
+          "text": "The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift."
+        },
+        {
+          "evidence_id": "D01E3",
+          "text": "Policy Connect had not been warned about the room's access challenges."
+        }
+      ],
+      "qualifications": [
+        "The source calls the lift unsafe; it does not establish that the room was inaccessible by both the steps and a faulty lift."
+      ],
+      "atomic_claims": [
+        {
+          "claim_id": "D01C1",
+          "dimension": "ACTION",
+          "claim": "A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour."
+        },
+        {
+          "claim_id": "D01C2",
+          "dimension": "ACTOR",
+          "claim": "The incident occurred at the Conservative conference in Birmingham's ICC."
+        },
+        {
+          "claim_id": "D01C3",
+          "dimension": "RELATIONSHIP",
+          "claim": "The room was inaccessible by eight steps and a faulty lift."
+        }
+      ]
+    },
+    {
+      "case_id": "dev03_enil_developed_versus_contributed",
+      "stage": "development",
+      "origin": "KNOWN_HISTORICAL_FALSE_PASS",
+      "source_name": "European Network on Independent Living",
+      "headline": "ENIL brings a disability rights perspective to OSCE/ODIHR discussions on hate crime and intersectionality",
+      "source_url": "https://enil.eu/enil-brings-a-disability-rights-perspective-to-osce-odihr-discussions-on-hate-crime-and-intersectionality/",
+      "candidate_summary": "European Network on Independent Living developed a disability rights perspective on hate crime and intersectionality. They proposed an Ask, Assess, Adapt approach for supporting hate-crime victims with disabilities.",
+      "verified_evidence": [
+        {
+          "evidence_id": "D03E1",
+          "text": "ENIL participated in an ODIHR side event during the Warsaw Human Dimension Conference."
+        },
+        {
+          "evidence_id": "D03E2",
+          "text": "ENIL's intervention argued that disability should be part of intersectional hate-crime analysis from the beginning."
+        },
+        {
+          "evidence_id": "D03E3",
+          "text": "ENIL proposed Ask, Assess, Adapt for professionals supporting hate-crime victims."
+        }
+      ],
+      "qualifications": [
+        "The evidence establishes participation, contribution and a proposal; it does not say ENIL developed the disability-rights perspective itself."
+      ],
+      "atomic_claims": [
+        {
+          "claim_id": "D03C1",
+          "dimension": "ACTION",
+          "claim": "ENIL developed a disability rights perspective on hate crime and intersectionality."
+        },
+        {
+          "claim_id": "D03C2",
+          "dimension": "ATTRIBUTION",
+          "claim": "ENIL proposed an Ask, Assess, Adapt approach for supporting hate-crime victims with disabilities."
+        }
+      ]
+    },
+    {
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "stage": "development",
+      "origin": "KNOWN_HISTORICAL_EVIDENCE_ASYMMETRY",
+      "source_name": "Disability Arts Online",
+      "headline": "World’s on Fire: a defiant story of hope and community",
+      "source_url": "https://disabilityarts.online/magazine/reviews/worlds-on-fire-a-defiant-story-of-hope-and-community/",
+      "candidate_summary": "Disability Arts Online reports on World’s on Fire, a stage production written and directed by disabled playwright Vici Wreford-Sinnott. The production features a wheelchair-using character who keeps disability and access on the group’s agenda.",
+      "verified_evidence": [
+        {
+          "evidence_id": "D05E1",
+          "text": "The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott."
+        },
+        {
+          "evidence_id": "D05E2",
+          "text": "The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans."
+        }
+      ],
+      "qualifications": [
+        "The traceable evidence supplied here does not state whether Vici Wreford-Sinnott is disabled."
+      ],
+      "atomic_claims": [
+        {
+          "claim_id": "D05C1",
+          "dimension": "ACTION",
+          "claim": "World’s on Fire was written and directed by Vici Wreford-Sinnott."
+        },
+        {
+          "claim_id": "D05C2",
+          "dimension": "ACTOR",
+          "claim": "Vici Wreford-Sinnott is a disabled playwright."
+        },
+        {
+          "claim_id": "D05C3",
+          "dimension": "ACTION",
+          "claim": "The production features a wheelchair-using character who keeps disability and access on the group’s agenda."
+        }
+      ]
+    }
+  ]
+}

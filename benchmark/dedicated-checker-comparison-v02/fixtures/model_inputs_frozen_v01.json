@@ -1,0 +1,1185 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-model-input-inventory-v01",
+  "status": "FROZEN_MODEL_FACING_NO_ANSWER_KEYS",
+  "records": [
+    {
+      "stage": "development",
+      "case_id": "dev00_access_supported_control",
+      "claim_id": "D01C1",
+      "evidence_ids": [
+        "D01E1"
+      ],
+      "claim": "A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n\nHypothesis: A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "formatted_input_sha256": "6a141fd8989c5d7dc1d4c6a16e11e8b4e5f9463b87cf8484926f1ed678446bd0",
+      "utf8_bytes": 358,
+      "conservative_token_upper_bound_not_exact_count": 366
+    },
+    {
+      "stage": "development",
+      "case_id": "dev00_access_supported_control",
+      "claim_id": "D01C1",
+      "evidence_ids": [
+        "D01E1"
+      ],
+      "claim": "A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.</s>A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "formatted_input_sha256": "0d504e69cfef6f4e843eb74d92d56a21ecdc3e967021ba6b34dc00c61058ad2d",
+      "utf8_bytes": 286,
+      "conservative_token_upper_bound_not_exact_count": 294
+    },
+    {
+      "stage": "development",
+      "case_id": "dev00_access_supported_control",
+      "claim_id": "D01C2",
+      "evidence_ids": [
+        "D01E1"
+      ],
+      "claim": "The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n\nHypothesis: The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "formatted_input_sha256": "5995452390dc63b75247a86c08874a0e77e40ec51dfb31d42d6535ed1b23c951",
+      "utf8_bytes": 342,
+      "conservative_token_upper_bound_not_exact_count": 350
+    },
+    {
+      "stage": "development",
+      "case_id": "dev00_access_supported_control",
+      "claim_id": "D01C2",
+      "evidence_ids": [
+        "D01E1"
+      ],
+      "claim": "The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.</s>The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "formatted_input_sha256": "2af8f7eec23ab860d039c08042fe4d7d725dfd831508ce2f3d4ac4a25aeeb907",
+      "utf8_bytes": 270,
+      "conservative_token_upper_bound_not_exact_count": 278
+    },
+    {
+      "stage": "development",
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C1",
+      "evidence_ids": [
+        "D01E1",
+        "D01E2",
+        "D01E3"
+      ],
+      "claim": "A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n[D01E2] The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift.\n[D01E3] Policy Connect had not been warned about the room's access challenges.\n\nHypothesis: A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "formatted_input_sha256": "e938f118a1a45b20e32d36c715ad2532e8401700035b9750641a56cfaa8637ec",
+      "utf8_bytes": 569,
+      "conservative_token_upper_bound_not_exact_count": 577
+    },
+    {
+      "stage": "development",
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C1",
+      "evidence_ids": [
+        "D01E1",
+        "D01E2",
+        "D01E3"
+      ],
+      "claim": "A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n[D01E2] The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift.\n[D01E3] Policy Connect had not been warned about the room's access challenges.</s>A powered-wheelchair user was suspended on an unsafe platform lift for more than an hour.",
+      "formatted_input_sha256": "ee873fcbbce9c95ede6f1182e28d2462fbefd8cc4222d338cd31d9f6e28729d3",
+      "utf8_bytes": 497,
+      "conservative_token_upper_bound_not_exact_count": 505
+    },
+    {
+      "stage": "development",
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C2",
+      "evidence_ids": [
+        "D01E1",
+        "D01E2",
+        "D01E3"
+      ],
+      "claim": "The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n[D01E2] The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift.\n[D01E3] Policy Connect had not been warned about the room's access challenges.\n\nHypothesis: The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "formatted_input_sha256": "6d5f7e3030e72ac87cfff89a629c4bb86aac4a0442a8b7f77349dd2d81676d28",
+      "utf8_bytes": 553,
+      "conservative_token_upper_bound_not_exact_count": 561
+    },
+    {
+      "stage": "development",
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C2",
+      "evidence_ids": [
+        "D01E1",
+        "D01E2",
+        "D01E3"
+      ],
+      "claim": "The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n[D01E2] The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift.\n[D01E3] Policy Connect had not been warned about the room's access challenges.</s>The incident occurred at the Conservative conference in Birmingham's ICC.",
+      "formatted_input_sha256": "7d33ad8943b1f8e23a097f726036fc464c1be52abf81e4b15e158583daa039eb",
+      "utf8_bytes": 481,
+      "conservative_token_upper_bound_not_exact_count": 489
+    },
+    {
+      "stage": "development",
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C3",
+      "evidence_ids": [
+        "D01E1",
+        "D01E2",
+        "D01E3"
+      ],
+      "claim": "The room was inaccessible by eight steps and a faulty lift.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n[D01E2] The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift.\n[D01E3] Policy Connect had not been warned about the room's access challenges.\n\nHypothesis: The room was inaccessible by eight steps and a faulty lift.",
+      "formatted_input_sha256": "d91148c47c22571ff32fddbffb217460e8ea1b7573b9a75beca4da6055a0971d",
+      "utf8_bytes": 539,
+      "conservative_token_upper_bound_not_exact_count": 547
+    },
+    {
+      "stage": "development",
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C3",
+      "evidence_ids": [
+        "D01E1",
+        "D01E2",
+        "D01E3"
+      ],
+      "claim": "The room was inaccessible by eight steps and a faulty lift.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D01E1] Clive Gilbert, a powered-wheelchair user, was suspended on an unsafe platform lift for more than an hour at Birmingham's ICC during the Conservative conference.\n[D01E2] The event room was beyond eight steps and reached through the platform lift; four other disabled attendees needed the lift.\n[D01E3] Policy Connect had not been warned about the room's access challenges.</s>The room was inaccessible by eight steps and a faulty lift.",
+      "formatted_input_sha256": "9e81b67a1c3374592c5d2c5cb84e21c120dc1e573dc71206d4a987d17bf20113",
+      "utf8_bytes": 467,
+      "conservative_token_upper_bound_not_exact_count": 475
+    },
+    {
+      "stage": "development",
+      "case_id": "dev03_enil_developed_versus_contributed",
+      "claim_id": "D03C1",
+      "evidence_ids": [
+        "D03E1",
+        "D03E2",
+        "D03E3"
+      ],
+      "claim": "ENIL developed a disability rights perspective on hate crime and intersectionality.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D03E1] ENIL participated in an ODIHR side event during the Warsaw Human Dimension Conference.\n[D03E2] ENIL's intervention argued that disability should be part of intersectional hate-crime analysis from the beginning.\n[D03E3] ENIL proposed Ask, Assess, Adapt for professionals supporting hate-crime victims.\n\nHypothesis: ENIL developed a disability rights perspective on hate crime and intersectionality.",
+      "formatted_input_sha256": "f979283ccdd50415009964de3cc1b7d18eae288eb165498f98b22537bbc71cd0",
+      "utf8_bytes": 492,
+      "conservative_token_upper_bound_not_exact_count": 500
+    },
+    {
+      "stage": "development",
+      "case_id": "dev03_enil_developed_versus_contributed",
+      "claim_id": "D03C1",
+      "evidence_ids": [
+        "D03E1",
+        "D03E2",
+        "D03E3"
+      ],
+      "claim": "ENIL developed a disability rights perspective on hate crime and intersectionality.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D03E1] ENIL participated in an ODIHR side event during the Warsaw Human Dimension Conference.\n[D03E2] ENIL's intervention argued that disability should be part of intersectional hate-crime analysis from the beginning.\n[D03E3] ENIL proposed Ask, Assess, Adapt for professionals supporting hate-crime victims.</s>ENIL developed a disability rights perspective on hate crime and intersectionality.",
+      "formatted_input_sha256": "1564e72b2660e3a8e400ea16fd36a775adc7442a6d3e245c6c0d241ad45e111e",
+      "utf8_bytes": 420,
+      "conservative_token_upper_bound_not_exact_count": 428
+    },
+    {
+      "stage": "development",
+      "case_id": "dev03_enil_developed_versus_contributed",
+      "claim_id": "D03C2",
+      "evidence_ids": [
+        "D03E1",
+        "D03E2",
+        "D03E3"
+      ],
+      "claim": "ENIL proposed an Ask, Assess, Adapt approach for supporting hate-crime victims with disabilities.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D03E1] ENIL participated in an ODIHR side event during the Warsaw Human Dimension Conference.\n[D03E2] ENIL's intervention argued that disability should be part of intersectional hate-crime analysis from the beginning.\n[D03E3] ENIL proposed Ask, Assess, Adapt for professionals supporting hate-crime victims.\n\nHypothesis: ENIL proposed an Ask, Assess, Adapt approach for supporting hate-crime victims with disabilities.",
+      "formatted_input_sha256": "34e320809e70287c57ad2216391bcc61fe1dc151cab923408e3be29c7c178c69",
+      "utf8_bytes": 506,
+      "conservative_token_upper_bound_not_exact_count": 514
+    },
+    {
+      "stage": "development",
+      "case_id": "dev03_enil_developed_versus_contributed",
+      "claim_id": "D03C2",
+      "evidence_ids": [
+        "D03E1",
+        "D03E2",
+        "D03E3"
+      ],
+      "claim": "ENIL proposed an Ask, Assess, Adapt approach for supporting hate-crime victims with disabilities.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D03E1] ENIL participated in an ODIHR side event during the Warsaw Human Dimension Conference.\n[D03E2] ENIL's intervention argued that disability should be part of intersectional hate-crime analysis from the beginning.\n[D03E3] ENIL proposed Ask, Assess, Adapt for professionals supporting hate-crime victims.</s>ENIL proposed an Ask, Assess, Adapt approach for supporting hate-crime victims with disabilities.",
+      "formatted_input_sha256": "2e0e59bb6e775bad37d984ac7c821d4d42b0790cd682f9e77a87bbd5e176204b",
+      "utf8_bytes": 434,
+      "conservative_token_upper_bound_not_exact_count": 442
+    },
+    {
+      "stage": "development",
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C1",
+      "evidence_ids": [
+        "D05E1",
+        "D05E2"
+      ],
+      "claim": "World’s on Fire was written and directed by Vici Wreford-Sinnott.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D05E1] The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott.\n[D05E2] The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans.\n\nHypothesis: World’s on Fire was written and directed by Vici Wreford-Sinnott.",
+      "formatted_input_sha256": "bed46f41f4f8ec0048117baaa1606376082f6c24caffacf589c074aea978e34c",
+      "utf8_bytes": 424,
+      "conservative_token_upper_bound_not_exact_count": 432
+    },
+    {
+      "stage": "development",
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C1",
+      "evidence_ids": [
+        "D05E1",
+        "D05E2"
+      ],
+      "claim": "World’s on Fire was written and directed by Vici Wreford-Sinnott.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D05E1] The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott.\n[D05E2] The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans.</s>World’s on Fire was written and directed by Vici Wreford-Sinnott.",
+      "formatted_input_sha256": "ebafa58ade510e20eec69fcf4e8567e93294ad498b5bfa5360050944443974ae",
+      "utf8_bytes": 352,
+      "conservative_token_upper_bound_not_exact_count": 360
+    },
+    {
+      "stage": "development",
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C2",
+      "evidence_ids": [
+        "D05E1",
+        "D05E2"
+      ],
+      "claim": "Vici Wreford-Sinnott is a disabled playwright.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D05E1] The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott.\n[D05E2] The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans.\n\nHypothesis: Vici Wreford-Sinnott is a disabled playwright.",
+      "formatted_input_sha256": "359d1967a667f4cdbc59e0e8ebb82e93127f4b7298a172468c6d643588f738e9",
+      "utf8_bytes": 403,
+      "conservative_token_upper_bound_not_exact_count": 411
+    },
+    {
+      "stage": "development",
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C2",
+      "evidence_ids": [
+        "D05E1",
+        "D05E2"
+      ],
+      "claim": "Vici Wreford-Sinnott is a disabled playwright.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D05E1] The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott.\n[D05E2] The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans.</s>Vici Wreford-Sinnott is a disabled playwright.",
+      "formatted_input_sha256": "be984c3a49a6986f440d65ac8a4885135f173409129aa7d019d43bd95a5a99c6",
+      "utf8_bytes": 331,
+      "conservative_token_upper_bound_not_exact_count": 339
+    },
+    {
+      "stage": "development",
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C3",
+      "evidence_ids": [
+        "D05E1",
+        "D05E2"
+      ],
+      "claim": "The production features a wheelchair-using character who keeps disability and access on the group’s agenda.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[D05E1] The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott.\n[D05E2] The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans.\n\nHypothesis: The production features a wheelchair-using character who keeps disability and access on the group’s agenda.",
+      "formatted_input_sha256": "8aa3d6bbf4b198502fdd84a9a160580a03bd6153c35aea868ecfa4af0c71d13d",
+      "utf8_bytes": 466,
+      "conservative_token_upper_bound_not_exact_count": 474
+    },
+    {
+      "stage": "development",
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C3",
+      "evidence_ids": [
+        "D05E1",
+        "D05E2"
+      ],
+      "claim": "The production features a wheelchair-using character who keeps disability and access on the group’s agenda.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[D05E1] The review identifies World’s on Fire as a production written and directed by Vici Wreford-Sinnott.\n[D05E2] The review describes Bec, played by Beth Samuels and using a wheelchair, reminding the group to retain disability and access in its plans.</s>The production features a wheelchair-using character who keeps disability and access on the group’s agenda.",
+      "formatted_input_sha256": "7e13187c4a53ac8084bc68d7224713dc9d64f386b0d19e15a85507da104e60d0",
+      "utf8_bytes": 394,
+      "conservative_token_upper_bound_not_exact_count": 402
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh01_bath_history_month_event",
+      "claim_id": "F01C1",
+      "evidence_ids": [
+        "F01E1",
+        "F01E2"
+      ],
+      "claim": "The University of Bath announces an online staff event for Disability History Month about disability and neurodivergence inclusion.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F01E1] The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November.\n[F01E2] The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model.\n\nHypothesis: The University of Bath announces an online staff event for Disability History Month about disability and neurodivergence inclusion.",
+      "formatted_input_sha256": "270105b995a4f24f5cf418ea80dbd1401f1fc4105b1da8af01506c3edb8c5268",
+      "utf8_bytes": 715,
+      "conservative_token_upper_bound_not_exact_count": 723
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh01_bath_history_month_event",
+      "claim_id": "F01C1",
+      "evidence_ids": [
+        "F01E1",
+        "F01E2"
+      ],
+      "claim": "The University of Bath announces an online staff event for Disability History Month about disability and neurodivergence inclusion.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F01E1] The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November.\n[F01E2] The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model.</s>The University of Bath announces an online staff event for Disability History Month about disability and neurodivergence inclusion.",
+      "formatted_input_sha256": "980260ab64e084dd22d6695dae741124c365789cd237ee5b7b814937fad476d8",
+      "utf8_bytes": 643,
+      "conservative_token_upper_bound_not_exact_count": 651
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh01_bath_history_month_event",
+      "claim_id": "F01C2",
+      "evidence_ids": [
+        "F01E1",
+        "F01E2"
+      ],
+      "claim": "Speakers from Disabled By Society will use lived experience and storytelling.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F01E1] The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November.\n[F01E2] The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model.\n\nHypothesis: Speakers from Disabled By Society will use lived experience and storytelling.",
+      "formatted_input_sha256": "0e036a168669d5ff0eb1f480b6c5aceed5cb9e652cdc6862d784c0322bd05d91",
+      "utf8_bytes": 661,
+      "conservative_token_upper_bound_not_exact_count": 669
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh01_bath_history_month_event",
+      "claim_id": "F01C2",
+      "evidence_ids": [
+        "F01E1",
+        "F01E2"
+      ],
+      "claim": "Speakers from Disabled By Society will use lived experience and storytelling.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F01E1] The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November.\n[F01E2] The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model.</s>Speakers from Disabled By Society will use lived experience and storytelling.",
+      "formatted_input_sha256": "cc332625637e08b3e21f612e3dd458f80d74f72928fcb8de41b548d0ddd7c9dc",
+      "utf8_bytes": 589,
+      "conservative_token_upper_bound_not_exact_count": 597
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh01_bath_history_month_event",
+      "claim_id": "F01C3",
+      "evidence_ids": [
+        "F01E1",
+        "F01E2"
+      ],
+      "claim": "Dr Keren MacLennan will discuss changing models of disability.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F01E1] The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November.\n[F01E2] The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model.\n\nHypothesis: Dr Keren MacLennan will discuss changing models of disability.",
+      "formatted_input_sha256": "6f54c03bb4f758771ea79a2b2c45cebaad596f5e735e847ab87e7706e64f97a0",
+      "utf8_bytes": 646,
+      "conservative_token_upper_bound_not_exact_count": 654
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh01_bath_history_month_event",
+      "claim_id": "F01C3",
+      "evidence_ids": [
+        "F01E1",
+        "F01E2"
+      ],
+      "claim": "Dr Keren MacLennan will discuss changing models of disability.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F01E1] The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November.\n[F01E2] The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model.</s>Dr Keren MacLennan will discuss changing models of disability.",
+      "formatted_input_sha256": "9899b0dc4f90c25fa8a84984c403adfbce7e4d453b97e9dea33ddaacaa37cba1",
+      "utf8_bytes": 574,
+      "conservative_token_upper_bound_not_exact_count": 582
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh02_aapd_revup_profile",
+      "claim_id": "F02C1",
+      "evidence_ids": [
+        "F02E1",
+        "F02E2"
+      ],
+      "claim": "AAPD marks REV UP’s tenth anniversary by profiling Rainey Dock Matthews.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F02E1] AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders.\n[F02E2] AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i.\n\nHypothesis: AAPD marks REV UP’s tenth anniversary by profiling Rainey Dock Matthews.",
+      "formatted_input_sha256": "a4f249218baaf34ee5df620d85c3e7e0492305abcd9f8e4b70bbddccddc7ef73",
+      "utf8_bytes": 613,
+      "conservative_token_upper_bound_not_exact_count": 621
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh02_aapd_revup_profile",
+      "claim_id": "F02C1",
+      "evidence_ids": [
+        "F02E1",
+        "F02E2"
+      ],
+      "claim": "AAPD marks REV UP’s tenth anniversary by profiling Rainey Dock Matthews.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F02E1] AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders.\n[F02E2] AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i.</s>AAPD marks REV UP’s tenth anniversary by profiling Rainey Dock Matthews.",
+      "formatted_input_sha256": "2dd2c4b638cd29d87f6e9601d8e99177f6e86b0bcad14533ee0451338e9a67d4",
+      "utf8_bytes": 541,
+      "conservative_token_upper_bound_not_exact_count": 549
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh02_aapd_revup_profile",
+      "claim_id": "F02C2",
+      "evidence_ids": [
+        "F02E1",
+        "F02E2"
+      ],
+      "claim": "Matthews’s 2016 voting-access experience led to disability-voting advocacy.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F02E1] AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders.\n[F02E2] AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i.\n\nHypothesis: Matthews’s 2016 voting-access experience led to disability-voting advocacy.",
+      "formatted_input_sha256": "d00a486da505777231449e582a513f6f5711a5c6c9799f4d3ec408265d2cca7f",
+      "utf8_bytes": 616,
+      "conservative_token_upper_bound_not_exact_count": 624
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh02_aapd_revup_profile",
+      "claim_id": "F02C2",
+      "evidence_ids": [
+        "F02E1",
+        "F02E2"
+      ],
+      "claim": "Matthews’s 2016 voting-access experience led to disability-voting advocacy.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F02E1] AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders.\n[F02E2] AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i.</s>Matthews’s 2016 voting-access experience led to disability-voting advocacy.",
+      "formatted_input_sha256": "2796de23059b619097166e14ea80e37abc3c8afd5b2d79905280b555d539b852",
+      "utf8_bytes": 544,
+      "conservative_token_upper_bound_not_exact_count": 552
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh02_aapd_revup_profile",
+      "claim_id": "F02C3",
+      "evidence_ids": [
+        "F02E1",
+        "F02E2"
+      ],
+      "claim": "She previously worked with REV UP Texas and is helping to start REV UP Hawai‘i.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F02E1] AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders.\n[F02E2] AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i.\n\nHypothesis: She previously worked with REV UP Texas and is helping to start REV UP Hawai‘i.",
+      "formatted_input_sha256": "28b2d3c4c81155ca973a7d57028af0c48b9f06c6d9a3611a8c46d3c4ad21d9d2",
+      "utf8_bytes": 620,
+      "conservative_token_upper_bound_not_exact_count": 628
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh02_aapd_revup_profile",
+      "claim_id": "F02C3",
+      "evidence_ids": [
+        "F02E1",
+        "F02E2"
+      ],
+      "claim": "She previously worked with REV UP Texas and is helping to start REV UP Hawai‘i.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F02E1] AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders.\n[F02E2] AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i.</s>She previously worked with REV UP Texas and is helping to start REV UP Hawai‘i.",
+      "formatted_input_sha256": "001e3ef5910e96c1f40ba6c3eb89188e00222db69008df9816ec5a8fc7f7aece",
+      "utf8_bytes": 548,
+      "conservative_token_upper_bound_not_exact_count": 556
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh03_bug_kabut_venice",
+      "claim_id": "F03C1",
+      "evidence_ids": [
+        "F03E1",
+        "F03E2"
+      ],
+      "claim": "Bug’s artwork Kabut is appearing in the UNSEEN exhibition in Venice from 13 to 24 October 2026.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F03E1] Disability Arts Cymru says Bug’s artwork Kabut features in UNSEEN – seeing differently at Palazzo Pisani-Revedin in Venice; the exhibition runs from 13 to 24 October 2026.\n[F03E2] The page says Kabut explores the overwhelming feeling of watching the world go by while wanting to take part, communicating frustration, confusion and a wish to connect.\n\nHypothesis: Bug’s artwork Kabut is appearing in the UNSEEN exhibition in Venice from 13 to 24 October 2026.",
+      "formatted_input_sha256": "b679c37d2b8d56304a7008bd98ed6fa83e1bab50b942e177c9229c96e621d37e",
+      "utf8_bytes": 559,
+      "conservative_token_upper_bound_not_exact_count": 567
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh03_bug_kabut_venice",
+      "claim_id": "F03C1",
+      "evidence_ids": [
+        "F03E1",
+        "F03E2"
+      ],
+      "claim": "Bug’s artwork Kabut is appearing in the UNSEEN exhibition in Venice from 13 to 24 October 2026.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F03E1] Disability Arts Cymru says Bug’s artwork Kabut features in UNSEEN – seeing differently at Palazzo Pisani-Revedin in Venice; the exhibition runs from 13 to 24 October 2026.\n[F03E2] The page says Kabut explores the overwhelming feeling of watching the world go by while wanting to take part, communicating frustration, confusion and a wish to connect.</s>Bug’s artwork Kabut is appearing in the UNSEEN exhibition in Venice from 13 to 24 October 2026.",
+      "formatted_input_sha256": "4fbe0cbd59086d970db214494b4d3a9f8488e8e9217dee61d1f6131bf5f63161",
+      "utf8_bytes": 487,
+      "conservative_token_upper_bound_not_exact_count": 495
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh03_bug_kabut_venice",
+      "claim_id": "F03C2",
+      "evidence_ids": [
+        "F03E1",
+        "F03E2"
+      ],
+      "claim": "Kabut explores feeling trapped and overwhelmed while wanting to connect with the world.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F03E1] Disability Arts Cymru says Bug’s artwork Kabut features in UNSEEN – seeing differently at Palazzo Pisani-Revedin in Venice; the exhibition runs from 13 to 24 October 2026.\n[F03E2] The page says Kabut explores the overwhelming feeling of watching the world go by while wanting to take part, communicating frustration, confusion and a wish to connect.\n\nHypothesis: Kabut explores feeling trapped and overwhelmed while wanting to connect with the world.",
+      "formatted_input_sha256": "14bed242e5c455e0ed914a121088e01609098b47d759ff5de0bd424ed31ef4f7",
+      "utf8_bytes": 549,
+      "conservative_token_upper_bound_not_exact_count": 557
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh03_bug_kabut_venice",
+      "claim_id": "F03C2",
+      "evidence_ids": [
+        "F03E1",
+        "F03E2"
+      ],
+      "claim": "Kabut explores feeling trapped and overwhelmed while wanting to connect with the world.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F03E1] Disability Arts Cymru says Bug’s artwork Kabut features in UNSEEN – seeing differently at Palazzo Pisani-Revedin in Venice; the exhibition runs from 13 to 24 October 2026.\n[F03E2] The page says Kabut explores the overwhelming feeling of watching the world go by while wanting to take part, communicating frustration, confusion and a wish to connect.</s>Kabut explores feeling trapped and overwhelmed while wanting to connect with the world.",
+      "formatted_input_sha256": "5a0802d1d006c3d68d388c313ed97a7d11fae07645c2195a137c3c738716bc7f",
+      "utf8_bytes": 477,
+      "conservative_token_upper_bound_not_exact_count": 485
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh04_radar_key_history",
+      "claim_id": "F04C1",
+      "evidence_ids": [
+        "F04E1",
+        "F04E2"
+      ],
+      "claim": "RADAR introduced a standardised national key system for disabled people’s toilets in 1981.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F04E1] History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements.\n[F04E2] The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK.\n\nHypothesis: RADAR introduced a standardised national key system for disabled people’s toilets in 1981.",
+      "formatted_input_sha256": "ea653e5b73d972b567628f9437b3d5dd3c8bb2d6b56d83cabdcfe791fdecb28e",
+      "utf8_bytes": 570,
+      "conservative_token_upper_bound_not_exact_count": 578
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh04_radar_key_history",
+      "claim_id": "F04C1",
+      "evidence_ids": [
+        "F04E1",
+        "F04E2"
+      ],
+      "claim": "RADAR introduced a standardised national key system for disabled people’s toilets in 1981.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F04E1] History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements.\n[F04E2] The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK.</s>RADAR introduced a standardised national key system for disabled people’s toilets in 1981.",
+      "formatted_input_sha256": "35262d481431ebd3300b632145607d7af4c7c15b1be9aad9cf508f2c4bdf5c6a",
+      "utf8_bytes": 498,
+      "conservative_token_upper_bound_not_exact_count": 506
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh04_radar_key_history",
+      "claim_id": "F04C2",
+      "evidence_ids": [
+        "F04E1",
+        "F04E2"
+      ],
+      "claim": "The scheme was developed through a partnership with Nicholls & Clarke.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F04E1] History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements.\n[F04E2] The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK.\n\nHypothesis: The scheme was developed through a partnership with Nicholls & Clarke.",
+      "formatted_input_sha256": "23ddab29228c689329a8c0033a97f19abf5639d0df6746562301e54187caa0c2",
+      "utf8_bytes": 548,
+      "conservative_token_upper_bound_not_exact_count": 556
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh04_radar_key_history",
+      "claim_id": "F04C2",
+      "evidence_ids": [
+        "F04E1",
+        "F04E2"
+      ],
+      "claim": "The scheme was developed through a partnership with Nicholls & Clarke.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F04E1] History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements.\n[F04E2] The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK.</s>The scheme was developed through a partnership with Nicholls & Clarke.",
+      "formatted_input_sha256": "eba594be1a0a97d4cd0d342f19a4a5c3cde2a83adb68f6b8879ce928919da1c0",
+      "utf8_bytes": 476,
+      "conservative_token_upper_bound_not_exact_count": 484
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh04_radar_key_history",
+      "claim_id": "F04C3",
+      "evidence_ids": [
+        "F04E1",
+        "F04E2"
+      ],
+      "claim": "One key could open thousands of accessible toilets across the UK.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F04E1] History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements.\n[F04E2] The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK.\n\nHypothesis: One key could open thousands of accessible toilets across the UK.",
+      "formatted_input_sha256": "33bc93d31c40ef97cbe50baedf46de8e466c80e0e272b9f8ba4db8dcee5cc005",
+      "utf8_bytes": 543,
+      "conservative_token_upper_bound_not_exact_count": 551
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh04_radar_key_history",
+      "claim_id": "F04C3",
+      "evidence_ids": [
+        "F04E1",
+        "F04E2"
+      ],
+      "claim": "One key could open thousands of accessible toilets across the UK.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F04E1] History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements.\n[F04E2] The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK.</s>One key could open thousands of accessible toilets across the UK.",
+      "formatted_input_sha256": "88329564ecabe0732527e0826619db4ae8742b1c1e9a15b970e1a9a5d54bf3ee",
+      "utf8_bytes": 471,
+      "conservative_token_upper_bound_not_exact_count": 479
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C1",
+      "evidence_ids": [
+        "F05E1",
+        "F05E2"
+      ],
+      "claim": "The three-year, $600,000 Justice Department-funded project is led by Bora Lee.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F05E1] The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers.\n[F05E2] The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf.\n\nHypothesis: The three-year, $600,000 Justice Department-funded project is led by Bora Lee.",
+      "formatted_input_sha256": "efa901e91b6dc0cd39b7b4af1d182d09736f11d42eb286d2ab521ce55ddf30af",
+      "utf8_bytes": 607,
+      "conservative_token_upper_bound_not_exact_count": 615
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C1",
+      "evidence_ids": [
+        "F05E1",
+        "F05E2"
+      ],
+      "claim": "The three-year, $600,000 Justice Department-funded project is led by Bora Lee.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F05E1] The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers.\n[F05E2] The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf.</s>The three-year, $600,000 Justice Department-funded project is led by Bora Lee.",
+      "formatted_input_sha256": "2945950f9342d60f718c48d03fa4b8c2d2381da63ff74cb62ad9d6edadc7637f",
+      "utf8_bytes": 535,
+      "conservative_token_upper_bound_not_exact_count": 543
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C2",
+      "evidence_ids": [
+        "F05E1",
+        "F05E2"
+      ],
+      "claim": "The project has removed accessibility barriers from victim services across Utah.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F05E1] The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers.\n[F05E2] The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf.\n\nHypothesis: The project has removed accessibility barriers from victim services across Utah.",
+      "formatted_input_sha256": "e0def7144d9abb2de94c7651f0903162aa2957da99093b451dad4b0df9ae7af8",
+      "utf8_bytes": 609,
+      "conservative_token_upper_bound_not_exact_count": 617
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C2",
+      "evidence_ids": [
+        "F05E1",
+        "F05E2"
+      ],
+      "claim": "The project has removed accessibility barriers from victim services across Utah.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F05E1] The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers.\n[F05E2] The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf.</s>The project has removed accessibility barriers from victim services across Utah.",
+      "formatted_input_sha256": "d51306806a3e9be8b70c5c30caf9994582f4d86781fe43e71496f82ec5c5226c",
+      "utf8_bytes": 537,
+      "conservative_token_upper_bound_not_exact_count": 545
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C3",
+      "evidence_ids": [
+        "F05E1",
+        "F05E2"
+      ],
+      "claim": "It trains providers and connects them with assistive technology, working with blind and Deaf partner organisations.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F05E1] The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers.\n[F05E2] The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf.\n\nHypothesis: It trains providers and connects them with assistive technology, working with blind and Deaf partner organisations.",
+      "formatted_input_sha256": "e02c93face78be6a74a3a94c3903faa259e38b023aba7dc052b8b8b01b4e1e47",
+      "utf8_bytes": 644,
+      "conservative_token_upper_bound_not_exact_count": 652
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C3",
+      "evidence_ids": [
+        "F05E1",
+        "F05E2"
+      ],
+      "claim": "It trains providers and connects them with assistive technology, working with blind and Deaf partner organisations.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F05E1] The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers.\n[F05E2] The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf.</s>It trains providers and connects them with assistive technology, working with blind and Deaf partner organisations.",
+      "formatted_input_sha256": "e9c386b3d6a14d6d36b99d95d33a2170daf7d91dfc4694cec605c1af6a74e359",
+      "utf8_bytes": 572,
+      "conservative_token_upper_bound_not_exact_count": 580
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C1",
+      "evidence_ids": [
+        "F06E1",
+        "F06E2"
+      ],
+      "claim": "The Lagos project has made disability data and accessibility standard parts of urban governance across Nigeria.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F06E1] JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub.\n[F06E2] Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria.\n\nHypothesis: The Lagos project has made disability data and accessibility standard parts of urban governance across Nigeria.",
+      "formatted_input_sha256": "2c5ae4b0fd375c6ebdc5516e2c37fee492c3de04d441697b733313d4387be6d5",
+      "utf8_bytes": 642,
+      "conservative_token_upper_bound_not_exact_count": 650
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C1",
+      "evidence_ids": [
+        "F06E1",
+        "F06E2"
+      ],
+      "claim": "The Lagos project has made disability data and accessibility standard parts of urban governance across Nigeria.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F06E1] JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub.\n[F06E2] Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria.</s>The Lagos project has made disability data and accessibility standard parts of urban governance across Nigeria.",
+      "formatted_input_sha256": "eef499c5038f625e04c993b793541755a777d31714a55bbbe247f53a41028dda",
+      "utf8_bytes": 570,
+      "conservative_token_upper_bound_not_exact_count": 578
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C2",
+      "evidence_ids": [
+        "F06E1",
+        "F06E2"
+      ],
+      "claim": "An October 2026 inception meeting launched the demonstration initiative.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F06E1] JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub.\n[F06E2] Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria.\n\nHypothesis: An October 2026 inception meeting launched the demonstration initiative.",
+      "formatted_input_sha256": "d9aa1463353d01bb9084f4976da1a483f4c6b158e1145b6820714da00397ee60",
+      "utf8_bytes": 603,
+      "conservative_token_upper_bound_not_exact_count": 611
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C2",
+      "evidence_ids": [
+        "F06E1",
+        "F06E2"
+      ],
+      "claim": "An October 2026 inception meeting launched the demonstration initiative.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F06E1] JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub.\n[F06E2] Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria.</s>An October 2026 inception meeting launched the demonstration initiative.",
+      "formatted_input_sha256": "7d9983a3ec85b8ea764e0834f440e8297632cc5b31e70a1f975166aab2224e60",
+      "utf8_bytes": 531,
+      "conservative_token_upper_bound_not_exact_count": 539
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C3",
+      "evidence_ids": [
+        "F06E1",
+        "F06E2"
+      ],
+      "claim": "The initiative is supported by the UN Global Disability Fund.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F06E1] JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub.\n[F06E2] Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria.\n\nHypothesis: The initiative is supported by the UN Global Disability Fund.",
+      "formatted_input_sha256": "86e9a763bb1adb5b269dd6b214389d6f59c7a909fc5d4fe9f13d804ba1c9fd53",
+      "utf8_bytes": 592,
+      "conservative_token_upper_bound_not_exact_count": 600
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C3",
+      "evidence_ids": [
+        "F06E1",
+        "F06E2"
+      ],
+      "claim": "The initiative is supported by the UN Global Disability Fund.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F06E1] JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub.\n[F06E2] Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria.</s>The initiative is supported by the UN Global Disability Fund.",
+      "formatted_input_sha256": "e98beff6b048c09d2a529293e49371788c5135f92d459461371cf894c4298d06",
+      "utf8_bytes": 520,
+      "conservative_token_upper_bound_not_exact_count": 528
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh07_heumann_sole_attribution",
+      "claim_id": "F07C1",
+      "evidence_ids": [
+        "F07E1",
+        "F07E2"
+      ],
+      "claim": "Judith Heumann created the dropped-kerb system now used across the United States.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F07E1] The article says dropped kerbs are now ordinary in many countries but were not normal a few decades ago; it presents them as one example of accessibility’s cultural and historical context.\n[F07E2] The article says legislation that Judy Heumann and others fought for brought accessibility into mainstream US law. It does not say that Heumann personally created a national dropped-kerb system.\n\nHypothesis: Judith Heumann created the dropped-kerb system now used across the United States.",
+      "formatted_input_sha256": "2d6ad578a169c62db5e13d21496882ba3bf3e801416758289648cd5fc90d4ed4",
+      "utf8_bytes": 583,
+      "conservative_token_upper_bound_not_exact_count": 591
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh07_heumann_sole_attribution",
+      "claim_id": "F07C1",
+      "evidence_ids": [
+        "F07E1",
+        "F07E2"
+      ],
+      "claim": "Judith Heumann created the dropped-kerb system now used across the United States.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F07E1] The article says dropped kerbs are now ordinary in many countries but were not normal a few decades ago; it presents them as one example of accessibility’s cultural and historical context.\n[F07E2] The article says legislation that Judy Heumann and others fought for brought accessibility into mainstream US law. It does not say that Heumann personally created a national dropped-kerb system.</s>Judith Heumann created the dropped-kerb system now used across the United States.",
+      "formatted_input_sha256": "e3bc88dbe44a17e3651675d8dafc0b7b9ab915de5c15afd66a081540132032c8",
+      "utf8_bytes": 511,
+      "conservative_token_upper_bound_not_exact_count": 519
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh07_heumann_sole_attribution",
+      "claim_id": "F07C2",
+      "evidence_ids": [
+        "F07E1",
+        "F07E2"
+      ],
+      "claim": "Heumann and other disabled activists campaigned for legislation that helped bring accessibility into mainstream US law.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F07E1] The article says dropped kerbs are now ordinary in many countries but were not normal a few decades ago; it presents them as one example of accessibility’s cultural and historical context.\n[F07E2] The article says legislation that Judy Heumann and others fought for brought accessibility into mainstream US law. It does not say that Heumann personally created a national dropped-kerb system.\n\nHypothesis: Heumann and other disabled activists campaigned for legislation that helped bring accessibility into mainstream US law.",
+      "formatted_input_sha256": "dd5323e15e19e81974cbb6dafc14d0bfb6d2705abfcbeb28dd19262a19dabe1f",
+      "utf8_bytes": 621,
+      "conservative_token_upper_bound_not_exact_count": 629
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh07_heumann_sole_attribution",
+      "claim_id": "F07C2",
+      "evidence_ids": [
+        "F07E1",
+        "F07E2"
+      ],
+      "claim": "Heumann and other disabled activists campaigned for legislation that helped bring accessibility into mainstream US law.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F07E1] The article says dropped kerbs are now ordinary in many countries but were not normal a few decades ago; it presents them as one example of accessibility’s cultural and historical context.\n[F07E2] The article says legislation that Judy Heumann and others fought for brought accessibility into mainstream US law. It does not say that Heumann personally created a national dropped-kerb system.</s>Heumann and other disabled activists campaigned for legislation that helped bring accessibility into mainstream US law.",
+      "formatted_input_sha256": "564a59a5eecff8fa8f9c8c2dc75ff59f05803c5372b99cbd84f1a96c70ccec11",
+      "utf8_bytes": 549,
+      "conservative_token_upper_bound_not_exact_count": 557
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh08_het_dorp_telethon_scope",
+      "claim_id": "F08C1",
+      "evidence_ids": [
+        "F08E1",
+        "F08E2"
+      ],
+      "claim": "Klapwijk’s television appeal paid for the construction of Het Dorp.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F08E1] The article says Arie Klapwijk and Mies Bouwman hosted a major Dutch telethon whose broadcast sought to raise funds for construction of an accessible neighbourhood for physically disabled people near Arnhem.\n[F08E2] At a London conference in April 1973, Klapwijk said the problems of parents, particularly those of severely disabled people, were the same worldwide.\n\nHypothesis: Klapwijk’s television appeal paid for the construction of Het Dorp.",
+      "formatted_input_sha256": "20282bdcd488f2e596b764918b1f397f0248a885ab15404459645af381c7e258",
+      "utf8_bytes": 543,
+      "conservative_token_upper_bound_not_exact_count": 551
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh08_het_dorp_telethon_scope",
+      "claim_id": "F08C1",
+      "evidence_ids": [
+        "F08E1",
+        "F08E2"
+      ],
+      "claim": "Klapwijk’s television appeal paid for the construction of Het Dorp.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F08E1] The article says Arie Klapwijk and Mies Bouwman hosted a major Dutch telethon whose broadcast sought to raise funds for construction of an accessible neighbourhood for physically disabled people near Arnhem.\n[F08E2] At a London conference in April 1973, Klapwijk said the problems of parents, particularly those of severely disabled people, were the same worldwide.</s>Klapwijk’s television appeal paid for the construction of Het Dorp.",
+      "formatted_input_sha256": "a4f0194027e06c934c98f09e2b3f45577a1b5d2637c66d3161d59674945d2161",
+      "utf8_bytes": 471,
+      "conservative_token_upper_bound_not_exact_count": 479
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh08_het_dorp_telethon_scope",
+      "claim_id": "F08C2",
+      "evidence_ids": [
+        "F08E1",
+        "F08E2"
+      ],
+      "claim": "At a 1973 London conference, Klapwijk presented the challenges faced by severely disabled people as shared across countries.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F08E1] The article says Arie Klapwijk and Mies Bouwman hosted a major Dutch telethon whose broadcast sought to raise funds for construction of an accessible neighbourhood for physically disabled people near Arnhem.\n[F08E2] At a London conference in April 1973, Klapwijk said the problems of parents, particularly those of severely disabled people, were the same worldwide.\n\nHypothesis: At a 1973 London conference, Klapwijk presented the challenges faced by severely disabled people as shared across countries.",
+      "formatted_input_sha256": "66006d613d244956d9799b764c0bce536ad7e4bebcb5c4205d2057b4b962fe5a",
+      "utf8_bytes": 598,
+      "conservative_token_upper_bound_not_exact_count": 606
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh08_het_dorp_telethon_scope",
+      "claim_id": "F08C2",
+      "evidence_ids": [
+        "F08E1",
+        "F08E2"
+      ],
+      "claim": "At a 1973 London conference, Klapwijk presented the challenges faced by severely disabled people as shared across countries.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F08E1] The article says Arie Klapwijk and Mies Bouwman hosted a major Dutch telethon whose broadcast sought to raise funds for construction of an accessible neighbourhood for physically disabled people near Arnhem.\n[F08E2] At a London conference in April 1973, Klapwijk said the problems of parents, particularly those of severely disabled people, were the same worldwide.</s>At a 1973 London conference, Klapwijk presented the challenges faced by severely disabled people as shared across countries.",
+      "formatted_input_sha256": "3d7fc005418c02b03dd074a970d88db81e2ba63299e97efa89747a03778c64bf",
+      "utf8_bytes": 526,
+      "conservative_token_upper_bound_not_exact_count": 534
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh09_personhood_implementation_gap",
+      "claim_id": "F09C1",
+      "evidence_ids": [
+        "F09E1",
+        "F09E2"
+      ],
+      "claim": "People with cognitive disabilities and their allies challenged the idea that autonomy is required for full human rights.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F09E1] The article examines how people with cognitive disabilities and their allies challenged the idea that a person must be autonomous and make decisions independently to have full human rights.\n[F09E2] It says Article 12 of the 2006 Convention on the Rights of Persons with Disabilities recognises equal recognition before the law and discusses negotiations about disabled people’s legal capacity. The supplied passage gives no account of implementation by every UN member state.\n\nHypothesis: People with cognitive disabilities and their allies challenged the idea that autonomy is required for full human rights.",
+      "formatted_input_sha256": "e6fdbbe7eb0c4ad18f6e7bc5af401e315632aab4907166e0429b82f2ce4990c5",
+      "utf8_bytes": 706,
+      "conservative_token_upper_bound_not_exact_count": 714
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh09_personhood_implementation_gap",
+      "claim_id": "F09C1",
+      "evidence_ids": [
+        "F09E1",
+        "F09E2"
+      ],
+      "claim": "People with cognitive disabilities and their allies challenged the idea that autonomy is required for full human rights.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F09E1] The article examines how people with cognitive disabilities and their allies challenged the idea that a person must be autonomous and make decisions independently to have full human rights.\n[F09E2] It says Article 12 of the 2006 Convention on the Rights of Persons with Disabilities recognises equal recognition before the law and discusses negotiations about disabled people’s legal capacity. The supplied passage gives no account of implementation by every UN member state.</s>People with cognitive disabilities and their allies challenged the idea that autonomy is required for full human rights.",
+      "formatted_input_sha256": "fcc53e16634e8f937643d861560d1e00abb21bafb1cce74dbc262504223a6355",
+      "utf8_bytes": 634,
+      "conservative_token_upper_bound_not_exact_count": 642
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh09_personhood_implementation_gap",
+      "claim_id": "F09C2",
+      "evidence_ids": [
+        "F09E1",
+        "F09E2"
+      ],
+      "claim": "Article 12 caused every UN member state to replace guardianship with supported decision-making.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F09E1] The article examines how people with cognitive disabilities and their allies challenged the idea that a person must be autonomous and make decisions independently to have full human rights.\n[F09E2] It says Article 12 of the 2006 Convention on the Rights of Persons with Disabilities recognises equal recognition before the law and discusses negotiations about disabled people’s legal capacity. The supplied passage gives no account of implementation by every UN member state.\n\nHypothesis: Article 12 caused every UN member state to replace guardianship with supported decision-making.",
+      "formatted_input_sha256": "93b576dca5710c3af6292f6bb093adff48d3a8500959aab8e778f20b80cd072f",
+      "utf8_bytes": 681,
+      "conservative_token_upper_bound_not_exact_count": 689
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh09_personhood_implementation_gap",
+      "claim_id": "F09C2",
+      "evidence_ids": [
+        "F09E1",
+        "F09E2"
+      ],
+      "claim": "Article 12 caused every UN member state to replace guardianship with supported decision-making.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F09E1] The article examines how people with cognitive disabilities and their allies challenged the idea that a person must be autonomous and make decisions independently to have full human rights.\n[F09E2] It says Article 12 of the 2006 Convention on the Rights of Persons with Disabilities recognises equal recognition before the law and discusses negotiations about disabled people’s legal capacity. The supplied passage gives no account of implementation by every UN member state.</s>Article 12 caused every UN member state to replace guardianship with supported decision-making.",
+      "formatted_input_sha256": "9a4ab751e9fab047fbefdc585c5807e9ec12eca0b898f78259c584afd71a56bf",
+      "utf8_bytes": 609,
+      "conservative_token_upper_bound_not_exact_count": 617
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh10_tambalan_duration_gap",
+      "claim_id": "F10C1",
+      "evidence_ids": [
+        "F10E1",
+        "F10E2"
+      ],
+      "claim": "Tambalan is a Wales–Indonesia collaboration using batik, residencies and workshops to explore disability rights, identity and belonging.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F10E1] The page says Tambalan connects Indonesian batik traditions and Welsh culture through artist residencies, collaborative creative processes and cross-cultural dialogue viewed through disability rights.\n[F10E2] It says patchwork and texts were created through reflection and workshops with disabled artists from Wales and Indonesia, children from Ty Gwyn School and communities in Indonesia and the UK. The supplied evidence gives no duration for the workshop programme.\n\nHypothesis: Tambalan is a Wales–Indonesia collaboration using batik, residencies and workshops to explore disability rights, identity and belonging.",
+      "formatted_input_sha256": "d14c8632bc8f69caee4cd35f1797fff9774a47b168e4ff1f929e9965e2702281",
+      "utf8_bytes": 715,
+      "conservative_token_upper_bound_not_exact_count": 723
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh10_tambalan_duration_gap",
+      "claim_id": "F10C1",
+      "evidence_ids": [
+        "F10E1",
+        "F10E2"
+      ],
+      "claim": "Tambalan is a Wales–Indonesia collaboration using batik, residencies and workshops to explore disability rights, identity and belonging.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F10E1] The page says Tambalan connects Indonesian batik traditions and Welsh culture through artist residencies, collaborative creative processes and cross-cultural dialogue viewed through disability rights.\n[F10E2] It says patchwork and texts were created through reflection and workshops with disabled artists from Wales and Indonesia, children from Ty Gwyn School and communities in Indonesia and the UK. The supplied evidence gives no duration for the workshop programme.</s>Tambalan is a Wales–Indonesia collaboration using batik, residencies and workshops to explore disability rights, identity and belonging.",
+      "formatted_input_sha256": "68ba166fe5d063273098693e0412a816f69f4c644f963a57463bba76ce1d1143",
+      "utf8_bytes": 643,
+      "conservative_token_upper_bound_not_exact_count": 651
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh10_tambalan_duration_gap",
+      "claim_id": "F10C2",
+      "evidence_ids": [
+        "F10E1",
+        "F10E2"
+      ],
+      "claim": "Its workshop programme ran for six months before the collaborative artworks were completed.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F10E1] The page says Tambalan connects Indonesian batik traditions and Welsh culture through artist residencies, collaborative creative processes and cross-cultural dialogue viewed through disability rights.\n[F10E2] It says patchwork and texts were created through reflection and workshops with disabled artists from Wales and Indonesia, children from Ty Gwyn School and communities in Indonesia and the UK. The supplied evidence gives no duration for the workshop programme.\n\nHypothesis: Its workshop programme ran for six months before the collaborative artworks were completed.",
+      "formatted_input_sha256": "d2ae5a4bcc5dcf8f0eeff564d1c98a91566b669f8162d4eb5f34a18eaaaff03b",
+      "utf8_bytes": 668,
+      "conservative_token_upper_bound_not_exact_count": 676
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh10_tambalan_duration_gap",
+      "claim_id": "F10C2",
+      "evidence_ids": [
+        "F10E1",
+        "F10E2"
+      ],
+      "claim": "Its workshop programme ran for six months before the collaborative artworks were completed.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F10E1] The page says Tambalan connects Indonesian batik traditions and Welsh culture through artist residencies, collaborative creative processes and cross-cultural dialogue viewed through disability rights.\n[F10E2] It says patchwork and texts were created through reflection and workshops with disabled artists from Wales and Indonesia, children from Ty Gwyn School and communities in Indonesia and the UK. The supplied evidence gives no duration for the workshop programme.</s>Its workshop programme ran for six months before the collaborative artworks were completed.",
+      "formatted_input_sha256": "24c58ffb95ab9369b42f61f41a390f955d64e87fe62b949b301c323f3c989464",
+      "utf8_bytes": 596,
+      "conservative_token_upper_bound_not_exact_count": 604
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh11_oral_history_interview_count_gap",
+      "claim_id": "F11C1",
+      "evidence_ids": [
+        "F11E1",
+        "F11E2"
+      ],
+      "claim": "A disabled historian uses oral history and archives to study Het Dorp residents’ disability identities and self-expression.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F11E1] The author identifies their positionality as a disabled disability historian and says their PhD uses oral history and archival research to study Het Dorp residents’ disability identity, social views and self-expression.\n[F11E2] The supplied passage describes interviews with Het Dorp residents and one respondent in detail. It gives neither a total of 40 interviewees nor nationwide geographic coverage.\n\nHypothesis: A disabled historian uses oral history and archives to study Het Dorp residents’ disability identities and self-expression.",
+      "formatted_input_sha256": "8662fd6446cc163bda31a7d4bfc14cd51fadfcab56357f63fbfa5a7551eca0eb",
+      "utf8_bytes": 639,
+      "conservative_token_upper_bound_not_exact_count": 647
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh11_oral_history_interview_count_gap",
+      "claim_id": "F11C1",
+      "evidence_ids": [
+        "F11E1",
+        "F11E2"
+      ],
+      "claim": "A disabled historian uses oral history and archives to study Het Dorp residents’ disability identities and self-expression.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F11E1] The author identifies their positionality as a disabled disability historian and says their PhD uses oral history and archival research to study Het Dorp residents’ disability identity, social views and self-expression.\n[F11E2] The supplied passage describes interviews with Het Dorp residents and one respondent in detail. It gives neither a total of 40 interviewees nor nationwide geographic coverage.</s>A disabled historian uses oral history and archives to study Het Dorp residents’ disability identities and self-expression.",
+      "formatted_input_sha256": "1ae72b8c6d48365987dc5b230437005825b6ab1da18489b24b4049e12f2eda82",
+      "utf8_bytes": 567,
+      "conservative_token_upper_bound_not_exact_count": 575
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh11_oral_history_interview_count_gap",
+      "claim_id": "F11C2",
+      "evidence_ids": [
+        "F11E1",
+        "F11E2"
+      ],
+      "claim": "The project draws on interviews with 40 former residents from across the Netherlands.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F11E1] The author identifies their positionality as a disabled disability historian and says their PhD uses oral history and archival research to study Het Dorp residents’ disability identity, social views and self-expression.\n[F11E2] The supplied passage describes interviews with Het Dorp residents and one respondent in detail. It gives neither a total of 40 interviewees nor nationwide geographic coverage.\n\nHypothesis: The project draws on interviews with 40 former residents from across the Netherlands.",
+      "formatted_input_sha256": "00888f9178dbac961bb55b360659761b489fed1795b64d2d85b69e795c32d658",
+      "utf8_bytes": 599,
+      "conservative_token_upper_bound_not_exact_count": 607
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh11_oral_history_interview_count_gap",
+      "claim_id": "F11C2",
+      "evidence_ids": [
+        "F11E1",
+        "F11E2"
+      ],
+      "claim": "The project draws on interviews with 40 former residents from across the Netherlands.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F11E1] The author identifies their positionality as a disabled disability historian and says their PhD uses oral history and archival research to study Het Dorp residents’ disability identity, social views and self-expression.\n[F11E2] The supplied passage describes interviews with Het Dorp residents and one respondent in detail. It gives neither a total of 40 interviewees nor nationwide geographic coverage.</s>The project draws on interviews with 40 former residents from across the Netherlands.",
+      "formatted_input_sha256": "eca893cbae78fe9e5164b77ea844998cda4998eef8e2f8a3f6299581f287d797",
+      "utf8_bytes": 527,
+      "conservative_token_upper_bound_not_exact_count": 535
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh12_ipswich_trigger_event_gap",
+      "claim_id": "F12C1",
+      "evidence_ids": [
+        "F12E1",
+        "F12E2"
+      ],
+      "claim": "Local Ipswich News urges disabled Australians to prepare early because evacuation can involve transport, equipment, medication and assistance animals.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F12E1] The article urges people with disability to prepare early for storms, floods, bushfires and other emergencies, citing accessible transport, essential equipment, medication, assistance animals and support at evacuation centres.\n[F12E2] It says power outages can create serious risks for people who rely on electrically powered medical or disability equipment. The supplied evidence does not mention a 2026 Ipswich flood evacuation or affected wheelchair users.\n\nHypothesis: Local Ipswich News urges disabled Australians to prepare early because evacuation can involve transport, equipment, medication and assistance animals.",
+      "formatted_input_sha256": "c77d676b2ea0e75266ca1967fac1ce59a22df6407b3f7da27a2cf6fdeb316349",
+      "utf8_bytes": 718,
+      "conservative_token_upper_bound_not_exact_count": 726
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh12_ipswich_trigger_event_gap",
+      "claim_id": "F12C1",
+      "evidence_ids": [
+        "F12E1",
+        "F12E2"
+      ],
+      "claim": "Local Ipswich News urges disabled Australians to prepare early because evacuation can involve transport, equipment, medication and assistance animals.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F12E1] The article urges people with disability to prepare early for storms, floods, bushfires and other emergencies, citing accessible transport, essential equipment, medication, assistance animals and support at evacuation centres.\n[F12E2] It says power outages can create serious risks for people who rely on electrically powered medical or disability equipment. The supplied evidence does not mention a 2026 Ipswich flood evacuation or affected wheelchair users.</s>Local Ipswich News urges disabled Australians to prepare early because evacuation can involve transport, equipment, medication and assistance animals.",
+      "formatted_input_sha256": "c226fe9c68c8db93c076ff8b483be0a058d3495cc87d1fe59c064461f4525912",
+      "utf8_bytes": 646,
+      "conservative_token_upper_bound_not_exact_count": 654
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh12_ipswich_trigger_event_gap",
+      "claim_id": "F12C2",
+      "evidence_ids": [
+        "F12E1",
+        "F12E2"
+      ],
+      "claim": "The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power.",
+      "candidate": "hhem_2_1_open",
+      "formatted_input": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: EVIDENCE PACKET\n[F12E1] The article urges people with disability to prepare early for storms, floods, bushfires and other emergencies, citing accessible transport, essential equipment, medication, assistance animals and support at evacuation centres.\n[F12E2] It says power outages can create serious risks for people who rely on electrically powered medical or disability equipment. The supplied evidence does not mention a 2026 Ipswich flood evacuation or affected wheelchair users.\n\nHypothesis: The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power.",
+      "formatted_input_sha256": "e2ea386e0867ab457b37053a5718eb6d944c5e3caaab917f8baf2f60656aa0ef",
+      "utf8_bytes": 661,
+      "conservative_token_upper_bound_not_exact_count": 669
+    },
+    {
+      "stage": "reserved_evaluation",
+      "case_id": "fresh12_ipswich_trigger_event_gap",
+      "claim_id": "F12C2",
+      "evidence_ids": [
+        "F12E1",
+        "F12E2"
+      ],
+      "claim": "The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power.",
+      "candidate": "minicheck_flan_t5_large",
+      "formatted_input": "predict: EVIDENCE PACKET\n[F12E1] The article urges people with disability to prepare early for storms, floods, bushfires and other emergencies, citing accessible transport, essential equipment, medication, assistance animals and support at evacuation centres.\n[F12E2] It says power outages can create serious risks for people who rely on electrically powered medical or disability equipment. The supplied evidence does not mention a 2026 Ipswich flood evacuation or affected wheelchair users.</s>The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power.",
+      "formatted_input_sha256": "89e870eb6f76a77a0d18c0791ce742b9ae980adf2ff47cc5518cc57906d4db39",
+      "utf8_bytes": 589,
+      "conservative_token_upper_bound_not_exact_count": 597
+    }
+  ],
+  "record_count": 78,
+  "logical_claim_count": 39,
+  "important": "The complete strings are frozen. Byte-derived bounds are not exact tokenizer counts; exact pinned-tokenizer counts remain mandatory before inference."
+}

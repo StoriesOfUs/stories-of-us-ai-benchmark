@@ -1,0 +1,57 @@
+{
+  "schema_version": "stories-of-us-checker-source-provenance-prior-use-v01",
+  "status": "OFFLINE_PROPOSAL_EVIDENCE",
+  "checked_at": "2026-11-04",
+  "freshness_definition": "Fresh to the Llama checker evaluation means the exact URL was not found in any earlier local checker, verifier or verification experiment fixture/report/code scan. It does not mean the article was newly discovered or unused elsewhere.",
+  "scan_result": {
+    "selected_urls": 12,
+    "exact_url_matches_in_prior_checker_verifier_directories": 0,
+    "network_requests": 0,
+    "limitation": "All twelve source articles were previously cached for non-checker discovery or candidate-selection work. They are new constructed checker cases, not independent new article discovery."
+  },
+  "source_files": [
+    {
+      "path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_multisource_refinement_v02/rounds/round_1/article_evidence_v02.json",
+      "sha256": "c3de32aa4ee630af662420c6ef566bf93669adbfafabf74d2c6c3b35e6aeaa72"
+    },
+    {
+      "path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_multisource_refinement_v02/rounds/round_2/article_evidence_v02.json",
+      "sha256": "3ac251883d4c618c7b2a18d8b76cc3088a429789e157b216a0a47f7e48878c85"
+    },
+    {
+      "path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_multisource_refinement_v02/rounds/round_3/article_evidence_v02.json",
+      "sha256": "a3fa76ac6a049343868b4d4915f5f1618a68564db94d4c3b30d897c015c5dfe4"
+    },
+    {
+      "path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_pool_depth_selection_v01/frozen_evaluation/direct_article_analysis_v04.json",
+      "sha256": "adfb1ba35fb77b7c74b9d791904a0f2da2cc27d71f04e7ff48ab0524a6d7652b"
+    }
+  ],
+  "records": [
+    {"case_id": "fresh01_bath_history_month_event", "record_id": "article_bath_history", "body_evidence_sha256": "42e3598b199e32dfcc516702e5d1c78e3f2f2cce804aed652fda90ed7b094c54", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh02_aapd_revup_profile", "record_id": "article_aapd_revup", "body_evidence_sha256": "c95f51b6d0c0e504cf037830848804aaa77cf8284964b916e49075833417bba1", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh03_bug_kabut_venice", "record_id": "article_arts_cymru_bug", "body_evidence_sha256": "f1911c75833bf77e3d7b62eb0776d429e4fcd558aef8b46fe5a857192eb56767", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh04_radar_key_history", "record_id": "article_history_workshop_radar_key", "body_evidence_sha256": "5d679ce8008aca6143e76481e3ca4298c56a0ba812374d3c7e2ec68b8ca34d29", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh05_utah_project_achievement", "record_id": "new_d210e989315b", "body_evidence_sha256": "98e14fd3e13c95f010aca003067ca32e2e95c9dd2e7a290640193acd28d8776d", "prior_nonchecker_use": "pool_depth_selection_v01 candidate evaluation", "prior_checker_url_matches": 0},
+    {"case_id": "fresh06_jonapwd_national_outcome", "record_id": "article_jonapwd_inclusive_cities", "body_evidence_sha256": "01532d3b27c17477ad87d78d3546286bcaafb31319c0f32971323f13e03d4778", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh07_heumann_sole_attribution", "record_id": "article_accessiblelink_heumann", "body_evidence_sha256": "1c3093e0f243f69ff5552298c8e12d4cbc0597d9eebd37f01abc4855b6e203cd", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh08_het_dorp_telethon_scope", "record_id": "article_rethinking_het_dorp", "body_evidence_sha256": "a97dd1c5ff62bbd2cd1abcabd737bdf4eeacaeb7adfe8d806d0e5c6ad51063ab", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh09_personhood_implementation_gap", "record_id": "article_history_workshop_personhood", "body_evidence_sha256": "b72c2b80e4ad6bb6731d582f7d17283e78fe5e811bd66bfffe875f04e6cebc23", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh10_tambalan_duration_gap", "record_id": "article_arts_cymru_tambalan", "body_evidence_sha256": "d0d9dfeef43a8eca2124dd34ac88e0f1b639e4ced0158eb7a597dfe63cdca68d", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh11_oral_history_interview_count_gap", "record_id": "article_rethinking_oral_history", "body_evidence_sha256": "5829e14b7ae55ae82dd5998fb70f13a2755eb427b96314076e5e7534e179e46f", "prior_nonchecker_use": "multisource_refinement_v02 source discovery and selection", "prior_checker_url_matches": 0},
+    {"case_id": "fresh12_ipswich_trigger_event_gap", "record_id": "new_fb8673055d6c", "body_evidence_sha256": "b56b7680d1d30a17227b17d5fe620035d6632148e604a949b8b9c4d852987184", "prior_nonchecker_use": "pool_depth_selection_v01 candidate evaluation", "prior_checker_url_matches": 0}
+  ],
+  "related_source_disclosure": [
+    "History Workshop supplies three distinct cached articles across the proposal.",
+    "Disability Arts Cymru supplies two distinct cached articles.",
+    "Rethinking Disability supplies two distinct cached articles.",
+    "The University of Bath URL also appeared in a later pool-depth candidate analysis; it remains one article and is counted once here.",
+    "Shared publishers and prior non-checker source use reduce independence and must be reported with any future result."
+  ],
+  "reserved_set_protection": {
+    "earlier_reserved_fixture": "option_c_llama_claim_checker_experiment_v01/fixtures/cases_blind_frozen_v01.json",
+    "earlier_reserved_fixture_sha256": "c62ab5e7ac048429c4e0a7a94fb68cb2caf54c2439d6f3cd66178f11848345fb",
+    "reused_evaluation_case_ids": [],
+    "status": "PASS_NOT_REPURPOSED"
+  }
+}

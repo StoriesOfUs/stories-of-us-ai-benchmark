@@ -1,0 +1,103 @@
+{
+  "schema_version": "stories-of-us-checker-evaluation-answer-key-v01",
+  "status": "FROZEN_CANDIDATE_PRIVATE_SCORING_FIXTURE_PENDING_OWNER_APPROVAL",
+  "case_counts": {
+    "fully_supported": 4,
+    "subtly_unsafe": 4,
+    "genuinely_insufficient_evidence": 4,
+    "total": 12
+  },
+  "answers": {
+    "fresh01_bath_history_month_event": {
+      "group": "fully_supported",
+      "expected_whole_summary": "SUPPORTED",
+      "claim_verdicts": {"F01C1": "SUPPORTED", "F01C2": "SUPPORTED", "F01C3": "SUPPORTED"},
+      "reason": "The event, speakers and planned subjects are all established by the supplied University page evidence.",
+      "construction_note": "Faithful summary constructed from cached source evidence; no deliberate defect."
+    },
+    "fresh02_aapd_revup_profile": {
+      "group": "fully_supported",
+      "expected_whole_summary": "SUPPORTED",
+      "claim_verdicts": {"F02C1": "SUPPORTED", "F02C2": "SUPPORTED", "F02C3": "SUPPORTED"},
+      "reason": "The anniversary profile, 2016 experience, prior Texas role and current Hawai‘i activity are directly supported.",
+      "construction_note": "Faithful summary constructed from cached source evidence; no deliberate defect."
+    },
+    "fresh03_bug_kabut_venice": {
+      "group": "fully_supported",
+      "expected_whole_summary": "SUPPORTED",
+      "claim_verdicts": {"F03C1": "SUPPORTED", "F03C2": "SUPPORTED"},
+      "reason": "The exhibition location and dates and the artwork’s subject are directly stated.",
+      "construction_note": "Faithful summary constructed from cached source evidence; no deliberate defect."
+    },
+    "fresh04_radar_key_history": {
+      "group": "fully_supported",
+      "expected_whole_summary": "SUPPORTED",
+      "claim_verdicts": {"F04C1": "SUPPORTED", "F04C2": "SUPPORTED", "F04C3": "SUPPORTED"},
+      "reason": "The actor, 1981 introduction, partnership and thousands-of-toilets scope are directly supported.",
+      "construction_note": "Faithful summary constructed from cached source evidence; no deliberate defect."
+    },
+    "fresh05_utah_project_achievement": {
+      "group": "subtly_unsafe",
+      "expected_whole_summary": "UNSUPPORTED",
+      "claim_verdicts": {"F05C1": "SUPPORTED", "F05C2": "UNSUPPORTED", "F05C3": "SUPPORTED"},
+      "reason": "The evidence says the project seeks to remove barriers; the summary converts that aim into an achieved statewide outcome.",
+      "construction_note": "Deliberate factual-status error: intended outcome changed to completed achievement."
+    },
+    "fresh06_jonapwd_national_outcome": {
+      "group": "subtly_unsafe",
+      "expected_whole_summary": "UNSUPPORTED",
+      "claim_verdicts": {"F06C1": "UNSUPPORTED", "F06C2": "SUPPORTED", "F06C3": "SUPPORTED"},
+      "reason": "The evidence identifies Lagos as the demonstration and nationwide practice as an ambition; the summary presents nationwide adoption as accomplished.",
+      "construction_note": "Deliberate scope/status error: demonstration and ambition changed to national outcome."
+    },
+    "fresh07_heumann_sole_attribution": {
+      "group": "subtly_unsafe",
+      "expected_whole_summary": "UNSUPPORTED",
+      "claim_verdicts": {"F07C1": "UNSUPPORTED", "F07C2": "SUPPORTED"},
+      "reason": "The evidence attributes legal campaigning to Heumann and others and treats dropped kerbs as a historical example; it does not support sole creation of a national system by Heumann.",
+      "construction_note": "Deliberate actor/action overstatement: collective campaigning changed to sole technical creation."
+    },
+    "fresh08_het_dorp_telethon_scope": {
+      "group": "subtly_unsafe",
+      "expected_whole_summary": "UNSUPPORTED",
+      "claim_verdicts": {"F08C1": "UNSUPPORTED", "F08C2": "SUPPORTED"},
+      "reason": "The evidence says the broadcast sought to raise funds for construction; it does not establish that the appeal paid for the construction.",
+      "construction_note": "Deliberate scope/status overstatement: fundraising purpose changed to full financing outcome."
+    },
+    "fresh09_personhood_implementation_gap": {
+      "group": "genuinely_insufficient_evidence",
+      "expected_whole_summary": "INSUFFICIENT_EVIDENCE",
+      "claim_verdicts": {"F09C1": "SUPPORTED", "F09C2": "INSUFFICIENT_EVIDENCE"},
+      "reason": "The supplied evidence discusses Article 12 and legal capacity but provides no information establishing or contradicting universal replacement of guardianship by every member state.",
+      "construction_note": "Deliberate evidence-gap case: the implementation claim is withheld from the evidence packet because the cached passage does not address it. This is not labelled false."
+    },
+    "fresh10_tambalan_duration_gap": {
+      "group": "genuinely_insufficient_evidence",
+      "expected_whole_summary": "INSUFFICIENT_EVIDENCE",
+      "claim_verdicts": {"F10C1": "SUPPORTED", "F10C2": "INSUFFICIENT_EVIDENCE"},
+      "reason": "The collaboration and workshop process are supported, but the supplied evidence gives no six-month duration or sequencing that would establish the second claim.",
+      "construction_note": "Deliberate evidence-gap case: duration and sequence are absent, not contradicted."
+    },
+    "fresh11_oral_history_interview_count_gap": {
+      "group": "genuinely_insufficient_evidence",
+      "expected_whole_summary": "INSUFFICIENT_EVIDENCE",
+      "claim_verdicts": {"F11C1": "SUPPORTED", "F11C2": "INSUFFICIENT_EVIDENCE"},
+      "reason": "The method and historian’s positionality are supported, but the packet gives neither 40 interviewees nor nationwide coverage.",
+      "construction_note": "Deliberate evidence-gap case: interview count and coverage are absent, not contradicted."
+    },
+    "fresh12_ipswich_trigger_event_gap": {
+      "group": "genuinely_insufficient_evidence",
+      "expected_whole_summary": "INSUFFICIENT_EVIDENCE",
+      "claim_verdicts": {"F12C1": "SUPPORTED", "F12C2": "INSUFFICIENT_EVIDENCE"},
+      "reason": "The emergency-planning advice and practical barriers are supported; the packet gives no information about the asserted 2026 Ipswich flood event or causal trigger.",
+      "construction_note": "Deliberate evidence-gap case: a plausible triggering event is absent, not contradicted."
+    }
+  },
+  "important_interpretation": {
+    "unsafe_false_pass": "Any fresh05–fresh08 whole-summary result of SUPPORTED.",
+    "insufficient_false_pass": "Any fresh09–fresh12 whole-summary result of SUPPORTED.",
+    "unnecessary_withholding": "Any fresh01–fresh04 whole-summary result other than SUPPORTED.",
+    "safe_boundary_mismatch": "UNSUPPORTED versus INSUFFICIENT_EVIDENCE where the whole summary remains withheld. This is an exact-classification error but not an unsafe approval.",
+    "reject_everything": "Fails usefulness even if it produces zero unsafe approvals."
+  }
+}

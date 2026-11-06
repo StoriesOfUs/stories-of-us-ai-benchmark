@@ -1,0 +1,15 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-input-assembly-v01",
+  "evidence_document_template": "EVIDENCE PACKET\n[{evidence_id}] {evidence_text}\n...",
+  "qualification_handling": "Reviewer qualification fields are not sent. Some state the expected defect and are not source evidence. Every verified_evidence item is sent unchanged and in frozen order.",
+  "hhem_template": "<pad> Determine if the hypothesis is true given the premise?\n\nPremise: {evidence_document}\n\nHypothesis: {atomic_claim}",
+  "minicheck_template": "predict: {evidence_document}{tokenizer_eos_token}{atomic_claim}",
+  "identical_semantic_content": "Both candidates receive the same evidence IDs/text and the same atomic claim. Only the documented model wrapper differs.",
+  "headline_sent": false,
+  "candidate_summary_sent": false,
+  "source_url_sent": false,
+  "answer_key_sent": false,
+  "chunking": "No chunking. Any complete formatted input above 1024 tokens stops the affected candidate before scoring.",
+  "truncation": false,
+  "complete_coverage_record": "The runner saves the exact formatted input SHA-256, evidence IDs, tokenizer count and truncation=false for every attempted logical evaluation."
+}
