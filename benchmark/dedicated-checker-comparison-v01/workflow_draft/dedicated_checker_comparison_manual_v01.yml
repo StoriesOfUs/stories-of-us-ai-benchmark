@@ -1,0 +1,63 @@
+name: Dedicated checker comparison V01 (manual, one use)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dedicated-checker-comparison-v01
+  cancel-in-progress: false
+
+jobs:
+  bounded-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PACKAGE_DIR: benchmark/dedicated-checker-comparison-v01
+      SOU_HF_CACHE: ${{ runner.temp }}/sou_hf_cache
+      SOU_ENV_ROOT: ${{ runner.temp }}/sou_checker_venv
+      HF_HOME: ${{ runner.temp }}/sou_hf_cache
+      TRANSFORMERS_CACHE: ${{ runner.temp }}/sou_hf_cache
+    steps:
+      - name: Check out the authorised public benchmark commit
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Consume one-use authority before installation
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: python code/lock_execution_v01.py
+
+      - name: Verify disk and install exact direct dependencies
+        working-directory: ${{ env.PACKAGE_DIR }}
+        shell: bash
+        run: |
+          test "$(df -Pk . | awk 'NR==2 {print $4}')" -ge 10485760
+          python -m venv "$SOU_ENV_ROOT"
+          "$SOU_ENV_ROOT/bin/python" -m pip install --disable-pip-version-check --no-input -r fixtures/dependencies_frozen_v01.txt
+          "$SOU_ENV_ROOT/bin/python" -m pip freeze --all > outputs/resolved_environment_v01.txt
+          test "$(du -sk "$SOU_ENV_ROOT" | awk '{print $1}')" -le 3145728
+
+      - name: Run the single bounded comparison
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: "$SOU_ENV_ROOT/bin/python" code/dedicated_checker_runner_v01.py --execute
+
+      - name: Remove model and dependency caches before upload
+        if: always()
+        run: |
+          python -c 'import os, shutil; [shutil.rmtree(p, ignore_errors=True) for p in (os.environ["SOU_HF_CACHE"], os.environ["SOU_ENV_ROOT"])]'
+
+      - name: Upload concise evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dedicated-checker-comparison-v01
+          path: ${{ env.PACKAGE_DIR }}/outputs/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9

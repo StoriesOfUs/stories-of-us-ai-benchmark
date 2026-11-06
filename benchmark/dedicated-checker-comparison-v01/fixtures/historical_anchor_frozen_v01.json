@@ -1,0 +1,36 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-historical-anchor-v01",
+  "created_at": "2026-11-06",
+  "controlling_decision": "SOU-CEN-121",
+  "controlling_handover": {
+    "path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_dedicated_checker_feasibility_documentation_v01/reports/04_updated_governance_handover.md",
+    "sha256": "e5de01f56027768a72ec36287fcbe730ef086f84eebc94cbed144821a67d5960"
+  },
+  "audit_handover": {
+    "path": "mission_based_ai_discovery_news_desk/output/ai_agent_governance_autonomy_audit_v01/option_c_dedicated_checker_feasibility_audit_v01/reports/08_governance_handover.md",
+    "sha256": "e4d05393b42fc58fdce6ab220039d8abe4e9f910a15815f5bc17f48c2936d3a8"
+  },
+  "source_fixture_hashes": {
+    "development_cases": "95c3f7d120116d9cba7a3eed88fa8c161685552455201069479286d4ff4fbee7",
+    "development_answer_key": "87a2c86bc2c227f022c928f3d6af60601d94af6938dab82ec382f46206ed1c75",
+    "evaluation_cases_with_approved_aapd_correction": "9978613d661d9b510ec850cf874226a2806e75c012a6e34bc71f9501f7c1a014",
+    "evaluation_answer_key": "4cf60dbda5fc31f3495a2c57f35f10fcb4b1fa9523bc6b7b377b8d0a4bec6ad0",
+    "case_correction_record": "2b6578ea1b7706534515b7fcff38309ca820dc6fd41dc90b169ba9f3384d695e",
+    "source_provenance": "4afa67e53b9ffa2fcdb540d657046273b16dfc60c0a833cb425b7dcf1244421e"
+  },
+  "prior_state": {
+    "exact_hhem_candidate_previously_tested": false,
+    "exact_minicheck_candidate_previously_tested": false,
+    "reserved_evaluation_model_requests": 0,
+    "historical_results_scores_counters_and_locks_changed": false
+  },
+  "new_package_counters": {
+    "logical_evaluations_attempted": 0,
+    "logical_evaluations_completed": 0,
+    "passage_forward_computations": 0,
+    "retries": 0,
+    "installations": 0,
+    "model_downloads": 0,
+    "model_inferences": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-execution-authority-v01",
+  "execution_authorised": false,
+  "approved_freeze_manifest_sha256": "OWNER_MUST_SUPPLY_EXACT_HASH",
+  "owner_approved_installation": false,
+  "owner_approved_model_and_tokenizer_downloads": false,
+  "owner_approved_bounded_inference": false,
+  "owner_approved_public_github_workflow_commit_and_single_dispatch": false,
+  "owner_confirmed_standard_public_runner_eligible_and_zero_cost": false,
+  "approved_at": null,
+  "note": "Template only. The runner requires a separate execution_authority_APPROVED_v01.json; this template cannot unlock execution."
+}

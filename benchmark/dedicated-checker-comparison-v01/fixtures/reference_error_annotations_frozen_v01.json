@@ -1,0 +1,109 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-reference-error-annotations-v01",
+  "status": "PRIVATE_SCORING_ANNOTATIONS_NOT_MODEL_FACING",
+  "development_non_supported_claims": [
+    {
+      "case_id": "dev01_access_barrier_relationship",
+      "claim_id": "D01C3",
+      "reference_verdict": "UNSUPPORTED",
+      "owner_error_type": "A_FALSE_CLAIM",
+      "seriousness": "HIGH",
+      "note": "The claim changes a narrower access arrangement into a combined causal/inaccessibility statement not established by the evidence."
+    },
+    {
+      "case_id": "dev03_enil_developed_versus_contributed",
+      "claim_id": "D03C1",
+      "reference_verdict": "UNSUPPORTED",
+      "owner_error_type": "A_FALSE_CLAIM",
+      "seriousness": "HIGH",
+      "note": "Participation and contribution are changed into ENIL having developed the perspective."
+    },
+    {
+      "case_id": "dev05_disabled_playwright_evidence_gap",
+      "claim_id": "D05C2",
+      "reference_verdict": "INSUFFICIENT_EVIDENCE",
+      "owner_error_type": "EVIDENCE_GAP_NOT_CLASSIFIED_AS_FALSE",
+      "seriousness": "HIGH",
+      "note": "The supplied review evidence does not decide the playwright's disability identity."
+    }
+  ],
+  "reserved_evaluation_non_supported_claims": [
+    {
+      "case_id": "fresh05_utah_project_achievement",
+      "claim_id": "F05C2",
+      "exact_summary_wording": "has removed accessibility barriers from victim services across Utah",
+      "relevant_evidence_ids": ["F05E1"],
+      "reference_verdict": "UNSUPPORTED",
+      "owner_error_type": "A_FALSE_CLAIM",
+      "secondary_pattern": "B_MISLEADING_OMISSION_OF_INTENDED_STATUS",
+      "seriousness": "HIGH"
+    },
+    {
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "claim_id": "F06C1",
+      "exact_summary_wording": "has made disability data and accessibility standard parts of urban governance across Nigeria",
+      "relevant_evidence_ids": ["F06E1", "F06E2"],
+      "reference_verdict": "UNSUPPORTED",
+      "owner_error_type": "A_FALSE_CLAIM",
+      "secondary_pattern": "B_MISLEADING_OMISSION_OF_DEMONSTRATION_AND_AMBITION_STATUS",
+      "seriousness": "HIGH"
+    },
+    {
+      "case_id": "fresh07_heumann_sole_attribution",
+      "claim_id": "F07C1",
+      "exact_summary_wording": "Judith Heumann created the dropped-kerb system now used across the United States",
+      "relevant_evidence_ids": ["F07E1", "F07E2"],
+      "reference_verdict": "UNSUPPORTED",
+      "owner_error_type": "A_FALSE_CLAIM",
+      "seriousness": "HIGH"
+    },
+    {
+      "case_id": "fresh08_het_dorp_telethon_scope",
+      "claim_id": "F08C1",
+      "exact_summary_wording": "Arie Klapwijk’s television appeal paid for the construction of Het Dorp",
+      "relevant_evidence_ids": ["F08E1"],
+      "reference_verdict": "UNSUPPORTED",
+      "owner_error_type": "A_FALSE_CLAIM",
+      "secondary_pattern": "B_MISLEADING_OMISSION_OF_FUNDRAISING_PURPOSE",
+      "seriousness": "HIGH"
+    },
+    {
+      "case_id": "fresh09_personhood_implementation_gap",
+      "claim_id": "F09C2",
+      "exact_summary_wording": "Article 12 of the disability convention caused every UN member state to replace guardianship with supported decision-making",
+      "relevant_evidence_ids": ["F09E2"],
+      "reference_verdict": "INSUFFICIENT_EVIDENCE",
+      "owner_error_type": "EVIDENCE_GAP_NOT_CLASSIFIED_AS_FALSE",
+      "seriousness": "HIGH"
+    },
+    {
+      "case_id": "fresh10_tambalan_duration_gap",
+      "claim_id": "F10C2",
+      "exact_summary_wording": "Its workshop programme ran for six months before the collaborative artworks were completed",
+      "relevant_evidence_ids": ["F10E2"],
+      "reference_verdict": "INSUFFICIENT_EVIDENCE",
+      "owner_error_type": "EVIDENCE_GAP_NOT_CLASSIFIED_AS_FALSE",
+      "seriousness": "MEDIUM"
+    },
+    {
+      "case_id": "fresh11_oral_history_interview_count_gap",
+      "claim_id": "F11C2",
+      "exact_summary_wording": "interviews with 40 former residents from across the Netherlands",
+      "relevant_evidence_ids": ["F11E2"],
+      "reference_verdict": "INSUFFICIENT_EVIDENCE",
+      "owner_error_type": "EVIDENCE_GAP_NOT_CLASSIFIED_AS_FALSE",
+      "seriousness": "HIGH"
+    },
+    {
+      "case_id": "fresh12_ipswich_trigger_event_gap",
+      "claim_id": "F12C2",
+      "exact_summary_wording": "The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power",
+      "relevant_evidence_ids": ["F12E2"],
+      "reference_verdict": "INSUFFICIENT_EVIDENCE",
+      "owner_error_type": "EVIDENCE_GAP_NOT_CLASSIFIED_AS_FALSE",
+      "seriousness": "HIGH"
+    }
+  ],
+  "acceptable_omission_note": "No reserved case is labelled unsafe solely for omitting non-essential background. Acceptable omission remains a reporting category, not a negative checker target.",
+  "important": "These reference annotations come from the frozen human/Codex assessment. Neither binary checker produces these explanations."
+}

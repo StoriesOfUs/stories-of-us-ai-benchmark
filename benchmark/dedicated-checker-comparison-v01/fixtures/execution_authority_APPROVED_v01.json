@@ -1,0 +1,23 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-execution-authority-v01",
+  "execution_authorised": true,
+  "approved_freeze_manifest_sha256": "6cdec0611e75c4561ec68993863a259c8c8af23e75d23d2a0bddd1ff6fbf20c5",
+  "owner_approved_installation": true,
+  "owner_approved_model_and_tokenizer_downloads": true,
+  "owner_approved_bounded_inference": true,
+  "owner_approved_public_github_workflow_commit_and_single_dispatch": true,
+  "owner_confirmed_standard_public_runner_eligible_and_zero_cost": true,
+  "approved_at": "2026-11-06",
+  "limits": {
+    "logical_model_evaluations_maximum": 90,
+    "model_computations_maximum": 90,
+    "retries": 0,
+    "elapsed_minutes_maximum": 45,
+    "peak_resident_memory_gb_maximum": 12,
+    "additional_expenditure_gbp_maximum": 0
+  },
+  "adoption_status": "EXPERIMENT_ONLY_NOT_ADOPTED",
+  "autonomous_agent": "HOLD",
+  "deployment": "NONE",
+  "note": "Separate owner approval for one first-attempt standard public GitHub CPU workflow run. It does not alter the frozen package or authorise adoption, integration, publishing, deployment, paid fallback, a larger runner, a retry or another run."
+}

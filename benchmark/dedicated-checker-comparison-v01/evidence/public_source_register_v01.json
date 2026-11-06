@@ -1,0 +1,63 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-package-public-sources-v01",
+  "research_date": "2026-11-06",
+  "status": "PUBLIC_READ_ONLY_RESEARCH_NO_INSTALLATION_NO_MODEL_DOWNLOAD_NO_INFERENCE",
+  "sources": [
+    {
+      "subject": "HHEM model card and licence",
+      "url": "https://huggingface.co/vectara/hallucination_evaluation_model",
+      "retrieved": "2026-11-06",
+      "finding": "HHEM-2.1-Open; Apache-2.0; binary factual-consistency model; exact audited revision de9a5e6ba9ba49531a022dba17e35ffeb2a6fad8."
+    },
+    {
+      "subject": "Official HHEM CPU implementation",
+      "url": "https://huggingface.co/spaces/vectara/hhem-2.1-open-demo/blob/main/app.py",
+      "retrieved": "2026-11-06",
+      "finding": "Official demo loads the HHEM safetensors into T5ForTokenClassification, uses the frozen premise/hypothesis prompt, and treats softmax class 1 as the supported/consistent score."
+    },
+    {
+      "subject": "HHEM official demo dependency guidance",
+      "url": "https://huggingface.co/spaces/vectara/hhem-2.1-open-demo/blob/main/requirements.txt",
+      "retrieved": "2026-11-06",
+      "finding": "Official demo declares CPU PyTorch, Transformers 5, safetensors and sentencepiece; its ranges are not a reproducible transitive lock."
+    },
+    {
+      "subject": "FLAN-T5-base foundation",
+      "url": "https://huggingface.co/google/flan-t5-base/tree/d76732216083fbc26a721b5cf3a653978fdb64ef",
+      "retrieved": "2026-11-06",
+      "finding": "Pinned tokenizer/config foundation revision; Apache-2.0. Foundation weights are not needed for the direct HHEM loading path."
+    },
+    {
+      "subject": "MiniCheck model card and weights",
+      "url": "https://huggingface.co/lytang/MiniCheck-Flan-T5-Large/tree/96eafd01cee2d16cf81aaa2fb226b14f422a37b3",
+      "retrieved": "2026-11-06",
+      "finding": "770M FLAN-T5-Large checkpoint; model-card metadata licence MIT; binary support score."
+    },
+    {
+      "subject": "MiniCheck pinned inference code",
+      "url": "https://github.com/Liyan06/MiniCheck/blob/b58b9fa69acbd1015ec970fa65dd752413a053d2/minicheck/inference.py",
+      "retrieved": "2026-11-06",
+      "finding": "Official code joins document and claim with the tokenizer EOS marker, prefixes 'predict: ', compares token IDs 3 (no support) and 209 (support), and returns the support probability."
+    },
+    {
+      "subject": "MiniCheck code licence and dependencies",
+      "url": "https://github.com/Liyan06/MiniCheck/tree/b58b9fa69acbd1015ec970fa65dd752413a053d2",
+      "retrieved": "2026-11-06",
+      "finding": "Code licence Apache-2.0; upstream dependency declarations are not version-pinned."
+    },
+    {
+      "subject": "Standard public GitHub-hosted runners",
+      "url": "https://docs.github.com/en/actions/reference/runners/github-hosted-runners",
+      "retrieved": "2026-11-06",
+      "finding": "GitHub documents standard runners as free and unlimited for public repositories; ubuntu-latest public runners are documented as 4 CPU, 16 GB RAM and 14 GB SSD. Repository eligibility and actual capacity still require execution-time checks."
+    }
+  ],
+  "request_accounting": {
+    "public_research": "PERFORMED",
+    "exact_public_http_fan_out": "UNKNOWN",
+    "account_requests": 0,
+    "model_requests": 0,
+    "model_weight_downloads": 0,
+    "software_installations": 0
+  }
+}

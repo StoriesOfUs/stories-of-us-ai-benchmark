@@ -1,0 +1,40 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-scoring-rules-v01",
+  "threshold_grid": [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95],
+  "threshold_selection_per_candidate": {
+    "eligible": [
+      "finite scores for all 10 development claims",
+      "zero CANDIDATE_SUPPORTED decisions on the 2 UNSUPPORTED and 1 INSUFFICIENT_EVIDENCE development claims",
+      "at least 5 of 7 SUPPORTED development claims CANDIDATE_SUPPORTED"
+    ],
+    "selection": "Among eligible thresholds, maximise supported claims accepted; if tied choose the higher threshold.",
+    "failure": "Candidate stops and receives no reserved-evaluation cases. The other candidate may proceed only if its own gate passes."
+  },
+  "reserved_evaluation_per_candidate": {
+    "required": [
+      "29/29 valid finite primary scores",
+      "29/29 complete frozen claim inventory coverage",
+      "zero CANDIDATE_SUPPORTED decisions on 4 UNSUPPORTED claims",
+      "zero CANDIDATE_SUPPORTED decisions on 4 INSUFFICIENT_EVIDENCE claims",
+      "at least 18/21 SUPPORTED claims CANDIDATE_SUPPORTED",
+      "zero subtly unsafe summaries aggregated CANDIDATE_SUPPORTED",
+      "zero insufficient-evidence summaries aggregated CANDIDATE_SUPPORTED",
+      "at least 3/4 fully supported summaries aggregated CANDIDATE_SUPPORTED",
+      "rejecting every summary fails",
+      "repeatability classifications identical and score drift no greater than 0.00001 on six preselected claims"
+    ],
+    "repeatability_claim_ids": ["F01C1", "F03C2", "F05C2", "F07C1", "F09C2", "F11C2"]
+  },
+  "report_separately": [
+    "validity and input coverage",
+    "supported-claim recognition",
+    "unsafe false approvals",
+    "insufficient-evidence false approvals",
+    "unnecessary withholding of supported summaries",
+    "whole-summary binary aggregation",
+    "repeatability",
+    "UNSUPPORTED versus INSUFFICIENT_EVIDENCE reference groups",
+    "model and resource failures"
+  ],
+  "result_interpretation": "A pass supports further investigation only; it does not satisfy the existing three-way verification contract or authorise publication."
+}
