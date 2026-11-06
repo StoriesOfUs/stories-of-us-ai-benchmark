@@ -1,0 +1,18 @@
+{
+  "schema_version": "stories-of-us-combined-cpu-checker-static-compatibility-v01",
+  "reviewed_at": "2026-11-06",
+  "preparation_requests": {"documented_public_research_lookups": 8, "account_requests": 0, "model_requests": 0},
+  "hhem_2_1_open": {
+    "status": "STATICALLY_COMPATIBLE_WITH_UNMEASURED_LOAD_RUNTIME_RISK",
+    "route": "Create standard T5ForTokenClassification from pinned google/flan-t5-base config; load the pinned HHEM safetensors after documented t5. prefix removal; use the pinned FLAN tokenizer; no remote code.",
+    "evidence": "The current official Vectara demo describes this direct standard-architecture route for Transformers 4.x compatibility. The frozen torch/transformers/safetensors/tokenizer imports passed the CPU smoke test.",
+    "unknowns": ["actual model-load peak memory", "actual CPU inference time", "behaviour of the pinned weights with the frozen Transformers 5.22.0 environment until bounded loading"]
+  },
+  "minicheck_flan_t5_large": {
+    "status": "STATICALLY_COMPATIBLE_WITH_UNMEASURED_LOAD_RUNTIME_RISK",
+    "route": "Load the pinned repository locally with AutoTokenizer and AutoModelForSeq2SeqLM, CPU only and local_files_only; derive the documented first-token support probability from token IDs 3 and 209; no remote code.",
+    "evidence": "Pinned model configuration declares T5ForConditionalGeneration. The official MiniCheck code uses the same model/tokenizer classes and token IDs. Required imports passed the CPU smoke test.",
+    "unknowns": ["actual load peak memory for the 3.13 GB weight file", "actual CPU inference time", "whether both candidates complete inside the shared 45-minute job"]
+  },
+  "conclusion": "No substantive dependency or model-behaviour change is proposed. Static compatibility is not loading or inference evidence."
+}

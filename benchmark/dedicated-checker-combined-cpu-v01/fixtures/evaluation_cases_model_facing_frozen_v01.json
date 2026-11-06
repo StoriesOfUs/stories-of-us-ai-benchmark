@@ -1,0 +1,217 @@
+{
+  "schema_version": "stories-of-us-checker-evaluation-cases-model-facing-v01",
+  "status": "FROZEN_CANDIDATE_PENDING_OWNER_APPROVAL",
+  "public_label": "EXPERIMENTAL CHECKER INPUT — NOT FOR PUBLICATION",
+  "important": "This fixture intentionally contains no expected verdicts, group labels, error descriptions or scoring answers.",
+  "cases": [
+    {
+      "case_id": "fresh01_bath_history_month_event",
+      "source_record_id": "article_bath_history",
+      "source_name": "University of Bath",
+      "headline": "Disability History Month 2026",
+      "source_url": "https://www.bath.ac.uk/announcements/disability-history-month-2026",
+      "category": "History",
+      "candidate_summary": "University of Bath announces an online staff event for Disability History Month about embedding disability and neurodivergence inclusion. Speakers from Disabled By Society will use lived experience and storytelling, while Dr Keren MacLennan will discuss changing models of disability.",
+      "verified_evidence": [
+        {"evidence_id": "F01E1", "text": "The University page says Disability History Month runs from 19 November to 19 December 2026 and lists an online all-staff event, From Awareness to Action, on 25 November."},
+        {"evidence_id": "F01E2", "text": "The event explores embedding disability and neurodivergence inclusion. Jamie Shields and Celia Chartres-Aris from Disabled By Society will use lived experience, storytelling and conversation; Dr Keren MacLennan will explain changing perceptions of disability from the medical to the social model."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F01C1", "dimension": "ACTION", "claim": "The University of Bath announces an online staff event for Disability History Month about disability and neurodivergence inclusion."},
+        {"claim_id": "F01C2", "dimension": "ATTRIBUTION", "claim": "Speakers from Disabled By Society will use lived experience and storytelling."},
+        {"claim_id": "F01C3", "dimension": "ACTION", "claim": "Dr Keren MacLennan will discuss changing models of disability."}
+      ]
+    },
+    {
+      "case_id": "fresh02_aapd_revup_profile",
+      "source_record_id": "article_aapd_revup",
+      "source_name": "American Association of People with Disabilities",
+      "headline": "REV UP 10 Year Anniversary Spotlight: Rainey Dock Matthews, REV UP Hawai’i and REV UP Texas",
+      "source_url": "https://www.aapd.com/rev-up-10-year-anniversary-spotlight-rainey-dock-matthews-rev-up-hawaii-and-rev-up-texas",
+      "category": "Activism",
+      "candidate_summary": "American Association of People with Disabilities marks REV UP’s tenth anniversary by profiling Rainey Dock Matthews, whose 2016 voting-access experience led to disability-voting advocacy. She previously worked with REV UP Texas and is helping to start REV UP Hawai‘i.",
+      "verified_evidence": [
+        {"evidence_id": "F02E1", "text": "AAPD says REV UP was founded in Texas in 2016 by grassroots activists to build the power of the disability vote and is marking ten years by profiling leaders."},
+        {"evidence_id": "F02E2", "text": "AAPD says Rainey Dock Matthews encountered discrimination at the polls in Texas in 2016 and that this experience launched her into advocating for an accessible democracy. It says she formerly participated in REV UP Texas and is now helping start REV UP Hawai‘i."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F02C1", "dimension": "ACTION", "claim": "AAPD marks REV UP’s tenth anniversary by profiling Rainey Dock Matthews."},
+        {"claim_id": "F02C2", "dimension": "RELATIONSHIP", "claim": "Matthews’s 2016 voting-access experience led to disability-voting advocacy."},
+        {"claim_id": "F02C3", "dimension": "FACTUAL_STATUS", "claim": "She previously worked with REV UP Texas and is helping to start REV UP Hawai‘i."}
+      ]
+    },
+    {
+      "case_id": "fresh03_bug_kabut_venice",
+      "source_record_id": "article_arts_cymru_bug",
+      "source_name": "Disability Arts Cymru",
+      "headline": "Welsh Artist Bug Takes Artwork Kabut to Venice Biennale 2026",
+      "source_url": "https://www.disabilityarts.cymru/post/welsh-artist-bug-takes-artwork-kabut-to-venice-biennale-2026",
+      "category": "Arts",
+      "candidate_summary": "Disability Arts Cymru reports that Welsh artist Bug’s artwork Kabut is appearing in the UNSEEN exhibition in Venice from 13 to 24 October 2026. The work explores feeling trapped and overwhelmed while wanting to connect with the world.",
+      "verified_evidence": [
+        {"evidence_id": "F03E1", "text": "Disability Arts Cymru says Bug’s artwork Kabut features in UNSEEN – seeing differently at Palazzo Pisani-Revedin in Venice; the exhibition runs from 13 to 24 October 2026."},
+        {"evidence_id": "F03E2", "text": "The page says Kabut explores the overwhelming feeling of watching the world go by while wanting to take part, communicating frustration, confusion and a wish to connect."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F03C1", "dimension": "ACTION", "claim": "Bug’s artwork Kabut is appearing in the UNSEEN exhibition in Venice from 13 to 24 October 2026."},
+        {"claim_id": "F03C2", "dimension": "ACTION", "claim": "Kabut explores feeling trapped and overwhelmed while wanting to connect with the world."}
+      ]
+    },
+    {
+      "case_id": "fresh04_radar_key_history",
+      "source_record_id": "article_history_workshop_radar_key",
+      "source_name": "History Workshop",
+      "headline": "Radical Object: The Radar Key",
+      "source_url": "https://www.historyworkshop.org.uk/disability-history/radical-object-the-radar-key",
+      "category": "History",
+      "candidate_summary": "History Workshop traces how RADAR introduced a standardised national key system for disabled people’s toilets in 1981. Developed through a partnership with locksmiths Nicholls & Clarke, one key could open thousands of accessible toilets across the UK.",
+      "verified_evidence": [
+        {"evidence_id": "F04E1", "text": "History Workshop says the Royal Association for Disability and Rehabilitation introduced a standardised national key system in 1981 after disabled people had faced varied local arrangements."},
+        {"evidence_id": "F04E2", "text": "The National Key Scheme emerged from a partnership between RADAR and locksmiths Nicholls & Clarke, enabling one key to open thousands of accessible toilets across the UK."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F04C1", "dimension": "ACTOR", "claim": "RADAR introduced a standardised national key system for disabled people’s toilets in 1981."},
+        {"claim_id": "F04C2", "dimension": "RELATIONSHIP", "claim": "The scheme was developed through a partnership with Nicholls & Clarke."},
+        {"claim_id": "F04C3", "dimension": "SCOPE_OR_QUANTITY", "claim": "One key could open thousands of accessible toilets across the UK."}
+      ]
+    },
+    {
+      "case_id": "fresh05_utah_project_achievement",
+      "source_record_id": "new_d210e989315b",
+      "source_name": "Utah State Today",
+      "headline": "Utah Assistive Technology Program Awarded Grant to Boost Accessibility for Victim Services",
+      "source_url": "https://www.usu.edu/today/story/utah-assistive-technology-program-awarded-grant-to-boost-accessibility-for-victim-services",
+      "category": "Tech",
+      "candidate_summary": "Utah State Today reports that a three-year, $600,000 Justice Department project led by Bora Lee has removed accessibility barriers from victim services across Utah. It trains providers and connects them with assistive technology, working with blind and Deaf partner organisations.",
+      "verified_evidence": [
+        {"evidence_id": "F05E1", "text": "The article describes a three-year, $600,000 project funded by the U.S. Department of Justice and led by Utah Assistive Technology Program director Bora Lee; it seeks to tear down accessibility barriers."},
+        {"evidence_id": "F05E2", "text": "The project provides training and connects service providers to assistive-technology devices. Grant partners include the National Federation for the Blind of Utah and the Sego Lily Center for the Abused Deaf."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F05C1", "dimension": "ACTOR", "claim": "The three-year, $600,000 Justice Department-funded project is led by Bora Lee."},
+        {"claim_id": "F05C2", "dimension": "FACTUAL_STATUS", "claim": "The project has removed accessibility barriers from victim services across Utah."},
+        {"claim_id": "F05C3", "dimension": "ACTION", "claim": "It trains providers and connects them with assistive technology, working with blind and Deaf partner organisations."}
+      ]
+    },
+    {
+      "case_id": "fresh06_jonapwd_national_outcome",
+      "source_record_id": "article_jonapwd_inclusive_cities",
+      "source_name": "JONAPWD Nigeria",
+      "headline": "Building Inclusive and Climate-Resilient Cities: JONAPWD Advances a National Vision for Accessible and Sustainable Urbanisation in Nigeria",
+      "source_url": "https://jonapwdng.org/building-inclusive-and-climate-resilient-cities-jonapwd-advances-a-national-vision-for-accessible-and-sustainable-urbanisation-in-nigeria",
+      "category": "Access",
+      "candidate_summary": "JONAPWD Nigeria reports that its Lagos project has made disability data and accessibility standard parts of urban governance across Nigeria. An October 2026 inception meeting launched the demonstration initiative with support from the UN Global Disability Fund.",
+      "verified_evidence": [
+        {"evidence_id": "F06E1", "text": "JONAPWD describes an inception meeting on 27 October 2026 in Lagos for a project supported by the UN Global Disability Fund through its Resilient and Inclusive Cities Hub."},
+        {"evidence_id": "F06E2", "text": "Lagos is the initial demonstration location. JONAPWD says the broader ambition is a replicable model through which accessibility, disability-inclusive data, digital innovation and participation become parts of urban governance across Nigeria."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F06C1", "dimension": "FACTUAL_STATUS", "claim": "The Lagos project has made disability data and accessibility standard parts of urban governance across Nigeria."},
+        {"claim_id": "F06C2", "dimension": "ACTION", "claim": "An October 2026 inception meeting launched the demonstration initiative."},
+        {"claim_id": "F06C3", "dimension": "ATTRIBUTION", "claim": "The initiative is supported by the UN Global Disability Fund."}
+      ]
+    },
+    {
+      "case_id": "fresh07_heumann_sole_attribution",
+      "source_record_id": "article_accessiblelink_heumann",
+      "source_name": "The Accessible Link",
+      "headline": "Being Heumann - Dropped kerbs didn’t fall from the sky",
+      "source_url": "https://accessiblelink.substack.com/p/being-heumann-dropped-kerbs-didnt",
+      "category": "History",
+      "candidate_summary": "The Accessible Link says Judith Heumann created the dropped-kerb system now used across the United States. Its review of Being Heumann argues that campaigning by Heumann and other disabled activists helped bring accessibility into mainstream US law.",
+      "verified_evidence": [
+        {"evidence_id": "F07E1", "text": "The article says dropped kerbs are now ordinary in many countries but were not normal a few decades ago; it presents them as one example of accessibility’s cultural and historical context."},
+        {"evidence_id": "F07E2", "text": "The article says legislation that Judy Heumann and others fought for brought accessibility into mainstream US law. It does not say that Heumann personally created a national dropped-kerb system."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F07C1", "dimension": "ACTOR", "claim": "Judith Heumann created the dropped-kerb system now used across the United States."},
+        {"claim_id": "F07C2", "dimension": "ATTRIBUTION", "claim": "Heumann and other disabled activists campaigned for legislation that helped bring accessibility into mainstream US law."}
+      ]
+    },
+    {
+      "case_id": "fresh08_het_dorp_telethon_scope",
+      "source_record_id": "article_rethinking_het_dorp",
+      "source_name": "Rethinking Disability",
+      "headline": "Selling Het Dorp, or the transnational framing of Social Rehabilitation",
+      "source_url": "https://rethinkingdisability.net/blog-selling-het-dorp-or-the-transnational-framing-of-social-rehabilitation",
+      "category": "History",
+      "candidate_summary": "Rethinking Disability says Arie Klapwijk’s television appeal paid for the construction of Het Dorp, an accessible neighbourhood near Arnhem. At a 1973 London conference, he presented the challenges faced by severely disabled people as shared across countries.",
+      "verified_evidence": [
+        {"evidence_id": "F08E1", "text": "The article says Arie Klapwijk and Mies Bouwman hosted a major Dutch telethon whose broadcast sought to raise funds for construction of an accessible neighbourhood for physically disabled people near Arnhem."},
+        {"evidence_id": "F08E2", "text": "At a London conference in April 1973, Klapwijk said the problems of parents, particularly those of severely disabled people, were the same worldwide."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F08C1", "dimension": "SCOPE_OR_QUANTITY", "claim": "Klapwijk’s television appeal paid for the construction of Het Dorp."},
+        {"claim_id": "F08C2", "dimension": "ACTION", "claim": "At a 1973 London conference, Klapwijk presented the challenges faced by severely disabled people as shared across countries."}
+      ]
+    },
+    {
+      "case_id": "fresh09_personhood_implementation_gap",
+      "source_record_id": "article_history_workshop_personhood",
+      "source_name": "History Workshop",
+      "headline": "Shared Personhood: Rethinking Human Rights through Cognitive Disability",
+      "source_url": "https://www.historyworkshop.org.uk/disability-history/shared-personhood-rethinking-human-rights-through-cognitive-disability",
+      "category": "History",
+      "candidate_summary": "History Workshop examines how people with cognitive disabilities and their allies challenged the idea that autonomy is required for full human rights. It says Article 12 of the disability convention caused every UN member state to replace guardianship with supported decision-making.",
+      "verified_evidence": [
+        {"evidence_id": "F09E1", "text": "The article examines how people with cognitive disabilities and their allies challenged the idea that a person must be autonomous and make decisions independently to have full human rights."},
+        {"evidence_id": "F09E2", "text": "It says Article 12 of the 2006 Convention on the Rights of Persons with Disabilities recognises equal recognition before the law and discusses negotiations about disabled people’s legal capacity. The supplied passage gives no account of implementation by every UN member state."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F09C1", "dimension": "ACTION", "claim": "People with cognitive disabilities and their allies challenged the idea that autonomy is required for full human rights."},
+        {"claim_id": "F09C2", "dimension": "SCOPE_OR_QUANTITY", "claim": "Article 12 caused every UN member state to replace guardianship with supported decision-making."}
+      ]
+    },
+    {
+      "case_id": "fresh10_tambalan_duration_gap",
+      "source_record_id": "article_arts_cymru_tambalan",
+      "source_name": "Disability Arts Cymru",
+      "headline": "Tambalan - Community Murals CIC (Cymru/Wales) & Jogja Disability Arts (Indonesia)",
+      "source_url": "https://www.disabilityarts.cymru/post/tambalan-community-murals-cic-cymru-wales-jogja-disability-arts-indonesia-1",
+      "category": "Arts",
+      "candidate_summary": "Disability Arts Cymru describes Tambalan, a Wales–Indonesia collaboration using batik, residencies and workshops to explore disability rights, identity and belonging. Its workshop programme ran for six months before the collaborative artworks were completed.",
+      "verified_evidence": [
+        {"evidence_id": "F10E1", "text": "The page says Tambalan connects Indonesian batik traditions and Welsh culture through artist residencies, collaborative creative processes and cross-cultural dialogue viewed through disability rights."},
+        {"evidence_id": "F10E2", "text": "It says patchwork and texts were created through reflection and workshops with disabled artists from Wales and Indonesia, children from Ty Gwyn School and communities in Indonesia and the UK. The supplied evidence gives no duration for the workshop programme."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F10C1", "dimension": "RELATIONSHIP", "claim": "Tambalan is a Wales–Indonesia collaboration using batik, residencies and workshops to explore disability rights, identity and belonging."},
+        {"claim_id": "F10C2", "dimension": "SCOPE_OR_QUANTITY", "claim": "Its workshop programme ran for six months before the collaborative artworks were completed."}
+      ]
+    },
+    {
+      "case_id": "fresh11_oral_history_interview_count_gap",
+      "source_record_id": "article_rethinking_oral_history",
+      "source_name": "Rethinking Disability",
+      "headline": "Insider or outsider? Positionality and doing oral history as a disabled historian",
+      "source_url": "https://rethinkingdisability.net/blog-insider-or-outsider-positionality-and-doing-oral-history-as-a-disabled-historian",
+      "category": "History",
+      "candidate_summary": "Rethinking Disability describes a disabled historian using oral history and archives to study Het Dorp residents’ disability identities and self-expression. The project draws on interviews with 40 former residents from across the Netherlands.",
+      "verified_evidence": [
+        {"evidence_id": "F11E1", "text": "The author identifies their positionality as a disabled disability historian and says their PhD uses oral history and archival research to study Het Dorp residents’ disability identity, social views and self-expression."},
+        {"evidence_id": "F11E2", "text": "The supplied passage describes interviews with Het Dorp residents and one respondent in detail. It gives neither a total of 40 interviewees nor nationwide geographic coverage."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F11C1", "dimension": "ACTOR", "claim": "A disabled historian uses oral history and archives to study Het Dorp residents’ disability identities and self-expression."},
+        {"claim_id": "F11C2", "dimension": "SCOPE_OR_QUANTITY", "claim": "The project draws on interviews with 40 former residents from across the Netherlands."}
+      ]
+    },
+    {
+      "case_id": "fresh12_ipswich_trigger_event_gap",
+      "source_record_id": "new_fb8673055d6c",
+      "source_name": "Local Ipswich News",
+      "headline": "Emergency planning vital for people with disability",
+      "source_url": "https://localipswichnews.com.au/news/disability-emergency-planning/",
+      "category": "Access",
+      "candidate_summary": "Local Ipswich News urges disabled Australians to prepare early for emergencies because evacuation can involve accessible transport, equipment, medication and assistance animals. The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power.",
+      "verified_evidence": [
+        {"evidence_id": "F12E1", "text": "The article urges people with disability to prepare early for storms, floods, bushfires and other emergencies, citing accessible transport, essential equipment, medication, assistance animals and support at evacuation centres."},
+        {"evidence_id": "F12E2", "text": "It says power outages can create serious risks for people who rely on electrically powered medical or disability equipment. The supplied evidence does not mention a 2026 Ipswich flood evacuation or affected wheelchair users."}
+      ],
+      "atomic_claims": [
+        {"claim_id": "F12C1", "dimension": "ACTION", "claim": "Local Ipswich News urges disabled Australians to prepare early because evacuation can involve transport, equipment, medication and assistance animals."},
+        {"claim_id": "F12C2", "dimension": "RELATIONSHIP", "claim": "The advice followed a 2026 Ipswich flood evacuation that left wheelchair users without power."}
+      ]
+    }
+  ]
+}

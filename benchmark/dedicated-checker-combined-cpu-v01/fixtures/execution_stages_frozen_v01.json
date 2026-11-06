@@ -1,0 +1,19 @@
+{
+  "schema_version": "stories-of-us-combined-cpu-checker-stages-v01",
+  "candidate_order": ["hhem_2_1_open", "minicheck_flan_t5_large"],
+  "global_stages": [
+    "verify separate approval, freeze, one-use state, standard-public-runner and zero-cost evidence",
+    "install exact 36-wheel CPU-only lock and verify package identity, storage and absence of GPU packages"
+  ],
+  "per_candidate_stages": [
+    "download only allowlisted pinned files and verify size and content hash",
+    "record inode-aware storage before applying the candidate-cache guard",
+    "load pinned tokenizer and model on CPU in an isolated subprocess",
+    "verify all exact tokenizer lengths before first inference; never truncate or chunk",
+    "run 10 development claim computations and select threshold using development only",
+    "run 29 reserved evaluation computations and six repeatability computations only if the development gate passes",
+    "preserve concise results, terminate the subprocess and remove its model cache before the next candidate"
+  ],
+  "candidate_failure_continuation": "A candidate-specific access, integrity, loading, token or development-gate failure with preserved evidence stops that candidate but may allow the other candidate to run if every global limit remains satisfied.",
+  "global_stop": "Authority, dependency, aggregate budget, time, peak-memory, total-storage, contract or evidence-preservation failure stops the whole job."
+}

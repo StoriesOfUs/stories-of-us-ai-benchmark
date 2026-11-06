@@ -1,0 +1,37 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-binary-contract-v01",
+  "status": "PROPOSED_EXPERIMENTAL_CONTRACT_NOT_PRODUCTION_CONTRACT",
+  "unit": "one manually inventoried atomic claim against one complete frozen evidence packet",
+  "candidate_outputs": {
+    "CANDIDATE_SUPPORTED": "Finite support score at or above that candidate's development-frozen threshold.",
+    "WITHHOLD": "Finite support score below threshold, or any invalid/incomplete/overflow/resource failure. WITHHOLD does not say whether the claim is contradicted or merely unproved."
+  },
+  "answer_key_mapping_for_scoring_only": {
+    "SUPPORTED": "positive",
+    "UNSUPPORTED": "negative",
+    "INSUFFICIENT_EVIDENCE": "negative"
+  },
+  "three_way_contract_satisfied": false,
+  "model_explanations_created": false,
+  "model_evidence_references_created": false,
+  "evidence_ids_mean": "Material supplied to the checker, not model-verified proof.",
+  "input_requirements": [
+    "non-empty known case ID",
+    "non-empty unique known claim ID",
+    "non-empty atomic claim",
+    "all frozen evidence items for that case in frozen order",
+    "non-empty unique evidence IDs",
+    "no answer-key, expected-label, group or scoring fields",
+    "complete formatted tokenizer count at or below 1024",
+    "no truncation and exactly one passage computation"
+  ],
+  "whole_summary_aggregation": "Only a non-empty, complete inventory in which every claim is CANDIDATE_SUPPORTED yields CANDIDATE_SUPPORTED. Any withheld, invalid, missing or duplicated claim yields WITHHOLD.",
+  "fail_closed": true,
+  "known_limitations": [
+    "The candidates cannot discover a material summary claim omitted from the manual inventory.",
+    "A high score cannot prove that the supplied evidence packet was complete.",
+    "A low score cannot distinguish contradiction from missing evidence.",
+    "A passage examined is not automatically a passage that supports the full claim.",
+    "This factual signal is separate from Summary House Style V04 and editorial acceptance."
+  ]
+}

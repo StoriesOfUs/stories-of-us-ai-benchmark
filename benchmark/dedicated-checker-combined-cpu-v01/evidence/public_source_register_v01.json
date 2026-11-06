@@ -1,0 +1,13 @@
+{
+  "schema_version": "stories-of-us-combined-cpu-checker-public-sources-v01",
+  "retrieval_date": "2026-11-06",
+  "sources": [
+    {"purpose": "HHEM pinned model and file metadata", "url": "https://huggingface.co/vectara/hallucination_evaluation_model/tree/de9a5e6ba9ba49531a022dba17e35ffeb2a6fad8"},
+    {"purpose": "HHEM official loading demonstration", "url": "https://huggingface.co/spaces/vectara/HHEM-2.1-Open"},
+    {"purpose": "FLAN-T5 base pinned tokenizer/config metadata", "url": "https://huggingface.co/google/flan-t5-base/tree/d76732216083fbc26a721b5cf3a653978fdb64ef"},
+    {"purpose": "MiniCheck pinned model and file metadata", "url": "https://huggingface.co/lytang/MiniCheck-Flan-T5-Large/tree/96eafd01cee2d16cf81aaa2fb226b14f422a37b3"},
+    {"purpose": "MiniCheck official code", "url": "https://github.com/Liyan06/MiniCheck/tree/b58b9fa69acbd1015ec970fa65dd752413a053d2"},
+    {"purpose": "GitHub-hosted runner public repository billing basis", "url": "https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-actions/about-billing-for-github-actions"}
+  ],
+  "execution_preflight_required": "Current public repository visibility, standard runner eligibility, free-route status, model availability and terms must be rechecked after separate owner execution approval."
+}

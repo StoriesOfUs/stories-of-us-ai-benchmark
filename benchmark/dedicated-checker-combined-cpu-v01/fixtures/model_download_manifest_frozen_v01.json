@@ -1,0 +1,52 @@
+{
+  "schema_version": "stories-of-us-pinned-model-download-manifest-v01",
+  "retrieved_metadata_at_utc": "2026-11-06T00:00:00Z",
+  "note": "LFS objects use SHA-256. Small Git-backed files use Git blob SHA-1 plus exact byte size. Only these allowlisted files may be downloaded.",
+  "candidates": {
+    "hhem_2_1_open": {
+      "candidate_bytes": 441757214,
+      "repositories": [
+        {
+          "repo_id": "vectara/hallucination_evaluation_model",
+          "revision": "de9a5e6ba9ba49531a022dba17e35ffeb2a6fad8",
+          "destination": "hhem_model",
+          "files": [
+            {"path": "model.safetensors", "size": 438535352, "hash_type": "sha256", "hash": "634de18a38cf1e991c1acd0f7a9e0d30f7ea187fba42bb4798f862d3edd31e72"}
+          ]
+        },
+        {
+          "repo_id": "google/flan-t5-base",
+          "revision": "d76732216083fbc26a721b5cf3a653978fdb64ef",
+          "destination": "flan_t5_base",
+          "files": [
+            {"path": "config.json", "size": 1404, "hash_type": "git_blob_sha1", "hash": "d41e16cd4cd58621695da4f94132f516d07251af"},
+            {"path": "special_tokens_map.json", "size": 2201, "hash_type": "git_blob_sha1", "hash": "2c19eb6e3b583f52d34b903b5978d3d30b6b7682"},
+            {"path": "spiece.model", "size": 791656, "hash_type": "sha256", "hash": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"},
+            {"path": "tokenizer.json", "size": 2424064, "hash_type": "git_blob_sha1", "hash": "fc669fbad1a6a82119ca3e1fa75db33ee22ca47d"},
+            {"path": "tokenizer_config.json", "size": 2537, "hash_type": "git_blob_sha1", "hash": "e3685b0cb5c8909cf3e7d72ffc16ca94c861bdfb"}
+          ]
+        }
+      ]
+    },
+    "minicheck_flan_t5_large": {
+      "candidate_bytes": 3136026916,
+      "repositories": [
+        {
+          "repo_id": "lytang/MiniCheck-Flan-T5-Large",
+          "revision": "96eafd01cee2d16cf81aaa2fb226b14f422a37b3",
+          "destination": "minicheck_model",
+          "files": [
+            {"path": "added_tokens.json", "size": 2634, "hash_type": "git_blob_sha1", "hash": "109f87fd12f4dc7a2b03af5ea270290c192d352d"},
+            {"path": "config.json", "size": 826, "hash_type": "git_blob_sha1", "hash": "5c46355b6fc6847c27b021600017918f9c36d437"},
+            {"path": "generation_config.json", "size": 112, "hash_type": "git_blob_sha1", "hash": "bdbc0fffcc340e3d90343f1df6cdc93644630c2c"},
+            {"path": "pytorch_model.bin", "size": 3132786242, "hash_type": "sha256", "hash": "41291881e13c6235ed47149cec903bee9493e45d9d7325587a9fa2e266c526c0"},
+            {"path": "special_tokens_map.json", "size": 2239, "hash_type": "git_blob_sha1", "hash": "8ab766dbd101a926a5d669cc53b75a2427f03076"},
+            {"path": "spiece.model", "size": 791656, "hash_type": "sha256", "hash": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"},
+            {"path": "tokenizer.json", "size": 2422290, "hash_type": "git_blob_sha1", "hash": "8f3d5322d60f21722824a995c3ea99b2c22f7410"},
+            {"path": "tokenizer_config.json", "size": 20917, "hash_type": "git_blob_sha1", "hash": "6692a718be7044691992278506c6a688d4a83b9d"}
+          ]
+        }
+      ]
+    }
+  }
+}

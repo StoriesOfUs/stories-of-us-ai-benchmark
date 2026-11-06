@@ -1,0 +1,101 @@
+name: Dedicated checker combined CPU V01 (manual, one use)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dedicated-checker-combined-cpu-v01
+  cancel-in-progress: false
+
+jobs:
+  bounded-combined-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PACKAGE_DIR: benchmark/dedicated-checker-combined-cpu-v01
+      PYTHONNOUSERSITE: '1'
+      PIP_NO_CACHE_DIR: '1'
+      TOKENIZERS_PARALLELISM: 'false'
+    steps:
+      - name: Check out the separately authorised public benchmark commit
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Initialise isolated runtime paths
+        shell: bash
+        run: |
+          echo "SOU_ENV_ROOT=${RUNNER_TEMP}/sou_combined_cpu_venv" >> "$GITHUB_ENV"
+          echo "SOU_RUNTIME_ROOT=${RUNNER_TEMP}/sou_combined_cpu_runtime" >> "$GITHUB_ENV"
+          echo "HF_HOME=${RUNNER_TEMP}/sou_combined_cpu_runtime/hf_home" >> "$GITHUB_ENV"
+
+      - name: Consume one-use authority before installation
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: python code/lock_execution_v01.py
+
+      - name: Install the proven exact CPU wheel lock and record pre-guard sizes
+        working-directory: ${{ env.PACKAGE_DIR }}
+        shell: bash
+        run: |
+          set +e
+          python -m venv "$SOU_ENV_ROOT"
+          venv_status=$?
+          if [ "$venv_status" -eq 0 ]; then
+            "$SOU_ENV_ROOT/bin/python" -m pip install \
+              --disable-pip-version-check \
+              --no-input \
+              --no-cache-dir \
+              --retries 0 \
+              --timeout 30 \
+              --no-deps \
+              --no-index \
+              --only-binary=:all: \
+              --require-hashes \
+              -r fixtures/requirements_cpu_wheels_frozen_v01.txt \
+              2>&1 | tee outputs/pip_install_log_v01.txt
+            install_status=${PIPESTATUS[0]}
+          else
+            install_status=$venv_status
+          fi
+          set -e
+          python code/record_install_state_v01.py --pip-exit-code "$install_status"
+
+      - name: Verify dependency consistency and identity
+        working-directory: ${{ env.PACKAGE_DIR }}
+        shell: bash
+        run: |
+          "$SOU_ENV_ROOT/bin/python" -m pip check | tee outputs/pip_check_v01.txt
+          "$SOU_ENV_ROOT/bin/python" -m pip freeze --all > outputs/resolved_environment_v01.txt
+
+      - name: Run the single bounded sequential comparison
+        working-directory: ${{ env.PACKAGE_DIR }}
+        shell: bash
+        run: |
+          "$SOU_ENV_ROOT/bin/python" code/combined_checker_runner_v01.py --execute
+
+      - name: Enforce concise result retention
+        if: always()
+        working-directory: ${{ env.PACKAGE_DIR }}
+        run: python code/final_artifact_guard_v01.py
+
+      - name: Remove model and dependency material before upload
+        if: always()
+        shell: bash
+        run: |
+          python -c 'import os, shutil; [shutil.rmtree(os.environ[name], ignore_errors=True) for name in ("SOU_ENV_ROOT", "SOU_RUNTIME_ROOT", "HF_HOME")]'
+
+      - name: Upload concise evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dedicated-checker-combined-cpu-v01
+          path: ${{ env.PACKAGE_DIR }}/outputs/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9

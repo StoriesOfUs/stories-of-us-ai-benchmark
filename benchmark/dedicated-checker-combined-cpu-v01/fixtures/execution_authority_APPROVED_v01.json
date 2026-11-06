@@ -1,0 +1,23 @@
+{
+  "schema_version": "stories-of-us-combined-cpu-checker-owner-authority-v01",
+  "approved_at_project_date": "2026-11-06",
+  "package": "option_c_dedicated_checker_combined_cpu_package_v01",
+  "approved_freeze_manifest_sha256": "ebf94ab1612f9ec7a6da5cccc01c3f1266b3afc8db8152a2e25b9e6f001216cc",
+  "execution_authorised": true,
+  "owner_approved_public_repository_upload_and_single_dispatch": true,
+  "owner_approved_pinned_cpu_dependency_installation": true,
+  "owner_approved_pinned_model_tokenizer_download_and_cpu_loading": true,
+  "owner_approved_bounded_checker_inference": true,
+  "owner_confirmed_standard_public_runner_eligible_and_zero_cost": true,
+  "owner_approved_results_recovery_and_five_step_closeout": true,
+  "maximum_workflow_runs": 1,
+  "maximum_run_attempt": 1,
+  "maximum_retries": 0,
+  "maximum_logical_evaluations": 90,
+  "maximum_model_computations": 90,
+  "maximum_job_minutes": 45,
+  "maximum_expenditure_gbp": 0,
+  "adoption_authorised": false,
+  "publication_or_deployment_authorised": false,
+  "autonomous_agent_status": "HOLD"
+}

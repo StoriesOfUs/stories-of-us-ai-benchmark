@@ -1,0 +1,23 @@
+{
+  "schema_version": "stories-of-us-combined-cpu-checker-reuse-provenance-v01",
+  "cpu_environment": {
+    "source_package": "option_c_dedicated_checker_cpu_smoke_test_v01",
+    "source_freeze_sha256": "28bac3fbca231062d01d1598199846d03dda20bb451e79c1e736a03f05b612a1",
+    "successful_run": "https://github.com/StoriesOfUs/stories-of-us-ai-benchmark/actions/runs/42230812483",
+    "reused_files": ["requirements_cpu_wheels_frozen_v01.txt", "expected_versions_frozen_v01.json"],
+    "measured_result": "36 exact wheels installed; torch 2.15.0+cpu; imports and dependency consistency passed; allocated environment 1,249,054,720 bytes; peak RSS 449,081,344 bytes."
+  },
+  "comparison_contract": {
+    "source_package": "option_c_dedicated_checker_comparison_package_v02",
+    "reused": "four development summaries/10 claims, twelve reserved evaluation summaries/29 claims, approved AAPD correction, binary contract, model registry, scoring, answer keys and provenance",
+    "historical_status": "Preserved. The V02 execution stopped before inference after CUDA-bearing dependency installation exceeded its environment guard."
+  },
+  "changes": [
+    "Replace the failed dependency route with the proven exact CPU wheel lock.",
+    "Download only pinned allowlisted model/tokenizer files and verify each size and hash.",
+    "Run candidates sequentially in separate subprocesses so model memory is released between candidates.",
+    "Use inode-aware storage accounting so hard links and snapshot links do not double-count stored blobs.",
+    "Record exact sizes before applying guards and retain candidate-specific failure evidence.",
+    "Keep live execution locked pending a new freeze-specific owner approval."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "stories-of-us-combined-cpu-checker-resource-limits-v01",
+  "execution_status": "LOCKED_NOT_AUTHORISED",
+  "maximum_workflow_runs": 1,
+  "maximum_run_attempt": 1,
+  "maximum_retries": 0,
+  "maximum_job_seconds": 2700,
+  "maximum_expenditure_gbp": 0,
+  "logical_evaluations": {
+    "development": 20,
+    "reserved_evaluation_maximum": 58,
+    "repeatability_maximum": 12,
+    "total_maximum": 90,
+    "probes": 0,
+    "warmups": 0
+  },
+  "model_computations": {
+    "maximum": 90,
+    "required_per_logical_evaluation": 1,
+    "unexpected_chunking_action": "STOP_AFFECTED_CANDIDATE"
+  },
+  "input": {
+    "maximum_complete_formatted_tokens": 1024,
+    "truncation": false,
+    "exact_pinned_tokenizer_counts_required_before_candidate_inference": true
+  },
+  "memory": {
+    "maximum_peak_task_rss_bytes": 12000000000,
+    "definition": "12 GB decimal; parent monitors candidate subprocess RSS and descendants",
+    "candidate_subprocesses_sequential": true
+  },
+  "storage": {
+    "minimum_free_disk_bytes_before_installation": 10737418240,
+    "maximum_compressed_dependency_wheels_bytes": 1000000000,
+    "maximum_installed_environment_bytes": 3221225472,
+    "installed_environment_definition": "3 GiB exactly",
+    "maximum_candidate_model_tokenizer_bytes": 4000000000,
+    "maximum_other_task_temporary_bytes": 1000000000,
+    "maximum_combined_task_created_bytes": 8000000000,
+    "maximum_saved_artifacts_bytes": 5000000,
+    "model_weights_in_artifacts": false,
+    "measurement": "inode-aware lstat accounting; hard-linked inodes counted once; symlink targets diagnostic only"
+  },
+  "candidate_failure_policy": {
+    "affected_candidate_only": [
+      "model or tokenizer access/download/integrity failure",
+      "candidate model load failure",
+      "candidate exact-token overflow",
+      "candidate cache limit",
+      "candidate development gate failure"
+    ],
+    "whole_job_stop": [
+      "authority or freeze failure",
+      "dependency identity or environment limit failure",
+      "combined storage, memory, time or computation cap",
+      "answer-key leakage",
+      "invalid scoring contract or result preservation failure",
+      "paid route or zero-cost condition not established"
+    ]
+  },
+  "workflow": {
+    "manual_only": true,
+    "permissions": "contents: read",
+    "secrets": false,
+    "runtime_repository_writes": false,
+    "schedule": false,
+    "deployment": false,
+    "paid_or_larger_runner_fallback": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "stories-of-us-dedicated-checker-model-registry-v01",
+  "frozen_at": "2026-11-06",
+  "models": {
+    "hhem_2_1_open": {
+      "model_id": "vectara/hallucination_evaluation_model",
+      "revision": "de9a5e6ba9ba49531a022dba17e35ffeb2a6fad8",
+      "architecture": "FLAN-T5-base encoder with a two-class token-classification head",
+      "licence": "Apache-2.0",
+      "weight_file": "model.safetensors",
+      "weight_bytes": 438535352,
+      "weight_sha256": "634de18a38cf1e991c1acd0f7a9e0d30f7ea187fba42bb4798f862d3edd31e72",
+      "foundation_model_id": "google/flan-t5-base",
+      "foundation_revision": "d76732216083fbc26a721b5cf3a653978fdb64ef",
+      "foundation_licence": "Apache-2.0",
+      "score_direction": "Higher softmax class-1 score means more consistent/supported.",
+      "execution_route": "Direct official-demo-equivalent CPU architecture loading; no trust_remote_code execution.",
+      "explanations_or_citations": false
+    },
+    "minicheck_flan_t5_large": {
+      "model_id": "lytang/MiniCheck-Flan-T5-Large",
+      "revision": "96eafd01cee2d16cf81aaa2fb226b14f422a37b3",
+      "architecture": "FLAN-T5-Large sequence-to-sequence model scored on the first decoder token",
+      "model_weight_licence": "MIT",
+      "weight_file": "pytorch_model.bin",
+      "weight_bytes": 3132786242,
+      "weight_sha256": "41291881e13c6235ed47149cec903bee9493e45d9d7325587a9fa2e266c526c0",
+      "reference_code_repository": "https://github.com/Liyan06/MiniCheck",
+      "reference_code_revision": "b58b9fa69acbd1015ec970fa65dd752413a053d2",
+      "reference_code_licence": "Apache-2.0",
+      "score_direction": "Higher probability for token ID 209 versus token ID 3 means more support.",
+      "execution_route": "Pinned checkpoint loaded on CPU; direct single-packet scoring equivalent to the pinned reference code.",
+      "explanations_or_citations": false
+    }
+  },
+  "common_lineage_warning": "Both candidates inherit FLAN-T5 components and binary grounding objectives. Agreement is not independent proof.",
+  "adoption_status": "EXPERIMENTAL_CANDIDATES_ONLY"
+}
