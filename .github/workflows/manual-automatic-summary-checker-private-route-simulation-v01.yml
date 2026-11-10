@@ -1,0 +1,140 @@
+name: Automatic summary checker V04 private-route simulation V01
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Exact synthetic operation to execute
+        required: true
+        type: choice
+        options:
+          - negative-suite
+          - negative-interruption
+          - negative-recovery
+          - stage1
+          - repeat-stage1
+          - stage2
+          - stage3
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sou-automatic-summary-checker-v04-private-route-simulation-v01
+  cancel-in-progress: false
+
+jobs:
+  synthetic-private-route:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: checker-simulation-v01
+    steps:
+      - name: Check out exact public simulation code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Verify approved public identity before private access
+        env:
+          SOU_EXPECTED_PUBLIC_COMMIT: ${{ vars.SOU_APPROVED_SIMULATION_COMMIT_SHA }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = "StoriesOfUs/stories-of-us-ai-benchmark"
+          test -n "$SOU_EXPECTED_PUBLIC_COMMIT"
+          test "$GITHUB_SHA" = "$SOU_EXPECTED_PUBLIC_COMMIT"
+
+      - name: Check out synthetic private storage
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: StoriesOfUs/stories-of-us-ai-checker-private-v01
+          token: ${{ secrets.SOU_PRIVATE_REPO_FINE_GRAINED_TOKEN }}
+          path: ${{ runner.temp }}/sou-private
+          persist-credentials: true
+          fetch-depth: 1
+
+      - name: Verify private repository checkout
+        env:
+          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+        run: |
+          set -euo pipefail
+          test -d "$SOU_PRIVATE_ROOT/.git"
+          test "$(git -C "$SOU_PRIVATE_ROOT" branch --show-current)" = "main"
+          test "$(git -C "$SOU_PRIVATE_ROOT" remote get-url origin)" = "https://github.com/StoriesOfUs/stories-of-us-ai-checker-private-v01"
+
+      - name: Run bounded synthetic operation
+        id: simulation
+        env:
+          SOU_SIMULATED_ONLY: "1"
+          SOU_OPERATION: ${{ inputs.operation }}
+          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+          SOU_EXPECTED_BUNDLE_SHA256: ${{ vars.SOU_SYNTHETIC_PRIVATE_BUNDLE_SHA256 }}
+          SOU_EXPECTED_PUBLIC_COMMIT: ${{ vars.SOU_APPROVED_SIMULATION_COMMIT_SHA }}
+        run: |
+          set +e
+          python3 benchmark/automatic-summary-checker-v01/tools/cloud_private_route_simulation_v01.py \
+            --private-root "$SOU_PRIVATE_ROOT" \
+            --operation "$SOU_OPERATION" \
+            --utc-date "$(date -u +%F)" \
+            --dispatch-id "$GITHUB_RUN_ID" \
+            --expected-bundle-sha256 "$SOU_EXPECTED_BUNDLE_SHA256" \
+            --expected-public-commit "$SOU_EXPECTED_PUBLIC_COMMIT" \
+            --actual-public-commit "$GITHUB_SHA" \
+            > "$RUNNER_TEMP/sou-sanitised-result.json"
+          driver_exit_code=$?
+          set -e
+          echo "driver_exit_code=$driver_exit_code" >> "$GITHUB_OUTPUT"
+          python3 -m json.tool "$RUNNER_TEMP/sou-sanitised-result.json"
+
+      - name: Persist synthetic counters and results privately
+        if: always()
+        env:
+          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+          SOU_OPERATION: ${{ inputs.operation }}
+        run: |
+          set -euo pipefail
+          if [ ! -d "$SOU_PRIVATE_ROOT/.git" ]; then
+            echo "Private checkout unavailable; no private persistence possible"
+            exit 0
+          fi
+          cd "$SOU_PRIVATE_ROOT"
+          git config user.name "stories-of-us-checker-simulation"
+          git config user.email "storiesofus404@gmail.com"
+          git add simulation/state simulation/results simulation/recovery
+          if git diff --cached --quiet; then
+            echo "No private state change to persist"
+          else
+            git commit -m "Record V04 private-route simulation ${SOU_OPERATION}"
+            git push origin HEAD:main
+          fi
+
+      - name: Refuse public private-data output
+        if: always()
+        run: |
+          set -euo pipefail
+          test ! -d public-artifacts
+          if [ -f "$RUNNER_TEMP/sou-sanitised-result.json" ]; then
+            python3 benchmark/automatic-summary-checker-v01/tools/cloud_private_route_simulation_v01.py \
+              --scan-public-output "$RUNNER_TEMP/sou-sanitised-result.json"
+          fi
+
+      - name: Remove private runner files
+        if: always()
+        env:
+          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+        run: |
+          set -euo pipefail
+          if [ -d "$SOU_PRIVATE_ROOT" ]; then
+            find "$SOU_PRIVATE_ROOT" -type f -exec sh -c ': > "$1"' sh {} \;
+            rm -rf "$SOU_PRIVATE_ROOT"
+          fi
+          rm -f "$RUNNER_TEMP/sou-sanitised-result.json"
+          test ! -e "$SOU_PRIVATE_ROOT"
+          test ! -e "$RUNNER_TEMP/sou-sanitised-result.json"
+
+      - name: Enforce driver outcome after preservation and cleanup
+        if: always()
+        env:
+          SOU_DRIVER_EXIT_CODE: ${{ steps.simulation.outputs.driver_exit_code }}
+        run: |
+          set -euo pipefail
+          test "$SOU_DRIVER_EXIT_CODE" = "0"
