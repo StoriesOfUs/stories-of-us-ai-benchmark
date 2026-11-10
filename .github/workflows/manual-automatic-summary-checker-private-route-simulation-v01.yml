@@ -48,13 +48,13 @@ jobs:
         with:
           repository: StoriesOfUs/stories-of-us-ai-checker-private-v01
           token: ${{ secrets.SOU_PRIVATE_REPO_FINE_GRAINED_TOKEN }}
-          path: ${{ runner.temp }}/sou-private
+          path: sou-private
           persist-credentials: true
           fetch-depth: 1
 
       - name: Verify private repository checkout
         env:
-          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+          SOU_PRIVATE_ROOT: ${{ github.workspace }}/sou-private
         run: |
           set -euo pipefail
           test -d "$SOU_PRIVATE_ROOT/.git"
@@ -66,7 +66,7 @@ jobs:
         env:
           SOU_SIMULATED_ONLY: "1"
           SOU_OPERATION: ${{ inputs.operation }}
-          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+          SOU_PRIVATE_ROOT: ${{ github.workspace }}/sou-private
           SOU_EXPECTED_BUNDLE_SHA256: ${{ vars.SOU_SYNTHETIC_PRIVATE_BUNDLE_SHA256 }}
           SOU_EXPECTED_PUBLIC_COMMIT: ${{ vars.SOU_APPROVED_SIMULATION_COMMIT_SHA }}
         run: |
@@ -88,7 +88,7 @@ jobs:
       - name: Persist synthetic counters and results privately
         if: always()
         env:
-          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+          SOU_PRIVATE_ROOT: ${{ github.workspace }}/sou-private
           SOU_OPERATION: ${{ inputs.operation }}
         run: |
           set -euo pipefail
@@ -120,7 +120,7 @@ jobs:
       - name: Remove private runner files
         if: always()
         env:
-          SOU_PRIVATE_ROOT: ${{ runner.temp }}/sou-private
+          SOU_PRIVATE_ROOT: ${{ github.workspace }}/sou-private
         run: |
           set -euo pipefail
           if [ -d "$SOU_PRIVATE_ROOT" ]; then
