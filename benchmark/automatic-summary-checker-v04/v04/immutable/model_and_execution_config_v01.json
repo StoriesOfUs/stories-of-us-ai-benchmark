@@ -1,0 +1,38 @@
+{
+  "schema_version": "stories-of-us-automatic-checker-claim-identification-model-config-v01",
+  "provider": "Cloudflare Workers AI",
+  "checker": {
+    "model_id": "@cf/openai/gpt-oss-120b",
+    "reasoning": "low",
+    "temperature": 0,
+    "seed": 42,
+    "stream": false,
+    "maximum_input_tokens": 14000,
+    "maximum_output_tokens": 1536,
+    "provider_json_schema_assumed": false
+  },
+  "writer_revision": {
+    "model_id": "@cf/google/gemma-4-26b-a4b-it",
+    "temperature": 0,
+    "seed": 42,
+    "stream": false,
+    "maximum_input_tokens": 16000,
+    "maximum_output_tokens": 256,
+    "initial_instruction_sha256": "22b5c31325c86936e8f776fc8990fb13841848d324860af634996ce6f5dbea66",
+    "revision_instruction_sha256": "f5955a138b66a876a5e71227dbb60ce97751c1e334a2a64fdf30033fcaa7b127"
+  },
+  "sequence": [
+    "DEVELOPMENT_CHECK",
+    "DEVELOPMENT_CLAIM_COVERAGE_GATE",
+    "D14_SINGLE_REVISION",
+    "D14_COMPLETE_RECHECK_GATE",
+    "EVALUATION_CHECK",
+    "THREE_CONDITIONAL_REVISIONS_MAXIMUM",
+    "COMPLETE_RECHECK",
+    "FINAL_SCORE"
+  ],
+  "network_state": "DISABLED_WITHOUT_FUTURE_EXACT_V04_FREEZE_AUTHORITY",
+  "maximum_requests": 35,
+  "maximum_probes": 0,
+  "maximum_retries": 0
+}

@@ -1,0 +1,8 @@
+README.md
+code/
+immutable/
+reports/public/
+recovery/public_manifest_v01.json
+
+# Everything under private/ is excluded. State and authority are created only
+# by a later separately approved execution arrangement and are also excluded.

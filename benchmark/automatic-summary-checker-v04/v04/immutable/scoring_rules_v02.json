@@ -1,0 +1,62 @@
+{
+  "schema_version": "stories-of-us-automatic-checker-claim-identification-scoring-v02",
+  "status": "FROZEN_PROPOSED_FOR_OWNER_APPROVAL",
+  "development_gate": {
+    "valid_responses": "15/15",
+    "exact_authoritative_overall_decisions": "15/15",
+    "material_claim_identification": "45/45 protected meaning units completely covered after condition-blinded semantic mapping",
+    "correct_reference_unit_assessments": "45/45",
+    "invented_material_claims": 0,
+    "inventory_gaps": 0,
+    "uncertain_mappings": 0,
+    "duplicate_meaning_groups": 0,
+    "unsafe_claim_or_summary_approvals": 0,
+    "incorrect_rejection_of_acceptable_controls": 0,
+    "valid_and_substantively_relevant_evidence_references": "all",
+    "D14_feedback": "REVISE with one complete source-bound instruction covering the approved scope, population/number and programme-end errors",
+    "introduced_different_error_case": "exact HOLD",
+    "failure_action": "STOP_BEFORE_EVALUATION"
+  },
+  "evaluation_gate": {
+    "valid_responses": "12/12",
+    "material_claim_identification": "36/36 protected meaning units completely covered after condition-blinded semantic mapping",
+    "correct_reference_unit_assessments": "at least 35/36",
+    "invented_material_claims": 0,
+    "inventory_gaps": 0,
+    "uncertain_mappings": 0,
+    "duplicate_meaning_groups": 0,
+    "unsafe_false_approvals": 0,
+    "acceptable_controls_accepted": "at least 5/6",
+    "exact_authoritative_overall_decisions": "at least 11/12",
+    "evidence_references": "all valid and substantively relevant",
+    "unsupported_insufficient_mismatch": "counts as an error"
+  },
+  "correction_recheck_gate": {
+    "initial_defects_detected_with_accurate_complete_checker_guidance": "3/3",
+    "maximum_revisions_per_case": 1,
+    "recheck_matches_reference": "3/3",
+    "bad_revisions_approved": 0,
+    "revisions_ending_accept": "at least 2/3",
+    "second_revision": "forbidden"
+  },
+  "semantic_coverage_rules": {
+    "denominator": "protected material meaning units, not the number of checker fragments",
+    "split_claim": "multiple returned fragments may map to one reference unit; that unit counts once and every fragment assessment must be compatible with the expected verdict",
+    "combined_claim": "one returned claim may cover multiple reference units only when it preserves each meaning; one verdict must be correct for every mapped unit",
+    "compound_portions": "one returned claim may have multiple protected disposition portions; mapped text cannot conceal an invented, inventory-gap or uncertain portion",
+    "duplicate_claim": "duplicate meanings count once for coverage and any duplicate group fails the zero-duplication gate",
+    "mapped": "the identified proposition corresponds to one or more protected reference units; mapping and factual-verdict correctness are scored separately",
+    "invented": "the checker attributes a material proposition to the summary that the summary neither asserts nor necessarily implies; a false claim genuinely in the summary is not checker invention",
+    "inventory_gap": "the checker identified a genuine summary proposition missing from the protected inventory; record it separately, stop the affected gate and do not count it as invention or factual error",
+    "uncertain_mapping": "the saved wording, anchors and evidence do not permit confident semantic classification; record it separately and stop the affected gate",
+    "missing_or_partial_claim": "a missing or partially represented reference unit receives no complete-coverage credit and cannot be hidden by checking every returned item",
+    "adjudication": "semantic mappings and dispositions are CODEX_ASSISTED unless an actual human reviewer is recorded; code validates adjudication and calculates scores but does not decide meaning or factual truth",
+    "unresolved_action": "inventory gaps and uncertain mappings prevent PASS and subsequent-stage progression until resolved under the versioned resolution procedure"
+  },
+  "decision": {
+    "continue": "all development, claim-identification, disposition, evaluation and correction gates pass",
+    "change_then_seek_new_approval": "zero unsafe approvals but a format, reference, false-rejection, inventory or usefulness threshold fails",
+    "stop": "any unresolved inventory gap or uncertain mapping, missed material reference unit paired with unsafe approval, invented material proposition, unsafe summary approval, invalid output treated as approval, bad correction approved, leakage, payment breach or resource-safeguard failure"
+  }
+}
+

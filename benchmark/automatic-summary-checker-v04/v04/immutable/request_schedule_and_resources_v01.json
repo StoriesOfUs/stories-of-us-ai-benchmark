@@ -1,0 +1,76 @@
+{
+  "schema_version": "stories-of-us-automatic-checker-claim-identification-request-schedule-v01",
+  "status": "FROZEN_PROPOSED_FOR_OWNER_APPROVAL",
+  "rates_saved_2026_11_09": {
+    "gpt_oss_input_neurons_per_million_tokens": 31818,
+    "gpt_oss_output_neurons_per_million_tokens": 68182,
+    "gemma_input_neurons_per_million_tokens": 9091,
+    "gemma_output_neurons_per_million_tokens": 27273
+  },
+  "day_1_development_identification": {
+    "required_utc_day": "separate from days 2 and 3",
+    "checker_requests": 15,
+    "gemma_revision_requests": 0,
+    "checker_input_tokens": 210000,
+    "checker_output_and_reasoning_tokens": 23040,
+    "reservation_neurons": 8252.693280,
+    "gate": "15 valid responses, protected semantic coverage/adjudication and all initial development thresholds must pass before D14 correction"
+  },
+  "day_2_D14_correction": {
+    "required_utc_day": "later UTC allowance day after initial development gate",
+    "checker_requests": 1,
+    "gemma_revision_requests": 1,
+    "checker_input_tokens": 14000,
+    "checker_output_and_reasoning_tokens": 1536,
+    "gemma_input_tokens": 16000,
+    "gemma_output_tokens": 256,
+    "reservation_neurons": 702.617440,
+    "gate": "the sole D14 revision must resolve all cited errors and the complete recheck must pass before hidden evaluation"
+  },
+  "day_3_evaluation_and_correction": {
+    "required_utc_day": "later UTC allowance day after complete D14 correction gate",
+    "initial_checker_requests": 12,
+    "gemma_revision_requests_maximum": 3,
+    "checker_recheck_requests_maximum": 3,
+    "checker_input_tokens": 210000,
+    "checker_output_and_reasoning_tokens": 23040,
+    "gemma_input_tokens": 48000,
+    "gemma_output_tokens": 768,
+    "reservation_neurons": 8710.006944,
+    "gate": "requires all development gates plus fresh day-3 availability, pricing, free-route and allowance evidence"
+  },
+  "aggregate": {
+    "requests_maximum": 35,
+    "checker_requests_maximum": 31,
+    "gemma_revision_requests_maximum": 4,
+    "probes": 0,
+    "retries": 0,
+    "input_tokens": 498000,
+    "output_and_reasoning_tokens": 48640,
+    "reservation_neurons": 17665.317664,
+    "hard_cap_neurons": 17666,
+    "maximum_additional_expenditure": "£0"
+  },
+  "per_request": {
+    "gpt_oss_checker_or_recheck": {"input_tokens": 14000, "output_and_reasoning_tokens": 1536},
+    "gemma_revision": {"input_tokens": 16000, "output_tokens": 256}
+  },
+  "change_from_V02": {
+    "requests": "+2 (D14 revision and complete recheck)",
+    "input_tokens": "+30000 (one 16000-token Gemma reservation plus one 14000-token checker reservation)",
+    "output_tokens": "+24832 (checker allowance rises from 768 to 1536 for all 31 calls, plus the new Gemma call)",
+    "reservation_neurons": "+2273.530720",
+    "hard_cap_neurons": "+2274",
+    "utc_days": "+1; three gated UTC days replace two to preserve semantic-review pauses"
+  },
+  "accounting_rules": [
+    "Reserve a slot and its full bound before transmission.",
+    "A transmitted or possibly transmitted request remains consumed.",
+    "Missing provider usage is UNKNOWN, never zero.",
+    "UTC rollover never resets cumulative experiment counters.",
+    "Each UTC day must independently fit available free allowance after all other account usage.",
+    "No historical UNKNOWN-allowance exception transfers.",
+    "The larger checker output allowance includes all answer and reasoning output and is required for claim identification plus assessment fields.",
+    "The three-day route is only arithmetically feasible under the saved 10000-neuron daily Free allocation; each day still requires fresh eligibility and available-allowance evidence after other account use."
+  ]
+}

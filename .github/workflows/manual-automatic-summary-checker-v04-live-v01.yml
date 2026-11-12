@@ -1,0 +1,106 @@
+name: Automatic summary checker V04 live experiment V01
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Exact state-aware operation
+        required: true
+        type: choice
+        options:
+          - day1-development
+          - day2-d14-correction
+          - day3-evaluation-initial
+          - day3-evaluation-corrections
+
+permissions:
+  contents: read
+
+concurrency:
+  group: automatic-summary-checker-v04-live-v01
+  cancel-in-progress: false
+
+jobs:
+  live-v04:
+    environment: checker-v04-live-v01
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out approved public commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Verify approved public identity
+        env:
+          APPROVED: ${{ vars.SOU_APPROVED_LIVE_PUBLIC_COMMIT_SHA }}
+          ACTUAL: ${{ github.sha }}
+        run: |
+          test -n "$APPROVED"
+          test "$ACTUAL" = "$APPROVED"
+
+      - name: Set up pinned Python
+        uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548
+        with:
+          python-version: '3.11'
+
+      - name: Check out restricted private storage
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: StoriesOfUs/stories-of-us-ai-checker-private-v01
+          token: ${{ secrets.SOU_PRIVATE_REPO_FINE_GRAINED_TOKEN }}
+          ref: main
+          path: sou-private
+          persist-credentials: true
+
+      - name: Install private hash-locked wheel-only runtime
+        run: |
+          python -m pip install \
+            --disable-pip-version-check \
+            --no-index \
+            --find-links sou-private/live_v04/bundle/live_overlay/assets/wheels \
+            --require-hashes \
+            -r sou-private/live_v04/bundle/live_overlay/assets/requirements-linux-cp311-v01.txt
+
+      - name: Configure private persistence identity
+        working-directory: sou-private
+        run: |
+          git config user.name "Stories Of Us checker V04"
+          git config user.email "storiesofus404@gmail.com"
+
+      - name: Execute exactly one approved state-aware operation
+        env:
+          PYTHONPATH: ${{ github.workspace }}/benchmark/automatic-summary-checker-v04/runtime:${{ github.workspace }}/benchmark/automatic-summary-checker-v04/v04/code
+          SOU_CLOUDFLARE_ACCOUNT_ID: ${{ secrets.SOU_CLOUDFLARE_ACCOUNT_ID }}
+          SOU_CLOUDFLARE_WORKERS_AI_TOKEN: ${{ secrets.SOU_CLOUDFLARE_WORKERS_AI_TOKEN }}
+          EXPECTED_PUBLIC: ${{ vars.SOU_APPROVED_LIVE_PUBLIC_COMMIT_SHA }}
+          EXPECTED_V04: ${{ vars.SOU_APPROVED_V04_FREEZE_SHA256 }}
+          EXPECTED_OVERLAY: ${{ vars.SOU_APPROVED_LIVE_OVERLAY_SHA256 }}
+          EXPECTED_BUNDLE: ${{ vars.SOU_APPROVED_PRIVATE_LIVE_BUNDLE_SHA256 }}
+          EXPECTED_AUTHORITY: ${{ vars.SOU_APPROVED_LIVE_AUTHORITY_SHA256 }}
+          OPERATION: ${{ inputs.operation }}
+          ACTUAL_PUBLIC: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set +x
+          test "$EXPECTED_V04" = "6fa84bbb065873d796f71a52df68661455ed663e24b5ce62491eafeb7a15dfb5"
+          python benchmark/automatic-summary-checker-v04/runtime/cloud_live_checker_v01.py \
+            --operation "$OPERATION" \
+            --private-root "$GITHUB_WORKSPACE/sou-private" \
+            --v04-root "$GITHUB_WORKSPACE/sou-private/live_v04/bundle/v04_package" \
+            --asset-root "$GITHUB_WORKSPACE/sou-private/live_v04/bundle/live_overlay/assets" \
+            --utc-date "$(date -u +%F)" \
+            --run-id "$RUN_ID" \
+            --expected-public-commit "$EXPECTED_PUBLIC" \
+            --actual-public-commit "$ACTUAL_PUBLIC" \
+            --expected-overlay-freeze "$EXPECTED_OVERLAY" \
+            --expected-bundle-sha256 "$EXPECTED_BUNDLE" \
+            --expected-authority-sha256 "$EXPECTED_AUTHORITY"
+
+      - name: Remove private runner files
+        if: always()
+        run: |
+          find "$GITHUB_WORKSPACE/sou-private" -type f -exec chmod u+w {} + 2>/dev/null || true
+          rm -rf "$GITHUB_WORKSPACE/sou-private"
+          test ! -e "$GITHUB_WORKSPACE/sou-private"
