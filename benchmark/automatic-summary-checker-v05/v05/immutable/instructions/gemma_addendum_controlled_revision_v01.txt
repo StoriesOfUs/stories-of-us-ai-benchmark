@@ -1,0 +1,7 @@
+The reviewer has identified the following specific problem in the first draft:
+
+`REVIEW_REASON`
+
+Using only the same verified evidence, revise the complete summary once to correct that problem while preserving every other V04 and Addendum V01 requirement above. Do not add unsupported information. Return the complete revised summary only, or exactly `HOLD` if the mandatory requirements cannot be met.
+
+The complete revised summary must then be checked again against the source and every mandatory requirement. If any mandatory requirement still fails, the result is `HOLD` and must not be published. A second revision is not permitted.

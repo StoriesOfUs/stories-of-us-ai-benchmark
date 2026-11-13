@@ -1,0 +1,95 @@
+{
+  "schema_version": "stories-of-us-automatic-checker-v05-request-schedule-v01",
+  "status": "FROZEN_PROPOSED_FOR_OWNER_APPROVAL",
+  "rates_saved_2026_11_09": {
+    "gpt_oss_input_neurons_per_million_tokens": 31818,
+    "gpt_oss_output_neurons_per_million_tokens": 68182,
+    "gemma_input_neurons_per_million_tokens": 9091,
+    "gemma_output_neurons_per_million_tokens": 27273
+  },
+  "per_request": {
+    "gpt_oss_checker_or_recheck": {
+      "input_tokens": 14000,
+      "output_and_reasoning_tokens": 2560,
+      "reservation_neurons": 619.997920
+    },
+    "gemma_revision": {
+      "input_tokens": 16000,
+      "output_tokens": 256,
+      "reservation_neurons": 152.437888
+    }
+  },
+  "day_0_focused_diagnostics": {
+    "required_utc_day": "separate from formal development and later stages",
+    "checker_requests": 9,
+    "gemma_revision_requests": 0,
+    "checker_input_tokens": 126000,
+    "checker_output_and_reasoning_tokens": 23040,
+    "reservation_neurons": 5579.981280,
+    "gate": "9 valid responses, 9/9 exact decisions, zero unsafe approvals, all six acceptable controls accepted and all three required failures detected",
+    "failure_action": "STOP_BEFORE_FORMAL_DEVELOPMENT"
+  },
+  "day_1_development_identification": {
+    "required_utc_day": "later UTC day after the focused diagnostic gate",
+    "checker_requests": 15,
+    "gemma_revision_requests": 0,
+    "checker_input_tokens": 210000,
+    "checker_output_and_reasoning_tokens": 38400,
+    "reservation_neurons": 9299.968800,
+    "gate": "15 valid responses, protected semantic coverage/adjudication and all unchanged development thresholds must pass before D14 correction"
+  },
+  "day_2_D14_correction": {
+    "required_utc_day": "later UTC day after initial development gate",
+    "checker_requests": 1,
+    "gemma_revision_requests": 1,
+    "checker_input_tokens": 14000,
+    "checker_output_and_reasoning_tokens": 2560,
+    "gemma_input_tokens": 16000,
+    "gemma_output_tokens": 256,
+    "reservation_neurons": 772.435808,
+    "gate": "the sole D14 revision must resolve all cited errors and the complete recheck must pass before hidden evaluation"
+  },
+  "day_3_evaluation_and_correction": {
+    "required_utc_day": "later UTC day after complete D14 correction gate",
+    "initial_checker_requests": 12,
+    "gemma_revision_requests_maximum": 3,
+    "checker_recheck_requests_maximum": 3,
+    "checker_input_tokens": 210000,
+    "checker_output_and_reasoning_tokens": 38400,
+    "gemma_input_tokens": 48000,
+    "gemma_output_tokens": 768,
+    "reservation_neurons": 9757.282464,
+    "gate": "requires every earlier gate plus fresh day-specific availability, pricing, free-route and allowance evidence"
+  },
+  "aggregate": {
+    "requests_maximum": 44,
+    "checker_requests_maximum": 40,
+    "gemma_revision_requests_maximum": 4,
+    "probes": 0,
+    "retries": 0,
+    "input_tokens": 624000,
+    "output_and_reasoning_tokens": 103424,
+    "reservation_neurons": 25409.668352,
+    "hard_cap_neurons": 25410,
+    "maximum_additional_expenditure": "£0"
+  },
+  "comparison_with_v04": {
+    "requests": "+9 focused diagnostic checks (44 rather than 35)",
+    "input_tokens": "+126000 conservative tokens (624000 rather than 498000)",
+    "output_tokens": "+54784 tokens (103424 rather than 48640)",
+    "reservation_neurons": "+7744.350688 (25409.668352 rather than 17665.317664)",
+    "hard_cap_neurons": "+7744 (25410 rather than 17666)",
+    "utc_days": "+1; four separately gated UTC days replace three"
+  },
+  "accounting_rules": [
+    "Reserve a slot and its full bound before transmission.",
+    "A transmitted or possibly transmitted request remains consumed.",
+    "Missing provider usage is UNKNOWN, never zero.",
+    "UTC rollover never resets cumulative experiment counters.",
+    "Every fixed request is counted locally under the pinned Harmony format; every realised revision and recheck is exact-counted immediately before transmission.",
+    "No evidence is truncated, split, substituted or weakened to fit a limit.",
+    "Each UTC day must independently fit available free allowance after other account usage.",
+    "No previous authority or allowance exception transfers.",
+    "The 2,560-token checker allowance covers reasoning and answer output; concise response fields reduce but do not eliminate live truncation uncertainty."
+  ]
+}

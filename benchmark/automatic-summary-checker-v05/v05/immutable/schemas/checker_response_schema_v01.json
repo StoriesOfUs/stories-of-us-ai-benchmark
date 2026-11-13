@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stories Of Us experimental claim-identification checker response V01",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "assessment_status",
+    "identified_claims",
+    "claim_identification",
+    "claim_results",
+    "omission_assessment",
+    "editorial_checks",
+    "correction",
+    "overall_diagnostic"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "assessment_status": {"const": "COMPLETE"},
+    "identified_claims": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "claim_text", "summary_spans"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^C[0-9]{2}$"},
+          "claim_text": {"type": "string", "minLength": 1, "maxLength": 1200},
+          "summary_spans": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "claim_identification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason"],
+      "properties": {
+        "status": {"enum": ["COMPLETE", "UNCERTAIN"]},
+        "reason": {"type": "string", "minLength": 1, "maxLength": 1200}
+      }
+    },
+    "claim_results": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim_id", "verdict", "evidence_refs", "reason"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^C[0-9]{2}$"},
+          "verdict": {"enum": ["SUPPORTED", "UNSUPPORTED", "INSUFFICIENT_EVIDENCE"]},
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "reason": {"type": "string", "minLength": 1, "maxLength": 1200}
+        }
+      }
+    },
+    "omission_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "evidence_refs", "reason"],
+      "properties": {
+        "verdict": {"enum": ["NO_MATERIAL_OMISSION", "MATERIAL_MISLEADING_OMISSION", "UNCERTAIN"]},
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "reason": {"type": "string", "minLength": 1, "maxLength": 1200}
+      }
+    },
+    "editorial_checks": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterion_id", "verdict", "evidence_refs", "reason"],
+        "properties": {
+          "criterion_id": {
+            "enum": [
+              "attribution_relationship_status_scope",
+              "disability_and_category_relevance",
+              "material_qualification",
+              "terminology_context",
+              "repetition_originality_clarity"
+            ]
+          },
+          "verdict": {"enum": ["PASS", "FAIL", "UNCERTAIN"]},
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "reason": {"type": "string", "minLength": 1, "maxLength": 1200}
+        }
+      }
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligible", "instruction", "evidence_refs", "claim_ids", "criterion_ids"],
+      "properties": {
+        "eligible": {"type": "boolean"},
+        "instruction": {"type": "string", "maxLength": 1200},
+        "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "claim_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^C[0-9]{2}$"}},
+        "criterion_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "attribution_relationship_status_scope",
+              "disability_and_category_relevance",
+              "material_qualification",
+              "terminology_context",
+              "repetition_originality_clarity"
+            ]
+          }
+        }
+      }
+    },
+    "overall_diagnostic": {"enum": ["ACCEPT", "REVISE", "HOLD"]}
+  }
+}

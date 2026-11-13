@@ -1,0 +1,16 @@
+{
+  "schema_version": "stories-of-us-automatic-checker-revision-allocation-v02",
+  "status": "PRIVATE_SCHEDULE_IDENTIFIERS_ONLY_NO_EXPECTED_ANSWERS",
+  "maximum_revision_sequences": 4,
+  "development": {
+    "case_ids": ["D14"],
+    "owner_decision": "One controlled revision is approved as eligible because complete retained evidence supports correction of all agreed material errors.",
+    "eligibility_rule": "Proceed only after the initial response is valid, protected semantic coverage review passes, the code-derived decision is REVISE and checker guidance accurately covers scope, population/number and programme-end errors.",
+    "recheck_rule": "Recheck the complete revised summary. Any mandatory failure or unresolved uncertainty becomes HOLD and blocks evaluation."
+  },
+  "evaluation": {
+    "case_ids": ["E02", "E06", "E12"],
+    "eligibility_rule": "A listed case proceeds only when the initial checker response is valid, the code-derived decision is REVISE and guidance is specific, source-bound and valid. Listing does not override HOLD or invalid output."
+  },
+  "second_revision": "FORBIDDEN"
+}

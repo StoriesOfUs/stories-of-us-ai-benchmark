@@ -1,0 +1,24 @@
+{
+  "capture_limit_bytes": 65536,
+  "capture_truncated": false,
+  "captured_at_utc": "2026-11-09T10:52:08.099629+00:00",
+  "captured_transport_bytes": 708,
+  "credentials_present": false,
+  "decode_policy": "utf-8 with replacement for diagnostic persistence",
+  "http_status": 200,
+  "observed_transport_bytes_minimum": 708,
+  "parse_status": "VALID_JSON",
+  "safe_headers": {
+    "CF-RAY": "a57c441ea9d89415-LHR",
+    "Content-Type": "application/json",
+    "Date": "Mon, 09 Nov 2026 10:52:08 GMT",
+    "Server": "cloudflare"
+  },
+  "sanitised_body_sha256": "3dedea6844ad5be0df8a16732fb709eabd1ec887ab88bbc23a5c94311f31e96d",
+  "sanitised_body_utf8_bytes": 708,
+  "sanitised_bounded_body": "{\"result\":{\"id\":\"d5eab2501f6340f8b38bcd9269bd1dc6\",\"object\":\"chat.completion\",\"created\":1794221526,\"model\":\"@cf/google/gemma-4-26b-a4b-it-external\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"European Disability Forum reports that the Disability Intergroup met to call for stronger implementation of disability rights. Members focused on actions like expanding the European Disability Card and prioritizing independent living over residential institutions.\"},\"finish_reason\":\"stop\",\"logprobs\":null}],\"usage\":{\"prompt_tokens\":1340,\"completion_tokens\":38,\"total_tokens\":1378,\"prompt_tokens_details\":{\"cached_tokens\":0},\"neurons\":13.218181610107422}},\"success\":true,\"errors\":[],\"messages\":[]}",
+  "sanitised_capture_truncated": false,
+  "schema_version": "stories-of-us-provider-response-capture-v01",
+  "transport_error": null,
+  "uncertain_transport_outcome": false
+}

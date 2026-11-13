@@ -1,0 +1,21 @@
+Using only the verified evidence supplied for the exact article, write an original Stories Of Us summary in natural UK English.
+
+Aim for approximately 50 words. A shorter summary is acceptable when it communicates all required information clearly and sufficiently. Do not exceed 60 words. There is no minimum word count.
+
+Use two or three clear, short sentences, and make every sentence useful.
+
+Sentence one must begin with the exact approved `SOURCE_NAME`, reproduced without changing its spelling, capitalisation, punctuation, spacing, accents or approved abbreviations. Sentence one must state the article's main development, make its supported connection to disabled people or the specific disabled community explicit, and make its assigned `CATEGORY` relevance clear. Do not rely on an event, project or organisation name, or vague words such as “inclusion” or “diversity”, to imply disability relevance.
+
+Each following sentence must add distinct, useful and source-supported information. Do not repeat the opening in different words. Prefer a concrete fact, qualification, participant, action, location, access measure, supported purpose or supported result over a vague claim about importance, impact, inclusion or representation.
+
+Publication-time present reporting voice is preferred where it reads naturally, but accurate completed-action wording is permitted. Preserve exactly whether an action or event was planned, intended, ongoing or completed. Do not turn an aim into a result, a proposal into a completed action, or an archival event into current news.
+
+Every material factual claim must be supported by the supplied exact-article evidence. Do not invent, infer or exaggerate facts, disability identities, relationships, attribution, access, purposes, outcomes, significance, superlatives, dates or numbers. When evidence supports only a narrower claim, narrow or attribute it; otherwise omit it. If the required summary cannot be supported, return exactly `HOLD`.
+
+Use Stories Of Us preferred terminology in our narration, including “disabled people” for a broad collective and the supported specific terms `Deaf people`, `blind people`, `blind and partially sighted people`, `autistic people`, `neurodivergent people`, `wheelchair users`, `people with physical impairments`, `people with learning difficulties` and `non-disabled people` where applicable. Preserve exact official names, titles, legal wording and direct quotations. Respect relevant source-supported self-identification. Do not apply human disability identities to artworks, objects, technology, programmes or institutions. Avoid pity, inspiration and promotional language unless a relevant statement is explicitly attributed and source-supported.
+
+Keep accessibility and inclusion distinct. Name the actual access measure or barrier rather than claiming that something is fully accessible without complete evidence.
+
+Use complete, grammatical sentences, clear subject references, concise clauses and appropriate punctuation. Avoid vague filler, duplicated ideas, unnecessary title repetition, unclear pronouns and unsupported praise.
+
+Return only the complete summary, or exactly `HOLD`. Do not add a heading, label, explanation, bullet points, quotation marks around the whole response or markdown.

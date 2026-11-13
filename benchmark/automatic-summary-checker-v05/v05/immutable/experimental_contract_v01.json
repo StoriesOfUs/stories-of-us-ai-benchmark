@@ -1,0 +1,54 @@
+{
+  "schema_version": "stories-of-us-automatic-checker-claim-identification-contract-v02",
+  "status": "PREPARATION_ONLY_EXECUTION_LOCKED",
+  "question": "Can deterministic checks plus Cloudflare-hosted GPT-OSS-120B identify every material claim in a supplied summary, assess those claims and material implications against the complete source, provide accurate source-bound correction guidance, and make the right decision after one Gemma correction?",
+  "architecture": {
+    "writer_reviser": "@cf/google/gemma-4-26b-a4b-it",
+    "semantic_checker": "@cf/openai/gpt-oss-120b",
+    "authoritative_decision": "strict local validation plus code-derived ACCEPT/REVISE/HOLD",
+    "model_overall": "diagnostic_only",
+    "invalid_or_uncertain_assessment": "HOLD",
+    "maximum_revisions_per_case": 1
+  },
+  "case_counts": {
+    "focused_diagnostic": 9,
+    "development": 15,
+    "hidden_evaluation": 12,
+    "protected_development_material_claim_units": 45,
+    "hidden_evaluation_material_claim_units": 36,
+    "conditional_revision_sequences": 4,
+    "development_revision_sequence": "D14 only",
+    "evaluation_revision_sequences": 3
+  },
+  "sequence": [
+    "9 separately scored focused diagnostic checker calls using six reused development examples and three explicitly synthetic fixtures",
+    "focused diagnostic gate before the unchanged formal development set",
+    "15 development checker calls",
+    "condition-blinded semantic coverage assessment of development responses",
+    "one D14 Gemma correction and complete GPT-OSS recheck on a separately gated UTC day",
+    "complete development correction gate",
+    "12 hidden evaluation checker calls on a third separately gated UTC day",
+    "up to 3 eligible evaluation Gemma corrections",
+    "complete GPT-OSS recheck of each correction",
+    "frozen scoring and terminal closeout"
+  ],
+  "boundaries": [
+    "The checker receives no protected claim inventory and must identify material claims itself; protected meaning units are used only for post-response scoring.",
+    "Ordinary code validates structure and calculates adjudicated denominators but cannot prove semantic claim completeness or factual truth.",
+    "Claim-coverage mapping is CODEX_ASSISTED unless an actual human reviewer is separately recorded.",
+    "Every returned proposition portion is adjudicated as MAPPED, INVENTED, INVENTORY_GAP or UNCERTAIN_MAPPING after the response is frozen.",
+    "Inventory gaps and uncertain mappings remain separate from the checker decision and block the affected experimental gate until resolved under the frozen procedure.",
+    "A mapped portion cannot conceal an invented, inventory-gap or uncertain portion of a compound returned claim.",
+    "A citation is not proof that its passage supports the checker finding.",
+    "A different model family is not independent human verification.",
+    "A PASS would justify only a larger fresh-source validation.",
+    "No production adoption, automatic publication or deployment is authorised."
+  ],
+  "focused_diagnostic_boundary": {
+    "status": "PROPOSED_ADDITIONAL_GATE_REQUIRING_FUTURE_OWNER_EXECUTION_APPROVAL",
+    "not_fresh_validation": true,
+    "hidden_evaluation_material_used": false,
+    "synthetic_cases_reported_separately": true,
+    "failure_action": "STOP_BEFORE_FORMAL_DEVELOPMENT"
+  }
+}
