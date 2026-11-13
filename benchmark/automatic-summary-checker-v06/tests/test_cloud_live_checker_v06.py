@@ -31,7 +31,16 @@ class PublicRuntimeSmokeTests(unittest.TestCase):
     def test_reservation_precedes_transmission(self):
         with tempfile.TemporaryDirectory() as directory:
             store = DurablePrivateState(Path(directory), MemoryPersistence(), "freeze")
-            store.start_operation("day0-regressions", "run", "2026-11-13")
+            store.start_operation(
+                "day0-regressions",
+                "run",
+                "2026-11-13",
+                {
+                    "operation": "day0-regressions",
+                    "utc_date": "2026-11-13",
+                    "receipt_sha256": "b" * 64,
+                },
+            )
             store.reserve_request("REGRESSION__TEST", "DAY_0_REGRESSIONS", {"exact": 1})
             _, ledger = store.load()
             self.assertEqual("CONSUMED_BEFORE_TRANSMISSION", ledger["requests"][0]["status"])

@@ -21,6 +21,10 @@ from review_gate_v06 import ReviewStop, canonical_hash, evaluate_stage_review
 
 SCIENTIFIC_FREEZE = "6590545bfbfec58cb07317aa31ee471009dfe36d0c68be34ca49b29ad26655e0"
 OPERATIONS = ("day0-regressions", "day1-fresh")
+OPERATION_PREFLIGHTS = {
+    "day0-regressions": ("DAY_0_REGRESSIONS", 2619.628416),
+    "day1-fresh": ("DAY_1_FRESH", 5239.256832),
+}
 
 
 class LiveStop(RuntimeError):
@@ -94,6 +98,66 @@ def verify_identity(
         if authority.get(key) != expected:
             raise LiveStop(f"Live authority mismatch: {key}")
     return authority
+
+
+def verify_allowance_preflight(
+    private_root: Path,
+    operation: str,
+    utc_date: str,
+    account_id: str,
+) -> dict[str, Any]:
+    """Require a fresh, account-bound Option A receipt for this operation."""
+    day_key, required = OPERATION_PREFLIGHTS[operation]
+    path = private_root / f"live_v06/preflight/{operation}_allowance_v01.json"
+    if not path.is_file():
+        raise LiveStop("Fresh Option A allowance evidence is absent")
+    value = read_json(path)
+    exact = {
+        "schema_version": "stories-of-us-v06-option-a-allowance-preflight-v01",
+        "status": "VERIFIED_SUFFICIENT",
+        "operation": operation,
+        "execution_day": day_key,
+        "utc_date": utc_date,
+        "workers_plan": "Workers Free",
+        "direct_workers_ai_route_verified": True,
+        "paid_or_credit_fallback_absent": True,
+        "sufficient_remaining_allowance": True,
+        "required_reserved_neurons": required,
+        "account_id_sha256": hashlib.sha256(account_id.encode("utf-8")).hexdigest(),
+    }
+    for key, expected in exact.items():
+        if value.get(key) != expected:
+            raise LiveStop(f"Option A allowance evidence mismatch: {key}")
+    observed = value.get("observed_at_utc")
+    try:
+        observed_at = dt.datetime.fromisoformat(observed.replace("Z", "+00:00"))
+    except (AttributeError, ValueError) as exc:
+        raise LiveStop("Option A observation time is invalid") from exc
+    if observed_at.tzinfo is None or observed_at.utcoffset() != dt.timedelta(0):
+        raise LiveStop("Option A observation time is not UTC")
+    if observed_at.date() != dt.date.fromisoformat(utc_date):
+        raise LiveStop("Option A allowance evidence is stale")
+    daily = value.get("daily_free_allowance_neurons")
+    used = value.get("used_today_neurons")
+    remaining = value.get("remaining_neurons")
+    if any(isinstance(item, bool) or not isinstance(item, (int, float)) for item in (daily, used, remaining)):
+        raise LiveStop("Option A allowance quantities are invalid")
+    if min(daily, used, remaining) < 0 or abs((daily - used) - remaining) > 1e-6:
+        raise LiveStop("Option A allowance quantities are inconsistent")
+    if remaining + 1e-9 < required:
+        raise LiveStop("Workers Free allowance is insufficient for this operation")
+    if not isinstance(value.get("private_evidence_reference"), str) or not value["private_evidence_reference"].strip():
+        raise LiveStop("Option A private evidence reference is absent")
+    return {
+        "schema_version": value["schema_version"],
+        "operation": operation,
+        "execution_day": day_key,
+        "utc_date": utc_date,
+        "observed_at_utc": observed,
+        "receipt_sha256": sha_file(path),
+        "remaining_neurons": remaining,
+        "required_reserved_neurons": required,
+    }
 
 
 def recognised_usage(body: bytes) -> dict[str, Any]:
@@ -210,11 +274,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         args.expected_bundle_sha256,
         args.expected_authority_sha256,
     )
-    day_key = {"day0-regressions": "DAY_0_REGRESSIONS", "day1-fresh": "DAY_1_FRESH"}[args.operation]
+    day_key = OPERATION_PREFLIGHTS[args.operation][0]
     if authority.get("authorised_execution_days", {}).get(day_key) is not True:
         raise LiveStop("Authority does not permit this execution day")
-    if authority.get("allowance_status_by_day", {}).get(day_key) != "VERIFIED_SUFFICIENT":
-        raise LiveStop("Option A requires fresh sufficient allowance evidence")
     for field in (
         "workers_free_eligibility_currently_verified", "model_availability_currently_verified",
         "pricing_currently_verified", "interface_currently_verified",
@@ -222,13 +284,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     ):
         if authority.get(field) is not True:
             raise LiveStop(f"Authority prerequisite is false or absent: {field}")
+    allowance_preflight = verify_allowance_preflight(
+        private_root, args.operation, args.utc_date, account_id
+    )
     counter = ExactTokenCounter(args.asset_root)
     backend = GitPersistence(private_root)
     store = DurablePrivateState(private_root, backend, SCIENTIFIC_FREEZE)
     runner = LiveRunner(
         private_root, args.scientific_root, store, CloudflareChatTransport(), counter, account_id, token
     )
-    store.start_operation(args.operation, args.run_id, args.utc_date)
+    store.start_operation(
+        args.operation, args.run_id, args.utc_date, allowance_preflight
+    )
     try:
         details = runner.run_regressions() if args.operation == "day0-regressions" else runner.run_fresh(args.utc_date)
         result = {

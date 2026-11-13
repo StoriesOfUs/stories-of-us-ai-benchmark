@@ -100,6 +100,7 @@ def new_state(scientific_freeze: str) -> dict[str, Any]:
         "stage": "NOT_STARTED",
         "created_at_utc": utc_now(),
         "operation_dates": {},
+        "allowance_preflight_records": {},
         "completed_operations": [],
         "consumed_slots": [],
     }
@@ -148,16 +149,30 @@ class DurablePrivateState:
             raise StateStop("Live state belongs to another scientific freeze")
         return state, ledger
 
-    def start_operation(self, operation: str, run_id: str, utc_date: str) -> None:
+    def start_operation(
+        self,
+        operation: str,
+        run_id: str,
+        utc_date: str,
+        allowance_preflight: dict[str, Any],
+    ) -> None:
         if self.lock_path.exists():
             raise StateStop("Concurrent or interrupted operation lock exists")
         state = read_json(self.state_path) if self.state_path.exists() else new_state(self.scientific_freeze)
         ledger = read_json(self.ledger_path) if self.ledger_path.exists() else new_ledger()
         if operation in state["completed_operations"]:
             raise StateStop("Repeat operation refused")
+        if allowance_preflight.get("operation") != operation or allowance_preflight.get("utc_date") != utc_date:
+            raise StateStop("Allowance preflight does not match this operation")
+        state.setdefault("allowance_preflight_records", {})[operation] = allowance_preflight
         self.lock_path.parent.mkdir(parents=True, exist_ok=True)
         self.lock_path.write_text(
-            json.dumps({"operation": operation, "run_id": run_id, "utc_date": utc_date}) + "\n",
+            json.dumps({
+                "operation": operation,
+                "run_id": run_id,
+                "utc_date": utc_date,
+                "allowance_preflight_sha256": allowance_preflight.get("receipt_sha256"),
+            }) + "\n",
             encoding="utf-8",
         )
         atomic_json(self.state_path, state)
