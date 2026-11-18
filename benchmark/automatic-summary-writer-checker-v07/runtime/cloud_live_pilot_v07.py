@@ -410,6 +410,8 @@ class LiveRunner:
                 "authoritative_decision": decision,
             })
         self.store.save_parsed(slot_id, parsed)
+        if kind == "CHECKER" and not parsed["validation"]["valid"]:
+            raise LiveStop("Checker response failed frozen validation; affected operation stops")
         return parsed
 
     def _ordinary_case(self, case_id: str, candidate_summary: str, stage: str = "INITIAL") -> tuple[dict[str, Any], list[dict[str, str]]]:
