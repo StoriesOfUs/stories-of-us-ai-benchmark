@@ -129,7 +129,7 @@ def verify_identity(
         raise LiveStop("V07 live authority identity mismatch")
     authority = read_json(authority_path)
     exact = {
-        "status": "OWNER_APPROVED_EXACT_V07_EXECUTION_AUTHORITY",
+        "status": "CANDIDATE_BECOMES_APPROVED_ONLY_ON_EXACT_HASH_OWNER_APPROVAL",
         "approval_scope": "ONE_BOUNDED_V07_WRITER_CHECKER_ORDINARY_STORY_PILOT",
         "scientific_freeze_sha256": SCIENTIFIC_FREEZE,
         "runtime_overlay_freeze_sha256": expected_overlay_freeze,
